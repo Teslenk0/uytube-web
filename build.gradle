@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'war'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    providedCompile 'javax:javaee-web-api:7.0'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile group: 'org.netbeans.external', name: 'AbsoluteLayout', version: 'RELEASE111'
+    compile group: 'com.github.fracpete', name: 'jfilechooser-bookmarks', version: '0.1.6'
+    compile group: 'com.toedter', name: 'jcalendar', version: '1.4'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.17'
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.4.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.4.Final'
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+    testCompile     'junit:junit:4.12'
+}
