@@ -88,7 +88,7 @@ public class LoginServlet extends HttpServlet {
             if(usuario.getContrasenia().equals(pwd.trim())){
                 HttpSession session = request.getSession();
                 session.setAttribute("inputUser", user);
-                //setting session to expiry in 30 mins
+                //setting session to expirdy in 30 mins
                 session.setMaxInactiveInterval(30 * 60);
                 response.sendRedirect("LoginSuccess.jsp");
             }
