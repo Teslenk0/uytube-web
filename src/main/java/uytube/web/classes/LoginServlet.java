@@ -85,7 +85,7 @@ public class LoginServlet extends HttpServlet {
         IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
         DtUsuario usuario = controladorUsuario.buscarUsuario(user);
         if (usuario != null) {
-            if(usuario.getContraseña().equals(pwd.trim())){
+            if(usuario.getContrasenia().equals(pwd.trim())){
                 HttpSession session = request.getSession();
                 session.setAttribute("inputUser", user);
                 //setting session to expiry in 30 mins

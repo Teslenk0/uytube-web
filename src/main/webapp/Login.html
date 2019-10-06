@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>LOGIN DE USUARIO</h1>
-        <form action="LoginServlet" method="post">
-            <label for="inputUser">Usuario</label>
-            <input type="text" name="inputUser">
-            <br>
-            <label for="inputPassword">Contrasenia</label>
-            <input type="password" name="inputPassword">
-            <br>
-            <button type="submit" value="Ingresar">Ingresar</button>
-        </form>
-    </body>
+<head>
+    <title>Ejemplo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bulma.css">
+</head>
+<body>
+<h1>LOGIN DE USUARIO</h1>
+<form action="LoginServlet" method="post">
+    <div class="field">
+        <label class="label" for="inputUser">Usuario</label>
+        <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" type="text" placeholder="Usuario" name="inputUser">
+            <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+            <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+            </span>
+        </div>
+    </div>
+    <br>
+    <label for="inputPassword">Contrasenia</label>
+    <input type="password" name="inputPassword">
+    <br>
+    <button type="submit" value="Ingresar" class="button is-danger">Ingresar</button>
+</form>
+</body>
 </html>
