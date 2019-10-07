@@ -8,6 +8,7 @@ repositories {
 
 dependencies {
     providedCompile 'javax:javaee-web-api:7.0'
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile group: 'org.netbeans.external', name: 'AbsoluteLayout', version: 'RELEASE111'
     compile group: 'com.github.fracpete', name: 'jfilechooser-bookmarks', version: '0.1.6'
@@ -16,5 +17,6 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.4.Final'
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.4.Final'
     compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+    compile group: 'org.json', name: 'json', version: '20190722'
     testCompile     'junit:junit:4.12'
 }

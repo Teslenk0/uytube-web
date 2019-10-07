@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.json.JSONObject;
 
 /**
  *
@@ -37,18 +38,25 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String user = request.getParameter("inputUser");
+        String pwd = request.getParameter("inputPassword");
+        
+        Fabrica fabrica = Fabrica.getInstance();
+        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
+        DtUsuario usuario = controladorUsuario.buscarUsuario(user);
+        if (usuario != null) {
+            if(usuario.getContrasenia().equals(pwd.trim())){
+                HttpSession session = request.getSession();
+                session.setAttribute("inputUser", user);
+                //setting session to expirdy in 30 mins
+                session.setMaxInactiveInterval(30 * 60);
+                response.sendRedirect("LoginSuccess.jsp");
+            }
+        } else {
+            /*RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.html");
+            PrintWriter out = response.getWriter();
+            out.println("<font color=red>Either user name or password is wrong.</font>");
+            rd.include(request, response);*/
         }
     }
 
@@ -78,26 +86,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("inputUser");
-        String pwd = request.getParameter("inputPassword");
-        
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
-        DtUsuario usuario = controladorUsuario.buscarUsuario(user);
-        if (usuario != null) {
-            if(usuario.getContrasenia().equals(pwd.trim())){
-                HttpSession session = request.getSession();
-                session.setAttribute("inputUser", user);
-                //setting session to expirdy in 30 mins
-                session.setMaxInactiveInterval(30 * 60);
-                response.sendRedirect("LoginSuccess.jsp");
-            }
-        } else {
-            /*RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.html");
-            PrintWriter out = response.getWriter();
-            out.println("<font color=red>Either user name or password is wrong.</font>");
-            rd.include(request, response);*/
-        }
+        processRequest(request, response);
     }
 
     /**
