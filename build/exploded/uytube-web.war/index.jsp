@@ -21,7 +21,7 @@
 </head>
 
 <body>
-
+    
     <!-- BARRA SUPERIOR -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background: #312A25">
         <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
@@ -47,13 +47,11 @@
     </nav>
 
 
-
     <!-- ACA BARRA LATERAL -->
     <div class="container">
         <div class="row">
-            
-            <div id="wrapper">
 
+            <div id="wrapper">
 
 
                 <!-- Sidebar -->
@@ -93,19 +91,24 @@
                     </ul>
                 </div>
                 <!-- /#sidebar-wrapper -->
-
+                
                 <!-- Page Content -->
                 <div id="page-content-wrapper">
-                    <div class="container-fluid">
+                    <div class="contenedor_video">
+                        <div class="embed-responsive embed-responsive-16by9">
+                                <iframe id="ytplayer" class="embed-responsive-item" type="text/html" width="640" height="360"
+                                src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://uytube.uy&modestbranding=1"
+                                frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    
+                    
+                            <div class="container-fluid">
+                        
                         <div class="row">
                             <div class="col-lg-12">
-
-
-
+                                    
                                 </a>
-
-
-
 
                                 <!-- /#page-content-wrapper -->
 

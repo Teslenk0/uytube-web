@@ -3,6 +3,11 @@ body {
 }
 /* Toggle Styles */
 
+.contenedor_video{
+    height: 200px;
+    width: 400px;
+}
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.6s ease;
