@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,29 +39,25 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("inputUser");
-        String pwd = request.getParameter("inputPassword");
-        
+        String user = request.getParameter("inputUser").trim();
         Fabrica fabrica = Fabrica.getInstance();
         IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
-        DtUsuario usuario = controladorUsuario.buscarUsuario(user);
-        if (usuario != null) {
-            if(usuario.getContrasenia().equals(pwd.trim())){
-                HttpSession session = request.getSession();
-                session.setAttribute("inputUser", user);
-                //setting session to expirdy in 30 mins
-                session.setMaxInactiveInterval(30 * 60);
-                response.sendRedirect("LoginSuccess.jsp");
-            }
-        } else {
-            /*RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.html");
-            PrintWriter out = response.getWriter();
-            out.println("<font color=red>Either user name or password is wrong.</font>");
-            rd.include(request, response);*/
-        }
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("nickname", user);
+        
+        //setting session to expiry in 30 mins
+        session.setMaxInactiveInterval(30 * 60);
+        
+        Cookie userName = new Cookie("nickname", user);
+        userName.setMaxAge(30 * 60);
+        response.addCookie(userName);
+        
+        response.sendRedirect("LoginSuccess.jsp");
+
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
