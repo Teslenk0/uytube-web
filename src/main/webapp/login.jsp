@@ -42,14 +42,6 @@
                                     </span>
                                 </div>
                             </div>
-                            <!-- PARA CONTROL DE COOKIE Y RECORDAR
-                        <div class="field">
-                            <label for="" class="checkbox">
-                                <input type="checkbox">
-                                Remember me
-                            </label>
-                        </div>
-                        -->
                             <div class="field">
                                 <button type="submit" class="button is-success" id="submitForm">
                                     Iniciar Sesion
