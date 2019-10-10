@@ -28,11 +28,37 @@
 </head>
 
 <body>
+    <%
+        //allow access only if session exists
+        String user = null;
+        if (session.getAttribute("nickname") == null) {
+            response.sendRedirect("login.jsp");
+        } else {
+            user = (String) session.getAttribute("nickname");
+        }
+        String userName = null;
+        String sessionID = null;
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("nickname")) {
+                    userName = cookie.getValue();
+                }
+                if (cookie.getName().equals("JSESSIONID")) {
+                    sessionID = cookie.getValue();
+                }
+            }
+        }
+    %>
     
     <!-- BARRA SUPERIOR -->
     <div class="barra_superior" style="width: 100% ;  background-color: #121212">
         <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
-
+        <div class="navbar-brand">
+            <ul class="navbar-nav mr-auto">
+                <a class="navbar" Href="login.jsp" style="margin-left: 90%"> Iniciar Sesion </a>
+            </ul>
+        </div>
     </div>
 
 

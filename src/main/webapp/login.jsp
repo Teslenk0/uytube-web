@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <section class="hero is-primary is-fullheight">
+    <section class="hero is-dark is-fullheight">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">
@@ -47,7 +47,9 @@
                                     Iniciar Sesion
                                 </button>
                             </div>
-
+                            <div class="field">
+                                <a href="registrar.jsp">Registrarse</a>
+                            </div>
                         </form>
                     </div>
                 </div>
