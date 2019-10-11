@@ -17,8 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.json.JSONObject;
-
 /**
  *
  * @author tesla
@@ -39,21 +37,23 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("inputUser").trim();
+        String nickname = request.getParameter("inputUser").trim();
         Fabrica fabrica = Fabrica.getInstance();
         IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
         
+        DtUsuario user = controladorUsuario.buscarUsuario(nickname);
+        
         HttpSession session = request.getSession();
-        session.setAttribute("nickname", user);
+        session.setAttribute("usuario", user);
         
         //setting session to expiry in 30 mins
         session.setMaxInactiveInterval(30 * 60);
         
-        Cookie userName = new Cookie("nickname", user);
+        Cookie userName = new Cookie("usuario", user.getNickname());
         userName.setMaxAge(30 * 60);
         response.addCookie(userName);
         
-        response.sendRedirect("LoginSuccess.jsp");
+        response.sendRedirect("index.jsp");
 
     }
 
