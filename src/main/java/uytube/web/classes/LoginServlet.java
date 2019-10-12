@@ -7,9 +7,11 @@ package uytube.web.classes;
 
 import DataTypes.DtUsuario;
 import fabrica.Fabrica;
+import interfaces.IControladorCanal;
 import interfaces.IControladorUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 /**
  *
  * @author tesla
@@ -40,21 +43,24 @@ public class LoginServlet extends HttpServlet {
         String nickname = request.getParameter("inputUser").trim();
         Fabrica fabrica = Fabrica.getInstance();
         IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
-        
+
         DtUsuario user = controladorUsuario.buscarUsuario(nickname);
-        
+
         HttpSession session = request.getSession();
         session.setAttribute("usuario", user);
-        
+
         //setting session to expiry in 30 mins
         session.setMaxInactiveInterval(30 * 60);
-        
+
         Cookie userName = new Cookie("usuario", user.getNickname());
         userName.setMaxAge(30 * 60);
         response.addCookie(userName);
-        
-        response.sendRedirect("index.jsp");
 
+        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+        List videos = controladorCanal.listaVideos(user.getCanal());
+
+        request.setAttribute("videos", videos);
+        response.sendRedirect("index.jsp");
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
