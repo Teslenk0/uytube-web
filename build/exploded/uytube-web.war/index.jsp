@@ -1,3 +1,5 @@
+<%@page import="DataTypes.DtVideo"%>
+<%@page import="java.util.List"%>
 <%@page import="DataTypes.DtUsuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

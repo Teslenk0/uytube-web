@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
         IControladorCanal controladorCanal = fabrica.getControladorCanal();
         List videos = controladorCanal.listaVideos(user.getCanal());
 
-        request.setAttribute("videos", videos);
+        session.setAttribute("videos", videos);
         response.sendRedirect("index.jsp");
     }
 
