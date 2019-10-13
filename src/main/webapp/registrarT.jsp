@@ -52,7 +52,7 @@
                             <span class="helper-text"></span>
                         </div>
                         <div class="input-field">
-                            <i class="material-icons prefix">today</i>
+                            <i class="material-icons prefix">event_note</i>
                             <label for="fechaNac">Fecha de Nacimiento</label>
                             <input type="text" class="datepicker validate" name="fechaNac" id="fechaNac" required>
                             <span class="helper-text" data-error="Este campo es obligatorio"></span>
@@ -77,9 +77,25 @@
                         </div>
                         <div class="input-field">
                             <i class="material-icons prefix">mode_edit</i>
-                            <label for="descripcion" data-error="An error has occurred">Descripción</label>
+                            <label for="descripcion">Descripción</label>
                             <textarea id="descripcion" name="descripcion" class="materialize-textarea validate" data-length="300" maxlength="300" required></textarea>
                             <span class="helper-text" data-error="Este campo es obligatorio"></span>
+                        </div>
+                        <div>
+                             <!--<i class="material-icons prefix">security</i>-->
+                            <label for="buttonR" style="font-size: larger">Estado de canal</label>
+                            <p>
+                            <label>
+                                <input class="with-gap" name="group1" id="buttonR" type="radio"  checked/>
+                                <span>Privado</span>
+                            </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="group1" type="radio"  />
+                                    <span>Público</span>
+                                </label>
+                            </p>
                         </div>
                         <div class="file-field input-field">
                             <div class="waves-effect waves-light btn">

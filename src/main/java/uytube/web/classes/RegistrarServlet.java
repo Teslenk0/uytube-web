@@ -16,6 +16,8 @@ import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -55,12 +57,10 @@ public class RegistrarServlet extends HttpServlet {
         Date fecha = sdf.parse(fechaNac);
 
         String img;
-        String filename = part.getSubmittedFileName(); // saca nombre de la img
-        String path = "E:\\Descargas\\Github\\uytube-web\\src\\main\\webapp\\assets\\imagenesUsuarios\\"; // path truchazo porque no me funca la wea
+        String filename = part.getSubmittedFileName();
+        String path = getServletContext().getRealPath("/") + "assets/imagenesUsuarios/";
 
-        System.out.println(path);
-        if(!filename.isEmpty()){ // esto crea la imagen
-
+        if(!filename.isEmpty()){
             part.write(path + nick + ".png");
             img = "/imagenesUsuarios/"+ nick +".png";
         }
@@ -77,7 +77,7 @@ public class RegistrarServlet extends HttpServlet {
 
         Fabrica fabrica = Fabrica.getInstance();
         IControladorUsuario cu = fabrica.getControladorUsuario();
-        //cu.registrarUsuario(u,null);
+        cu.registrarUsuario(u,null);
 
         response.sendRedirect("login.jsp");
     }
