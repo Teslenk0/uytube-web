@@ -7,20 +7,15 @@ package uytube.web.classes;
 
 import DataTypes.DtCanal;
 import DataTypes.DtUsuario;
-import excepciones.CanalRepetidoException;
-import excepciones.EmailRepetidoException;
-import excepciones.UsuarioRepetidoException;
 import fabrica.Fabrica;
 import interfaces.IControladorUsuario;
 
-import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+import java.io.File;
 import java.io.IOException;
-import java.text.ParseException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -28,6 +23,7 @@ import java.util.Date;
  *
  * @author isaac
  */
+@MultipartConfig
 @WebServlet(name = "RegistrarServlet", urlPatterns = {"/RegistrarServlet"})
 public class RegistrarServlet extends HttpServlet {
 
@@ -42,7 +38,7 @@ public class RegistrarServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ParseException, EmailRepetidoException, CanalRepetidoException, UsuarioRepetidoException {
+            throws Exception {
         HttpSession s = request.getSession();
         String nick = request.getParameter("nickname").trim();
         String pass = request.getParameter("password").trim();
@@ -53,9 +49,23 @@ public class RegistrarServlet extends HttpServlet {
         String nomCanal = request.getParameter("nomCanal").trim();
         String desc = request.getParameter("descripcion").trim();
         Boolean privado = "on".equals(request.getParameter("privado"));
+        Part part = request.getPart("image");
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = sdf.parse(fechaNac);
-        String img = "/imagenesUsuario/Defecto.png";
+
+        String img;
+        String filename = part.getSubmittedFileName(); // saca nombre de la img
+        String path = "E:\\Descargas\\Github\\uytube-web\\src\\main\\webapp\\assets\\imagenesUsuarios\\"; // path truchazo porque no me funca la wea
+
+        System.out.println(path);
+        if(!filename.isEmpty()){ // esto crea la imagen
+
+            part.write(path + nick + ".png");
+            img = "/imagenesUsuarios/"+ nick +".png";
+        }
+        else
+            img = "/imagenesUsuarios/Defecto.png";
 
         DtCanal c;
         if(nomCanal.isEmpty())
@@ -67,7 +77,7 @@ public class RegistrarServlet extends HttpServlet {
 
         Fabrica fabrica = Fabrica.getInstance();
         IControladorUsuario cu = fabrica.getControladorUsuario();
-        cu.registrarUsuario(u,null);
+        //cu.registrarUsuario(u,null);
 
         response.sendRedirect("login.jsp");
     }
@@ -78,12 +88,9 @@ public class RegistrarServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         try{
             processRequest(request, response);
         }
@@ -98,15 +105,12 @@ public class RegistrarServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
             processRequest(request, response);
-        } catch (ParseException | EmailRepetidoException | CanalRepetidoException | UsuarioRepetidoException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -121,5 +125,4 @@ public class RegistrarServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

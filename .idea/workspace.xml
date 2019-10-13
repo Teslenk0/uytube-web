@@ -2,83 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c480040-9da6-4703-b893-201c743c0858" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/uytube-web.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AltaVideoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/LogoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ValidarVideoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/modificaruser.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/registrar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/modificarUser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/registrar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/registrar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/registrarT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/registrarT.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/uytube-web-815478042/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/nb-cache/uytube-web-815478042/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/uytube-web-815478042/project-info.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/nb-cache/uytube-web-815478042/project-info.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/LoginSuccess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/META-INF/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/classes/uytube/web/classes/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/classes/uytube/web/classes/ValidarUsuarioServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/AbsoluteLayout-RELEASE111.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/byte-buddy-1.9.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/dom4j-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/hibernate-core-5.4.4.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/hibernate-entitymanager-5.4.4.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/jandex-2.0.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/jcalendar-1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/jclipboardhelper-0.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/jfilechooser-bookmarks-0.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/json-20190722.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/mysql-connector-java-8.0.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/stax-ex-1.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/txw2-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/uytubeMaven-0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/css/bulma.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/css/bulma.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/images/logo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/js/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/RegistrarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/RegistrarServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/uytubeMaven-0.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/uytubeMaven-0.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/RegistrarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/RegistrarServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/registrar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/registrar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/registrar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrar.jsp" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,10 +84,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Jsp File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -181,16 +125,16 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
     </key>
   </component>
@@ -330,6 +274,8 @@
       <workItem from="1570825077994" duration="513000" />
       <workItem from="1570825610864" duration="667000" />
       <workItem from="1570826295300" duration="218000" />
+      <workItem from="1570827515497" duration="22808000" />
+      <workItem from="1570893291350" duration="38088000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>

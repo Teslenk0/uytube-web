@@ -149,6 +149,6 @@
         </div>
     </div>
 </div>
-<script src="assets/js/registrar.js" type="text/javascript"></script>
+<script src="assets/js/registrarT.js" type="text/javascript"></script>
 </body>
 </html>
