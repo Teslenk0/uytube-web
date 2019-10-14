@@ -8,15 +8,8 @@ $(document).ready(function () {
 
     });
 
-    $('.dropdown-menu a').click(function(){
-        $('#selected').text($(this).text());
-    });
-
     var registrar = $("#formAltaVideo");
     registrar.submit(function (e) {
-        //pongo boton en cargando
-        //$('#aceptar').attr("class","button is-success is-loading");
-        //evito que se haga un reload de la pagina
         e.preventDefault();
         e.returnValue = false;
 
@@ -35,7 +28,7 @@ $(document).ready(function () {
                 if(!response.existe){
                     registrar.off('submit');
                     registrar.submit();
-                    console.log('no existe');
+                    console.log("no existe el video");
                 }else{
                     //busco el div que tiene el boton
                     var div = $("#divError");
