@@ -15,9 +15,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -50,7 +47,7 @@ public class RegistrarServlet extends HttpServlet {
         String fechaNac = request.getParameter("fechaNac");
         String nomCanal = request.getParameter("nomCanal").trim();
         String desc = request.getParameter("descripcion").trim();
-        Boolean privado = "on".equals(request.getParameter("privado"));
+        Boolean privado = request.getParameter("group1").equals("privado");
         Part part = request.getPart("image");
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -58,7 +55,12 @@ public class RegistrarServlet extends HttpServlet {
 
         String img;
         String filename = part.getSubmittedFileName();
-        String path = getServletContext().getRealPath("/") + "assets/imagenesUsuarios/";
+
+        String path = System.getProperty("user.dir");
+        path = path.substring(0,path.length()-3) + "webapps/assets/imagenesUsuarios/";
+        File file = new File(path);
+        if(!file.exists())
+            file.mkdirs();
 
         if(!filename.isEmpty()){
             part.write(path + nick + ".png");

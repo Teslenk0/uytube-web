@@ -25,7 +25,7 @@
                             <div class="col s6">
                                 <div class="input-field">
                                     <i class="material-icons prefix">person</i>
-                                    <label for="nombre" >Nombre </label>
+                                    <label for="nombre" >Nombre</label>
                                     <input type="text" name="nombre" id="nombre" onfocusout="validateNombre()">
                                     <span class="helper-text"></span>
                                 </div>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="input-field">
                             <i class="material-icons prefix">email</i>
-                            <label for="email">Email </label>
+                            <label for="email">Email</label>
                             <input type="email" name="email" id="email" onfocusout="validateEmail()">
                             <span class="helper-text"></span>
                         </div>
@@ -86,13 +86,13 @@
                             <label for="buttonR" style="font-size: larger">Estado de canal</label>
                             <p>
                             <label>
-                                <input class="with-gap" name="group1" id="buttonR" type="radio"  checked/>
+                                <input class="with-gap" name="group1" id="buttonR" type="radio" value="privado" checked/>
                                 <span>Privado</span>
                             </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="with-gap" name="group1" type="radio"  />
+                                    <input class="with-gap" name="group1" type="radio" value="publico"/>
                                     <span>Público</span>
                                 </label>
                             </p>
@@ -100,14 +100,19 @@
                         <div class="file-field input-field">
                             <div class="waves-effect waves-light btn">
                                 <span>Imágen</span>
-                                <input type="file" name="image">
+                                <input type="file" name="image" accept="image/*">
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
+                                <input class="file-path validate" type="text" accept="image/png,image/jpg">
                             </div>
                         </div>
                         <button type="submit" class="btn-block waves-effect waves-light btn"><i class="material-icons left">person</i>Registrar</button>
-                        <div class="card-action">
+                        <div class="hide" id="LBar">
+                            <div class="progress">
+                                <div class="indeterminate"></div>
+                            </div>
+                        </div>
+                        <div class="card-action" style="margin-top: 20px">
                             <a href="login.jsp">Iniciar Sesión</a>
                         </div>
                 </form>
@@ -117,23 +122,6 @@
 </div>
 <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="assets/js/registrarT.js" type="text/javascript"></script>
-<script>
-$(document).ready(function() {
-    $('.datepicker').datepicker();
-    $('textarea#descripcion').characterCounter();
-    $('.datepicker').datepicker({
-        firstDay: true,
-        format: 'dd-mm-yyyy',
-        i18n: {
-            months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-            monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic"],
-            weekdays: ["Domingo","Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
-            weekdaysShort: ["Dom","Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
-            weekdaysAbbrev: ["D","L", "M", "M", "J", "V", "S"]
-        }
-    });
-});
-</script>
+<script src="assets/js/registrar.js" type="text/javascript"></script>
 </body>
 </html>

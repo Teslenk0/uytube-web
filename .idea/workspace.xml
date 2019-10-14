@@ -13,7 +13,10 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/RegistrarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/RegistrarServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/RegistrarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/RegistrarServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrarT.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrarT.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/registrarT.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/registrar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrarT.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrar.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +111,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -122,10 +125,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Descargas\Github\uytube-web\src\main\webapp" />
+      <recent name="E:\Descargas\Github\uytube-web\src\main\webapp\assets\js" />
       <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
     </key>
   </component>
@@ -219,22 +224,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9089943d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9089943d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3ea0a6a9" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9089943d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5fc1a54f" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -272,7 +262,7 @@
       <workItem from="1570826295300" duration="218000" />
       <workItem from="1570827515497" duration="22808000" />
       <workItem from="1570893291350" duration="38793000" />
-      <workItem from="1570982024646" duration="3486000" />
+      <workItem from="1570982024646" duration="14045000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>
