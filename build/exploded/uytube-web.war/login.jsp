@@ -48,7 +48,7 @@
                                 </button>
                             </div>
                             <div class="field">
-                                <a href="registrarT.jsp">Registrarse</a>
+                                <a href="registrar.jsp">Registrarse</a>
                             </div>
                         </form>
                     </div>

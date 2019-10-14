@@ -7,13 +7,20 @@ $(document).ready(function () {
     $('#myTab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
-      })
+      });
     
     //capturo el evento click
     $('#videos-tab').on('click', function (e) {
         e.target; // newly activated tab
         e.relatedTarget; // previous active tab
         $("#videos").load("videos.jsp");
+    });
+    
+    $('#playlists-tab').on('click', function (e) {
+        console.log("entra aca");
+        e.target; // newly activated tab
+        e.relatedTarget; // previous active tab
+        $("#playlists").load("playlists.jsp");
     });
 
 
