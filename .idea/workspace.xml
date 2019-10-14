@@ -2,34 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c480040-9da6-4703-b893-201c743c0858" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/playlists.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/getID.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/getPrimerVideoListaDefecto.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/getPrimerVideoListaParticular.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/listasDefecto.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/listasParticular.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/playlists.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/classes/uytube/web/classes/RegistrarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/classes/uytube/web/classes/RegistrarServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/js/registrarT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/modificarUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/modificarUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/registrarT.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/uytubeMaven-0.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/uytubeMaven-0.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/playlists.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/inicio.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/inicio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/inicio.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/videos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/videos.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/listasParticular.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listasParticular.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -277,7 +258,7 @@
       <workItem from="1570893291350" duration="38793000" />
       <workItem from="1570982024646" duration="14045000" />
       <workItem from="1571059753642" duration="682000" />
-      <workItem from="1571060611150" duration="28000" />
+      <workItem from="1571060611150" duration="1081000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>

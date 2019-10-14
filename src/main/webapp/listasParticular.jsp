@@ -35,8 +35,7 @@
                         for (int i = 0; i < listasParticulares.size(); i++) {
                             lista = (DtListaParticulares) listasParticulares.get(i);
                             datos = getPrimerVideoListaParticular(lista, user.getNickname());
-                            if (datos != null) {
-System.out.println(datos[0]);%>
+                            if (datos != null) {%>
             <div class="card">
                 <img src="https://img.youtube.com/vi/<%=datos[0].toString()%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
                      <div class="card-body">
