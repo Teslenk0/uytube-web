@@ -40,7 +40,10 @@
                     %>
 
                     <div class="card">
-                        <a href="verVideos.jsp?variable1=<%=id%>"><img src="https://img.youtube.com/vi/<%=id%>/0.jpg" name="<%=id%>" id="<%=id%>" class="card-img-top" alt="Miniatura de video"></a>
+                        <div class="card-body">
+                            <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombre_canal()%>">
+                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                            </a>
                             <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
                             <p class="card-text"><%=vid.getDescripcion()%></p>
                         </div>

@@ -2,7 +2,9 @@
 <%@ page import="fabrica.Fabrica" %>
 <%@ page import="java.util.List" %>
 <%@ page import="DataTypes.DtVideo" %>
-<%@ page import="DataTypes.DtComentario" %><%--
+<%@include file="getID.jsp"%>
+<%@ page import="DataTypes.DtComentario" %>
+<%@ page import="DataTypes.DtAuxiliar" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19
@@ -20,9 +22,17 @@
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src='verVideos.jsp'> </script>
 </head>
 <body>
+
+<%
+    String nomVideo = request.getParameter("video");
+    String canal = request.getParameter("canal");
+    Fabrica fabrica = Fabrica.getInstance();
+    IControladorCanal c = fabrica.getControladorCanal();
+    DtVideo video  = c.obtenerVideo(nomVideo,canal);
+    String url = getID(video.getUrl());
+%>
 <!-- BARRA SUPERIOR -->
 <div class="barra_superior" style="background-color:black">
     <div class="d-inline">
@@ -38,7 +48,7 @@
 
                     <div class="form-group">
                          <div class="cols-sm-10">
-                             <iframe width="720" height="315" src="https://www.youtube.com/embed/Es6GRMHXeCQ?modestbranding=1" frameborder="0" allowfullscreen style="margin-left: 45px"></iframe>
+                             <iframe width="720" height="315" src="https://www.youtube.com/embed/<%=url%>?modestbranding=1" frameborder="0" allowfullscreen style="margin-left: 45px"></iframe>
                         </div>
                     </div>
                     <div class="form-group">
@@ -46,12 +56,12 @@
                         <div class="cols-sm-10">
                             <div class="input-group" >
                                 <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                <textarea class="form-control" rows="3" name="descripcion" id="descripcion" placeholder="4A ETAPA A CONTRAMANO LIGUILLA"></textarea>
+                                <textarea class="form-control" rows="4" name="descripcion" id="descripcion" placeholder="<%=video.getDescripcion()%>" disabled></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="comentario" class="cols-sm-2 control-label"><strong Comentario:></strong></label>
+                        <label for="comentario" class="cols-sm-2 control-label"><strong>Comentario:</strong></label>
                         <div class="cols-sm-10">
                             <div class="input-group" >
                                 <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
@@ -65,7 +75,14 @@
                     </div>
 
                     <div >
-                        <a >Aca van los comentarios</a>
+                        <%List lista = c.listaComentarios(video);
+                        for(int x=0 ; x<lista.size(); x++){
+                            DtAuxiliar com = (DtAuxiliar) lista.get(x);
+                            if(com != null){%>
+                        <label for="descripcion" class="cols-sm-2 control-label"> <%=com.getComentario()%></label>
+                        <%}
+                        }%>
+
                     </div>
                 </form>
             </div>

@@ -53,6 +53,8 @@ public class AltaVideoServlet extends HttpServlet {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = sdf.parse(fechaPub);
 
+        System.out.println(categoria);
+
         DtCanal canal = user.getCanal();
         DtVideo v = new DtVideo(video, canal, fecha, url, descripcion,categoria, duracion, estado);
 

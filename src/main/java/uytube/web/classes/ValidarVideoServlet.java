@@ -51,7 +51,7 @@ public class ValidarVideoServlet extends HttpServlet {
 
         IControladorCanal icanal = f.getControladorCanal();
         List videos = icanal.listaVideos(u.getCanal());
-        String respuesta = "{\"existe\":false}";;
+        String respuesta = "{\"existe\":false}";
         for (int i=0;i<videos.size();i++) {
             DtVideo v = (DtVideo) videos.get(i);
             if (v!=null) {
@@ -63,7 +63,6 @@ public class ValidarVideoServlet extends HttpServlet {
         out.print(respuesta);
         out.flush();
         out.close();
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -8,12 +8,12 @@ $(document).ready(function () {
 
     });
 
-    const registrar = $("#formAltaVideo");
+    var registrar = $("#formAltaVideo");
     registrar.submit(function (e) {
         e.preventDefault();
         e.returnValue = false;
 
-        const nomVideo = $('#nombreVideo').val().trim();
+        var nomVideo = $('#nombreVideo').val().trim();
 
         $.ajax({
             type: 'get',

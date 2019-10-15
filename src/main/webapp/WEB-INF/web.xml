@@ -21,7 +21,70 @@
         <servlet-name>ValidarUsuarioServlet</servlet-name>
         <url-pattern>/ValidarUsuarioServlet</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>ValidarVideoServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ValidarVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidarVideoServlet</servlet-name>
+        <url-pattern>/ValidarVideoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AltaVideoServlet</servlet-name>
+        <servlet-class>uytube.web.classes.AltaVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AltaVideoServlet</servlet-name>
+        <url-pattern>/AltaVideoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuscarServlet</servlet-name>
+        <servlet-class>uytube.web.classes.BuscarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuscarServlet</servlet-name>
+        <url-pattern>/BuscarServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModificarVideoServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ModificarVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModificarVideoServlet</servlet-name>
+        <url-pattern>/ModificarVideoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>uytube.web.classes.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegistrarServlet</servlet-name>
+        <servlet-class>uytube.web.classes.RegistrarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegistrarServlet</servlet-name>
+        <url-pattern>/RegistrarServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ValidarRegistroServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ValidarRegistroServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidarRegistroServlet</servlet-name>
+        <url-pattern>/ValidarRegistroServlet</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30
