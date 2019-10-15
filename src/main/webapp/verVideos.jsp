@@ -4,7 +4,11 @@
 <%@ page import="DataTypes.DtVideo" %>
 <%@include file="getID.jsp"%>
 <%@ page import="DataTypes.DtComentario" %>
-<%@ page import="DataTypes.DtAuxiliar" %><%--
+<%@ page import="DataTypes.DtAuxiliar" %>
+<%@ page import="interfaces.IControladorUsuario" %>
+<%@ page import="DataTypes.DtUsuario" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19
@@ -20,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/Comentarios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -75,14 +80,74 @@
                     </div>
 
                     <div >
+                        <h1>Comentarios</h1>
                         <%List lista = c.listaComentarios(video);
                         for(int x=0 ; x<lista.size(); x++){
                             DtAuxiliar com = (DtAuxiliar) lista.get(x);
-                            if(com != null){%>
-                        <label for="descripcion" class="cols-sm-2 control-label"> <%=com.getComentario()%></label>
-                        <%}
-                        }%>
+                            if(com != null){
+                                IControladorUsuario u = fabrica.getControladorUsuario();%>
 
+                        <!-- Contenedor Principal -->
+                        <div class="comments-container">
+                            <ul id="comments-list" class="comments-list">
+                                <li>
+                                    <%if (com.getPadre() == null) {%>
+                                    <div class="comment-main-level">
+                                        <!-- Avatar -->
+                                        <%DtUsuario usuario = u.buscarUsuario(com.getNick());
+                                        String ruta = "assets" + usuario.getImagen().toString();%>
+                                        <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
+                                        <!-- Contenedor del Comentario -->
+                                        <div class="comment-box">
+                                            <div class="comment-head">
+                                                <h6 class="comment-name"><a href="Canal de la persona?"><%=com.getNick()%></a></h6>
+                                                <span><%=com.getFecha()+" Hs"%></span>
+                                                <i class="fa fa-reply"></i>
+                                            </div>
+                                            <div class="comment-content">
+                                                <%=com.getComentario()%>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%}
+                                    else {
+                                        List lista2 = c.listaComentarios(video);
+                                        for(int y=0; y<lista2.size(); y++){
+                                            DtAuxiliar resp =(DtAuxiliar) lista2.get(y);
+
+                                            if(com.getPadre().equals(resp.getReferencia().toString())){;%>
+
+                                                <!-- Respuestas de los comentarios -->
+                                                <ul class="comments-list reply-list">
+                                                    <li>
+                                                        <!-- Avatar -->
+                                                        <%DtUsuario usuario = u.buscarUsuario(resp.getNick());
+                                                        String ruta = "assets" + usuario.getImagen().toString();%>
+                                                        <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
+                                                        <!-- Contenedor del Comentario -->
+                                                        <div class="comment-box">
+                                                            <div class="comment-head">
+                                                                <h6 class="comment-name"><a href="canal de la persona"><%=com.getNick()%></a></h6>
+                                                                <span><%=com.getFecha()+" Hs"%></span>
+                                                                <i class="fa fa-reply"></i>
+                                                            </div>
+                                                            <div class="comment-content">
+                                                                <%=com.getComentario()%>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                            <%}
+                                        }
+                                    }
+
+                                }
+                                }%>
+
+                            </ul>
+                        </div>
                     </div>
                 </form>
             </div>
