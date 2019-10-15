@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c480040-9da6-4703-b893-201c743c0858" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ModificarVideoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ValidarVideoModificarServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/inicio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/inicio.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listasParticular.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listasParticular.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/altaVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/altaVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,12 +126,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Descargas\Github\uytube-web\src\main\webapp" />
       <recent name="E:\Descargas\Github\uytube-web\src\main\webapp\assets\js" />
+      <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="uytube.web.classes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
     </key>
   </component>

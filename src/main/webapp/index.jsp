@@ -163,7 +163,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">Modificar Video</a>
+                                            <a href="#" id="modificoVideo_btn">Modificar Video</a>
                                         </li>
                                         <li>
                                             <a href="#" id="altaVideo_btn">Subir Video</a>
@@ -254,6 +254,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
         <script src="assets/js/modificarUser.js"></script>
+        <script src="assets/js/modificarVideo.js"></script>
         <script src="assets/js/altaVideo.js"></script>
     </body>
 
