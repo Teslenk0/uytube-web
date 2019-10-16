@@ -85,6 +85,33 @@
         <url-pattern>/ValidarRegistroServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ResponderComentarioServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ResponderComentarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponderComentarioServlet</servlet-name>
+        <url-pattern>/ResponderComentarioServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResponderRespuestaServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ResponderRespuestaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponderRespuestaServlet</servlet-name>
+        <url-pattern>/ResponderRespuestaServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NuevoComentarioServlet</servlet-name>
+        <servlet-class>uytube.web.classes.NuevoComentarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NuevoComentarioServlet</servlet-name>
+        <url-pattern>/NuevoComentarioServlet</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30

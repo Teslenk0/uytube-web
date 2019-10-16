@@ -7,7 +7,6 @@ package uytube.web.classes;
 
 import fabrica.Fabrica;
 import interfaces.IControladorCanal;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.*;

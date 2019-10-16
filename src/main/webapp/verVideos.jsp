@@ -33,10 +33,13 @@
         String canal = request.getParameter("canal");
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal c = fabrica.getControladorCanal();
-        DtVideo video  = c.obtenerVideo(nomVideo,canal);
-        String url = getID(video.getUrl());
-
-        session.setAttribute("nomVideo", String.valueOf(nomVideo)); // guardo en la sesion el nombre video PA VO GIL!!
+        DtVideo video = null;
+        String url = null;
+        if(!nomVideo.isEmpty() && !canal.isEmpty()) {
+            video = c.obtenerVideo(nomVideo, canal);
+            url = getID(video.getUrl());
+            session.setAttribute("nomVideo", String.valueOf(nomVideo)); // guardo en la sesion el nombre video PA VO GIL!!
+        }
     %>
     <!-- BARRA SUPERIOR -->
     <div class="barra_superior" style="background-color:black">
@@ -99,14 +102,28 @@
                                             <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
                                             <!-- Contenedor del Comentario -->
                                             <div class="comment-box">
-                                                <div class="comment-head">
-                                                    <h6 class="comment-name"><a href="Canal de la persona?"><%=com.getNick()%></a></h6>
-                                                    <span><%=com.getFecha()+" Hs"%></span>
-                                                    <i class="fa fa-reply"></i>
-                                                </div>
-                                                <div class="comment-content">
-                                                    <%=com.getComentario()%>
-                                                </div>
+                                                <form class="form-horizontal needs-validation" method="post" action="ResponderComentarioServlet" id="fromRespuesta">
+                                                    <a id="referencia" name="referencia"><%=com.getReferencia()%></a>
+                                                    <div class="comment-head">
+                                                        <h6 class="comment-name"><a href="Canal de la persona?"><%=com.getNick()%></a></h6>
+                                                        <span><%=com.getFecha()+" Hs"%></span>
+                                                    </div>
+                                                    <div class="comment-content">
+                                                        <%=com.getComentario()%>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="cols-sm-10">
+                                                            <div class="input-group" >
+                                                                <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                <textarea class="form-control" rows="2" name="respuesta" id="respuesta" placeholder="Agrega una respuesta"></textarea>
+                                                                <input type="hidden"  name="referencia" value="<%=com.getReferencia()%>" >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" id="error1" >
+                                                        <button type="submit"  id="resp" name="resp" class="btn" >responder</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                         <%}
@@ -126,17 +143,31 @@
                                                             <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
                                                             <!-- Contenedor del Comentario -->
                                                             <div class="comment-box">
-                                                                <div class="comment-head">
-                                                                    <h6 class="comment-name"><a href="canal de la persona"><%=com.getNick()%></a></h6>
-                                                                    <span><%=com.getFecha()+" Hs"%></span>
-                                                                    <i class="fa fa-reply"></i>
-                                                                </div>
-                                                                <div class="comment-content">
-                                                                    <%="@"+resp.getNick() +": "+com.getComentario()%>
-                                                                </div>
+                                                                <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
+                                                                    <a id="referencia1" name="referencia1"><%=com.getReferencia()%></a>
+                                                                    <div class="comment-head">
+                                                                        <h6 class="comment-name"><a href="canal de la persona"><%=com.getNick()%></a></h6>
+                                                                        <span><%=com.getFecha()+" Hs"%></span>
+                                                                        <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
+                                                                    </div>
+                                                                    <div class="comment-content">
+                                                                        <%="@"+resp.getNick() +": "+com.getComentario()%>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="cols-sm-10">
+                                                                            <div class="input-group" >
+                                                                                <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                                <textarea class="form-control" rows="2" name="respuesta1" id="respuesta1" placeholder="Agrega una respuesta"></textarea>
+                                                                                <input type="hidden"  name="referencia1" value="<%=com.getReferencia()%>" >
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group" id="error2" >
+                                                                        <button type="submit" id="resp1" name="resp" class="btn" >responder</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
                                                         </li>
-
                                                     </ul>
                                                 </li>
                                                 <%}
@@ -154,6 +185,8 @@
         </div>
     </div>
     <script src="assets/js/verVideos.js" type="text/javascript"></script>
+    <script src="assets/js/ResponderComentario.js" type="text/javascript"></script>
+    <script src="assets/js/responderRespuesta.js" type="text/javascript"></script>
 </body>
 </html>
 

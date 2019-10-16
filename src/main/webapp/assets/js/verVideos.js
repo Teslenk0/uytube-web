@@ -7,6 +7,7 @@ $(document).ready(function () {
 
         let com = $('#comentario').val().trim();
 
+
         if (com !== "") {
             agrego.off('submit');
             agrego.submit();
