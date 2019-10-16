@@ -182,7 +182,7 @@
                                 <div class="sidebar-submenu">
                                     <ul>
                                         <li>
-                                            <a href="#">Modificar lista</a>
+                                            <a href="#" id="modificarPlaylist_btn">Modificar lista</a>
                                         </li>
                                         <li>
                                             <a href="#">Agregar video</a>
@@ -260,6 +260,7 @@
         <script src="assets/js/modificarVideo.js"></script>
         <script src="assets/js/modificarUser.js"></script>
         <script src="assets/js/modificarVideo.js"></script>
+        <script src="assets/js/modificarPlaylist.js"></script>
         <script src="assets/js/altaVideo.js"></script>
     </body>
 

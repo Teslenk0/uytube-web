@@ -4,15 +4,11 @@
     Author     : tesla
 --%>
 
-<%@page import="DataTypes.DtListaParticularVideos"%>
-<%@page import="DataTypes.DtListaParticulares"%>
 <%@include file="getID.jsp" %>
 <%@page import="interfaces.IControladorCanal"%>
 <%@page import="fabrica.Fabrica"%>
 <%@page import="java.util.List"%>
-<%@page import="DataTypes.DtListaporDefecto"%>
-<%@page import="DataTypes.DtVideo"%>
-<%@page import="DataTypes.DtListaDefectoVideos"%>
+<%@ page import="DataTypes.*" %>
 
 <%!    public String[] getPrimerVideoListaParticular(DtListaReproduccion list, String usuario) {
         System.out.println(usuario + " -> " + list.getNombreLista());
