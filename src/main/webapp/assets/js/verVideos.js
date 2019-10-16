@@ -1,14 +1,19 @@
-function consigoURL() {
-        var paramstr = window.location.search.substr(1);
-        var paramarr = paramstr.split("&");
-        var params = {};
-        var url;
-        for (var i = 0; i < paramarr.length; i++) {
-            var tmparr = paramarr[i].split("=");
-            params[tmparr[0]] = tmparr[1];
+const comentar = $('#formComentario');
+    comentar.submit(function (e) {
+        e.preventDefault();
+        e.returnValue = false;
+        console.log(e.returnValue);
+
+        let com = $('#comentario').val().trim();
+
+        if(!com.existe){
+            comentar.off('submit');
+            comentar.submit();
         }
-        if (params['variable1']) {
-            url = params['variable1'];
+        else{
+            var div = $("#error");
+            $('#alertaRoja').remove();
+            div.append('<p id="alertaRoja" style="color: red">El comentario esta vacio</p>');
         }
-        return url;
-}
+    })
+
