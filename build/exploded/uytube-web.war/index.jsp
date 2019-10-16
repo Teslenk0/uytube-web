@@ -112,12 +112,15 @@
                             </a>
                             <%}%>
                             <div class="input-group">
-                                <input type="text" class="form-control search-menu" placeholder="Buscar...">
+                                <form id="buscarForm" method="get" action="BuscarServlet">
+                                <!--<input type="text" class="form-control search-menu" id="input_search" name="buscador" placeholder="Buscar...">-->
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        <input type="text" class="form-control search-menu" id="input_search" name="buscador" placeholder="Buscar...">
+                                        <a href="javascript:{}" onclick="document.getElementById('buscarForm').submit();" style="margin-left: -10px"><i class="fa fa-search" aria-hidden="true"></i></a>
                                     </span>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -163,7 +166,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">Modificar Video</a>
+                                            <a href="#" id="modificoVideo_btn">Modificar Video</a>
                                         </li>
                                         <li>
                                             <a href="#" id="altaVideo_btn">Subir Video</a>
@@ -248,12 +251,15 @@
             <!-- page-content" -->
         </div>
         <!-- page-wrapper -->
+        <script src="assets/js/search.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        <script src="assets/js/modificarVideo.js"></script>
         <script src="assets/js/modificarUser.js"></script>
+        <script src="assets/js/modificarVideo.js"></script>
         <script src="assets/js/altaVideo.js"></script>
     </body>
 

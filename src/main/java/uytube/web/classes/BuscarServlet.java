@@ -10,8 +10,7 @@ import interfaces.IControladorCanal;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.SortedSet;
+import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,7 +37,7 @@ public class BuscarServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String texto = request.getParameter("buscador");
-        System.out.println(request.getParameter("buscador"));
+
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal controladorCanal = fabrica.getControladorCanal();
 
@@ -51,7 +50,10 @@ public class BuscarServlet extends HttpServlet {
         request.setAttribute("videos",videos);
         request.setAttribute("listas",listas);
 
-        request.getRequestDispatcher("results.jsp").forward(request, response);
+        /*System.out.println(canales);
+        System.out.println(videos);
+        System.out.println(listas);*/
+        request.getRequestDispatcher("resultado.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -14,7 +14,7 @@
 <%@page import="DataTypes.DtVideo"%>
 <%@page import="DataTypes.DtListaDefectoVideos"%>
 
-<%!    public String[] getPrimerVideoListaParticular(DtListaParticulares list, String usuario) {
+<%!    public String[] getPrimerVideoListaParticular(DtListaReproduccion list, String usuario) {
         System.out.println(usuario + " -> " + list.getNombreLista());
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal controladorCanal = fabrica.getControladorCanal();

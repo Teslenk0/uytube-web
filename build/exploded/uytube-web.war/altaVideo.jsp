@@ -87,19 +87,19 @@
 
                         <label class="cols-sm-2 control-label" for="categorias">Categorias</label>
                         <div class="btn-group dropup" >
-                            <select id="categorias">
+                            <select id="categorias" name="categorias">
                                 <% Fabrica fabrica = Fabrica.getInstance();
                                     IControladorCanal controladorCanal = fabrica.getControladorCanal();
                                     List lista = controladorCanal.getCategorias();
                                     for(int x=0 ; x<lista.size(); x++) {
                                         DtCategoria c = (DtCategoria) lista.get(x);
                                         if(c != null) {%>
-                                <option value="None" name="categoria"><%=c.getnombreCategoria()%></option>
+                                <option value="<%=c.getnombreCategoria()%>" name="categoria"><%=c.getnombreCategoria()%></option>
                                 <%}}%>
                             </select>
                         </div>
                         <div class="form-group " id="divError">
-                            <button type="submit"  id="aceptar" class="btn btn-success btn-lg btn-block login-button">Aceptar</button>
+                            <button type="submit" id="aceptar" class="btn btn-success btn-lg btn-block login-button">Aceptar</button>
                         </div>
                     </form>
                 </div>
