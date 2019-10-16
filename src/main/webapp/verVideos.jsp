@@ -103,7 +103,6 @@
                                             <!-- Contenedor del Comentario -->
                                             <div class="comment-box">
                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderComentarioServlet" id="fromRespuesta">
-                                                    <a id="referencia" name="referencia"><%=com.getReferencia()%></a>
                                                     <div class="comment-head">
                                                         <h6 class="comment-name"><a href="Canal de la persona?"><%=com.getNick()%></a></h6>
                                                         <span><%=com.getFecha()+" Hs"%></span>
@@ -144,7 +143,6 @@
                                                             <!-- Contenedor del Comentario -->
                                                             <div class="comment-box">
                                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
-                                                                    <a id="referencia1" name="referencia1"><%=com.getReferencia()%></a>
                                                                     <div class="comment-head">
                                                                         <h6 class="comment-name"><a href="canal de la persona"><%=com.getNick()%></a></h6>
                                                                         <span><%=com.getFecha()+" Hs"%></span>
