@@ -55,17 +55,16 @@ public class ModificarVideoServlet extends HttpServlet {
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal c = fabrica.getControladorCanal();
         DtVideo v = new DtVideo(nomV, user.getCanal(), fecha, url, descripcion, categoria,duracion,estado);
-        System.out.println(fecha);
+        /*System.out.println(fecha);
         System.out.println(url);
         System.out.println(descripcion);
         System.out.println(categoria);
         System.out.println(duracion);
         System.out.println(estado);
         System.out.println(user.getCanal().getNombre_canal());
-        System.out.println(nomV);
-
+        System.out.println(nomV);*/
         c.modificarVideo(v,"Recoba 20 mejores goles");
-        s.removeAttribute("video");
+        s.removeAttribute("oldV");
         response.sendRedirect("index.jsp");
     }
 

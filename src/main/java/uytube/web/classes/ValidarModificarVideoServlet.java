@@ -42,7 +42,7 @@ public class ValidarModificarVideoServlet extends HttpServlet {
         Fabrica f = Fabrica.getInstance();
         HttpSession s = request.getSession();
 
-        String nomO = (String) s.getAttribute("video");
+        String nomO = (String) s.getAttribute("oldV");
         String nomVN = request.getParameter("nombre");
         DtUsuario u = (DtUsuario) s.getAttribute("usuario");
 
