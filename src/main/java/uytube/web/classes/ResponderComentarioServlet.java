@@ -11,14 +11,15 @@ import DataTypes.DtUsuario;
 import DataTypes.DtVideo;
 import fabrica.Fabrica;
 import interfaces.IControladorCanal;
+import interfaces.IControladorUsuario;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -42,13 +43,12 @@ public class ResponderComentarioServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String comentario = request.getParameter("respuesta");
         String padre = request.getParameter("referencia");
-        Date fecha = new Date();
+        String com = request.getParameter("com");
+        java.util.Date fecha = new Date();
 
         String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion de verVideo.jsp
 

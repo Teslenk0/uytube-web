@@ -1,14 +1,11 @@
 <%@ page import="interfaces.IControladorCanal" %>
 <%@ page import="fabrica.Fabrica" %>
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtVideo" %>
 <%@include file="getID.jsp"%>
-<%@ page import="DataTypes.DtComentario" %>
-<%@ page import="DataTypes.DtAuxiliar" %>
 <%@ page import="interfaces.IControladorUsuario" %>
-<%@ page import="DataTypes.DtUsuario" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Date" %><%--
+<%@ page import="java.util.Date" %>
+<%@ page import="DataTypes.*" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19
@@ -23,6 +20,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="assets/css/Comentarios.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/meGusta.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -33,12 +31,16 @@
         String canal = request.getParameter("canal");
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal c = fabrica.getControladorCanal();
+        IControladorUsuario u = fabrica.getControladorUsuario();
+        HttpSession s = request.getSession();
+        DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         DtVideo video = null;
         String url = null;
         if(!nomVideo.isEmpty() && !canal.isEmpty()) {
             video = c.obtenerVideo(nomVideo, canal);
             url = getID(video.getUrl());
             session.setAttribute("nomVideo", String.valueOf(nomVideo)); // guardo en la sesion el nombre video PA VO GIL!!
+            session.setAttribute("canal", String.valueOf(canal)); //
         }
     %>
     <!-- BARRA SUPERIOR -->
@@ -58,6 +60,56 @@
                              <div class="cols-sm-10">
                                  <iframe width="720" height="315" src="https://www.youtube.com/embed/<%=url%>?modestbranding=1" frameborder="0" allowfullscreen style="margin-left: 45px"></iframe>
                             </div>
+                        </div>
+                        <div class="form-group" >
+                           <%List listaV = c.listaMeGustas(user.getNickname());
+                            DtAuxiliarValorar dtaux;
+                            int contMg = 0;
+                            int contNmg = 0;
+                            boolean esta = false;
+                            boolean mg = false;
+                            if(listaV != null){
+                                for(int x =0; x<listaV.size(); x++){
+                                    dtaux = (DtAuxiliarValorar) listaV.get(x);
+                                    if (listaV.get(x) != null) {
+                                        if(nomVideo.equals(dtaux.getVid()) && user.getNickname().equals(dtaux.getDueño()) && dtaux.getVal().equals("Me gusta")){
+                                            contMg++;
+                                        }
+                                        if(nomVideo.equals(dtaux.getVid()) && user.getNickname().equals(dtaux.getDueño()) && dtaux.getVal().equals("No me gusta")){
+                                            contNmg++;
+                                        }
+                                    }
+                                    if(nomVideo.equals(dtaux.getVid()) && user.getNickname().equals(dtaux.getUser())) {
+                                        esta = true;
+                                        if(dtaux.getVal().equals("Me gusta")) {
+                                            mg = true;
+                                        }
+                                    }
+                                 }%>
+                                <div class="btn-group" role="group" aria-label="Basic example" style="margin-left: 85%">
+                                    <%if(contMg != 0) {%>
+                                    <a><%=contMg%></a>
+                                    <%}
+                                    if(esta == false) {%>
+                                        <a href="/MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
+                                        <a href="/NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                                     <%}
+                                    else{
+                                        if(mg == true) {%>
+                                            <a href="/CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: red" ></i><br></a>
+                                            <a href="#" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                                        <%}
+                                        else{%>
+                                            <a href="#" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
+                                            <a href="/CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: red"></i><br></a>
+                                        <%}
+                                    }
+                                    if(contNmg != 0) {%>
+                                        <a style="margin-left: 5px" ><%=contNmg%></a>
+                                    <%}%>
+                                </div>
+
+                            <%}%>
                         </div>
                         <div class="form-group">
                             <label for="descripcion" class="cols-sm-2 control-label"><strong>Descripcion:</strong></label>
@@ -87,8 +139,7 @@
                         <%List lista = c.listaComentarios(video);
                         for(int x=0 ; x<lista.size(); x++){
                             DtAuxiliar com = (DtAuxiliar) lista.get(x);
-                            if(com != null){
-                                IControladorUsuario u = fabrica.getControladorUsuario();%>
+                            if(com != null){%>
 
                             <!-- Contenedor Principal -->
                             <div class="comments-container">
@@ -185,6 +236,7 @@
     <script src="assets/js/verVideos.js" type="text/javascript"></script>
     <script src="assets/js/ResponderComentario.js" type="text/javascript"></script>
     <script src="assets/js/responderRespuesta.js" type="text/javascript"></script>
+    <script src="assets/js/botonesMegusta.js" type="text/javascript"></script>
 </body>
 </html>
 
