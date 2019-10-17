@@ -37,7 +37,7 @@
                             IControladorCanal c = f.getControladorCanal();
                             assert user != null;
                             DtVideo video = c.obtenerVideo("Recoba 20 mejores goles", user.getCanal().getNombre_canal());
-                            session.setAttribute("video",video.getNombre());
+                            session.setAttribute("oldV",video.getNombre());
                             Boolean isChannelPrivate = video.getPrivado();
                         %>
                         <div class="form-group" id="errorNom">
@@ -63,7 +63,7 @@
                         <label class="cols-sm-2 control-label" for="categorias">Categorias</label>
                         <div class="btn-group dropup">
                             <select id="categorias" name="categorias">
-                                <option value="" selected disabled hidden><%=video.getCategoria()%></option>
+                                <option value="<%=video.getCategoria()%>" selected hidden><%=video.getCategoria()%></option>
                                 <%
                                     List lista = c.getCategorias();
                                     for (Object o : lista) {
