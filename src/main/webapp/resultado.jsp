@@ -242,6 +242,7 @@
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-white">Canal: <%=v.getCanal().getNombre_canal()%></small>
+                                    <br>
                                     <small class="text-white">Duracion: <%=v.getDuracion().toString()%></small>
                                 </div>
                             </div>
@@ -253,7 +254,7 @@
                         </div>
                     </div>
                     <br>
-                <hr style="border-color: white">
+                <hr class="listas-resultado" style="border-color: white">
 
             <div class="card-deck" id="deck-listas">
                 <div class="row align-items-start">
@@ -309,7 +310,7 @@
 
                 </div>
             </div>
-            <hr style="border-color:white">
+            <hr class="canales-resultado" style="border-color:white">
             
             <div class="card-deck" id="deck-canales">
                 <div class="row align-items-start">
@@ -320,7 +321,7 @@
                         if (canales != null) {
                             DtCanal canal;
                             for (int i = 0; i < canales.size(); i++) {
-                                canal = (DtCanal) listasParticulares.get(i);
+                                canal = (DtCanal) canales.get(i);
                                 if(!canal.getPrivado()){
                     %>          
                                     <div class="col-md-4">
