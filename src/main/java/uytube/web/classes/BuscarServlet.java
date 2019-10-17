@@ -52,9 +52,7 @@ public class BuscarServlet extends HttpServlet {
         request.setAttribute("videos",videos);
         request.setAttribute("listas",listas);
 
-        /*System.out.println(canales);
-        System.out.println(videos);
-        System.out.println(listas);*/
+
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 

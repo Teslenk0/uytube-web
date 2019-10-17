@@ -45,7 +45,7 @@
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
                     <div class="sidebar-brand">
-                        <a href="#">UyTube</a>
+                        <a href="index.jsp">UyTube</a>
                         <div id="close-sidebar">
                             <i class="fas fa-times"></i>
                         </div>
@@ -109,16 +109,16 @@
                     <% if (user != null) {%>
                     <div class="sidebar-menu">
                         <ul>
-                            <li class="sidebar-dropdown">
+                            <li>
                                 <a href="index.jsp">
                                     <i class="fa fa-home"></i>
-                                    <span>Inicio</span>
+                                    <span class="menu-text">Inicio</span>
                                 </a>
                             </li>
-                            <li class="sidebar-dropdown">
+                            <li>
                                 <a href="#" id="canal_btn">
-                                    <i class="fa fa-bath"></i>
-                                    <span>Canal</span>
+                                    <i class="fa fa-film"></i>
+                                    <span class="menu-text">Canal</span>
                                 </a>
                             </li>
                             <li class="sidebar-dropdown">
@@ -166,7 +166,7 @@
                                 <div class="sidebar-submenu">
                                     <ul>
                                         <li>
-                                            <a href="#">Modificar lista</a>
+                                            <a href="#" id="modificarPlaylist_btn">Modificar lista</a>
                                         </li>
                                         <li>
                                             <a href="#">Agregar video</a>
@@ -187,10 +187,9 @@
 
             </nav>
             <!-- sidebar-wrapper  -->
-            <div class="page-content">
-                <p class="container-fluid" id="panelcentral">
+            <div class="page-content" id="panelcentral">
                 <div class="btn-group">
-                    <button class="btn btn-secondary btn-lg dropdown-toggle bg-info" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Filtrar
                         <i class="fas fa-filter"></i>
                     </button>
@@ -201,16 +200,15 @@
                     </div>
                 </div>
                 <div class="btn-group">
-                <button class="btn btn-secondary btn-lg dropdown-toggle bg-info" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Ordenar
-                    <i class="fas fa-sort"></i>
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Alfabeticamente (Defecto)</a>
-                    <a class="dropdown-item" href="#">Fecha de carga</a>
+                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ordenar
+                        <i class="fas fa-sort"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Alfabeticamente (Defecto)</a>
+                        <a class="dropdown-item" href="#">Fecha de carga</a>
+                    </div>
                 </div>
-            </div>
-                <hr style="border-color: white">
                 <div class="card-deck" id="deck-videos">
                     <div class="row align-items-start">
                         <%
@@ -223,7 +221,7 @@
                                     id = getID(v.getUrl());
                         %>
                         <div class="col-md-4">
-                            <div class="card video-resultado text-white bg-info mb-3">
+                            <div class="card video-resultado mb-3">
                                 <div class="card-body">
                                     <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombre_canal()%>">
                                         <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
@@ -232,9 +230,9 @@
                                     <p class="card-text"><%=v.getDescripcion()%></p>
                                 </div>
                                 <div class="card-footer">
-                                    <small class="text-white">Canal: <%=v.getCanal().getNombre_canal()%></small>
+                                    <small>Canal: <%=v.getCanal().getNombre_canal()%></small>
                                     <br>
-                                    <small class="text-white">Duracion: <%=v.getDuracion()%></small>
+                                    <small>Duracion: <%=v.getDuracion()%></small>
                                 </div>
                             </div>
                         </div>
@@ -242,15 +240,11 @@
                                 }
                             }
                         %>
-                        </div>
                     </div>
-                    <br>
-                <hr class="listas-resultado" style="border-color: white">
-
-            <div class="card-deck" id="deck-listas">
-                <div class="row align-items-start">
-
-                    <%
+                </div>
+                <div class="card-deck" id="deck-listas">
+                    <div class="row align-items-start">
+                        <%
                         List listasParticulares = (List) request.getAttribute("listas");
 
                         if (listasParticulares != null) {
@@ -262,76 +256,69 @@
                                 datos = getPrimerVideoListaParticular(lista, lista.getCanal().getUsuario().getNickname());
 
                                 if (datos != null) {%>
-
-                    <div class="col-md-4">
-                        <div class="card listas-resultado text-white bg-info mb-3">
-                            <div class="card-body">
-                                    <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-                                <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
-                                <p class="card-text">Dueno: <%=lista.getCanal().getNombre_canal()%></p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-white">Cantidad de videos: <%=datos[1]%></small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <%}else{%>
-                    <div class="col-md-4">
-                        <div class="card listas-resultado text-white bg-info mb-3">
-                            <div class="card-body">
-                                <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" width="480" height="360">
-                                <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-                                <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
-                                <p class="card-text">Dueno: <%=lista.getCanal().getNombre_canal()%></p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-white">Cantidad de videos: 0</small>
+                        <div class="col-md-4">
+                            <div class="card listas-resultado mb-3">
+                                <div class="card-body">
+                                        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                    <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+                                    <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
+                                    <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>Cantidad de videos: <%=datos[1]%></small>
+                                </div>
                             </div>
                         </div>
+                        <%}else{%>
+                        <div class="col-md-4">
+                            <div class="card listas-resultado mb-3">
+                                <div class="card-body">
+                                    <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" width="480" height="360">
+                                    <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+                                    <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
+                                    <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>Cantidad de videos: 0</small>
+                                </div>
+                            </div>
+                        </div>
+                        <%
+                            }
+                            }
+                            }
+                        %>
                     </div>
-                    <%
-                        }
-                        }
-                        }
-                    %>
-
                 </div>
-            </div>
-            <hr class="canales-resultado" style="border-color:white">
-            
-            <div class="card-deck" id="deck-canales">
-                <div class="row align-items-start">
+                 <div class="card-deck" id="deck-canales">
+                    <div class="row align-items-start">
+                        <%
+                            List canales = (List) request.getAttribute("canales");
 
-                    <%
-                        List canales = (List) request.getAttribute("canales");
-
-                        if (canales != null) {
-                            DtCanal canal;
-                            for (int i = 0; i < canales.size(); i++) {
-                                canal = (DtCanal) canales.get(i);
-                                if(!canal.getPrivado()){
-                    %>          
-                                    <div class="col-md-4">
-                                        <div class="card canales-resultado text-white bg-info mb-3">
-                                            <div class="card-body">
-                                                <img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal">
-                                                <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
-                                                <p class="card-text"><%=canal.getDescripcion()%></p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <small class="text-white">Dueño: <%=canal.getUsuario().getNickname()%></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                    <%  }
-                        }
-                        }
-                    %>
-
+                            if (canales != null) {
+                                DtCanal canal;
+                                for (int i = 0; i < canales.size(); i++) {
+                                    canal = (DtCanal) canales.get(i);
+                                    if(!canal.getPrivado()){
+                        %>
+                        <div class="col-md-4">
+                            <div class="card canales-resultado mb-3">
+                                <div class="card-body">
+                                    <img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal">
+                                    <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
+                                    <p class="card-text"><%=canal.getDescripcion()%></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>Dueño: <%=canal.getUsuario().getNickname()%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <%  }
+                            }
+                            }
+                        %>
+                    </div>
                 </div>
-            </div>
             </div>
         </main>
         </div>
