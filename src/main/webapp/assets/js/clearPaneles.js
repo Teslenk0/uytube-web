@@ -31,4 +31,9 @@ $(document).ready(function () {
         panel.load("modificarUser.jsp");
     });
 
+    $("#crearLista_btn").on("click",function (e) {
+        panel.empty();
+        panel.load("crearPlaylist.jsp");
+    });
+
 });

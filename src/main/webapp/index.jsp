@@ -166,6 +166,9 @@
                                 <div class="sidebar-submenu">
                                     <ul>
                                         <li>
+                                            <a href="#" id="crearLista_btn">Crear lista</a>
+                                        </li>
+                                        <li>
                                             <a href="#" id="modificarPlaylist_btn">Modificar lista</a>
                                         </li>
                                         <li>
