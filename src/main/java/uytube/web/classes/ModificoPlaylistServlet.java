@@ -46,6 +46,7 @@ public class ModificoPlaylistServlet extends HttpServlet {
 
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal controladorCanal = fabrica.getControladorCanal();
+
         try{
             controladorCanal.modificarListaParticular(listaMod,user);
         }catch (Exception e){

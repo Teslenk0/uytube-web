@@ -1,9 +1,9 @@
-<%@page import="DataTypes.DtVideo"%>
+<%@include file="getPrimerVideoListaParticular.jsp"%>
 <%@page import="java.util.List"%>
-<%@page import="DataTypes.DtUsuario"%>
+<%@ page import="DataTypes.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <meta charset="UTF-8">
@@ -16,41 +16,23 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        <!-- cosas barra lateral
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
-
-        <!------ Include the above in your HEAD tag
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">---------->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
 
-    <body>
+    <body style="background-color: #EEEEEE">
         <%
-            //allow access only if session exists
             DtUsuario user = null;
             if (session.getAttribute("usuario") != null) {
                 user = (DtUsuario) session.getAttribute("usuario");
-        %>
-        <script>
-            $(document).ready(function () {
-                var panel = $("#panelcentral");
-                panel.load("inicio.jsp");
-            });
-        </script>
-        <%
             }
         %>
         <!-- BARRA SUPERIOR -->
-        <div class="barra_superior" style="background-color:black">
+        <div class="barra_superior" style="background-color:#343841">
             <div class="d-inline">
-                <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png"
-                                                                                        width="112" height="auto"></a>
+                <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
             </div>
         </div>
 
@@ -75,14 +57,14 @@
                                  src="assets/imagenesUsuarios/Defecto.png"
                                  alt="User picture">
                             <%} else {
-                                String ruta = "assets" + user.getImagen().toString();%>
+                        String ruta = "assets" + user.getImagen();%>
                             <img class="img-responsive img-rounded" src="<%=ruta%>" alt="User picture">
                             <%}%>
                         </div>
                         <div class="user-info">
                             <span class="user-name">
                                 <% if (user != null) {%>
-                                <strong><%=user.getNickname().toString()%> </strong>
+                                <strong><%=user.getNickname()%> </strong>
                                 <%} else {%>
                                 <strong>Invitado</strong>
                                 <%}%>
@@ -113,13 +95,12 @@
                             <%}%>
                             <div class="input-group">
                                 <form id="buscarForm" method="get" action="BuscarServlet">
-                                <!--<input type="text" class="form-control search-menu" id="input_search" name="buscador" placeholder="Buscar...">-->
-                                <div class="input-group-append">
-                                    <span class="input-group-text">
-                                        <input type="text" class="form-control search-menu" id="input_search" name="buscador" placeholder="Buscar...">
-                                        <a href="javascript:{}" onclick="document.getElementById('buscarForm').submit();" style="margin-left: -10px"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                    </span>
-                                </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <input type="text" class="form-control search-menu" id="input_search" name="buscador" placeholder="Buscar...">
+                                            <a href="javascript:{}" onclick="document.getElementById('buscarForm').submit();" style="margin-left: -10px"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -129,6 +110,18 @@
                     <div class="sidebar-menu">
                         <ul>
                             <li class="sidebar-dropdown">
+                                <a href="index.jsp">
+                                    <i class="fa fa-home"></i>
+                                    <span>Inicio</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-dropdown">
+                                <a href="#" id="canal_btn">
+                                    <i class="fa fa-bath"></i>
+                                    <span>Canal</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-dropdown">
                                 <a href="#">
                                     <i class="fa fa-user"></i>
                                     <span>Usuario</span>
@@ -136,18 +129,14 @@
                                 <div class="sidebar-submenu">
                                     <ul>
                                         <li>
-                                            <a href="#">Consulta
-                                            </a>
+                                            <a href="#">Consulta</a>
                                         </li>
                                         <li>
-                                            <a href="#" id="modificoUser_btn">Modificar
-                                            </a>
+                                            <a href="#" id="modificoUser_btn">Modificar</a>
                                             <header class="header">
                                                 <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
-
                                                 </nav>
                                             </header>
-
                                             <script type="text/javascript" src="/assets/js/barralateral_index.js"></script></a>
                                         </li>
                                     </ul>
@@ -161,15 +150,10 @@
                                 <div class="sidebar-submenu">
                                     <ul>
                                         <li>
-                                            <a href="#">Consulta Video
-
-                                            </a>
+                                            <a href="#" id="altaVideo_btn">Subir Video</a>
                                         </li>
                                         <li>
                                             <a href="#" id="modificoVideo_btn">Modificar Video</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" id="altaVideo_btn">Subir Video</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -182,7 +166,7 @@
                                 <div class="sidebar-submenu">
                                     <ul>
                                         <li>
-                                            <a href="#" id="modificarPlaylist_btn">Modificar lista</a>
+                                            <a href="#">Modificar lista</a>
                                         </li>
                                         <li>
                                             <a href="#">Agregar video</a>
@@ -197,60 +181,161 @@
                                 </div>
                             </li>
                         </ul>
-                        <!-- sidebar-menu  -->
                     </div>
                     <%}%>
                     <!-- sidebar-content  -->
 
             </nav>
             <!-- sidebar-wrapper  -->
-            <main class="page-content">
-                <div class="container-fluid" id="panelcentral">
-                    <h2>Pro Sidebar</h2>
-                    <hr>
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <p>This is a responsive sidebar template with dropdown menu based on bootstrap 4 framework.</p>
-                            <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-                                    Github</a>, it contains more themes and background image option</p>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=large"
-                                    frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
-                            <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=large"
-                                    frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
-                        </div>
-                    </div>
-                    <h5>More templates</h5>
-                    <hr>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                            <div class="card rounded-0 p-0 shadow-sm">
-                                <img src="https://user-images.githubusercontent.com/25878302/58369568-a49b2480-7efc-11e9-9ca9-2be44afacda1.png" class="card-img-top rounded-0" alt="Angular pro sidebar">
-                                <div class="card-body text-center">
-                                    <h6 class="card-title">Angular Pro Sidebar</h6>
-                                    <a href="https://github.com/azouaoui-med/angular-pro-sidebar" target="_blank" class="btn btn-primary btn-sm">Github</a>
-                                    <a href="https://azouaoui-med.github.io/angular-pro-sidebar/demo/" target="_blank" class="btn btn-success btn-sm">Preview</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                            <div class="card rounded-0 p-0 shadow-sm">
-                                <img src="https://user-images.githubusercontent.com/25878302/58369258-33f20900-7ef8-11e9-8ff3-b277cb7ed7b4.PNG" class="card-img-top rounded-0" alt="Angular pro sidebar">
-                                <div class="card-body text-center">
-                                    <h6 class="card-title">Angular Dashboard</h6>
-                                    <a href="https://github.com/azouaoui-med/lightning-admin-angular" target="_blank" class="btn btn-primary btn-sm">Github</a>
-                                    <a href="https://azouaoui-med.github.io/lightning-admin-angular/demo/" target="_blank" class="btn btn-success btn-sm">Preview</a>
-                                </div>
-                            </div>
-                        </div>
+            <div class="page-content">
+                <p class="container-fluid" id="panelcentral">
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-lg dropdown-toggle bg-info" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filtrar
+                        <i class="fas fa-filter"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="filtroListas" href="#">Playlists</a>
+                        <a class="dropdown-item" id="filtroVideos" href="#">Videos</a>
+                        <a class="dropdown-item" id="filtroCanales" href="#">Canales</a>
                     </div>
                 </div>
+                <div class="btn-group">
+                <button class="btn btn-secondary btn-lg dropdown-toggle bg-info" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ordenar
+                    <i class="fas fa-sort"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Alfabeticamente (Defecto)</a>
+                    <a class="dropdown-item" href="#">Fecha de carga</a>
+                </div>
+            </div>
+                <hr style="border-color: white">
+                <div class="card-deck" id="deck-videos">
+                    <div class="row align-items-start">
+                        <%
+                            List videos = (List) request.getAttribute("videos");
+                            if (videos != null) {
+                                DtVideo v;
+                                String id;
+                                for (int i = 0; i < videos.size(); i++) {
+                                    v = (DtVideo) videos.get(i);
+                                    id = getID(v.getUrl());
+                        %>
+                        <div class="col-md-4">
+                            <div class="card video-resultado text-white bg-info mb-3">
+                                <div class="card-body">
+                                    <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombre_canal()%>">
+                                        <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                    </a>
+                                    <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
+                                    <p class="card-text"><%=v.getDescripcion()%></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-white">Canal: <%=v.getCanal().getNombre_canal()%></small>
+                                    <br>
+                                    <small class="text-white">Duracion: <%=v.getDuracion()%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <%
+                                }
+                            }
+                        %>
+                        </div>
+                    </div>
+                    <br>
+                <hr class="listas-resultado" style="border-color: white">
 
-            </main>
-            <!-- page-content" -->
+            <div class="card-deck" id="deck-listas">
+                <div class="row align-items-start">
+
+                    <%
+                        List listasParticulares = (List) request.getAttribute("listas");
+
+                        if (listasParticulares != null) {
+                            DtListaParticulares lista;
+                            String[] datos;
+                            for (int i = 0; i < listasParticulares.size(); i++) {
+                                lista = (DtListaParticulares) listasParticulares.get(i);
+
+                                datos = getPrimerVideoListaParticular(lista, lista.getCanal().getUsuario().getNickname());
+
+                                if (datos != null) {%>
+
+                    <div class="col-md-4">
+                        <div class="card listas-resultado text-white bg-info mb-3">
+                            <div class="card-body">
+                                    <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+                                <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
+                                <p class="card-text">Dueno: <%=lista.getCanal().getNombre_canal()%></p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-white">Cantidad de videos: <%=datos[1]%></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%}else{%>
+                    <div class="col-md-4">
+                        <div class="card listas-resultado text-white bg-info mb-3">
+                            <div class="card-body">
+                                <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" width="480" height="360">
+                                <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+                                <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
+                                <p class="card-text">Dueno: <%=lista.getCanal().getNombre_canal()%></p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-white">Cantidad de videos: 0</small>
+                            </div>
+                        </div>
+                    </div>
+                    <%
+                        }
+                        }
+                        }
+                    %>
+
+                </div>
+            </div>
+            <hr class="canales-resultado" style="border-color:white">
+            
+            <div class="card-deck" id="deck-canales">
+                <div class="row align-items-start">
+
+                    <%
+                        List canales = (List) request.getAttribute("canales");
+
+                        if (canales != null) {
+                            DtCanal canal;
+                            for (int i = 0; i < canales.size(); i++) {
+                                canal = (DtCanal) canales.get(i);
+                                if(!canal.getPrivado()){
+                    %>          
+                                    <div class="col-md-4">
+                                        <div class="card canales-resultado text-white bg-info mb-3">
+                                            <div class="card-body">
+                                                <img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal">
+                                                <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
+                                                <p class="card-text"><%=canal.getDescripcion()%></p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <small class="text-white">Dueño: <%=canal.getUsuario().getNickname()%></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                    <%  }
+                        }
+                        }
+                    %>
+
+                </div>
+            </div>
+            </div>
+        </main>
         </div>
-        <!-- page-wrapper -->
+        <script src="assets/js/filtrado.js"></script>
         <script src="assets/js/search.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

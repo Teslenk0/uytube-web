@@ -55,7 +55,7 @@ public class BuscarServlet extends HttpServlet {
         /*System.out.println(canales);
         System.out.println(videos);
         System.out.println(listas);*/
-        request.getRequestDispatcher("resultado.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

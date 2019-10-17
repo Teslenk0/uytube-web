@@ -1,6 +1,11 @@
 $(document).ready(function () {
     const panel = $("#panelcentral");
 
+    $("#canal_btn").on("click",function (e) {
+        panel.empty();
+        panel.load("inicio.jsp");
+    });
+
     $("#modificoVideo_btn").on("click",function (e) {
         panel.empty();
         panel.load("modificarVideo.jsp");
