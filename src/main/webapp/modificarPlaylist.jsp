@@ -37,8 +37,6 @@
                     lista = (DtListaParticulares) listasParticulares.get(i);
                     datos = getPrimerVideoListaParticular(lista, user.getNickname());
                     if (datos != null) {
-                        Boolean isPlaylistPrivate =  lista.getPrivado();
-                        session.setAttribute("lista", lista);
     %>
     <div class="card" id="playlist_div">
         <img src="https://img.youtube.com/vi/<%=datos[0].toString()%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
@@ -47,23 +45,7 @@
             <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
         </div>
         <div class="card-footer">
-            <form class="form-horizontal" method="post" action="ModificoPlaylistServlet" id="formModificarPlaylist">
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">Estado de Playlist</label>
-                    <span id="is-playlist-private" data-value="<%=isPlaylistPrivate%>" hidden></span>
-                    <div class="custom-control custom-radio">
-                        <input name="group1" value="privado" type="radio" class="custom-control-input" id="privado" name="defaultExampleRadios">
-                        <label class="custom-control-label" for="privado">Privado</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input name="group1" value="publico" type="radio" class="custom-control-input" id="publico" name="defaultExampleRadios">
-                        <label class="custom-control-label" for="publico">Publico</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button style="margin-top: 10px" type="submit" class="btn btn-success btn-block login-button" id="submitForm">Modificar</button>
-                </div>
-            </form>
+            <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>">MODIFICAR</a>
         </div>
     </div>
     <%} else {%>
@@ -74,7 +56,7 @@
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
         </div>
         <div class="card-footer">
-            <small class="text-muted">Cantidad de videos: 0</small>
+            <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>">MODIFICAR</a>
         </div>
     </div>
     <%}
@@ -83,6 +65,6 @@
     }
     %>
 </div>
-<script src="assets/js/modificarPlaylist.js"></script>
+
 </body>
 </html>

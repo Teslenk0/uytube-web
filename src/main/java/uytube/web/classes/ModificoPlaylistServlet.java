@@ -52,6 +52,7 @@ public class ModificoPlaylistServlet extends HttpServlet {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+        s.removeAttribute("lista");
         response.sendRedirect("index.jsp");
 
     }
