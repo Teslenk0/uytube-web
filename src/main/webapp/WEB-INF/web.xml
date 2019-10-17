@@ -12,7 +12,16 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>ValidarModificarVideoServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ValidarModificarVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidarModificarVideoServlet</servlet-name>
+        <url-pattern>/ValidarModificarVideoServlet</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>ValidarUsuarioServlet</servlet-name>
         <servlet-class>uytube.web.classes.ValidarUsuarioServlet</servlet-class>

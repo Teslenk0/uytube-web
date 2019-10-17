@@ -37,8 +37,9 @@
                             IControladorCanal c = f.getControladorCanal();
                             assert user != null;
                             DtVideo video = c.obtenerVideo("Niño Payaso", user.getCanal().getNombre_canal());
+                            session.setAttribute("video",video.getNombre());
                         %>
-                        <div class="form-group">
+                        <div class="form-group" id="errorNom">
                             <label for="nomV" class="control-label">Nombre de Video</label>
                             <input type="text" class="form-control" name="nomV" id="nomV" value="<%=video.getNombre()%>" required>
                         </div>

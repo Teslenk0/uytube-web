@@ -61,8 +61,9 @@ form.addEventListener('submit', function(event) {
                 success: function (response) {
                     document.getElementById('LBar').className = 'hide';
                     if(!response.nickname && !response.email && !response.canal){
-                        $('#bodyForm').off();
-                        $('#bodyForm').submit();
+                        const form = $('#bodyForm');
+                        form.off();
+                        form.submit();
                     }else{
                         if(response.nickname) {
                             setInvalid(nickname, 'Este nickname ya se encuentra en uso');
@@ -96,10 +97,6 @@ function validateApellido() {
 }
 function validateNickname() {
     if (checkIfEmpty(nickname)) return;
-    return true;
-}
-function validateFecha() {
-    if (checkIfEmpty(fecha)) return;
     return true;
 }
 function validateEmail() {
@@ -142,8 +139,8 @@ function checkIfEmpty(field) {
     }
 }
 function isEmpty(value) {
-    if (value === '') return true;
-    return false;
+    return value === '';
+
 }
 function setInvalid(field, message) {
     field.className = 'invalid';
@@ -215,7 +212,7 @@ function containsCharacters(field, code) {
             );
         case 5:
             // Email pattern
-            regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return matchWithRegEx(regEx, field, 'Debe ser un email valido');
         default:
             return false;

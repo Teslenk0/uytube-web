@@ -1,26 +1,11 @@
 $(document).ready(function () {
-    const panel = $("#panelcentral");
-    const boton = $("#modificoVideo_btn");
-    boton.on("click",function (e) {
-        panel.empty();
-        panel.load("modificarVideo.jsp");
-    });
-
-    const modificar = $("#formMVideo");
-    modificar.submit(function (e) {
+    let form = $("#formMVideo");
+    form.submit(function (e) {
         e.preventDefault();
         e.returnValue = false;
-
-        const url = $('#url').val();
-        if(matchYoutubeUrl(url)){
-            modificar.off('submit');
-            modificar.submit();
-        }else{
-            const div = $("#urlError");
-            $('#alertaRoja').remove();
-            div.append('<p id="alertaRoja" style="color: red">URL Invalida</p>');
-        }
-        /*$.ajax({
+        console.log("Entra")
+        let nomVideo = $('#nomV').val().trim();
+        $.ajax({
             type: 'get',
             url: 'ValidarModificarVideoServlet',
             dataType: 'JSON',
@@ -29,27 +14,31 @@ $(document).ready(function () {
                 nombre: nomVideo
             },
             success: function (response) {
-                if(matchYoutubeUrl(url)){
-                    console.log("Pasa aca");
-                    registrar.off('submit');
-                    registrar.submit();
+                if(!response.existe){
+                    let url = $('#url').val();
+                    if(matchYoutubeUrl(url)){
+                        form.off('submit');
+                        form.submit();
+                    }else{
+                        let div = $("#urlError");
+                        $('#alertaRoja').remove();
+                        div.append('<p id="alertaRoja" style="color: red">URL Invalida</p>');
+                    }
                 }else{
-                    console.log("Pasa else");
-                    var div = $("#url");
+                    let div = $("#errorNom");
                     $('#alertaRoja').remove();
-                    div.append('<p id="alertaRoja" style="color: red">URL Invalida</p>');
+                    div.append('<p id="alertaRoja" style="color: red">Este nombre de video ya existe en su canal</p>');
                 }
             },
             error: function (data) {
                 console.log("ERROR: Fallo la peticion hacia el servlet");
             }
-        });*/
+        });
     });
 });
 
 function matchYoutubeUrl(url) {
-    console.log(url);
-    const p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+    let p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
     if(url.match(p)){
         return url.match(p)[1];
     }

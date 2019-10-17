@@ -1,13 +1,4 @@
 $(document).ready(function () {
-    var panel = $("#panelcentral");
-    var boton = $("#altaVideo_btn");
-    boton.on("click",function (e) {
-
-        panel.empty();
-        panel.load("altaVideo.jsp");
-
-    });
-
     var registrar = $("#formAltaVideo");
     registrar.submit(function (e) {
         e.preventDefault();
@@ -38,7 +29,6 @@ $(document).ready(function () {
                 console.log("ERROR: Fallo la peticion hacia el servlet");
             }
         });
-
     });
 });
 
