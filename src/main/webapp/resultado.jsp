@@ -3,7 +3,7 @@
 <%@ page import="DataTypes.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <meta charset="UTF-8">
@@ -241,6 +241,7 @@
                                     <p class="card-text"><%=v.getDescripcion()%></p>
                                 </div>
                                 <div class="card-footer">
+                                    <small class="text-white">Canal: <%=v.getCanal().getNombre_canal()%></small>
                                     <small class="text-white">Duracion: <%=v.getDuracion().toString()%></small>
                                 </div>
                             </div>
@@ -308,6 +309,41 @@
 
                 </div>
             </div>
+            <hr style="border-color:white">
+            
+            <div class="card-deck" id="deck-canales">
+                <div class="row align-items-start">
+
+                    <%
+                        List canales = (List) request.getAttribute("canales");
+
+                        if (canales != null) {
+                            DtCanal canal;
+                            for (int i = 0; i < canales.size(); i++) {
+                                canal = (DtCanal) listasParticulares.get(i);
+                                if(!canal.getPrivado()){
+                    %>          
+                                    <div class="col-md-4">
+                                        <div class="card canales-resultado text-white bg-info mb-3">
+                                            <div class="card-body">
+                                                <img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal">
+                                                <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
+                                                <p class="card-text"><%=canal.getDescripcion()%></p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <small class="text-white">Dueño: <%=canal.getUsuario().getNickname()%></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                    <%  }
+                        }
+                        }
+                    %>
+
+                </div>
+            </div>
+                    
+                    
             </div>
         </main>
                 <!-- page-content" -->
