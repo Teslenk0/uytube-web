@@ -8,16 +8,14 @@ package uytube.web.classes;
 import DataTypes.DtUsuario;
 import fabrica.Fabrica;
 import interfaces.IControladorUsuario;
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import org.json.JSONObject;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -32,15 +30,15 @@ public class ValidarUsuarioServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
 
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
 
         String strJson = request.getParameter("datos");
         JSONObject json = new JSONObject(strJson);
@@ -51,7 +49,7 @@ public class ValidarUsuarioServlet extends HttpServlet {
         IControladorUsuario user = f.getControladorUsuario();
         DtUsuario u = user.buscarUsuario(nickname);
 
-        String respuesta = null;
+        String respuesta;
 
         if (u != null) {
             if (u.getContrasenia().equals(password)) {
@@ -73,12 +71,11 @@ public class ValidarUsuarioServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         processRequest(request, response);
     }
 
@@ -87,12 +84,11 @@ public class ValidarUsuarioServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         processRequest(request, response);
     }
 

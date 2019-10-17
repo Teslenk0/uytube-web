@@ -10,7 +10,6 @@ import DataTypes.DtVideo;
 import fabrica.Fabrica;
 import interfaces.IControladorCanal;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,15 +32,15 @@ public class ValidarVideoServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
 
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
 
         String datosVideo = request.getParameter("nombre");
 
@@ -52,10 +51,10 @@ public class ValidarVideoServlet extends HttpServlet {
         IControladorCanal icanal = f.getControladorCanal();
         List videos = icanal.listaVideos(u.getCanal());
         String respuesta = "{\"existe\":false}";
-        for (int i=0;i<videos.size();i++) {
-            DtVideo v = (DtVideo) videos.get(i);
-            if (v!=null) {
-                if(v.getNombre().equals(datosVideo)){
+        for (Object video : videos) {
+            DtVideo v = (DtVideo) video;
+            if (v != null) {
+                if (v.getNombre().equals(datosVideo)) {
                     respuesta = "{\"existe\":true}";
                 }
             }
@@ -71,12 +70,11 @@ public class ValidarVideoServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         processRequest(request, response);
     }
 
@@ -85,12 +83,11 @@ public class ValidarVideoServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         processRequest(request, response);
     }
 

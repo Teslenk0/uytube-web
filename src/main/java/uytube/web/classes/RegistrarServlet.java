@@ -38,7 +38,9 @@ public class RegistrarServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        HttpSession s = request.getSession();
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+
         String nick = request.getParameter("nickname").trim();
         String pass = request.getParameter("password").trim();
         String nombre = request.getParameter("nombre").trim();
@@ -59,8 +61,10 @@ public class RegistrarServlet extends HttpServlet {
         String path = System.getProperty("user.dir");
         path = path.substring(0,path.length()-3) + "webapps/assets/imagenesUsuarios/";
         File file = new File(path);
-        if(!file.exists())
-            file.mkdirs();
+        if(!file.exists()) {
+            if (file.mkdirs())
+                System.out.println("Directorios creados");
+        }
 
         if(!filename.isEmpty()){
             part.write(path + nick + ".png");

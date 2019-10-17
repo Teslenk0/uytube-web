@@ -11,7 +11,6 @@ import interfaces.IControladorCanal;
 import interfaces.IControladorUsuario;
 import org.json.JSONObject;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,6 +39,7 @@ public class ValidarRegistroServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
 
         String strJson = request.getParameter("datos");
         JSONObject json = new JSONObject(strJson);
@@ -58,13 +58,12 @@ public class ValidarRegistroServlet extends HttpServlet {
         else
             rnickname = "\"nickname\":false";
 
-        Boolean esta = u.buscarEmail(email);
+        boolean esta = u.buscarEmail(email);
         if (esta)
             remail = "\"email\":true";
         else
             remail = "\"email\":false";
 
-        Boolean ca;
         if(canal.isEmpty()){
             if(c.buscarCanal(nickname))
                 rcanal = "\"canal\":true";
@@ -90,12 +89,11 @@ public class ValidarRegistroServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         processRequest(request, response);
     }
 
@@ -104,12 +102,11 @@ public class ValidarRegistroServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         processRequest(request, response);
     }
 

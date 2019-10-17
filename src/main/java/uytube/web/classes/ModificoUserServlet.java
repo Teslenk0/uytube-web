@@ -7,24 +7,18 @@ package uytube.web.classes;
 
 import DataTypes.DtCanal;
 import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
 import fabrica.Fabrica;
-import interfaces.IControladorCanal;
 import interfaces.IControladorUsuario;
-import javassist.Loader;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @MultipartConfig
 @WebServlet(name = "ModificoUserServlet", urlPatterns = {"/ModificoUserServlet"})
@@ -43,6 +37,8 @@ public class ModificoUserServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ParseException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
 
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
@@ -64,11 +60,24 @@ public class ModificoUserServlet extends HttpServlet {
         String path = System.getProperty("user.dir");
         path = path.substring(0,path.length()-3) + "webapps/assets/imagenesUsuarios/";
         File file = new File(path);
-        if(!file.exists())
-            file.mkdirs();
+        if(!file.exists()){
+            if(file.mkdirs())
+                System.out.println("Directorios creados");
+        }
 
-        part.write(path + nick + ".png");
-        img = "/imagenesUsuarios/"+ nick +".png";
+
+
+        if(filename.isEmpty() && user.getImagen().equals("/imagenesUsuarios/Defecto.png")){
+            img = "/imagenesUsuarios/Defecto.png";
+        }
+        else{
+            file = new File(path + nick + ".png");
+            if(file.delete())
+                System.out.println("Imagen borrada");
+
+            part.write(path + nick + ".png");
+            img = "/imagenesUsuarios/"+ nick +".png";
+        }
 
         DtCanal canal = new DtCanal(nomCanal,descripcion,estadoCanal);
 
@@ -94,12 +103,9 @@ public class ModificoUserServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         try{
             processRequest(request, response);
         }

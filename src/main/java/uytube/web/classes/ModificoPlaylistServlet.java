@@ -5,24 +5,18 @@
  */
 package uytube.web.classes;
 
-import DataTypes.*;
+import DataTypes.DtListaParticulares;
+import DataTypes.DtUsuario;
 import fabrica.Fabrica;
 import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
-import javassist.Loader;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 @MultipartConfig
 @WebServlet(name = "ModificoPlaylistServlet", urlPatterns = {"/ModificoPlaylistServlet"})
@@ -36,11 +30,12 @@ public class ModificoPlaylistServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ParseException {
+            throws IOException {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
 
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
@@ -66,12 +61,9 @@ public class ModificoPlaylistServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         try{
             processRequest(request, response);
         }
@@ -86,17 +78,12 @@ public class ModificoPlaylistServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+            throws IOException {
+        processRequest(request, response);
 
     }
 

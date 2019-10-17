@@ -38,6 +38,8 @@ public class ModificarVideoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ParseException, VideoRepetidoException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
 
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
@@ -46,7 +48,7 @@ public class ModificarVideoServlet extends HttpServlet {
         String url = request.getParameter("url").trim();
         String descripcion = request.getParameter("desc");
         String fechaPub = request.getParameter("fechaPu");
-        Boolean estado = request.getParameter("estado").equals("privado");
+        boolean estado = request.getParameter("estado").equals("privado");
         String categoria = request.getParameter("categorias");
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -55,14 +57,7 @@ public class ModificarVideoServlet extends HttpServlet {
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal c = fabrica.getControladorCanal();
         DtVideo v = new DtVideo(nomV, user.getCanal(), fecha, url, descripcion, categoria,duracion,estado);
-        /*System.out.println(fecha);
-        System.out.println(url);
-        System.out.println(descripcion);
-        System.out.println(categoria);
-        System.out.println(duracion);
-        System.out.println(estado);
-        System.out.println(user.getCanal().getNombre_canal());
-        System.out.println(nomV);*/
+
         c.modificarVideo(v,"Recoba 20 mejores goles");
         s.removeAttribute("oldV");
         response.sendRedirect("index.jsp");

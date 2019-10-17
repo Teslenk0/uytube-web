@@ -38,6 +38,7 @@ public class ValidarModificarVideoServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
 
         Fabrica f = Fabrica.getInstance();
         HttpSession s = request.getSession();

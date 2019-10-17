@@ -10,12 +10,13 @@ import DataTypes.DtUsuario;
 import DataTypes.DtVideo;
 import fabrica.Fabrica;
 import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-import java.io.File;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,6 +41,9 @@ public class AltaVideoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String video = request.getParameter("nombreVideo");
@@ -47,7 +51,7 @@ public class AltaVideoServlet extends HttpServlet {
         String url = request.getParameter("url").trim();
         String descripcion = request.getParameter("descripcion");
         String fechaPub = request.getParameter("Fecha");
-        Boolean estado = request.getParameter("estado").equals("privado");
+        boolean estado = request.getParameter("estado").equals("privado");
         String categoria = request.getParameter("categorias");
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
