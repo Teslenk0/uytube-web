@@ -36,8 +36,9 @@
                             Fabrica f = Fabrica.getInstance();
                             IControladorCanal c = f.getControladorCanal();
                             assert user != null;
-                            DtVideo video = c.obtenerVideo("Niño Payaso", user.getCanal().getNombre_canal());
+                            DtVideo video = c.obtenerVideo("Recoba 20 mejores goles", user.getCanal().getNombre_canal());
                             session.setAttribute("video",video.getNombre());
+                            Boolean isChannelPrivate = video.getPrivado();
                         %>
                         <div class="form-group" id="errorNom">
                             <label for="nomV" class="control-label">Nombre de Video</label>
@@ -59,9 +60,9 @@
                             <label for="desc" class="control-label">Descripción</label>
                             <textarea class="form-control rounded-0" name="desc" id="desc" rows="4" required><%=video.getDescripcion()%></textarea>
                         </div>
-                        <label class="cols-sm-2 control-label" for="categoria">Categorias</label>
+                        <label class="cols-sm-2 control-label" for="categorias">Categorias</label>
                         <div class="btn-group dropup">
-                            <select id="categoria">
+                            <select id="categorias" name="categorias">
                                 <option value="" selected disabled hidden><%=video.getCategoria()%></option>
                                 <%
                                     List lista = c.getCategorias();
@@ -76,8 +77,9 @@
                         </div>
                         <div class="form-group">
                             <label for="privado">Estado de video</label>
+                            <span id="is-channel-private" data-value="<%=isChannelPrivate%>" hidden></span>
                             <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="privado" value="publico" name="estado" checked>
+                                <input type="radio" class="custom-control-input" id="privado" value="publico" name="estado">
                                 <label class="custom-control-label" for="privado">Privado</label>
                             </div>
                             <div class="custom-control custom-radio">

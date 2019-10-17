@@ -9,7 +9,6 @@ import DataTypes.DtUsuario;
 import fabrica.Fabrica;
 import interfaces.IControladorCanal;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -47,21 +46,15 @@ public class ValidarModificarVideoServlet extends HttpServlet {
         String nomVN = request.getParameter("nombre");
         DtUsuario u = (DtUsuario) s.getAttribute("usuario");
 
-        System.out.println(nomO);
-        System.out.println(nomVN);
         IControladorCanal c = f.getControladorCanal();
         String respuesta = "{\"existe\":false}";
         if(!nomVN.equals(nomO)) {
-            System.out.println("Entra");
             if (c.obtenerVideo(nomVN, u.getCanal().getNombre_canal()) != null) {
                 respuesta = "{\"existe\":true}";
             } else {
                 respuesta = "{\"existe\":false}";
             }
         }
-
-        s.removeAttribute("video");
-        System.out.println(respuesta);
         out.print(respuesta);
         out.flush();
         out.close();
@@ -73,12 +66,11 @@ public class ValidarModificarVideoServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         processRequest(request, response);
     }
 
@@ -87,12 +79,11 @@ public class ValidarModificarVideoServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         processRequest(request, response);
     }
 

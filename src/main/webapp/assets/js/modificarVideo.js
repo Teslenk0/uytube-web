@@ -1,10 +1,17 @@
 $(document).ready(function () {
-    let form = $("#formMVideo");
+    const isChannelPrivate = $("#is-channel-private").attr("data-value");
+
+    if (isChannelPrivate === "true") {
+        $("#privado").attr("checked", true);
+    } else {
+        $("#publico").attr("checked", true);
+    }
+
+    const form = $("#formMVideo");
     form.submit(function (e) {
         e.preventDefault();
         e.returnValue = false;
-        console.log("Entra")
-        let nomVideo = $('#nomV').val().trim();
+        const nomVideo = $('#nomV').val().trim();
         $.ajax({
             type: 'get',
             url: 'ValidarModificarVideoServlet',
@@ -15,17 +22,17 @@ $(document).ready(function () {
             },
             success: function (response) {
                 if(!response.existe){
-                    let url = $('#url').val();
+                    const url = $('#url').val();
                     if(matchYoutubeUrl(url)){
                         form.off('submit');
                         form.submit();
                     }else{
-                        let div = $("#urlError");
+                        const div = $("#urlError");
                         $('#alertaRoja').remove();
                         div.append('<p id="alertaRoja" style="color: red">URL Invalida</p>');
                     }
                 }else{
-                    let div = $("#errorNom");
+                    const div = $("#errorNom");
                     $('#alertaRoja').remove();
                     div.append('<p id="alertaRoja" style="color: red">Este nombre de video ya existe en su canal</p>');
                 }
@@ -38,7 +45,7 @@ $(document).ready(function () {
 });
 
 function matchYoutubeUrl(url) {
-    let p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+    const p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
     if(url.match(p)){
         return url.match(p)[1];
     }
