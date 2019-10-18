@@ -5,8 +5,10 @@
  */
 package uytube.web.classes;
 
+import DataTypes.DtCanal;
 import fabrica.Fabrica;
 import interfaces.IControladorCanal;
+import DataTypes.DtVideo;
 
 import java.io.IOException;
 import java.util.*;
@@ -38,7 +40,7 @@ public class BuscarServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
 
         response.setContentType("text/html;charset=UTF-8");
-        String texto = request.getParameter("buscador");
+        String texto = request.getParameter("buscador").trim();
 
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal controladorCanal = fabrica.getControladorCanal();
@@ -48,12 +50,60 @@ public class BuscarServlet extends HttpServlet {
         List listas = controladorCanal.busquedaArborescenteListasParticulares(texto);
         List videos = controladorCanal.busquedaArborescenteVideos(texto);
 
-        request.setAttribute("canales",canales);
-        request.setAttribute("videos",videos);
-        request.setAttribute("listas",listas);
+        if(request.getParameter("ordFecha") != null){
+            if (request.getParameter("ordFecha").equals("1")){
+                Collections.sort(videos, new Comparator()
+                {
+                    public int compare(Object o1, Object o2)
+                    {
+                        DtVideo aux;
+                        DtVideo tmp;
+                        aux = (DtVideo) o1;
+                        tmp = (DtVideo) o2;
+                        return tmp.getFechaPublicacion().compareTo(aux.getFechaPublicacion());
+                    }
+                });
 
+                /*Collections.sort(canales, new Comparator()
+                {
+                    public int compare(Object o1, Object o2)
+                    {
+
+                        //hay que crear una funcion en el controladorcanal que busque el video mas nuevo en un canal y lo devuelva
+                        /*DtCanal aux;
+                        DtCanal tmp;
+                        aux = (DtCanal) o1;
+                        tmp = (DtCanal) o2;
+
+                        return tmp.getFechaPublicacion().compareTo(aux.getFechaPublicacion());
+                    }
+                });
+
+                Collections.sort(listas, new Comparator()
+                {
+                    public int compare(Object o1, Object o2)
+                    {
+
+                        //hay que crear una funcion en el controladorcanal que busque el video mas nuevo en una lista y lo devuelva
+                        DtCanal aux;
+                        DtCanal tmp;
+                        aux = (DtCanal) o1;
+                        tmp = (DtCanal) o2;
+
+                        return tmp.getFechaPublicacion().compareTo(aux.getFechaPublicacion());
+                    }
+                });*/
+            }
+        }
+        System.out.println(videos);
+
+        request.setAttribute("canales", canales);
+        request.setAttribute("videos", videos);
+        request.setAttribute("listas", listas);
+        request.setAttribute("ultimaBusqueda",texto);
 
         request.getRequestDispatcher("index.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

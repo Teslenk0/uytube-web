@@ -209,11 +209,12 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Alfabeticamente (Defecto)</a>
-                        <a class="dropdown-item" href="#">Fecha de carga</a>
+                        <a class="dropdown-item" href="BuscarServlet?buscador=<%=request.getAttribute("ultimaBusqueda")%>&ordFecha=1">Fecha de carga</a>
                     </div>
                 </div>
+                <div class="container-fluid">
                 <div class="card-deck" id="deck-videos">
-                    <div class="row align-items-start">
+                    <div class="row align-self-center">
                         <%
                             List videos = (List) request.getAttribute("videos");
                             if (videos != null) {
@@ -246,7 +247,7 @@
                     </div>
                 </div>
                 <div class="card-deck" id="deck-listas">
-                    <div class="row align-items-start">
+                    <div class="row align-self-center">
                         <%
                         List listasParticulares = (List) request.getAttribute("listas");
 
@@ -255,14 +256,14 @@
                             String[] datos;
                             for (int i = 0; i < listasParticulares.size(); i++) {
                                 lista = (DtListaParticulares) listasParticulares.get(i);
-
+                                if(!lista.getPrivado()){
                                 datos = getPrimerVideoListaParticular(lista, lista.getCanal().getUsuario().getNickname());
 
                                 if (datos != null) {%>
                         <div class="col-md-4">
                             <div class="card listas-resultado mb-3">
                                 <div class="card-body">
-                                        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video" width="480" height="360">
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                                     <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
                                     <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
@@ -290,11 +291,12 @@
                             }
                             }
                             }
+                            }
                         %>
                     </div>
                 </div>
                  <div class="card-deck" id="deck-canales">
-                    <div class="row align-items-start">
+                    <div class="row align-self-center">
                         <%
                             List canales = (List) request.getAttribute("canales");
 
@@ -304,10 +306,10 @@
                                     canal = (DtCanal) canales.get(i);
                                     if(!canal.getPrivado()){
                         %>
-                        <div class="col-md-4">
+                        <div class="col-md-offset">
                             <div class="card canales-resultado mb-3">
                                 <div class="card-body">
-                                    <img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal">
+                                    <img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal"  width="480" height="360">
                                     <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
                                     <p class="card-text"><%=canal.getDescripcion()%></p>
                                 </div>
@@ -323,6 +325,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </main>
         </div>
         <script src="assets/js/filtrado.js"></script>

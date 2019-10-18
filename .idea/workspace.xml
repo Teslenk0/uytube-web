@@ -2,43 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c480040-9da6-4703-b893-201c743c0858" name="Default Changelist" comment="">
-<<<<<<< Updated upstream
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ModificarVideoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ValidarVideoModificarServlet.java" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/results.jsp" afterDir="false" />
->>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-<<<<<<< Updated upstream
-=======
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
->>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/altaVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/altaVideo.js" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/classes/uytube/web/classes/AltaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/classes/uytube/web/classes/AltaVideoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/uytubeMaven-0.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/WEB-INF/lib/uytubeMaven-0.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/altaVideo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/altaVideo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/js/altaVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/js/altaVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/js/inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/assets/js/inicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/inicio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/inicio.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/exploded/uytube-web.war/videos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/exploded/uytube-web.war/videos.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/uytubeMaven-0.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/uytubeMaven-0.5.jar" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,18 +41,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="uytubeapp: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="uytubeAPP: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -134,7 +114,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -250,7 +230,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4d59b7b4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4d59b7b4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@380e4d0c" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -293,6 +283,7 @@
       <workItem from="1571060611150" duration="1081000" />
       <workItem from="1571099149817" duration="3538000" />
       <workItem from="1571108528882" duration="2961000" />
+      <workItem from="1571370009765" duration="5435000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>
