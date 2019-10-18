@@ -20,6 +20,7 @@
 </head>
 <body style="background-color: #32353E">
 <%
+    String nomVideo = request.getParameter("nombre");
     DtUsuario user = null;
     if (session.getAttribute("usuario") != null) {
         user = (DtUsuario) session.getAttribute("usuario");
@@ -36,7 +37,7 @@
                             Fabrica f = Fabrica.getInstance();
                             IControladorCanal c = f.getControladorCanal();
                             assert user != null;
-                            DtVideo video = c.obtenerVideo("Recoba 20 mejores goles", user.getCanal().getNombre_canal());
+                            DtVideo video = c.obtenerVideo(nomVideo, user.getCanal().getNombre_canal());
                             session.setAttribute("oldV",video.getNombre());
                             Boolean isChannelPrivate = video.getPrivado();
                         %>

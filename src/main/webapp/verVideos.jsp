@@ -39,8 +39,8 @@
         if(!nomVideo.isEmpty() && !canal.isEmpty()) {
             video = c.obtenerVideo(nomVideo, canal);
             url = getID(video.getUrl());
-            session.setAttribute("nomVideo", String.valueOf(nomVideo)); // guardo en la sesion el nombre video PA VO GIL!!
-            session.setAttribute("canal", String.valueOf(canal)); //
+            session.setAttribute("nomVideo", nomVideo);
+            session.setAttribute("canal", canal);
         }
         DtUsuario logeado = null;
         if (session.getAttribute("usuario") != null) {
@@ -48,7 +48,7 @@
         }
     %>
     <!-- BARRA SUPERIOR -->
-    <div class="barra_superior" style="background-color:black">
+    <div class="barra_superior" style="background-color:#343841">
         <div class="d-inline">
             <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
         </div>
@@ -72,41 +72,42 @@
                             boolean esta = false;
                             boolean mg = false;
                             if(listaV != null){
-                                for(int x =0; x<listaV.size(); x++){
-                                    dtaux = (DtAuxiliarValorar) listaV.get(x);
-                                    if (listaV.get(x) != null) {
+                                for (Object o : listaV) {
+                                    dtaux = (DtAuxiliarValorar) o;
+                                    if (o != null) {
 
-                                        if(nomVideo.equals(dtaux.getVid()) && dtaux.getVal().equals("Me gusta")){
+                                        if (nomVideo.equals(dtaux.getVid()) && dtaux.getVal().equals("Me gusta")) {
                                             contMg++;
                                         }
-                                        if(nomVideo.equals(dtaux.getVid()) && dtaux.getVal().equals("No me gusta")){
+                                        if (nomVideo.equals(dtaux.getVid()) && dtaux.getVal().equals("No me gusta")) {
                                             contNmg++;
                                         }
                                     }
-                                    if(nomVideo.equals(dtaux.getVid()) && usuarioDuenio.getNickname().equals(dtaux.getUser())) {
+                                    if (nomVideo.equals(dtaux.getVid()) && usuarioDuenio.getNickname().equals(dtaux.getUser())) {
                                         esta = true;
-                                        if(dtaux.getVal().equals("Me gusta")) {
+                                        if (dtaux.getVal().equals("Me gusta")) {
                                             mg = true;
                                         }
                                     }
-                                 }%>
+                                }
+                           %>
                                 <div class="btn-group" role="group" aria-label="Basic example" style="margin-left: 85%">
                                     <%if(contMg != 0) {%>
                                     <a><%=contMg%></a>
                                     <%}
                                     if (logeado != null) {
-                                        if(esta == false) {%>
-                                            <a href="/MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                                            <a href="/NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                                        if(!esta) {%>
+                                            <a href="MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
+                                            <a href="NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
                                         <%}
                                         else{
-                                            if(mg == true) {%>
-                                                <a href="/CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: red" ></i><br></a>
+                                            if(mg) {%>
+                                                <a href="CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: red" ></i><br></a>
                                                 <a href="#" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
                                             <%}
                                             else{%>
                                                 <a href="#" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                                                <a href="/CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: red"></i><br></a>
+                                                <a href="CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: red"></i><br></a>
                                             <%}
                                         }
                                     }
@@ -121,6 +122,16 @@
 
                             <%}%>
                         </div>
+                        <%if(logeado!=null) {
+                            assert video != null;
+                            if(logeado.getCanal().equals(video.getCanal())){%>
+                            <div class="form-group">
+                             <a href="modificarVideo.jsp?nombre=<%=video.getNombre()%>" class="btn btn-primary">Modificar<span class="badge"></span></a>
+                            </div>
+                        <%}
+                        }
+                            assert video != null;
+                        %>
                         <div class="form-group">
                             <label for="descripcion" class="cols-sm-2 control-label"><strong>Descripcion:</strong></label>
                             <div class="cols-sm-10">
@@ -251,7 +262,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group" id="error2" >
-                                                                            <button type="submit" id="resp1" name="resp" class="btn btn-success btn-lg" >responder</button>
+                                                                            <button type="submit" id="resp1" name="resp" class="btn btn-success btn-lg" >Responder</button>
                                                                         </div>
                                                                     <%}
                                                                     else{ %>

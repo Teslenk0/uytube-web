@@ -11,11 +11,6 @@ $(document).ready(function () {
         panel.load("inicio.jsp");
     });
 
-    $("#modificoVideo_btn").on("click",function (e) {
-        panel.empty();
-        panel.load("modificarVideo.jsp");
-    });
-
     $("#altaVideo_btn").on("click",function (e) {
         panel.empty();
         panel.load("altaVideo.jsp");

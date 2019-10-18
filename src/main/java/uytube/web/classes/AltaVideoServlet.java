@@ -46,13 +46,13 @@ public class AltaVideoServlet extends HttpServlet {
 
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
-        String video = request.getParameter("nombreVideo");
+        String video = request.getParameter("nombreVideo").trim();
         String duracion = request.getParameter("duracion").trim();
         String url = request.getParameter("url").trim();
-        String descripcion = request.getParameter("descripcion");
-        String fechaPub = request.getParameter("Fecha");
+        String descripcion = request.getParameter("descripcion").trim();
+        String fechaPub = request.getParameter("Fecha").trim();
         boolean estado = request.getParameter("estado").equals("privado");
-        String categoria = request.getParameter("categorias");
+        String categoria = request.getParameter("categorias").trim();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = sdf.parse(fechaPub);
@@ -62,11 +62,7 @@ public class AltaVideoServlet extends HttpServlet {
 
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal controladorCanal = fabrica.getControladorCanal();
-        try{
-            controladorCanal.registrarVideo(v);
-        }catch (Exception e){
-            System.out.println("QUEDO MAL");
-        }
+        controladorCanal.registrarVideo(v);
         response.sendRedirect("index.jsp");
     }
 

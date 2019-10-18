@@ -152,9 +152,6 @@
                                         <li>
                                             <a href="#" id="altaVideo_btn">Subir Video</a>
                                         </li>
-                                        <li>
-                                            <a href="#" id="modificoVideo_btn">Modificar Video</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </li>

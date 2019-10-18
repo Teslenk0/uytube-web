@@ -43,13 +43,14 @@ public class ModificarVideoServlet extends HttpServlet {
 
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
-        String nomV = request.getParameter("nomV");
+        String oldV = (String) s.getAttribute("oldV");
+        String nomV = request.getParameter("nomV").trim();
         String duracion = request.getParameter("duracion").trim();
         String url = request.getParameter("url").trim();
-        String descripcion = request.getParameter("desc");
-        String fechaPub = request.getParameter("fechaPu");
+        String descripcion = request.getParameter("desc").trim();
+        String fechaPub = request.getParameter("fechaPu").trim();
         boolean estado = request.getParameter("estado").equals("privado");
-        String categoria = request.getParameter("categorias");
+        String categoria = request.getParameter("categorias").trim();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = sdf.parse(fechaPub);
@@ -58,7 +59,7 @@ public class ModificarVideoServlet extends HttpServlet {
         IControladorCanal c = fabrica.getControladorCanal();
         DtVideo v = new DtVideo(nomV, user.getCanal(), fecha, url, descripcion, categoria,duracion,estado);
 
-        c.modificarVideo(v,"Recoba 20 mejores goles");
+        c.modificarVideo(v,oldV);
         s.removeAttribute("oldV");
         response.sendRedirect("index.jsp");
     }

@@ -23,7 +23,7 @@
 <body>
 <div class="card-group">
     <%
-        DtUsuario user = null;
+        DtUsuario user;
         if (session.getAttribute("usuario") != null) {
             user = (DtUsuario) session.getAttribute("usuario");
             Fabrica fabrica = Fabrica.getInstance();
@@ -45,7 +45,7 @@
             <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
         </div>
         <div class="card-footer">
-            <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>">MODIFICAR</a>
+            <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>" class="btn btn-primary">Modificar</a>
         </div>
     </div>
     <%} else {%>
@@ -56,7 +56,7 @@
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
         </div>
         <div class="card-footer">
-            <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>">MODIFICAR</a>
+            <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>" class="btn btn-primary">Modificar</a>
         </div>
     </div>
     <%}

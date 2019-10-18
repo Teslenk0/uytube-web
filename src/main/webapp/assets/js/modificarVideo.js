@@ -22,7 +22,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 if(!response.existe){
-                    const url = $('#url').val();
+                    const url = $('#url').val().trim();
                     if(matchYoutubeUrl(url)){
                         form.off('submit');
                         form.submit();
