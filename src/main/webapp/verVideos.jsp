@@ -32,8 +32,8 @@
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal c = fabrica.getControladorCanal();
         IControladorUsuario u = fabrica.getControladorUsuario();
-        HttpSession s = request.getSession();
-        DtUsuario user = (DtUsuario) s.getAttribute("usuario");
+        DtUsuario usuarioDuenio = u.buscarUsuarioCanal(canal);
+
         DtVideo video = null;
         String url = null;
         if(!nomVideo.isEmpty() && !canal.isEmpty()) {
@@ -42,6 +42,10 @@
             session.setAttribute("nomVideo", String.valueOf(nomVideo)); // guardo en la sesion el nombre video PA VO GIL!!
             session.setAttribute("canal", String.valueOf(canal)); //
         }
+        DtUsuario logeado = null;
+        if (session.getAttribute("usuario") != null) {
+            logeado = (DtUsuario) session.getAttribute("usuario");
+        }
     %>
     <!-- BARRA SUPERIOR -->
     <div class="barra_superior" style="background-color:black">
@@ -49,7 +53,6 @@
             <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
         </div>
     </div>
-
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -62,7 +65,7 @@
                             </div>
                         </div>
                         <div class="form-group" >
-                           <%List listaV = c.listaMeGustas(user.getNickname());
+                           <%List listaV = c.listaMeGustas(usuarioDuenio.getNickname());
                             DtAuxiliarValorar dtaux;
                             int contMg = 0;
                             int contNmg = 0;
@@ -72,14 +75,15 @@
                                 for(int x =0; x<listaV.size(); x++){
                                     dtaux = (DtAuxiliarValorar) listaV.get(x);
                                     if (listaV.get(x) != null) {
-                                        if(nomVideo.equals(dtaux.getVid()) && user.getNickname().equals(dtaux.getDueño()) && dtaux.getVal().equals("Me gusta")){
+
+                                        if(nomVideo.equals(dtaux.getVid()) && dtaux.getVal().equals("Me gusta")){
                                             contMg++;
                                         }
-                                        if(nomVideo.equals(dtaux.getVid()) && user.getNickname().equals(dtaux.getDueño()) && dtaux.getVal().equals("No me gusta")){
+                                        if(nomVideo.equals(dtaux.getVid()) && dtaux.getVal().equals("No me gusta")){
                                             contNmg++;
                                         }
                                     }
-                                    if(nomVideo.equals(dtaux.getVid()) && user.getNickname().equals(dtaux.getUser())) {
+                                    if(nomVideo.equals(dtaux.getVid()) && usuarioDuenio.getNickname().equals(dtaux.getUser())) {
                                         esta = true;
                                         if(dtaux.getVal().equals("Me gusta")) {
                                             mg = true;
@@ -90,20 +94,26 @@
                                     <%if(contMg != 0) {%>
                                     <a><%=contMg%></a>
                                     <%}
-                                    if(esta == false) {%>
-                                        <a href="/MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                                        <a href="/NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
-                                     <%}
-                                    else{
-                                        if(mg == true) {%>
-                                            <a href="/CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: red" ></i><br></a>
-                                            <a href="#" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                                    if (logeado != null) {
+                                        if(esta == false) {%>
+                                            <a href="/MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
+                                            <a href="/NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
                                         <%}
-                                        else{%>
-                                            <a href="#" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                                            <a href="/CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: red"></i><br></a>
-                                        <%}
+                                        else{
+                                            if(mg == true) {%>
+                                                <a href="/CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: red" ></i><br></a>
+                                                <a href="#" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                                            <%}
+                                            else{%>
+                                                <a href="#" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
+                                                <a href="/CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: red"></i><br></a>
+                                            <%}
+                                        }
                                     }
+                                    else{%>
+                                        <a class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
+                                        <a class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                                    <%}
                                     if(contNmg != 0) {%>
                                         <a style="margin-left: 5px" ><%=contNmg%></a>
                                     <%}%>
@@ -120,20 +130,36 @@
                                 </div>
                             </div>
                         </div>
-
+                        <%if (logeado != null) {%>
+                            <div class="form-group">
+                                <label for="comentario" class="cols-sm-2 control-label"><strong>Comentario:</strong></label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group" >
+                                        <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                        <textarea class="form-control" rows="2" name="comentario" id="comentario" placeholder="Agrega un comentario"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="form-group" id="error" >
+                            <button type="submit"  id="comenta" name="comenta" class="btn btn-success btn-lg btn-block login-button">Comentar</button>
+                        </div>
+                    </form>
+                    <%}
+                    else {%>
                         <div class="form-group">
                             <label for="comentario" class="cols-sm-2 control-label"><strong>Comentario:</strong></label>
                             <div class="cols-sm-10">
                                 <div class="input-group" >
                                     <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                    <textarea class="form-control" rows="2" name="comentario" id="comentario" placeholder="Agrega un comentario"></textarea>
+                                    <textarea class="form-control" rows="2" name="comentario" id="" placeholder="Para poder realizar comentarios o valoraciones de un video, debes iniciar sesion." disabled></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group" id="error" >
-                            <button type="submit"  id="comenta" name="comenta" class="btn btn-success btn-lg btn-block login-button">Comentar</button>
+                            <a href="login.jsp" class="btn btn-success btn-lg btn-block login-button" >Login</a>
                         </div>
                     </form>
+                    <%}%>
                     <div >
                         <h1>Comentarios</h1>
                         <%List lista = c.listaComentarios(video);
@@ -161,6 +187,7 @@
                                                     <div class="comment-content">
                                                         <%=com.getComentario()%>
                                                     </div>
+                                                    <%if (logeado != null) {%>
                                                     <div class="form-group">
                                                         <div class="cols-sm-10">
                                                             <div class="input-group" >
@@ -173,6 +200,17 @@
                                                     <div class="form-group" id="error1" >
                                                         <button type="submit"  id="resp" name="resp" class="btn btn-success btn-lg" >Responder</button>
                                                     </div>
+                                                    <%}
+                                                    else {%>
+                                                    <div class="form-group">
+                                                        <div class="cols-sm-10">
+                                                            <div class="input-group" >
+                                                                <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                <textarea class="form-control" rows="2" name="respuesta1" placeholder="Agrega una respuesta" disabled></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <%}%>
                                                 </form>
                                             </div>
                                         </div>
@@ -202,18 +240,30 @@
                                                                     <div class="comment-content">
                                                                         <%="@"+resp.getNick() +": "+com.getComentario()%>
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                        <div class="cols-sm-10">
-                                                                            <div class="input-group" >
-                                                                                <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                                                                <textarea class="form-control" rows="2" name="respuesta1" id="respuesta1" placeholder="Agrega una respuesta"></textarea>
-                                                                                <input type="hidden"  name="referencia1" value="<%=com.getReferencia()%>" >
+                                                                    <%if (logeado != null) {%>
+                                                                        <div class="form-group">
+                                                                            <div class="cols-sm-10">
+                                                                                <div class="input-group" >
+                                                                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                                    <textarea class="form-control" rows="2" name="respuesta1" id="respuesta1" placeholder="Agrega una respuesta"></textarea>
+                                                                                    <input type="hidden"  name="referencia1" value="<%=com.getReferencia()%>" >
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="form-group" id="error2" >
-                                                                        <button type="submit" id="resp1" name="resp" class="btn btn-success btn-lg" >responder</button>
-                                                                    </div>
+                                                                        <div class="form-group" id="error2" >
+                                                                            <button type="submit" id="resp1" name="resp" class="btn btn-success btn-lg" >responder</button>
+                                                                        </div>
+                                                                    <%}
+                                                                    else{ %>
+                                                                        <div class="form-group">
+                                                                            <div class="cols-sm-10">
+                                                                                <div class="input-group" >
+                                                                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                                    <textarea class="form-control" rows="2" name="respuesta1" placeholder="Agrega una respuesta" disabled></textarea>
+                                                                                </div>
+                                                                             </div>
+                                                                        </div>
+                                                                    <%}%>
                                                                 </form>
                                                             </div>
                                                         </li>
