@@ -11,7 +11,6 @@
 <%@ page import="DataTypes.*" %>
 
 <%!    public String[] getPrimerVideoListaParticular(DtListaReproduccion list, String usuario) {
-        System.out.println(usuario + " -> " + list.getNombreLista());
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal controladorCanal = fabrica.getControladorCanal();
         DtListaParticularVideos vid = null;

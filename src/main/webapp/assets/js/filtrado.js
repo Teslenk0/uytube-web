@@ -13,7 +13,6 @@ $(document).ready(function () {
         if(!filtradoVideo){
             $(".listas-resultado").hide();
             $(".canales-resultado").hide();
-            console.log("filtrado activado")
             filtroVideos.html("<a class=\"dropdown-item\" id=\"filtroVideos\" href=\"#\"><strong>Videos<strong></a>");
             filtroListas.html("<a class=\"dropdown-item\" id=\"filtroListas\" href=\"#\">Playlists</a>");
             filtroCanales.html("<a class=\"dropdown-item\" id=\"filtroCanales\" href=\"#\">Canales</a>");
@@ -21,7 +20,6 @@ $(document).ready(function () {
         }else{
             $(".listas-resultado").show();
             $(".canales-resultado").show();
-            console.log("filtrado desactivado")
             filtroVideos.html("<a class=\"dropdown-item\" id=\"filtroVideos\" href=\"#\">Videos</a>");
             filtroListas.html("<a class=\"dropdown-item\" id=\"filtroListas\" href=\"#\">Playlists</a>");
             filtroCanales.html("<a class=\"dropdown-item\" id=\"filtroCanales\" href=\"#\">Canales</a>");
@@ -35,7 +33,6 @@ $(document).ready(function () {
         if(!filtradoCanal){
             $(".listas-resultado").hide();
             $(".video-resultado").hide();
-            console.log("filtrado activado")
             filtroVideos.html("<a class=\"dropdown-item\" id=\"filtroVideos\" href=\"#\">Videos</a>");
             filtroListas.html("<a class=\"dropdown-item\" id=\"filtroListas\" href=\"#\">Playlists</a>");
             filtroCanales.html("<a class=\"dropdown-item\" id=\"filtroCanales\" href=\"#\"><strong>Canales<strong></a>");
@@ -43,7 +40,6 @@ $(document).ready(function () {
         }else{
             $(".listas-resultado").show();
             $(".video-resultado").show();
-            console.log("filtrado desactivado")
             filtroVideos.html("<a class=\"dropdown-item\" id=\"filtroVideos\" href=\"#\">Videos</a>");
             filtroListas.html("<a class=\"dropdown-item\" id=\"filtroListas\" href=\"#\">Playlists</a>");
             filtroCanales.html("<a class=\"dropdown-item\" id=\"filtroCanales\" href=\"#\">Canales</a>");
@@ -56,7 +52,6 @@ $(document).ready(function () {
         if(!filtradoLista){
             $(".canales-resultado").hide();
             $(".video-resultado").hide();
-            console.log("filtrado activado")
             filtroVideos.html("<a class=\"dropdown-item\" id=\"filtroVideos\" href=\"#\">Videos</a>");
             filtroListas.html("<a class=\"dropdown-item\" id=\"filtroListas\" href=\"#\"><strong>Playlists<strong></a>");
             filtroCanales.html("<a class=\"dropdown-item\" id=\"filtroCanales\" href=\"#\">Canales</a>");
@@ -64,7 +59,6 @@ $(document).ready(function () {
         }else{
             $(".canales-resultado").show();
             $(".video-resultado").show();
-            console.log("filtrado desactivado")
             filtroVideos.html("<a class=\"dropdown-item\" id=\"filtroVideos\" href=\"#\">Videos</a>");
             filtroListas.html("<a class=\"dropdown-item\" id=\"filtroListas\" href=\"#\">Playlists</a>");
             filtroCanales.html("<a class=\"dropdown-item\" id=\"filtroCanales\" href=\"#\">Canales</a>");

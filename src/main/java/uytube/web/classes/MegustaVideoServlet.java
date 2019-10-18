@@ -46,8 +46,8 @@ public class MegustaVideoServlet extends HttpServlet {
             throws Exception {
         HttpSession s = request.getSession();
         DtUsuario userLog = (DtUsuario) s.getAttribute("usuario");
-        String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesio
-        String canal = (String) s.getAttribute("canal"); // obtengo nombre canal por medio de la sesio
+        String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion
+        String canal = (String) s.getAttribute("canal"); // obtengo nombre canal por medio de la sesion
 
         Fabrica fabrica = Fabrica.getInstance();
         IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();

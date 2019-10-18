@@ -28,8 +28,8 @@ import java.util.List;
  * @author isaac
  */
 @MultipartConfig
-@WebServlet(name = "NuevoComentarioServlet", urlPatterns = {"/NuevoComentarioServlet"})
-public class NuevoComentarioServlet extends HttpServlet {
+@WebServlet(name = "FollowUsuarioServlet", urlPatterns = {"/FollowUsuarioServlet"})
+public class FollowUsuarioServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -45,23 +45,15 @@ public class NuevoComentarioServlet extends HttpServlet {
             throws Exception {
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
-        String comentario = request.getParameter("comentario");
-        java.util.Date fecha = new Date();
-
-        String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion de verVideo.jsp
+        String seguir = (String )request.getParameter("seguir");
 
         Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
 
-        DtCanal canal = user.getCanal();
-        DtVideo v = controladorCanal.obtenerVideo(nomVid, canal.getNombre_canal());
-        List lista = controladorCanal.listaComentariosTodos();
-        Integer ref = lista.size() + 1;
+        System.out.println("Usuario logeado: "+user.getNickname());
+        System.out.println("usuario a seguir: "+seguir);
 
-        if(!comentario.isEmpty()){
-            DtComentario c = new DtComentario(user.getNickname(), comentario, fecha, v, null, ref, canal.getNombre_canal());
-            controladorCanal.agregarComentario(c);
-        }
+        controladorUsuario.seguirUsuario(user,seguir);
 
         response.sendRedirect("index.jsp");
     }

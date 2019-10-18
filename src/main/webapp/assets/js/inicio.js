@@ -17,7 +17,6 @@ $(document).ready(function () {
     });
     
     $('#playlists-tab').on('click', function (e) {
-        console.log("entra aca");
         e.target; // newly activated tab
         e.relatedTarget; // previous active tab
         $("#playlists").load("playlists.jsp");

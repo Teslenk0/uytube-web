@@ -121,6 +121,24 @@
         <url-pattern>/NuevoComentarioServlet</url-pattern>
     </servlet-mapping>
 
+<servlet>
+        <servlet-name>UnfollowUsuarioServlet</servlet-name>
+        <servlet-class>uytube.web.classes.UnfollowUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UnfollowUsuarioServlet</servlet-name>
+        <url-pattern>/UnfollowUsuarioServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FollowUsuarioServlet</servlet-name>
+        <servlet-class>uytube.web.classes.FollowUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FollowUsuarioServlet</servlet-name>
+        <url-pattern>/FollowUsuarioServlet</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30
