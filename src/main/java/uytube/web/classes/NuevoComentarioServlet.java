@@ -58,6 +58,11 @@ public class NuevoComentarioServlet extends HttpServlet {
         List lista = controladorCanal.listaComentariosTodos();
         Integer ref = lista.size() + 1;
 
+        System.out.println(user.getNickname());
+        System.out.println(comentario);
+        System.out.println(fecha);
+        System.out.println(ref);
+        System.out.println(canal.getNombre_canal());
         if(!comentario.isEmpty()){
             DtComentario c = new DtComentario(user.getNickname(), comentario, fecha, v, null, ref, canal.getNombre_canal());
             controladorCanal.agregarComentario(c);

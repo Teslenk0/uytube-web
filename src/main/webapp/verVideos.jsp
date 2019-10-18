@@ -57,8 +57,8 @@
                     <form class="form-horizontal needs-validation" method="post" action="NuevoComentarioServlet" id="formComentario">
 
                         <div class="form-group">
-                             <div class="cols-sm-10">
-                                 <iframe width="720" height="315" src="https://www.youtube.com/embed/<%=url%>?modestbranding=1" frameborder="0" allowfullscreen style="margin-left: 45px"></iframe>
+                             <div class="cols-sm-10 iframe-container">
+                                 <iframe src="https://www.youtube.com/embed/<%=url%>?modestbranding=1" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                         <div class="form-group" >
@@ -131,7 +131,7 @@
                             </div>
                         </div>
                         <div class="form-group" id="error" >
-                            <button type="submit"  id="comenta" name="comenta" class="btn btn-success btn-lg btn-block login-button" style="margin-left: 650px; width: 130px">Comentar</button>
+                            <button type="submit"  id="comenta" name="comenta" class="btn btn-success btn-lg btn-block login-button">Comentar</button>
                         </div>
                     </form>
                     <div >
@@ -171,7 +171,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group" id="error1" >
-                                                        <button type="submit"  id="resp" name="resp" class="btn" >responder</button>
+                                                        <button type="submit"  id="resp" name="resp" class="btn btn-success btn-lg" >Responder</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -212,7 +212,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group" id="error2" >
-                                                                        <button type="submit" id="resp1" name="resp" class="btn" >responder</button>
+                                                                        <button type="submit" id="resp1" name="resp" class="btn btn-success btn-lg" >responder</button>
                                                                     </div>
                                                                 </form>
                                                             </div>
