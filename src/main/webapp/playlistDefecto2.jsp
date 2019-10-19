@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: caste
+  User: tesla
   Date: 13/10/19
   Time: 18:32
   To change this template use File | Settings | File Templates.
@@ -37,8 +37,6 @@
                 for (int i = 0; i < listasDefecto.size(); i++) {
                     lista = (DtListaporDefecto) listasDefecto.get(i);
                     datos = getPrimerVideoListaDefecto(lista, user.getNickname());
-                    System.out.println(datos[0]);
-                    System.out.println(datos[1]);
                     if (datos != null) {%>
     <div class="card">
         <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
