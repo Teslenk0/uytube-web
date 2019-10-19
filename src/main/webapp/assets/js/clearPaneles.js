@@ -30,6 +30,12 @@ $(document).ready(function () {
         panel.empty();
         panel.load("crearPlaylist.jsp");
     });
+
+    $("#modificarPlaylist_btn").on("click",function (e) {
+        panel.empty();
+        panel.load("modificarPlaylist.jsp");
+    });
+
     $("#agregarVidPlaylist_btn").on("click",function (e) {
         panel.empty();
         panel.load("agregarVideoPlaylist.jsp");

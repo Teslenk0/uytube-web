@@ -38,7 +38,7 @@
                             datos = getPrimerVideoListaDefecto(lista, user.getNickname());
                             if (datos != null) {%>
             <div class="card">
-                <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg class="card-img-top" alt="Miniatura de lista">
+                <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
                      <div class="card-body">
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                 </div>

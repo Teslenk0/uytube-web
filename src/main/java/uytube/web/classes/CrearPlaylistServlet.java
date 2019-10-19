@@ -56,7 +56,7 @@ public class CrearPlaylistServlet extends HttpServlet {
         try{
             controladorCanal.crearListaParticular(lista, user);
         }catch (Exception e){
-            System.out.println("QUEDO MAL");
+            System.out.println(e);
         }
         response.sendRedirect("index.jsp");
     }
