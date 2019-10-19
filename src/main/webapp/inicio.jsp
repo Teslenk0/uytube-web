@@ -46,7 +46,7 @@
         <div class="tab-content">
             <div class="tab-pane fade show active" id="videos" role="tabpanel" aria-labelledby="videos-tab"></div>
             <div class="tab-pane fade" id="playlists" role="tabpanel" aria-labelledby="playlists-tab"></div>
-            <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">JA VAI BOLTS </div>
+            <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab"></div>
             <div class="tab-pane fade" id="informacion" role="tabpanel" aria-labelledby="info-tab">TOMAR NO CU</div>
         </div>
 

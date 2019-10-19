@@ -22,6 +22,12 @@ $(document).ready(function () {
         $("#playlists").load("playlists.jsp");
     });
 
+    $('#social-tab').on('click', function (e) {
+        e.target; // newly activated tab
+        e.relatedTarget; // previous active tab
+        $("#social").load("social.jsp");
+    });
+
 
     
 });
