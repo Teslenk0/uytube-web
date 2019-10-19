@@ -6,15 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="getPrimerVideoListaParticular.jsp"%>
-<%@page import="DataTypes.DtVideo"%>
-<%@page import="DataTypes.DtListaporDefecto"%>
-<%@page import="DataTypes.DtListaDefectoVideos"%>
-<%@page import="java.util.List"%>
-
-<%@page import="interfaces.IControladorCanal"%>
-<%@page import="fabrica.Fabrica"%>
 <%@page import="DataTypes.DtUsuario"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -39,7 +33,7 @@
                     if (datos != null) {
     %>
     <div class="card" id="playlist_div">
-        <img src="https://img.youtube.com/vi/<%=datos[0].toString()%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
+        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
         <div class="card-body">
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
             <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>

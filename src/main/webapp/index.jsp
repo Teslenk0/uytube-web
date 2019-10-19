@@ -306,7 +306,7 @@
                         <div class="col-md-offset">
                             <div class="card canales-resultado mb-3">
                                 <div class="card-body">
-                                    <img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal"  width="480" height="360">
+                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombre_canal()%>"><img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal"  width="480" height="360"></a>
                                     <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
                                     <p class="card-text"><%=canal.getDescripcion()%></p>
                                 </div>

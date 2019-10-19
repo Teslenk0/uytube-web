@@ -1,19 +1,18 @@
 <%@ page import="DataTypes.DtUsuario" %>
 <%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorUsuario" %>
 <%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="DataTypes.DtCanal" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="interfaces.IControladorUsuario" %>
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 18/10/19
   Time: 13:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Social</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/social.css">
@@ -38,20 +37,6 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-info-left">
-                    <!--<div class="text-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Avatar" class="avatar img-circle">
-                        <h2>Jack Bay</h2>
-                    </div>
-                    <div class="action-buttons">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <a href="#" class="btn btn-success btn-block"><i class="fa fa-plus-round"></i> Follow</a>
-                            </div>
-                            <div class="col-xs-6">
-                                <a href="#" class="btn btn-primary btn-block"><i class="fa fa-android-mail"></i> Message</a>
-                            </div>
-                        </div>
-                    </div>-->
                     <div class="section">
                         <h3>Descripcion canal</h3>
                         <p><%=user.getCanal().getDescripcion()%></p>
@@ -99,10 +84,10 @@
                                     DtUsuario nomSeguidor = (DtUsuario) listaSeguidores.get(x);
                                     %>
                                     <div class="media user-follower">
-                                        <%String ruta = "assets" + nomSeguidor.getImagen().toString();%>
+                                        <%String ruta = "assets" + nomSeguidor.getImagen();%>
                                         <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                         <div class="media-body">
-                                            <a href="#"><%=nomSeguidor.getNickname()%></a>
+                                            <a href="verCanales.jsp?nomCanal=<%=nomSeguidor.getCanal().getNombre_canal()%>" style="margin-left: 10px"><%=nomSeguidor.getNickname()%></a>
                                             <%
                                                 for(int r=0; r<listaSeguidos.size(); r++){
                                                     String usuarios = (String) listaSeguidos.get(r);
@@ -141,7 +126,7 @@
                                     <%String ruta = "assets" + userSeguidos.getImagen().toString();%>
                                     <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                     <div class="media-body">
-                                        <a href="#"><%=userSeguidos.getNickname()%></a>
+                                        <a href="verCanales.jsp?nomCanal=<%=userSeguidos.getCanal().getNombre_canal()%>" style="margin-left: 10px"><%=userSeguidos.getNickname()%></a>
                                         <a href="/UnfollowUsuarioServlet?seguir=<%=userSeguidos.getNickname()%>" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
                                     </div>
                                 </div>

@@ -5,9 +5,6 @@
 --%>
 
 <%@include file="getPrimerVideoListaParticular.jsp"%>
-<%@page import="DataTypes.DtVideo"%>
-<%@page import="DataTypes.DtListaporDefecto"%>
-<%@page import="DataTypes.DtListaDefectoVideos"%>
 <%@page import="java.util.List"%>
 
 <%@page import="interfaces.IControladorCanal"%>
@@ -44,7 +41,7 @@
             <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
         </div>
         <div class="card-footer">
-            <a href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>
+            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>
         </div>
     </div>
     <%} else {%>
@@ -55,7 +52,7 @@
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
         </div>
         <div class="card-footer">
-            <a href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>
+            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>
         </div>
     </div>
     <%}
