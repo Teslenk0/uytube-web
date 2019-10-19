@@ -6,6 +6,7 @@
 package uytube.web.classes;
 
 import DataTypes.DtCanal;
+import DataTypes.DtListaParticulares;
 import fabrica.Fabrica;
 import interfaces.IControladorCanal;
 import DataTypes.DtVideo;
@@ -52,50 +53,71 @@ public class BuscarServlet extends HttpServlet {
 
         if(request.getParameter("ordFecha") != null){
             if (request.getParameter("ordFecha").equals("1")){
-                Collections.sort(videos, new Comparator()
-                {
-                    public int compare(Object o1, Object o2)
-                    {
-                        DtVideo aux;
-                        DtVideo tmp;
-                        aux = (DtVideo) o1;
-                        tmp = (DtVideo) o2;
-                        return tmp.getFechaPublicacion().compareTo(aux.getFechaPublicacion());
+                if(videos != null) {
+                    Collections.sort(videos, new Comparator() {
+                        public int compare(Object o1, Object o2) {
+                            DtVideo aux;
+                            DtVideo tmp;
+                            aux = (DtVideo) o1;
+                            tmp = (DtVideo) o2;
+                            return tmp.getFechaPublicacion().compareTo(aux.getFechaPublicacion());
+                        }
+                    });
+                }
+                if(canales != null) {
+
+                    /*Collections.sort(canales, Comparator.comparing(DtCanal::get)
+                            .thenComparing(Report::getStudentNumber)
+                            .thenComparing(Report::getSchool));*/
+                    /*Collections.sort(canales, new Comparator<DtCanal>() {
+                        public int compare(DtCanal o1, DtCanal o2) {
+                            //hay que crear una funcion en el controladorcanal que busque el video mas nuevo en un canal y lo devuelva
+                            /*DtCanal aux;
+                            DtCanal tmp;
+                            aux = (DtCanal) o1;
+                            tmp = (DtCanal) o2;
+
+                            DtVideo auxV = controladorCanal.buscoVideoMasRecienteCanal(aux.getNombre_canal());
+
+                            DtVideo tmpV = controladorCanal.buscoVideoMasRecienteCanal(tmp.getNombre_canal());
+                            if (auxV != null && tmpV != null) {
+                                System.out.println("Canal: " + aux.getNombre_canal() + "Video: "+auxV.getNombre());
+
+                                System.out.println("Canal: " + tmp.getNombre_canal() + "Video: "+tmpV.getNombre());
+                                return tmpV.getFechaPublicacion().compareTo(auxV.getFechaPublicacion());
+                            }
+                            return 0;
+                        }
+                    });*/
+                }
+                /*if(listas != null) {
+                    Collections.sort(listas, new Comparator() {
+                        public int compare(Object o1, Object o2) {
+
+                            //hay que crear una funcion en el controladorcanal que busque el video mas nuevo en una lista y lo devuelva
+                            DtListaParticulares aux;
+                            DtListaParticulares tmp;
+                            aux = (DtListaParticulares) o1;
+                            tmp = (DtListaParticulares) o2;
+
+                            //HAY QUE SACAR LAS PRIVADAS TAMBIEN YA QUE SINO SE PIERDE EL ORDEN
+                            DtVideo auxV = controladorCanal.buscoVideoMasRecienteListaParticular(aux.getNombreLista(), aux.getCanal().getNombre_canal());
+                            if(auxV != null){
+                                System.out.println("Lista:" + aux.getNombreLista() + " Video: " + auxV.getNombre());
+                            }
+                            DtVideo tmpV = controladorCanal.buscoVideoMasRecienteListaParticular(tmp.getNombreLista(), tmp.getCanal().getNombre_canal());
+                            if(tmpV != null) {
+                                System.out.println("Lista:" + tmp.getNombreLista() + " Video: " + tmpV.getNombre());
+                            }
+                            if (auxV != null && tmpV != null) {
+                                return tmpV.getFechaPublicacion().compareTo(auxV.getFechaPublicacion());
+                            }
+                            return 0;
+                        }*/
                     }
-                });
+                    System.out.println(listas);
+                }
 
-                /*Collections.sort(canales, new Comparator()
-                {
-                    public int compare(Object o1, Object o2)
-                    {
-
-                        //hay que crear una funcion en el controladorcanal que busque el video mas nuevo en un canal y lo devuelva
-                        /*DtCanal aux;
-                        DtCanal tmp;
-                        aux = (DtCanal) o1;
-                        tmp = (DtCanal) o2;
-
-                        return tmp.getFechaPublicacion().compareTo(aux.getFechaPublicacion());
-                    }
-                });
-
-                Collections.sort(listas, new Comparator()
-                {
-                    public int compare(Object o1, Object o2)
-                    {
-
-                        //hay que crear una funcion en el controladorcanal que busque el video mas nuevo en una lista y lo devuelva
-                        DtCanal aux;
-                        DtCanal tmp;
-                        aux = (DtCanal) o1;
-                        tmp = (DtCanal) o2;
-
-                        return tmp.getFechaPublicacion().compareTo(aux.getFechaPublicacion());
-                    }
-                });*/
-            }
-        }
-        System.out.println(videos);
 
         request.setAttribute("canales", canales);
         request.setAttribute("videos", videos);
