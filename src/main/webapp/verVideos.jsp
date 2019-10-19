@@ -5,7 +5,8 @@
 <%@ page import="interfaces.IControladorUsuario" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="DataTypes.*" %><%--
+<%@ page import="DataTypes.*" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19
@@ -23,6 +24,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/meGusta.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <body>
 
@@ -125,10 +128,50 @@
                         <%if(logeado!=null) {
                             assert video != null;
                             if(logeado.getCanal().equals(video.getCanal())){%>
-                            <div class="form-group">
-                             <a href="modificarVideo.jsp?nombre=<%=video.getNombre()%>" class="btn btn-primary">Modificar<span class="badge"></span></a>
-                            </div>
-                        <%}
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="modificarVideo.jsp?nombre=<%=video.getNombre()%>" class="btn btn-primary">Modificar<span class="badge"></span></a>
+
+                                    <p> <a href="#" id="alternar-respuesta-ej1" style="margin-left: 30px;">Ver lista de me gustas</a>
+
+                                    <p> <a href="#" id="alternar-respuesta-ej2" style="margin-left: 60px;">Ver lista de No me gustas</a>
+                                </div>
+                                <%
+                                List<String> cadenaMegusta = new ArrayList<String>();
+                                List<String> cadenaNoMegusta = new ArrayList<String>();
+                                boolean entrarMg = false;
+                                boolean entrarNmg = false;
+                                DtAuxiliarValorar auxi;
+                                for(int i=0; i<listaV.size(); i++){
+                                    auxi = (DtAuxiliarValorar) listaV.get(i);
+                                    if(auxi != null){
+                                        if(auxi.getVal().equals("Me gusta") && auxi.getVid().equals(nomVideo)){
+                                            cadenaMegusta.add(auxi.getUser()+"\n");
+                                            if(entrarMg == false){
+                                                entrarMg = true;
+                                            }
+                                        }
+                                        if(auxi.getVal().equals("No me gusta") && auxi.getVid().equals(nomVideo)){
+                                            cadenaNoMegusta.add(auxi.getUser()+"\n");
+                                            if(entrarNmg == false){
+                                                entrarNmg = true;
+                                            }
+                                        }
+                                    }
+                                }
+                                if(entrarMg == true){%>
+                                    <div id="respuesta-ej1" style="display:none ; margin-left: 120px" ><%=cadenaMegusta%> </div>
+                                <%}
+                                else{%>
+                                    <div id="respuesta-ej1" style="display:none ; margin-left: 120px" >No se valoro el video aun</div>
+                                <%}
+                                if(entrarNmg == true){%>
+                                    <div id="respuesta-ej2" style="display:none ; margin-left: 320px" ><%=cadenaNoMegusta%> </div>
+                                <%}
+                                else{%>
+                                    <div id="respuesta-ej2" style="display:none ; margin-left: 320px" >No se valoro el video aun</div>
+                                <%}
+
+                            }
                         }
                             assert video != null;
                         %>
@@ -298,6 +341,7 @@
     <script src="assets/js/ResponderComentario.js" type="text/javascript"></script>
     <script src="assets/js/responderRespuesta.js" type="text/javascript"></script>
     <script src="assets/js/botonesMegusta.js" type="text/javascript"></script>
+    <script src="assets/js/verMas.js" type="text/javascript"></script>
 </body>
 </html>
 

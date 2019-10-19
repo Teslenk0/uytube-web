@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c480040-9da6-4703-b893-201c743c0858" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/verMas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/inicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/inicio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/inicio.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,10 +72,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -277,7 +283,7 @@
       <workItem from="1571407535088" duration="22000" />
       <workItem from="1571418468423" duration="8507000" />
       <workItem from="1571443643378" duration="6000" />
-      <workItem from="1571443787155" duration="290000" />
+      <workItem from="1571443787155" duration="9316000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>
