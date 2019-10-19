@@ -51,20 +51,17 @@ public class ResponderComentarioServlet extends HttpServlet {
         java.util.Date fecha = new Date();
 
         String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion de verVideo.jsp
-
-        /*System.out.println("El padre es: "+padre);
-        System.out.println("El comentario a responder es: "+com);*/
+        String canal = (String) s.getAttribute("canal");
 
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal controladorCanal = fabrica.getControladorCanal();
 
-        DtCanal canal = user.getCanal();
-        DtVideo v = controladorCanal.obtenerVideo(nomVid, canal.getNombre_canal());
+        DtVideo v = controladorCanal.obtenerVideo(nomVid, canal);
         List lista = controladorCanal.listaComentariosTodos();
         Integer ref = lista.size() + 1;
 
         if(!comentario.isEmpty()){
-            DtComentario c = new DtComentario(user.getNickname(),comentario, fecha, v, padre, ref, canal.getNombre_canal());
+            DtComentario c = new DtComentario(user.getNickname(),comentario, fecha, v, padre, ref, canal);
             controladorCanal.agregarComentario(c);
         }
 

@@ -30,7 +30,7 @@
 <body>
 
     <%
-        String nomVideo = request.getParameter("video");
+        String nomVideo = request.getParameter("video"); // obtengo  parametros del href
         String canal = request.getParameter("canal");
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal c = fabrica.getControladorCanal();
@@ -130,10 +130,11 @@
                             if(logeado.getCanal().equals(video.getCanal())){%>
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a href="modificarVideo.jsp?nombre=<%=video.getNombre()%>" class="btn btn-primary">Modificar<span class="badge"></span></a>
+                                </div>
+                                <div class="ver mas">
+                                    <p> <a href="#" id="alternar-respuesta-ej1" class="btn btn-primary" style="margin-top: 15px">Ver lista de me gustas</a>
 
-                                    <p> <a href="#" id="alternar-respuesta-ej1" style="margin-left: 30px;">Ver lista de me gustas</a>
-
-                                    <p> <a href="#" id="alternar-respuesta-ej2" style="margin-left: 60px;">Ver lista de No me gustas</a>
+                                    <p> <a href="#" id="alternar-respuesta-ej2" class="btn btn-primary" >Ver lista de No me gustas</a>
                                 </div>
                                 <%
                                 List<String> cadenaMegusta = new ArrayList<String>();
@@ -159,16 +160,16 @@
                                     }
                                 }
                                 if(entrarMg == true){%>
-                                    <div id="respuesta-ej1" style="display:none ; margin-left: 120px" ><%=cadenaMegusta%> </div>
+                                    <div id="respuesta-ej1" style="display:none" ><%=cadenaMegusta.toString()%> </div>
                                 <%}
                                 else{%>
-                                    <div id="respuesta-ej1" style="display:none ; margin-left: 120px" >No se valoro el video aun</div>
+                                    <div id="respuesta-ej1" style="display:none" >No se valoro el video aun</div>
                                 <%}
                                 if(entrarNmg == true){%>
-                                    <div id="respuesta-ej2" style="display:none ; margin-left: 320px" ><%=cadenaNoMegusta%> </div>
+                                    <div id="respuesta-ej2" style="display:none" ><%=cadenaNoMegusta.toString()%> </div>
                                 <%}
                                 else{%>
-                                    <div id="respuesta-ej2" style="display:none ; margin-left: 320px" >No se valoro el video aun</div>
+                                    <div id="respuesta-ej2" style="display:none" >No se valoro el video aun</div>
                                 <%}
 
                             }
@@ -219,7 +220,7 @@
                         <%List lista = c.listaComentarios(video);
                         for(int x=0 ; x<lista.size(); x++){
                             DtAuxiliar com = (DtAuxiliar) lista.get(x);
-                            if(com != null){%>
+                            if(com != null){ %>
 
                             <!-- Contenedor Principal -->
                             <div class="comments-container">
@@ -228,8 +229,8 @@
                                         <%if (com.getPadre() == null) {%>
                                         <div class="comment-main-level">
                                             <!-- Avatar -->
-                                            <%DtUsuario usuario = u.buscarUsuario(com.getNick());
-                                            String ruta = "assets" + usuario.getImagen().toString();%>
+                                            <%DtUsuario usuarioComenta = u.buscarUsuario(com.getNick());
+                                            String ruta = "assets" + usuarioComenta.getImagen().toString();%>
                                             <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
                                             <!-- Contenedor del Comentario -->
                                             <div class="comment-box">
@@ -271,24 +272,23 @@
                                         <%}
                                         else {
                                             List lista2 = c.listaComentarios(video);
+                                            //DtAuxiliar auxList = com;
                                             for(int y=0; y<lista2.size(); y++){
                                                 DtAuxiliar resp =(DtAuxiliar) lista2.get(y);
-
-                                                if(com.getPadre().equals(resp.getReferencia().toString())){;%>
-
+                                                if(com.getPadre().equals(resp.getReferencia().toString())){%>
                                                     <!-- Respuestas de los comentarios -->
                                                     <ul class="comments-list reply-list">
                                                         <li>
                                                             <!-- Avatar -->
-                                                            <%DtUsuario usuario = u.buscarUsuario(resp.getNick());
-                                                            String ruta = "assets" + usuario.getImagen().toString();%>
-                                                            <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
+                                                            <%DtUsuario usuarioResp = u.buscarUsuario(com.getNick());
+                                                            String ruta2 = "assets" + usuarioResp.getImagen().toString();%>
+                                                            <div class="comment-avatar"><img src="<%=ruta2%>" alt=""></div>
                                                             <!-- Contenedor del Comentario -->
                                                             <div class="comment-box">
                                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
                                                                     <div class="comment-head">
                                                                         <h6 class="comment-name"><a href="canal de la persona"><%=com.getNick()%></a></h6>
-                                                                        <span><%=com.getFecha()+" Hs"%></span>
+                                                                        <span><%=resp.getFecha()+" Hs"%></span>
                                                                         <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
                                                                     </div>
                                                                     <div class="comment-content">
@@ -300,7 +300,7 @@
                                                                                 <div class="input-group" >
                                                                                     <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
                                                                                     <textarea class="form-control" rows="2" name="respuesta1" id="respuesta1" placeholder="Agrega una respuesta"></textarea>
-                                                                                    <input type="hidden"  name="referencia1" value="<%=com.getReferencia()%>" >
+                                                                                    <input type="hidden"  name="referencia1" value="<%=resp.getReferencia()%>" >
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -327,7 +327,7 @@
                                             }
                                         }
                                     }
-                                    }%>
+                        }%>
 
                                 </ul>
                             </div>

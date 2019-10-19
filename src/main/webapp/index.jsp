@@ -169,7 +169,7 @@
                                             <a href="#" id="modificarPlaylist_btn">Modificar lista</a>
                                         </li>
                                         <li>
-                                            <a href="#">Agregar video</a>
+                                            <a href="#" id="agregarVidPlaylist_btn">Agregar video</a>
                                         </li>
                                         <li>
                                             <a href="#">Quitar video</a>
