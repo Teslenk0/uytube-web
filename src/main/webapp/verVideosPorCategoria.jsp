@@ -43,50 +43,54 @@
                                     DtVideo vid;
                                     DtListaParticulares playlist = null;
                                     String id;
-                                    for(int x = 0; x<listaVidCat.size(); x++){
-                                        vid = (DtVideo) listaVidCat.get(x);
-                                        if (vid.getUrl() != null) {
-                                            id = getID(vid.getUrl());
-                                            if(!vid.getPrivado()){%>
-                                                <div class="col-md-4">
-                                                    <div class="card mb-3">
-                                                        <div class="card-body">
-                                                            <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombre_canal()%>">
-                                                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                                            </a>
-                                                            <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
-                                                            <p class="card-text">Video</p>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <small class="text-muted">Propietario: <%=vid.getCanal().getNombre_canal()%></small>
+                                    if(listaVidCat != null){
+                                        for(int x = 0; x<listaVidCat.size(); x++){
+                                            vid = (DtVideo) listaVidCat.get(x);
+                                            if (vid.getUrl() != null) {
+                                                id = getID(vid.getUrl());
+                                                if(!vid.getPrivado()){%>
+                                                    <div class="col-md-4">
+                                                        <div class="card mb-3">
+                                                            <div class="card-body">
+                                                                <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombre_canal()%>">
+                                                                    <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                                                </a>
+                                                                <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
+                                                                <p class="card-text">Video</p>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <small class="text-muted">Propietario: <%=vid.getCanal().getNombre_canal()%></small>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            <%}
+                                                <%}
+                                            }
                                         }
                                     }
                                     String[] datos;
-                                    for(int y=0; y<listaPlaylistCat.size(); y++){
-                                        playlist = (DtListaParticulares) listaPlaylistCat.get(y);
-                                        DtUsuario usuario = u.buscarUsuarioCanal(playlist.getCanal().getNombre_canal());
-                                        datos = getPrimerVideoListaParticular(playlist, usuario.getNickname());
-                                        if (datos != null) {
-                                            if(!playlist.getPrivado()){%>
-                                                <div class="col-md-4">
-                                                    <div class="card mb-3">
-                                                            <div class="card-body">
-                                                                <a href="verPlaylist.jsp?nomLista=<%=playlist.getNombreLista()%>&user=<%=playlist.getCanal().getNombre_canal()%>&es_particular=true">
-                                                                    <img src="https://img.youtube.com/vi/<%=datos[0].toString()%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
-                                                                </a>
-                                                                <h5 class="card-title"><strong><%=playlist.getNombreLista()%></strong></h5>
-                                                                <p class="card-text">Lista de Reproduccion</p>
-                                                            </div>
-                                                                <div class="card-footer">
-                                                                    <small class="text-muted">Propietario: <%=playlist.getCanal().getNombre_canal()%></small>
+                                    if(listaPlaylistCat != null){
+                                        for(int y=0; y<listaPlaylistCat.size(); y++){
+                                            playlist = (DtListaParticulares) listaPlaylistCat.get(y);
+                                            DtUsuario usuario = u.buscarUsuarioCanal(playlist.getCanal().getNombre_canal());
+                                            datos = getPrimerVideoListaParticular(playlist, usuario.getNickname());
+                                            if (datos != null) {
+                                                if(!playlist.getPrivado()){%>
+                                                    <div class="col-md-4">
+                                                        <div class="card mb-3">
+                                                                <div class="card-body">
+                                                                    <a href="verPlaylist.jsp?nomLista=<%=playlist.getNombreLista()%>&user=<%=playlist.getCanal().getNombre_canal()%>&es_particular=true">
+                                                                        <img src="https://img.youtube.com/vi/<%=datos[0].toString()%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
+                                                                    </a>
+                                                                    <h5 class="card-title"><strong><%=playlist.getNombreLista()%></strong></h5>
+                                                                    <p class="card-text">Lista de Reproduccion</p>
                                                                 </div>
+                                                                    <div class="card-footer">
+                                                                        <small class="text-muted">Propietario: <%=playlist.getCanal().getNombre_canal()%></small>
+                                                                    </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            <%}
+                                                <%}
+                                            }
                                         }
                                     }%>
                                 </div>
