@@ -1,6 +1,7 @@
 <%@include file="getPrimerVideoListaParticular.jsp"%>
 <%@page import="java.util.List"%>
 <%@ page import="DataTypes.*" %>
+<%@ page import="interfaces.IControladorUsuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,6 +29,8 @@
             if (session.getAttribute("usuario") != null) {
                 user = (DtUsuario) session.getAttribute("usuario");
             }
+            Fabrica fabrica = Fabrica.getInstance();
+            IControladorCanal c = fabrica.getControladorCanal();
         %>
         <!-- BARRA SUPERIOR -->
         <div class="barra_superior" style="background-color:#343841">
@@ -172,7 +175,7 @@
                                             <a href="#" id="agregarVidPlaylist_btn">Agregar video</a>
                                         </li>
                                         <li>
-                                            <a href="#">Quitar video</a>
+                                            <a href="#" id="eliminarVidPlaylist_btn">Quitar video</a>
                                         </li>
                                         <li>
                                             <a href="#">Consulta de lista</a>
@@ -182,9 +185,30 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="sidebar-menu">
+                        <ul>
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="fa fa-list-alt"></i>
+                                    <span>Consulta Categorias</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                        <li><%
+                                            List listaCat = c.getCategorias();
+                                            DtCategoria dtaux = null;
+                                            for(int x = 0 ; x< listaCat.size(); x++){
+                                                dtaux = (DtCategoria) listaCat.get(x);%>
+                                            <a href="verVideosPorCategoria.jsp?categoria=<%=dtaux.getnombreCategoria()%>" id=""><%=dtaux.getnombreCategoria()%></a>
+                                            <%}%>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                     <%}%>
                     <!-- sidebar-content  -->
-
             </nav>
             <!-- sidebar-wrapper  -->
             <div class="page-content" id="panelcentral">
