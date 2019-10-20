@@ -241,23 +241,24 @@
                                 for (int i = 0; i < videos.size(); i++) {
                                     v = (DtVideo) videos.get(i);
                                     id = getID(v.getUrl());
+
                         %>
-                        <div class="col-md-4">
-                            <div class="card video-resultado mb-3">
-                                <div class="card-body">
-                                    <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombre_canal()%>">
-                                        <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                    </a>
-                                    <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
-                                    <p class="card-text"><%=v.getDescripcion()%></p>
-                                </div>
-                                <div class="card-footer">
-                                    <small>Canal: <%=v.getCanal().getNombre_canal()%></small>
-                                    <br>
-                                    <small>Duracion: <%=v.getDuracion()%></small>
-                                </div>
-                            </div>
-                        </div>
+                                    <div class="col-md-4">
+                                        <div class="card video-resultado mb-3">
+                                            <div class="card-body">
+                                                <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombre_canal()%>">
+                                                    <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                                </a>
+                                                <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
+                                                <p class="card-text"><%=v.getDescripcion()%></p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <small>Canal: <%=v.getCanal().getNombre_canal()%></small>
+                                                <br>
+                                                <small>Duracion: <%=v.getDuracion()%></small>
+                                            </div>
+                                        </div>
+                                    </div>
                         <%
                                 }
                             }

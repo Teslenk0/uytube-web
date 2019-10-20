@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
     <list default="true" id="3c480040-9da6-4703-b893-201c743c0858" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/playlist2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/playlist2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/playlistDefecto2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/playlistDefecto2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/uytubeMaven-0.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/uytubeMaven-0.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
-=======
-    <list default="true" id="3c480040-9da6-4703-b893-201c743c0858" name="Default Changelist" comment="" />
->>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,11 +291,17 @@
       <workItem from="1571523125944" duration="212000" />
       <workItem from="1571523479134" duration="211000" />
       <workItem from="1571523863135" duration="213000" />
-<<<<<<< Updated upstream
       <workItem from="1571524086727" duration="1142000" />
-=======
       <workItem from="1571524593722" duration="6000" />
->>>>>>> Stashed changes
+      <workItem from="1571525465267" duration="487000" />
+      <workItem from="1571528967576" duration="257000" />
+      <workItem from="1571529816696" duration="601000" />
+      <workItem from="1571531067554" duration="2514000" />
+      <workItem from="1571534142034" duration="974000" />
+      <workItem from="1571540100567" duration="1068000" />
+      <workItem from="1571583507261" duration="267000" />
+      <workItem from="1571584211827" duration="183000" />
+      <workItem from="1571584419532" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>
