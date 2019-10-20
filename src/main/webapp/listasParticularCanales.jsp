@@ -37,7 +37,7 @@
                     if (datos != null) {%>
             <div class="col-md-10">
                 <div class="card mb-5">
-                    <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
+                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombre_canal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
                     <div class="card-body">
                         <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                         <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>

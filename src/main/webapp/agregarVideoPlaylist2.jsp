@@ -22,6 +22,11 @@
     <title>Videos</title>
 </head>
 <body>
+<div class="barra_superior" style="background-color:#343841">
+    <div class="d-inline">
+        <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+    </div>
+</div>
 <div id="modify-user-panel" class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row justify-content-center">
         <div class="col-md-8">

@@ -174,9 +174,6 @@
                                         <li>
                                             <a href="#" id="eliminarVidPlaylist_btn">Quitar video</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Consulta de lista</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </li>
