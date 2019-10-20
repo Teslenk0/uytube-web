@@ -41,7 +41,7 @@
             <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
         </div>
         <div class="card-footer">
-            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>
+            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">Agregar</a>
         </div>
     </div>
     <%} else {%>
@@ -52,7 +52,7 @@
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
         </div>
         <div class="card-footer">
-            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>
+            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">Agregar</a>
         </div>
     </div>
     <%}
