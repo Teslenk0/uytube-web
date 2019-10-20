@@ -236,7 +236,8 @@
                                             <div class="comment-box">
                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderComentarioServlet" id="fromRespuesta">
                                                     <div class="comment-head">
-                                                        <h6 class="comment-name"><a href="Canal de la persona?"><%=com.getNick()%></a></h6>
+                                                        <%DtUsuario us = u.buscarUsuario(com.getNick());%>
+                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=us.getCanal().getNombre_canal()%>"><%=com.getNick()%></a></h6>
                                                         <span><%=com.getFecha()+" Hs"%></span>
                                                     </div>
                                                     <div class="comment-content">
@@ -287,7 +288,8 @@
                                                             <div class="comment-box">
                                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
                                                                     <div class="comment-head">
-                                                                        <h6 class="comment-name"><a href="canal de la persona"><%=com.getNick()%></a></h6>
+                                                                        <%DtUsuario usR = u.buscarUsuario(com.getNick());%>
+                                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombre_canal()%>"><%=com.getNick()%></a></h6>
                                                                         <span><%=resp.getFecha()+" Hs"%></span>
                                                                         <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
                                                                     </div>

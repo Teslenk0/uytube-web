@@ -47,7 +47,7 @@
             <img class="img-thumbnail" src="<%=ruta%>" style="margin-left: 45%" alt="User picture">
             <hr>
             <%
-                if(logiado!=null){
+                if(logiado!=null && !user.getNickname().equals(logiado.getNickname())){
                     boolean aux = false;
                     for(int r=0; r<listaSeguidos.size(); r++){
                         String usuarios = (String) listaSeguidos.get(r);

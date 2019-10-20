@@ -32,10 +32,10 @@
                     lista = (DtListaParticulares) listasParticulares.get(i);
                     datos = getPrimerVideoListaParticular(lista, user.getNickname());
                     if (datos != null) {%>
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
+        <div class="col-md-10">
+            <div class="card mb-5">
                 <div class="card-body">
+                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombre_canal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                     <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
                 </div>
@@ -47,9 +47,10 @@
     <%} else {%>
         <div class="col-md-4">
             <div class="card mb-3">
-                <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
                 <div class="card-body">
+                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombre_canal()%>&es_particular=true"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista"></a>
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+                    <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Cantidad de videos: 0</small>

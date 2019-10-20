@@ -130,10 +130,7 @@
                                     <span>Usuario</span>
                                 </a>
                                 <div class="sidebar-submenu">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Consulta</a>
-                                        </li>
+                                    <ul>      
                                         <li>
                                             <a href="#" id="modificoUser_btn">Modificar</a>
                                             <header class="header">
@@ -284,7 +281,7 @@
                         <div class="col-md-4">
                             <div class="card listas-resultado mb-3">
                                 <div class="card-body">
-                                        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video" width="480" height="360">
+                                        <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombre_canal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video" width="480" height="360"></a>
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                                     <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
                                     <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
@@ -298,7 +295,7 @@
                         <div class="col-md-4">
                             <div class="card listas-resultado mb-3">
                                 <div class="card-body">
-                                    <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" width="480" height="360">
+                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombre_canal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video" width="480" height="360"></a>
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                                     <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
                                     <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
