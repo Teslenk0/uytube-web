@@ -45,8 +45,8 @@
             </div>
         </div>
     <%} else {%>
-        <div class="col-md-4">
-            <div class="card mb-3">
+        <div class="col-md-10">
+            <div class="card mb-5">
                 <div class="card-body">
                     <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombre_canal()%>&es_particular=true"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista"></a>
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>

@@ -52,7 +52,7 @@
                                     IControladorCanal controladorCanal = fabrica.getControladorCanal();
 
                                     List<DtVideo> videosUser = new ArrayList<>();
-                                    videosUser=(List) session.getAttribute("videos");
+                                    videosUser = controladorCanal.listaVideos(user.getCanal());
                                     List<DtVideo> lista_videos = new ArrayList<>();
                                     lista_videos.addAll(videosUser);
 

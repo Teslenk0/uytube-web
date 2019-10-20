@@ -273,13 +273,13 @@
                             for (int i = 0; i < listasParticulares.size(); i++) {
                                 lista = (DtListaParticulares) listasParticulares.get(i);
                                 if(!lista.getPrivado()){
-                                datos = getPrimerVideoListaParticular(lista, lista.getCanal().getUsuario().getNickname());
+                                    datos = getPrimerVideoListaParticular(lista, lista.getCanal().getUsuario().getNickname());
 
                                 if (datos != null) {%>
                         <div class="col-md-4">
                             <div class="card listas-resultado mb-3">
                                 <div class="card-body">
-                                        <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombre_canal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video" width="480" height="360"></a>
+                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombre_canal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video"></a>
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                                     <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
                                     <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
@@ -293,7 +293,7 @@
                         <div class="col-md-4">
                             <div class="card listas-resultado mb-3">
                                 <div class="card-body">
-                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombre_canal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video" width="480" height="360"></a>
+                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombre_canal()%>&es_particular=true"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" ></a>
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                                     <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
                                     <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
@@ -325,7 +325,7 @@
                         <div class="col-md-offset">
                             <div class="card canales-resultado mb-3">
                                 <div class="card-body">
-                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombre_canal()%>"><img src="http://localhost:8080/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal"  width="480" height="360"></a>
+                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombre_canal()%>"><img src="http://localhost:8080/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal" ></a>
                                     <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
                                     <p class="card-text"><%=canal.getDescripcion()%></p>
                                 </div>

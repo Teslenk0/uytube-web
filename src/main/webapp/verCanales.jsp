@@ -58,11 +58,11 @@
                     }%>
                     <h5 align="center">Canal de <%=user.getNickname()%></h5>
                     <%if(aux == true){%>
-                        <a href="/UnfollowUsuarioServlet?seguir=<%=user.getNickname()%>" style="margin-left: 48%" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
+                        <a href="/uytube/UnfollowUsuarioServlet?seguir=<%=user.getNickname()%>" style="margin-left: 48%" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
                     <%
                     }
                     else{%>
-                        <a href="/FollowUsuarioServlet?seguir=<%=user.getNickname()%>" style="margin-left: 48%" class="btn btn-success" ><i class="fa fa-checkmark-round"></i> Follow</i><br></a>
+                        <a href="/uytube/FollowUsuarioServlet?seguir=<%=user.getNickname()%>" style="margin-left: 48%" class="btn btn-success" ><i class="fa fa-checkmark-round"></i> Follow</i><br></a>
                     <%}
                 }else{%>
                     <h5 align="center">Canal de <%=user.getNickname()%></h5>
