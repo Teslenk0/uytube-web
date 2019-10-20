@@ -56,11 +56,6 @@ public class AgregarVideoPlaylistParticularServlet extends HttpServlet {
         DtUsuario destino = controladorUsuario.buscarUsuarioCanal(nomCanal);
         String userDestino = destino.getNickname();
 
-        System.out.println(userDestino);
-        System.out.println(nomVideo);
-        System.out.println(nomLista);
-        System.out.println(nomUser);
-
         try{
             controladorCanal.agregarVideoLista(nomVideo,nomLista,nomUser,userDestino,true);
         }catch (Exception e){

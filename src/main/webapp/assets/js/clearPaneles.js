@@ -41,4 +41,9 @@ $(document).ready(function () {
         panel.load("agregarVideoPlaylist.jsp");
     });
 
+    $("#eliminarVidPlaylist_btn").on("click",function (e) {
+        panel.empty();
+        panel.load("eliminarVideoPlaylist.jsp");
+    });
+
 });

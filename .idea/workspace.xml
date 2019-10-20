@@ -2,20 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a05e968-1539-4d3e-a848-51078821ab16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/EliminarVideoPlaylistDefectoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/EliminarVideoPlaylistParticularServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/eliminarVideoPlaylist.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/eliminarVideoPlaylist2Defecto.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/eliminarVideoPlaylist2Particular.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AgregarVideoPlaylistDefectoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AgregarVideoPlaylistDefectoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AgregarVideoPlaylistParticularServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AgregarVideoPlaylistParticularServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AltaVideoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AltaVideoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/agregarVideoPlaylist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/agregarVideoPlaylist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/agregarVideoPlaylist2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/agregarVideoPlaylist2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listasParticularCanales.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listasParticularCanales.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/verVideosPorCategoria.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verVideosPorCategoria.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/altaVideo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/altaVideo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/clearPaneles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/clearPaneles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/registrar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/registrar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/inicio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/inicio.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -237,7 +250,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3c480040-9da6-4703-b893-201c743c0858" name="Default Changelist" comment="" />
+      <changelist id="2a05e968-1539-4d3e-a848-51078821ab16" name="Default Changelist" comment="" />
       <created>1570318120217</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -296,6 +309,8 @@
       <workItem from="1571583507261" duration="267000" />
       <workItem from="1571584211827" duration="183000" />
       <workItem from="1571584419532" duration="6000" />
+      <workItem from="1571589239458" duration="547000" />
+      <workItem from="1571590958524" duration="4164000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>

@@ -172,7 +172,7 @@
                                             <a href="#" id="agregarVidPlaylist_btn">Agregar video</a>
                                         </li>
                                         <li>
-                                            <a href="#" id="eliminarVidPlaylist_btn">Quitar video</a>
+                                            <a href="#" id="s">Quitar video</a>
                                         </li>
                                     </ul>
                                 </div>

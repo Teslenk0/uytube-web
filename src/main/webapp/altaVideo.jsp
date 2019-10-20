@@ -1,7 +1,11 @@
 <%@ page import="fabrica.Fabrica" %>
 <%@ page import="interfaces.IControladorCanal" %>
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtCategoria" %><%--
+<%@ page import="DataTypes.DtCategoria" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.time.format.DateTimeFormatter" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 10/10/19
@@ -41,10 +45,6 @@
                         <div class="form-group">
                             <label for="descripcion" class="control-label">Descripción</label>
                             <textarea class="form-control" rows="4" name="descripcion" id="descripcion" required maxlength="300"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="Fecha" class="control-label">Fecha de Publicación</label>
-                            <input type="date" class="form-control" name="Fecha" id="Fecha" required/>
                         </div>
                         <div class="form-group">
                             <label for="nombreVideo" class="control-label">Estado de video</label>

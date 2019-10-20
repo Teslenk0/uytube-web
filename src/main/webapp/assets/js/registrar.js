@@ -3,7 +3,9 @@ $(document).ready(function() {
     $('textarea#descripcion').characterCounter();
     $('.datepicker').datepicker({
         firstDay: true,
-        format: 'dd-mm-yyyy',
+        format: 'yyyy-mm-dd',
+        minDate: new Date(1950,1,1),
+        maxDate: new Date(2019,9,22),
         i18n: {
             months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
             monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic"],

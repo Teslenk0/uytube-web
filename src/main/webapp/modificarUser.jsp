@@ -78,12 +78,9 @@
                             </div>
                         </div>
 
-                        <div class="form-group" style="display:inline">
-                            <button style="margin-left: 35%; margin-right: 10px" id="modificarVideo_btn" type="button" class="btn btn-secondary">Videos</button><button id="modificarPlaylist_btn" type="button" class="btn btn-secondary">Playlists</button>
-                        </div>
                         <div class="custom-file" style="margin-top: 2%; margin-bottom: 2%">
                                 <input type="file" class="custom-file-input" name="image" id="image" accept="image/*">
-                                <label class="custom-file-label" for="image">Elije una imágen</label>
+                                <label class="custom-file-label" for="image">Elige una imágen</label>
                             </div>
                         <div class="form-group">
                             <button style="margin-top: 10px" type="submit" class="btn btn-success btn-lg btn-block login-button" id="submitForm">Modificar</button>

@@ -19,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -50,12 +52,12 @@ public class AltaVideoServlet extends HttpServlet {
         String duracion = request.getParameter("duracion").trim();
         String url = request.getParameter("url").trim();
         String descripcion = request.getParameter("descripcion").trim();
-        String fechaPub = request.getParameter("Fecha").trim();
         boolean estado = request.getParameter("estado").equals("privado");
         String categoria = request.getParameter("categorias").trim();
 
+        String date = LocalDate.now().toString();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date fecha = sdf.parse(fechaPub);
+        Date fecha = sdf.parse(date);
 
         DtCanal canal = user.getCanal();
         DtVideo v = new DtVideo(video, canal, fecha, url, descripcion,categoria, duracion, estado);

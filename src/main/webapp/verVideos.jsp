@@ -86,7 +86,7 @@
                                             contNmg++;
                                         }
                                     }
-                                    if (nomVideo.equals(dtaux.getVid()) && usuarioDuenio.getNickname().equals(dtaux.getUser())) {
+                                    if (nomVideo.equals(dtaux.getVid()) && logeado.getNickname().equals(dtaux.getUser())) {
                                         esta = true;
                                         if (dtaux.getVal().equals("Me gusta")) {
                                             mg = true;
