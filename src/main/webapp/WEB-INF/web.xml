@@ -139,6 +139,123 @@
         <url-pattern>/FollowUsuarioServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AgregarVideoPlaylistDefectoServlet</servlet-name>
+        <servlet-class>uytube.web.classes.AgregarVideoPlaylistDefectoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AgregarVideoPlaylistDefectoServlet</servlet-name>
+        <url-pattern>/AgregarVideoPlaylistDefectoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AgregarVideoPlaylistParticularServlet</servlet-name>
+        <servlet-class>uytube.web.classes.AgregarVideoPlaylistParticularServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AgregarVideoPlaylistParticularServlet</servlet-name>
+        <url-pattern>/AgregarVideoPlaylistParticularServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CambiarMegustaServlet</servlet-name>
+        <servlet-class>uytube.web.classes.CambiarMegustaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CambiarMegustaServlet</servlet-name>
+        <url-pattern>/CambiarMegustaServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CambiarNomegustaServlet</servlet-name>
+        <servlet-class>uytube.web.classes.CambiarNomegustaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CambiarNomegustaServlet</servlet-name>
+        <url-pattern>/CambiarNomegustaServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CrearPlaylistServlet</servlet-name>
+        <servlet-class>uytube.web.classes.CrearPlaylistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CrearPlaylistServlet</servlet-name>
+        <url-pattern>/CrearPlaylistServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EliminarVideoPlaylistDefectoServlet</servlet-name>
+        <servlet-class>uytube.web.classes.EliminarVideoPlaylistDefectoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EliminarVideoPlaylistDefectoServlet</servlet-name>
+        <url-pattern>/EliminarVideoPlaylistDefectoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EliminarVideoPlaylistParticularServlet</servlet-name>
+        <servlet-class>uytube.web.classes.EliminarVideoPlaylistParticularServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EliminarVideoPlaylistParticularServlet</servlet-name>
+        <url-pattern>/EliminarVideoPlaylistParticularServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MegustaVideoServlet</servlet-name>
+        <servlet-class>uytube.web.classes.MegustaVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MegustaVideoServlet</servlet-name>
+        <url-pattern>/MegustaVideoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModificoPlaylistServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ModificoPlaylistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModificoPlaylistServlet</servlet-name>
+        <url-pattern>/ModificoPlaylistServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModificoUserServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ModificoUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModificoUserServlet</servlet-name>
+        <url-pattern>/ModificoUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NomeGustaVideoServlet</servlet-name>
+        <servlet-class>uytube.web.classes.NomeGustaVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NomeGustaVideoServlet</servlet-name>
+        <url-pattern>/NomeGustaVideoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ValidarModificarUserServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ValidarModificarUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidarModificarUserServlet</servlet-name>
+        <url-pattern>/ValidarModificarUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ValidarPlaylistServlet</servlet-name>
+        <servlet-class>uytube.web.classes.ValidarPlaylistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidarPlaylistServlet</servlet-name>
+        <url-pattern>/ValidarPlaylistServlet</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30

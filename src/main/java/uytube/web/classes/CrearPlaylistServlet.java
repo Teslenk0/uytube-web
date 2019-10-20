@@ -38,6 +38,9 @@ public class CrearPlaylistServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
 
@@ -51,13 +54,12 @@ public class CrearPlaylistServlet extends HttpServlet {
 
         DtListaParticulares lista = new DtListaParticulares(estadoPlaylist,nombrePlaylist,cat,canal);
 
+        System.out.println(nombrePlaylist);
+        System.out.println(estadoPlaylist);
+        System.out.println(categoria);
         Fabrica fabrica = Fabrica.getInstance();
         IControladorCanal controladorCanal = fabrica.getControladorCanal();
-        try{
-            controladorCanal.crearListaParticular(lista, user);
-        }catch (Exception e){
-            System.out.println(e);
-        }
+        controladorCanal.crearListaParticular(lista, user);
         response.sendRedirect("index.jsp");
     }
 

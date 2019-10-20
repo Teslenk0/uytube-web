@@ -84,7 +84,7 @@
                                     DtUsuario nomSeguidor = (DtUsuario) listaSeguidores.get(x);
                                     %>
                                     <div class="media user-follower">
-                                        <%String ruta = "assets" + nomSeguidor.getImagen();%>
+                                        <%String ruta = "http://localhost:8080/assets" + nomSeguidor.getImagen();%>
                                         <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                         <div class="media-body">
                                             <a href="verCanales.jsp?nomCanal=<%=nomSeguidor.getCanal().getNombre_canal()%>" style="margin-left: 10px"><%=nomSeguidor.getNickname()%></a>
@@ -97,11 +97,11 @@
                                                     }
                                                 }
                                                 if(aux == true){%>
-                                                    <a href="/UnfollowUsuarioServlet?seguir=<%=nomSeguidor.getNickname()%>" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
+                                                    <a href="/uytube/UnfollowUsuarioServlet?seguir=<%=nomSeguidor.getNickname()%>" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
                                                     <%aux = false;
                                                 }
                                                 else{%>
-                                                    <a href="/FollowUsuarioServlet?seguir=<%=nomSeguidor.getNickname()%>" class="btn btn-success" ><i class="fa fa-checkmark-round"></i> Follow</i><br></a>
+                                                    <a href=/uytube/FollowUsuarioServlet?seguir=<%=nomSeguidor.getNickname()%>" class="btn btn-success" ><i class="fa fa-checkmark-round"></i> Follow</i><br></a>
                                                 <%}%>
 
                                                 </div>
@@ -120,14 +120,13 @@
                                 if(listaSeguidos.get(y) != null){
                                     String aux = (String) listaSeguidos.get(y);
                                     DtUsuario userSeguidos = u.buscarUsuario(aux);
-                                    //System.out.println("nombre del seguidor en string: "+userSeguidos.getNickname());
                                 %>
                                 <div class="media user-follower" style="margin-top: 30px">
-                                    <%String ruta = "assets" + userSeguidos.getImagen().toString();%>
+                                    <%String ruta = "http://localhost:8080/assets" + userSeguidos.getImagen();%>
                                     <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                     <div class="media-body">
                                         <a href="verCanales.jsp?nomCanal=<%=userSeguidos.getCanal().getNombre_canal()%>" style="margin-left: 10px"><%=userSeguidos.getNickname()%></a>
-                                        <a href="/UnfollowUsuarioServlet?seguir=<%=userSeguidos.getNickname()%>" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
+                                        <a href="/uytube/UnfollowUsuarioServlet?seguir=<%=userSeguidos.getNickname()%>" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
                                     </div>
                                 </div>
                             <%}

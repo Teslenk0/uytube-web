@@ -1,12 +1,13 @@
-<%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="java.util.List" %>
+<%@ page import="DataTypes.DtAuxiliar" %>
+<%@ page import="DataTypes.DtAuxiliarValorar" %>
+<%@ page import="DataTypes.DtUsuario" %>
 <%@include file="getID.jsp"%>
+<%@ page import="DataTypes.DtVideo" %>
+<%@ page import="fabrica.Fabrica" %>
+<%@ page import="interfaces.IControladorCanal" %>
 <%@ page import="interfaces.IControladorUsuario" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="DataTypes.*" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19
@@ -86,10 +87,12 @@
                                             contNmg++;
                                         }
                                     }
-                                    if (nomVideo.equals(dtaux.getVid()) && logeado.getNickname().equals(dtaux.getUser())) {
-                                        esta = true;
-                                        if (dtaux.getVal().equals("Me gusta")) {
-                                            mg = true;
+                                    if (logeado != null) {
+                                        if (nomVideo.equals(dtaux.getVid()) && logeado.getNickname().equals(dtaux.getUser())) {
+                                            esta = true;
+                                            if (dtaux.getVal().equals("Me gusta")) {
+                                                mg = true;
+                                            }
                                         }
                                     }
                                 }
@@ -100,17 +103,17 @@
                                     <%}
                                     if (logeado != null) {
                                         if(!esta) {%>
-                                            <a href="MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                                            <a href="NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                                            <a href="/uytube/MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
+                                            <a href="/uytube/NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
                                         <%}
                                         else{
                                             if(mg) {%>
-                                                <a href="CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: red" ></i><br></a>
+                                                <a href="/uytube/CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: red" ></i><br></a>
                                                 <a href="#" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
                                             <%}
                                             else{%>
                                                 <a href="#" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                                                <a href="CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: red"></i><br></a>
+                                                <a href="/uytube/CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: red"></i><br></a>
                                             <%}
                                         }
                                     }
@@ -230,7 +233,7 @@
                                         <div class="comment-main-level">
                                             <!-- Avatar -->
                                             <%DtUsuario usuarioComenta = u.buscarUsuario(com.getNick());
-                                            String ruta = "assets" + usuarioComenta.getImagen().toString();%>
+                                            String ruta = "http://localhost:8080/assets" + usuarioComenta.getImagen();%>
                                             <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
                                             <!-- Contenedor del Comentario -->
                                             <div class="comment-box">
@@ -273,7 +276,6 @@
                                         <%}
                                         else {
                                             List lista2 = c.listaComentarios(video);
-                                            //DtAuxiliar auxList = com;
                                             for(int y=0; y<lista2.size(); y++){
                                                 DtAuxiliar resp =(DtAuxiliar) lista2.get(y);
                                                 if(com.getPadre().equals(resp.getReferencia().toString())){%>
@@ -282,7 +284,7 @@
                                                         <li>
                                                             <!-- Avatar -->
                                                             <%DtUsuario usuarioResp = u.buscarUsuario(com.getNick());
-                                                            String ruta2 = "assets" + usuarioResp.getImagen().toString();%>
+                                                            String ruta2 = "http://localhost:8080/assets" + usuarioResp.getImagen();%>
                                                             <div class="comment-avatar"><img src="<%=ruta2%>" alt=""></div>
                                                             <!-- Contenedor del Comentario -->
                                                             <div class="comment-box">

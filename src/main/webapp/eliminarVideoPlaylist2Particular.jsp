@@ -75,12 +75,12 @@
                                             <%if(esParticular.equals("true")) {
                                             %>
 
-                                            <a href="/EliminarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombre_canal()%>">
+                                            <a href="/uytube/EliminarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombre_canal()%>">
                                                 <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                             </a>
                                             <%}
                                             else if(esParticular.equals("false")) {%>
-                                            <a href="/EliminarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombre_canal()%>">
+                                            <a href="/uytube/EliminarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombre_canal()%>">
                                                 <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                             </a>
                                             <%}%>

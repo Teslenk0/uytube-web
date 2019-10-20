@@ -57,10 +57,10 @@
                         <div class="user-pic">
                             <%if (user == null) {%>
                             <img class="img-responsive img-rounded"
-                                 src="assets/imagenesUsuarios/Defecto.png"
+                                 src="http://localhost:8080/assets/imagenesUsuarios/Defecto.png"
                                  alt="User picture">
                             <%} else {
-                        String ruta = "assets" + user.getImagen();%>
+                        String ruta = "http://localhost:8080/assets" + user.getImagen();%>
                             <img class="img-responsive img-rounded" src="<%=ruta%>" alt="User picture">
                             <%}%>
                         </div>
@@ -137,7 +137,7 @@
                                                 <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
                                                 </nav>
                                             </header>
-                                            <script type="text/javascript" src="/assets/js/barralateral_index.js"></script></a>
+                                            <script type="text/javascript" src="assets/js/barralateral_index.js"></script></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -172,7 +172,7 @@
                                             <a href="#" id="agregarVidPlaylist_btn">Agregar video</a>
                                         </li>
                                         <li>
-                                            <a href="#" id="s">Quitar video</a>
+                                            <a href="#" id="eliminarVidPlaylist_btn">Quitar video</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -325,7 +325,7 @@
                         <div class="col-md-offset">
                             <div class="card canales-resultado mb-3">
                                 <div class="card-body">
-                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombre_canal()%>"><img src="assets/<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal"  width="480" height="360"></a>
+                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombre_canal()%>"><img src="http://localhost:8080/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal"  width="480" height="360"></a>
                                     <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
                                     <p class="card-text"><%=canal.getDescripcion()%></p>
                                 </div>

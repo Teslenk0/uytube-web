@@ -7,6 +7,9 @@
 <%@page import="DataTypes.DtUsuario"%>
 <%@page import="DataTypes.DtVideo"%>
 <%@page import="java.util.List"%>
+<%@ page import="fabrica.Fabrica" %>
+<%@ page import="controladores.ControladorCanal" %>
+<%@ page import="interfaces.IControladorCanal" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,8 +29,10 @@
                         }
                         String id;
                         DtVideo vid;
-                        if (session.getAttribute("videos") != null) {
-                            List videos = (List) session.getAttribute("videos");
+                        Fabrica fabrica = Fabrica.getInstance();
+                        IControladorCanal c = fabrica.getControladorCanal();
+                        List videos = c.listaVideos(user.getCanal());
+                        if (videos != null) {
                             for (int i = 0; i < videos.size(); i++) {
                                 vid = (DtVideo) videos.get(i);
                                 if (vid.getUrl() != null) {
