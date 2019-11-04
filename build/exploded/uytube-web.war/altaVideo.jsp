@@ -1,7 +1,11 @@
 <%@ page import="fabrica.Fabrica" %>
 <%@ page import="interfaces.IControladorCanal" %>
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtCategoria" %><%--
+<%@ page import="DataTypes.DtCategoria" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.time.format.DateTimeFormatter" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 10/10/19
@@ -25,56 +29,25 @@
             <div class="card">
                 <div class="card-header">Subir Video</div>
                 <div class="card-body">
-
                     <form class="form-horizontal" method="post" action="AltaVideoServlet" id="formAltaVideo">
-
-                        <div class="form-group">
-                            <label for="nombreVideo" class="cols-sm-2 control-label">Nombre video</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="nombreVideo" id="nombreVideo" placeholder="Ingresa nombre video" />
-                                </div>
-                            </div>
+                        <div class="form-group" id="divError">
+                            <label for="nombreVideo" class="control-label">Nombre video</label>
+                            <input type="text" class="form-control" name="nombreVideo" id="nombreVideo" placeholder="Ingresa Nombre Video" required/>
                         </div>
                         <div class="form-group">
-                            <label for="duracion" class="cols-sm-2 control-label">Duracion</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="duracion" id="duracion" placeholder="Ingresa la duracion" />
-                                </div>
-                            </div>
+                            <label for="duracion" class="control-label">Duracion</label>
+                            <input type="text" class="form-control" name="duracion" id="duracion" placeholder="Ingresa la Duración" required/>
+                        </div>
+                        <div class="form-group" id="urlError">
+                            <label for="url" class="control-label">URL</label>
+                            <input type="url" class="form-control" name="url" id="url" placeholder="Ingresa URL" required>
                         </div>
                         <div class="form-group">
-                            <label for="url" class="cols-sm-2 control-label">URL</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="url" id="url" placeholder="Ingresa url" />
-                                </div>
-                            </div>
+                            <label for="descripcion" class="control-label">Descripción</label>
+                            <textarea class="form-control" rows="4" name="descripcion" id="descripcion" required maxlength="300"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="descripcion" class="cols-sm-2 control-label">Descripcion</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                    <textarea class="form-control" rows="4" name="descripcion" id="descripcion"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="Fecha" class="cols-sm-2 control-label">Fecha de publicacion</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                    <input type="date" class="form-control" name="Fecha" id="Fecha" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="nombreVideo" class="cols-sm-2 control-label">Estado de video</label>
+                            <label for="nombreVideo" class="control-label">Estado de video</label>
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" id="privado" value="publico" name="estado">
                                 <label class="custom-control-label" for="privado" name="privado">Privado</label>
@@ -85,9 +58,9 @@
                             </div>
                         </div>
 
-                        <label class="cols-sm-2 control-label" for="categorias">Categorias</label>
+                        <label class="control-label" for="categorias">Categorías</label>
                         <div class="btn-group dropup" >
-                            <select id="categorias" name="categorias">
+                            <select id="categorias" name="categorias" required>
                                 <% Fabrica fabrica = Fabrica.getInstance();
                                     IControladorCanal controladorCanal = fabrica.getControladorCanal();
                                     List lista = controladorCanal.getCategorias();
@@ -98,7 +71,7 @@
                                 <%}}%>
                             </select>
                         </div>
-                        <div class="form-group " id="divError">
+                        <div class="form-group ">
                             <button type="submit" id="aceptar" class="btn btn-success btn-lg btn-block login-button">Aceptar</button>
                         </div>
                     </form>

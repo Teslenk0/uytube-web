@@ -1,51 +1,25 @@
-<%-- 
+<%@ page import="DataTypes.DtUsuario" %><%--
     Document   : inicio
     Created on : 12 oct. 2019, 13:32:29
     Author     : tesla
 --%>
 
-<%@page import="DataTypes.DtUsuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inicio</title>
+        <title>Canal</title>
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
                 crossorigin="anonymous"></script>
         <script src="assets/js/inicio.js" type="text/javascript"></script>
     </head>
     <body>
-        <%
-            DtUsuario user = null;
-            if (session.getAttribute("usuario") != null) {
-                user = (DtUsuario) session.getAttribute("usuario");
-            }
-        %>
-
-        <h2>Bienvenido de nuevo, 
-            <%=user.getNickname()%>
-        </h2>
+        <%DtUsuario user = (DtUsuario) session.getAttribute("usuario");%>
         <hr>
-        <div class="row">
-            <div class="form-group col-md-12">
-                <p>This is a responsive sidebar template with dropdown menu based on bootstrap 4 framework.</p>
-                <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-                        Github</a>, it contains more themes and background image option</p>
-            </div>
-            <div class="form-group col-md-12">
-                <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=large"
-                        frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
-                <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=large"
-                        frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
-            </div>
-        </div>
-        <h5>Mi canal</h5>
+            <h5><%=user.getCanal().getNombre_canal()%></h5>
         <hr>
-        <!--<div class="row">-->
-        <!-- Nav tabs -->
-
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="videos-tab" href="#videos" role="tab" aria-controls="videos" aria-selected="true">Videos 
@@ -62,21 +36,14 @@
                     <i class="fas fa-users"></i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="info-tab" href="#informacion" role="tab" aria-controls="informacion" aria-selected="false">Informacion
-                    <i class="fas fa-address-card"></i>
-                </a>
-            </li>
         </ul>
 
 
         <div class="tab-content">
             <div class="tab-pane fade show active" id="videos" role="tabpanel" aria-labelledby="videos-tab"></div>
             <div class="tab-pane fade" id="playlists" role="tabpanel" aria-labelledby="playlists-tab"></div>
-            <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">JA VAI BOLTS </div>
-            <div class="tab-pane fade" id="informacion" role="tabpanel" aria-labelledby="info-tab">TOMAR NO CU</div>
+            <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab"></div>
         </div>
-        <!--</div>-->
 
         <script src="assets/js/inicio.js" type="text/javascript"></script>
         <script>

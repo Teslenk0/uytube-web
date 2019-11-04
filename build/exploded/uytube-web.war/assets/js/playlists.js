@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    var carousel = $('#carouselTipos');
-    var body = $("#cuerpo");
+    let carousel = $('#carouselTipos');
+    let body = $("#cuerpo");
 
     body.load("listasDefecto.jsp");
-    var defecto = true;
+    let defecto = true;
 
     carousel.bind('slide.bs.carousel', function (e) {
         if(defecto){

@@ -1,19 +1,18 @@
 $(document).ready(function () {
-    var panel = $("#panelcentral");
-    var boton = $("#altaVideo_btn");
-    boton.on("click",function (e) {
+    function matchYoutubeUrl(url) {
+        const p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+        if(url.match(p)){
+            return url.match(p)[1];
+        }
+        return false;
+    }
 
-        panel.empty();
-        panel.load("altaVideo.jsp");
-
-    });
-
-    var registrar = $("#formAltaVideo");
+    const registrar = $("#formAltaVideo");
     registrar.submit(function (e) {
         e.preventDefault();
         e.returnValue = false;
 
-        var nomVideo = $('#nombreVideo').val().trim();
+        const nomVideo = $('#nombreVideo').val().trim();
 
         $.ajax({
             type: 'get',
@@ -25,12 +24,19 @@ $(document).ready(function () {
             },
             success: function (response) {
                 if(!response.existe){
-                    registrar.off('submit');
-                    registrar.submit();
+                    const url = $('#url').val().trim();
+                    if(matchYoutubeUrl(url)){
+                        registrar.off('submit');
+                        registrar.submit();
+                    }else{
+                        const div = $("#urlError");
+                        $('#alertaRoja').remove();
+                        div.append('<p id="alertaRoja" style="color: red">URL Invalida</p>');
+                    }
                 }else{
                     var div = $("#divError");
                     $('#alertaRoja').remove();
-                    div.append('<p id="alertaRoja" style="color: red">El video ya existe</p>');
+                    div.append('<p id="alertaRoja" style="color: red">Este video ya existe en su canal</p>');
                     }
 
             },
@@ -38,7 +44,6 @@ $(document).ready(function () {
                 console.log("ERROR: Fallo la peticion hacia el servlet");
             }
         });
-
     });
 });
 

@@ -38,8 +38,8 @@
                             datos = getPrimerVideoListaDefecto(lista, user.getNickname());
                             if (datos != null) {%>
             <div class="card">
-                <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg class="card-img-top" alt="Miniatura de lista">
-                     <div class="card-body">
+                <div class="card-body">
+                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombre_canal()%>&es_particular=false"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                 </div>
                 <div class="card-footer">
@@ -48,9 +48,8 @@
             </div>
             <%} else {%>
             <div class="card">
-                <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
-
                 <div class="card-body">
+                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombre_canal()%>&es_particular=false"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista"></a>
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                 </div>
                 <div class="card-footer">

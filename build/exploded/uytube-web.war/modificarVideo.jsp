@@ -20,6 +20,7 @@
 </head>
 <body style="background-color: #32353E">
 <%
+    String nomVideo = request.getParameter("nombre");
     DtUsuario user = null;
     if (session.getAttribute("usuario") != null) {
         user = (DtUsuario) session.getAttribute("usuario");
@@ -36,9 +37,11 @@
                             Fabrica f = Fabrica.getInstance();
                             IControladorCanal c = f.getControladorCanal();
                             assert user != null;
-                            DtVideo video = c.obtenerVideo("Niño Payaso", user.getCanal().getNombre_canal());
+                            DtVideo video = c.obtenerVideo(nomVideo, user.getCanal().getNombre_canal());
+                            session.setAttribute("oldV",video.getNombre());
+                            Boolean isChannelPrivate = video.getPrivado();
                         %>
-                        <div class="form-group">
+                        <div class="form-group" id="errorNom">
                             <label for="nomV" class="control-label">Nombre de Video</label>
                             <input type="text" class="form-control" name="nomV" id="nomV" value="<%=video.getNombre()%>" required>
                         </div>
@@ -58,10 +61,10 @@
                             <label for="desc" class="control-label">Descripción</label>
                             <textarea class="form-control rounded-0" name="desc" id="desc" rows="4" required><%=video.getDescripcion()%></textarea>
                         </div>
-                        <label class="cols-sm-2 control-label" for="categoria">Categorias</label>
+                        <label class="cols-sm-2 control-label" for="categorias">Categorias</label>
                         <div class="btn-group dropup">
-                            <select id="categoria">
-                                <option value="" selected disabled hidden><%=video.getCategoria()%></option>
+                            <select id="categorias" name="categorias">
+                                <option value="<%=video.getCategoria()%>" selected hidden><%=video.getCategoria()%></option>
                                 <%
                                     List lista = c.getCategorias();
                                     for (Object o : lista) {
@@ -75,8 +78,9 @@
                         </div>
                         <div class="form-group">
                             <label for="privado">Estado de video</label>
+                            <span id="is-channel-private" data-value="<%=isChannelPrivate%>" hidden></span>
                             <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="privado" value="publico" name="estado" checked>
+                                <input type="radio" class="custom-control-input" id="privado" value="publico" name="estado">
                                 <label class="custom-control-label" for="privado">Privado</label>
                             </div>
                             <div class="custom-control custom-radio">

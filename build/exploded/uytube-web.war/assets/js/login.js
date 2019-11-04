@@ -34,8 +34,6 @@ $(document).ready(function () {
                 if(response.existe && response.passOk){
                     form.off('submit');
                     form.submit();
-                    console.log("paso por aca");
-                    
                 }else if(response.existe && !response.passOk){
                     //busco el div que tiene el boton
                     var div = $("#boxUsuario");
