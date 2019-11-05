@@ -5,13 +5,7 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtCanal;
-import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
-import clases.Usuario;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
+import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -46,14 +40,18 @@ public class CambiarMegustaServlet extends HttpServlet {
         String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesio
         String canal = (String) s.getAttribute("canal"); // obtengo nombre canal por medio de la sesio
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+
+        ControladorUsuarioService u = new ControladorUsuarioService();
+        IControladorUsuario controladorUser = u.getControladorUsuarioPort();
+
+        ControladorCanalService c = new ControladorCanalService();
+        IControladorCanal controladorCanal = c.getControladorCanalPort();
+
         DtVideo v = controladorCanal.obtenerVideo(nomVid,canal);
-        DtUsuario usuarioDuenio = controladorUsuario.buscarUsuarioCanal(canal);
+        DtUsuario usuarioDuenio = controladorUser.buscarUsuarioCanal(canal);
 
         if(v != null && usuarioDuenio != null){
-            controladorUsuario.valorarVideoEliminar(usuarioDuenio.getNickname(),nomVid,userLog.getNickname(),"Me gusta");
+            controladorUser.valorarVideoEliminar(usuarioDuenio.getNickname(),nomVid,userLog.getNickname(),"Me gusta");
         }
         response.sendRedirect("index.jsp");
     }
