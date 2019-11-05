@@ -5,21 +5,21 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
-import excepciones.VideoRepetidoException;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
+import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -37,7 +37,7 @@ public class ModificarVideoServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ParseException, VideoRepetidoException {
+            throws IOException, ParseException, VideoRepetidoException_Exception, DatatypeConfigurationException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
@@ -55,9 +55,21 @@ public class ModificarVideoServlet extends HttpServlet {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = sdf.parse(fechaPub);
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal c = fabrica.getControladorCanal();
-        DtVideo v = new DtVideo(nomV, user.getCanal(), fecha, url, descripcion, categoria,duracion,estado);
+        ControladorCanalService f = new ControladorCanalService();
+        IControladorCanal c = f.getControladorCanalPort();
+        DtVideo v = new DtVideo();
+        v.setNombre(nomV);
+        v.setCanal(user.getCanal());
+
+        GregorianCalendar calendario = new GregorianCalendar();
+        calendario.setTime(fecha);
+        XMLGregorianCalendar xmlCalendario = DatatypeFactory.newInstance().newXMLGregorianCalendar(calendario);
+        v.setFechaPublicacion(xmlCalendario);
+        v.setUrl(url);
+        v.setDescripcion(descripcion);
+        v.setCategoria(categoria);
+        v.setDuracion(duracion);
+        v.setPrivado(estado);
 
         c.modificarVideo(v,oldV);
         s.removeAttribute("oldV");
@@ -77,7 +89,7 @@ public class ModificarVideoServlet extends HttpServlet {
             throws IOException {
         try {
             processRequest(request, response);
-        } catch (ParseException | VideoRepetidoException e) {
+        } catch (ParseException | VideoRepetidoException_Exception | DatatypeConfigurationException e) {
             e.printStackTrace();
         }
     }
@@ -94,9 +106,10 @@ public class ModificarVideoServlet extends HttpServlet {
             throws IOException {
         try {
             processRequest(request, response);
-        } catch (ParseException | VideoRepetidoException e) {
+        } catch (ParseException | VideoRepetidoException_Exception | DatatypeConfigurationException e) {
             e.printStackTrace();
         }
+
     }
 
     /**

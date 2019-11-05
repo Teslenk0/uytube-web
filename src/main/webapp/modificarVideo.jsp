@@ -5,12 +5,8 @@
   Time: 20:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@page import="DataTypes.DtUsuario"%>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="DataTypes.DtVideo" %>
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtCategoria" %>
+<%@ page import="uytube.web.wsclients.*" %>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
@@ -34,12 +30,12 @@
                 <div class="card-body">
                     <form class="form-horizontal needs-validation" method="post" action="ModificarVideoServlet" id="formMVideo">
                         <%
-                            Fabrica f = Fabrica.getInstance();
-                            IControladorCanal c = f.getControladorCanal();
+                            ControladorCanalService f = new ControladorCanalService();
+                            IControladorCanal c = f.getControladorCanalPort();
                             assert user != null;
-                            DtVideo video = c.obtenerVideo(nomVideo, user.getCanal().getNombre_canal());
+                            DtVideo video = c.obtenerVideo(nomVideo, user.getCanal().getNombreCanal());
                             session.setAttribute("oldV",video.getNombre());
-                            Boolean isChannelPrivate = video.getPrivado();
+                            Boolean isChannelPrivate = video.isPrivado();
                         %>
                         <div class="form-group" id="errorNom">
                             <label for="nomV" class="control-label">Nombre de Video</label>
@@ -70,7 +66,7 @@
                                     for (Object o : lista) {
                                         DtCategoria cat = (DtCategoria) o;
                                 %>
-                                <option value="<%=cat.getnombreCategoria()%>"><%=cat.getnombreCategoria()%></option>
+                                <option value="<%=cat.getNombreCategoria()%>"><%=cat.getNombreCategoria()%></option>
                                 <%
                                     }
                                 %>

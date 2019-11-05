@@ -5,24 +5,16 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtCanal;
-import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
-import clases.Usuario;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
 
-import javax.print.MultiDocPrintJob;
-import javax.servlet.RequestDispatcher;
+import uytube.web.wsclients.*;
+
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-import java.io.File;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import static java.lang.System.out;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  *
@@ -49,21 +41,17 @@ public class MegustaVideoServlet extends HttpServlet {
         String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion
         String canal = (String) s.getAttribute("canal"); // obtengo nombre canal por medio de la sesion
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+        ControladorUsuarioService ff = new ControladorUsuarioService();
+        IControladorUsuario controladorUsuario = ff.getControladorUsuarioPort();
+        ControladorCanalService f = new ControladorCanalService();
+        IControladorCanal controladorCanal = f.getControladorCanalPort();
         DtVideo v = controladorCanal.obtenerVideo(nomVid,canal);
         DtUsuario usuarioDuenio = controladorUsuario.buscarUsuarioCanal(canal);
 
 
         if(v != null && usuarioDuenio != null){
-            try{
-                controladorUsuario.valorarVideo(usuarioDuenio.getNickname(),nomVid,userLog.getNickname(),"Me gusta");
-            }
-            catch (Exception e){
-                System.out.println("QUEDO MAL");
-            }
-       }
+            controladorUsuario.valorarVideo(usuarioDuenio.getNickname(),nomVid,userLog.getNickname(),"Me gusta");
+        }
         response.sendRedirect("index.jsp");
     }
 

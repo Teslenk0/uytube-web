@@ -5,23 +5,17 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtCanal;
-import DataTypes.DtComentario;
-import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
+import uytube.web.wsclients.ControladorUsuarioService;
+import uytube.web.wsclients.DtUsuario;
+import uytube.web.wsclients.IControladorUsuario;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-import java.io.File;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -45,12 +39,11 @@ public class UnfollowUsuarioServlet extends HttpServlet {
             throws Exception {
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
-        String seguir = (String )request.getParameter("seguir");
+        String seguir = request.getParameter("seguir");
+        ControladorUsuarioService f = new ControladorUsuarioService();
+        IControladorUsuario controladorUsuario = f.getControladorUsuarioPort();
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
-
-        controladorUsuario.DejarSeguir_Usuario(user,seguir);
+        controladorUsuario.dejarSeguirUsuario(user,seguir);
 
         response.sendRedirect("index.jsp");
     }

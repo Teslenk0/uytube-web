@@ -5,22 +5,21 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtCanal;
-import DataTypes.DtComentario;
-import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
+import uytube.web.wsclients.*;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-import java.io.File;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -46,20 +45,33 @@ public class NuevoComentarioServlet extends HttpServlet {
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String comentario = request.getParameter("comentario");
-        java.util.Date fecha = new Date();
+        String date = LocalDate.now().toString();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date fecha = sdf.parse(date);
 
         String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion de verVideo.jsp
         String canal = (String) s.getAttribute("canal");
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+        ControladorCanalService f = new ControladorCanalService();
+        IControladorCanal controladorCanal = f.getControladorCanalPort();
 
         DtVideo v = controladorCanal.obtenerVideo(nomVid, canal);
         List lista = controladorCanal.listaComentariosTodos();
         Integer ref = lista.size() + 1;
 
         if(!comentario.isEmpty()){
-            DtComentario c = new DtComentario(user.getNickname(), comentario, fecha, v, null, ref, canal);
+            DtComentario c = new DtComentario();
+            c.setNick(user.getNickname());
+            c.setComentario(comentario);
+
+            GregorianCalendar calendario = new GregorianCalendar();
+            calendario.setTime(fecha);
+            XMLGregorianCalendar xmlCalendario = DatatypeFactory.newInstance().newXMLGregorianCalendar(calendario);
+            c.setFecha(xmlCalendario);
+            c.setVideo(v);
+            c.setPadre(null);
+            c.setRef(ref);
+            c.setCanal(canal);
             controladorCanal.agregarComentario(c);
         }
 

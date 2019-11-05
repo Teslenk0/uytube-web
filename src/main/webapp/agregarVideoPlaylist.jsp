@@ -1,8 +1,3 @@
-<%@ page import="DataTypes.DtUsuario" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtListaParticulares" %>
 <%@include file="getPrimerVideoListaParticular.jsp"%>
 <%--
   Created by IntelliJ IDEA.
@@ -11,7 +6,7 @@
   Time: 14:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Agregar Video Playlist</title>
