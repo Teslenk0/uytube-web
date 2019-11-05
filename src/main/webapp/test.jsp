@@ -18,7 +18,6 @@
         IControladorUsuario i = c.getControladorUsuarioPort();
         DtUsuario user = i.buscarUsuario("cachilas");
     %>
-
     <h4><%=user.getNickname()%></h4>
     <h4><%=user.getNombre()%></h4>
     <h4><%=user.getEmail()%></h4>

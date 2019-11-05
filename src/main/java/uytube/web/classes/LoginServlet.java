@@ -5,10 +5,7 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtUsuario;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
+import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -38,13 +35,14 @@ public class LoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
 
         String nickname = request.getParameter("inputUser").trim();
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
 
-        DtUsuario user = controladorUsuario.buscarUsuario(nickname);
+        ControladorUsuarioService controllerUser = new ControladorUsuarioService();
+        IControladorUsuario iControllerUser = controllerUser.getControladorUsuarioPort();
+        DtUsuario user = iControllerUser.buscarUsuario(nickname);
 
         HttpSession session = request.getSession();
         session.setAttribute("usuario", user);
+        DtCanal c = user.getCanal();
 
         //setting session to expiry in 30 mins
         session.setMaxInactiveInterval(30 * 60);
@@ -53,8 +51,12 @@ public class LoginServlet extends HttpServlet {
         userName.setMaxAge(30 * 60);
         response.addCookie(userName);
 
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
-        List videos = controladorCanal.listaVideos(user.getCanal());
+        ControladorCanalService controllerCanal = new ControladorCanalService();
+        IControladorCanal iControllerCanal = controllerCanal.getControladorCanalPort();
+        DtCanal canal = user.getCanal();
+
+        List videos = iControllerCanal.listaVideos(canal);
+        //System.out.println(videos);
 
         session.setAttribute("videos", videos);
         response.sendRedirect("index.jsp");
