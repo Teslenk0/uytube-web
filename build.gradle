@@ -2,6 +2,11 @@ apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'war'
 
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
 repositories {
     jcenter()
 }
@@ -18,6 +23,14 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.4.Final'
     compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
     compile group: 'org.json', name: 'json', version: '20190722'
+
+    //ACA VAN LAS NUEVAS
+    // https://mvnrepository.com/artifact/javax.xml.ws/jaxws-api
+    compile group: 'javax.xml.ws', name: 'jaxws-api', version: '2.3.1'
+
+    // https://mvnrepository.com/artifact/javax.jws/javax.jws-api
+    compile group: 'javax.jws', name: 'javax.jws-api', version: '1.1'
+
 
     testCompile     'junit:junit:4.12'
 }
