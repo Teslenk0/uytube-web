@@ -2,6 +2,8 @@
 <%@page import="java.util.List"%>
 <%@ page import="DataTypes.*" %>
 <%@ page import="interfaces.IControladorUsuario" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,12 +27,17 @@
 
     <body style="background-color: #EEEEEE">
         <%
-            DtUsuario user = null;
+            uytube.web.wsclients.DtUsuario user = null;
             if (session.getAttribute("usuario") != null) {
-                user = (DtUsuario) session.getAttribute("usuario");
+                user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
             }
-            Fabrica fabrica = Fabrica.getInstance();
-            IControladorCanal c = fabrica.getControladorCanal();
+            ControladorUsuarioService usuario = new ControladorUsuarioService();
+            uytube.web.wsclients.IControladorUsuario u = usuario.getControladorUsuarioPort();
+            ControladorCanalService controlador = new ControladorCanalService();
+            uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
+            //Fabrica fabrica = Fabrica.getInstance();
+            //IControladorCanal c = fabrica.getControladorCanal();
         %>
         <!-- BARRA SUPERIOR -->
         <div class="barra_superior" style="background-color:#343841">
