@@ -5,18 +5,15 @@
  */
 package uytube.web.classes;
 
-import DataTypes.*;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
+import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-import java.io.File;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  *
@@ -50,15 +47,19 @@ public class CrearPlaylistServlet extends HttpServlet {
 
         DtCanal canal = user.getCanal();
 
-        DtCategoria cat = new DtCategoria(categoria);
+        DtCategoria cat = new DtCategoria();
+        cat.setNombreCategoria(categoria);
 
-        DtListaParticulares lista = new DtListaParticulares(estadoPlaylist,nombrePlaylist,cat,canal);
+        DtListaParticulares lista = new DtListaParticulares();
+        lista.setPrivado(estadoPlaylist);
+        lista.setNombreLista(nombrePlaylist);
+        lista.setCategoria(cat);
+        lista.setCanal(canal);
 
-        System.out.println(nombrePlaylist);
-        System.out.println(estadoPlaylist);
-        System.out.println(categoria);
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+
+        ControladorCanalService c = new ControladorCanalService();
+        IControladorCanal controladorCanal = c.getControladorCanalPort();
+
         controladorCanal.crearListaParticular(lista, user);
         response.sendRedirect("index.jsp");
     }

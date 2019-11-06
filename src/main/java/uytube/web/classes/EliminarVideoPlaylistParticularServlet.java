@@ -5,11 +5,7 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtListaParticulares;
-import DataTypes.DtUsuario;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
-import interfaces.IControladorUsuario;
+import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -39,22 +35,21 @@ public class EliminarVideoPlaylistParticularServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
 
-        DtUsuario user = null;
-        if (s.getAttribute("usuario") != null) {
-            user = (DtUsuario) s.getAttribute("usuario");
-        }
+        DtUsuario user = (DtUsuario) s.getAttribute("usuario");
 
         String nomUser = user.getNickname();
         String nomLista = request.getParameter("nomPlaylist");
         String nomVideo = request.getParameter("nomVideo");
         String nomCanal = request.getParameter("nomCanal");
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
-        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
+        ControladorUsuarioService u = new ControladorUsuarioService();
+        IControladorUsuario controladorUser = u.getControladorUsuarioPort();
 
-        DtUsuario destino = controladorUsuario.buscarUsuarioCanal(nomCanal);
-        String userDestino = destino.getCanal().getNombre_canal();
+        ControladorCanalService c = new ControladorCanalService();
+        IControladorCanal controladorCanal = c.getControladorCanalPort();
+
+        DtUsuario destino = controladorUser.buscarUsuarioCanal(nomCanal);
+        String userDestino = destino.getCanal().getNombreCanal();
 
         try{
             controladorCanal.sacarVideoLista(nomUser,nomLista,nomVideo,userDestino,true);

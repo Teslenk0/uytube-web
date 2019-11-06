@@ -5,10 +5,7 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtListaParticulares;
-import DataTypes.DtUsuario;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
+import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -42,10 +39,14 @@ public class ModificoPlaylistServlet extends HttpServlet {
         Boolean estadoPlaylist = request.getParameter("group1").equals("privado");
 
         DtListaParticulares lista = (DtListaParticulares) s.getAttribute("lista");
-        DtListaParticulares listaMod = new DtListaParticulares(estadoPlaylist, lista.getCategoria(), lista.getNombreLista());
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+        DtListaParticulares listaMod = new DtListaParticulares();
+        listaMod.setPrivado(estadoPlaylist);
+        listaMod.setCategoria(lista.getCategoria());
+        listaMod.setNombreLista(lista.getNombreLista());
+
+        ControladorCanalService c = new ControladorCanalService();
+        IControladorCanal controladorCanal = c.getControladorCanalPort();
 
         try{
             controladorCanal.modificarListaParticular(listaMod,user);
