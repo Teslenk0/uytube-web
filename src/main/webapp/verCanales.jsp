@@ -1,7 +1,8 @@
 <%@ page import="fabrica.Fabrica" %>
 <%@ page import="interfaces.IControladorUsuario" %>
 <%@ page import="DataTypes.DtUsuario" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %><%--
     Document   : inicio
     Created on : 12 oct. 2019, 13:32:29
     Author     : tesla
@@ -14,9 +15,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <% String nomCanal = request.getParameter("nomCanal");
             session.setAttribute("nomCanal",nomCanal);
-            Fabrica f = Fabrica.getInstance();
-            IControladorUsuario u = f.getControladorUsuario();
-            DtUsuario user = u.buscarUsuarioCanal(nomCanal);
+            ControladorUsuarioService controllerUser = new ControladorUsuarioService();
+            uytube.web.wsclients.IControladorUsuario u = controllerUser.getControladorUsuarioPort();
+            uytube.web.wsclients.DtUsuario user = u.buscarUsuarioCanal(nomCanal);
 
             List listaSeguidos = null;
             DtUsuario logiado = null;
@@ -51,7 +52,7 @@
                     boolean aux = false;
                     for(int r=0; r<listaSeguidos.size(); r++){
                         String usuarios = (String) listaSeguidos.get(r);
-                        DtUsuario auxiliar = u.buscarUsuario(usuarios);
+                        uytube.web.wsclients.DtUsuario auxiliar = u.buscarUsuario(usuarios);
                         if(auxiliar.getNickname().equals(user.getNickname())){
                             aux = true;
                         }

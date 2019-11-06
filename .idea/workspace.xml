@@ -2,316 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a05e968-1539-4d3e-a848-51078821ab16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/FastInoset.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/gmbal-api-only.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ha-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.annotation_2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxb-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxb-impl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxb-xjc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxws-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxws-rt.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxws-tools.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jsr181-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mail.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/management-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mimepull.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/policy.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/saaj-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/saaj-impl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/stax-ex.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/stax2-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/streambuffer.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/woodstox-core-asl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarComentario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarComentario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarComentarioResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarComentarioResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarVideoLista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarVideoLista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarVideoListaResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarVideoListaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BufferedImage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BufferedImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarCanal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarCanal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarCanalResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarCanalResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarEmail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarEmailResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarEmailResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarListaParticular.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarListaParticular.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarListaParticularResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarListaParticularResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarUsuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarUsuarioCanal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarUsuarioCanal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarUsuarioCanalResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarUsuarioCanalResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarUsuarioResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscarUsuarioResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscoVideoMasRecienteCanal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscoVideoMasRecienteCanal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscoVideoMasRecienteCanalResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscoVideoMasRecienteCanalResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscoVideoMasRecienteListaParticular.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscoVideoMasRecienteListaParticular.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscoVideoMasRecienteListaParticularResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BuscoVideoMasRecienteListaParticularResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteCanales.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteCanales.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteCanalesResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteCanalesResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteListasParticulares.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteListasParticulares.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteListasParticularesResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteListasParticularesResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteVideos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteVideos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteVideosResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/BusquedaArborescenteVideosResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalRepetidoException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalRepetidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalRepetidoException_Exception.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalRepetidoException_Exception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalWs.wsdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CategoriaRepetidaException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CategoriaRepetidaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CategoriaRepetidaException_Exception.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CategoriaRepetidaException_Exception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ComentarioEsp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ComentarioEsp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ComentarioEspResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ComentarioEspResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ControladorCanalService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ControladorCanalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ControladorUsuarioService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ControladorUsuarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CrearListaDefecto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CrearListaDefecto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CrearListaDefectoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CrearListaDefectoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CrearListaParticular.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CrearListaParticular.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CrearListaParticularResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CrearListaParticularResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DejarSeguirUsuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DejarSeguirUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DejarSeguirUsuarioResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DejarSeguirUsuarioResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtCanal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtCanal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtCategoria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtCategoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtComentario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtComentario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtListaParticulares.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtListaParticulares.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtListaReproduccion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtListaReproduccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtUsuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtVideo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtVideo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EmailRepetidoException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EmailRepetidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EmailRepetidoException_Exception.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EmailRepetidoException_Exception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetCanales.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetCanales.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetCanalesResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetCanalesResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetCategorias.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetCategorias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetCategoriasResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetCategoriasResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetListasDefecto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetListasDefecto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetListasDefectoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetListasDefectoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetListasReproduccion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetListasReproduccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetListasReproduccionResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetListasReproduccionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetVideosListaDefecto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetVideosListaDefecto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetVideosListaDefectoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetVideosListaDefectoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetVideosListaParticular.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetVideosListaParticular.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetVideosListaParticularResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/GetVideosListaParticularResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/InicioBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/InicioBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/InicioBaseResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/InicioBaseResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaComentarios.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaComentarios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaComentariosResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaComentariosResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaComentariosTodos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaComentariosTodos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaComentariosTodosResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaComentariosTodosResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaMeGustas.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaMeGustas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaMeGustasResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaMeGustasResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaRepetidaException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaRepetidaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaRepetidaException_Exception.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaRepetidaException_Exception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaSeguidores.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaSeguidores.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaSeguidoresResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaSeguidoresResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaSeguidos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaSeguidos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaSeguidosResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaSeguidosResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaUsuarios.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaUsuarios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaUsuariosResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaUsuariosResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaVideos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaVideos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaVideosResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListaVideosResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListarVideosPorCategoria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListarVideosPorCategoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListarVideosPorCategoriaResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ListarVideosPorCategoriaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarListaParticular.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarListaParticular.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarListaParticularResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarListaParticularResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarUsuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarUsuarioResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarUsuarioResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarVideo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarVideo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarVideoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ModificarVideoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerComentario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerComentario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerComentarioRef.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerComentarioRef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerComentarioRefResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerComentarioRefResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerComentarioResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerComentarioResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerListasParticularesPorCategoria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerListasParticularesPorCategoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerListasParticularesPorCategoriaResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerListasParticularesPorCategoriaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerVideo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerVideo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerVideoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObtenerVideoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/Raster.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/Raster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarCategoria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarCategoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarCategoriaResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarCategoriaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarUsuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarUsuarioResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarUsuarioResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarVideo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarVideo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarVideoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/RegistrarVideoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/SacarVideoLista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/SacarVideoLista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/SacarVideoListaResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/SacarVideoListaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/SeguirUsuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/SeguirUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/SeguirUsuarioResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/SeguirUsuarioResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioRepetidoException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioRepetidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioRepetidoException_Exception.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioRepetidoException_Exception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValoracionException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValoracionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValoracionException_Exception.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValoracionException_Exception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValorarVideo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValorarVideo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValorarVideoEliminar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValorarVideoEliminar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValorarVideoEliminarResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValorarVideoEliminarResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValorarVideoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ValorarVideoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/VideoRepetidoException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/VideoRepetidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/VideoRepetidoException_Exception.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/VideoRepetidoException_Exception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/VideoYaExisteEnListaException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/VideoYaExisteEnListaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/VideoYaExisteEnListaException_Exception.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/VideoYaExisteEnListaException_Exception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/package-info.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/uytube-web-616666053/project-info.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/nb-cache/uytube-web-616666053/project-info.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/uytube-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/uytube-web.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AgregarVideoPlaylistDefectoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AgregarVideoPlaylistDefectoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AgregarVideoPlaylistParticularServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AgregarVideoPlaylistParticularServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/CambiarMegustaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/CambiarMegustaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/CambiarNomegustaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/CambiarNomegustaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/CrearPlaylistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/CrearPlaylistServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistDefectoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistDefectoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistParticularServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistParticularServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/FollowUsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/FollowUsuarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/MegustaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/MegustaVideoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificarVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificarVideoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoPlaylistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoPlaylistServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/NomeGustaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/NomeGustaVideoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/NuevoComentarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/NuevoComentarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/RegistrarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/RegistrarServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderComentarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderComentarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderRespuestaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderRespuestaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/UnfollowUsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/UnfollowUsuarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarModificarUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarModificarUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarModificarVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarModificarVideoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarPlaylistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarPlaylistServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarRegistroServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarRegistroServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarUsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarUsuarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarVideoServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -333,7 +37,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="MySQL - uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="uytubeAPP: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -403,21 +118,21 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Descargas\Github\uytube-web\src\main\webapp" />
+      <recent name="E:\Descargas\Github\uytube-web\src\main\webapp\assets\js" />
       <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="uytube.web.classes" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Descargas\Github\uytube-web\src\main\webapp" />
-      <recent name="E:\Descargas\Github\uytube-web\src\main\webapp\assets\js" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tesla\Desktop\uytube-web-master\uytube-web-master\src\main\webapp\css" />
     </key>
   </component>
@@ -592,6 +307,10 @@
       <workItem from="1571610427628" duration="363000" />
       <workItem from="1572917744158" duration="719000" />
       <workItem from="1572919532555" duration="918000" />
+      <workItem from="1572959608729" duration="8254000" />
+      <workItem from="1572973777312" duration="6770000" />
+      <workItem from="1572980855031" duration="3591000" />
+      <workItem from="1573049032314" duration="5009000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>

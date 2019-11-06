@@ -2,6 +2,8 @@
 <%@page import="java.util.List"%>
 <%@ page import="DataTypes.*" %>
 <%@ page import="interfaces.IControladorUsuario" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,12 +27,14 @@
 
     <body style="background-color: #EEEEEE">
         <%
-            DtUsuario user = null;
+            uytube.web.wsclients.DtUsuario user = null;
             if (session.getAttribute("usuario") != null) {
-                user = (DtUsuario) session.getAttribute("usuario");
+                user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
             }
-            Fabrica fabrica = Fabrica.getInstance();
-            IControladorCanal c = fabrica.getControladorCanal();
+            ControladorCanalService controllerCanal = new ControladorCanalService();
+            uytube.web.wsclients.IControladorCanal c = controllerCanal.getControladorCanalPort();
+            //Fabrica fabrica = Fabrica.getInstance();
+            //IControladorCanal c = fabrica.getControladorCanal();
         %>
         <!-- BARRA SUPERIOR -->
         <div class="barra_superior" style="background-color:#343841">
@@ -60,7 +64,7 @@
                                  src="http://localhost:8080/assets/imagenesUsuarios/Defecto.png"
                                  alt="User picture">
                             <%} else {
-                        String ruta = "http://localhost:8080/assets" + user.getImagen();%>
+                                String ruta = "http://localhost:8080/assets" + user.getImagen();%>
                             <img class="img-responsive img-rounded" src="<%=ruta%>" alt="User picture">
                             <%}%>
                         </div>
@@ -190,10 +194,10 @@
                                     <ul>
                                         <li><%
                                             List listaCat = c.getCategorias();
-                                            DtCategoria dtaux = null;
+                                            uytube.web.wsclients.DtCategoria dtaux = null;
                                             for(int x = 0 ; x< listaCat.size(); x++){
-                                                dtaux = (DtCategoria) listaCat.get(x);%>
-                                            <a href="verVideosPorCategoria.jsp?categoria=<%=dtaux.getnombreCategoria()%>" id=""><%=dtaux.getnombreCategoria()%></a>
+                                                dtaux = (uytube.web.wsclients.DtCategoria) listaCat.get(x);%>
+                                            <a href="verVideosPorCategoria.jsp?categoria=<%=dtaux.getNombreCategoria()%>" id=""><%=dtaux.getNombreCategoria()%></a>
                                             <%}%>
                                         </li>
                                     </ul>
@@ -233,24 +237,24 @@
                         <%
                             List videos = (List) request.getAttribute("videos");
                             if (videos != null) {
-                                DtVideo v;
+                                uytube.web.wsclients.DtVideo v;
                                 String id;
                                 for (int i = 0; i < videos.size(); i++) {
-                                    v = (DtVideo) videos.get(i);
+                                    v = (uytube.web.wsclients.DtVideo) videos.get(i);
                                     id = getID(v.getUrl());
 
                         %>
                                     <div class="col-md-4">
                                         <div class="card video-resultado mb-3">
                                             <div class="card-body">
-                                                <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombre_canal()%>">
+                                                <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
                                                     <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                                 </a>
                                                 <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
                                                 <p class="card-text"><%=v.getDescripcion()%></p>
                                             </div>
                                             <div class="card-footer">
-                                                <small>Canal: <%=v.getCanal().getNombre_canal()%></small>
+                                                <small>Canal: <%=v.getCanal().getNombreCanal()%></small>
                                                 <br>
                                                 <small>Duracion: <%=v.getDuracion()%></small>
                                             </div>
@@ -268,21 +272,22 @@
                         List listasParticulares = (List) request.getAttribute("listas");
 
                         if (listasParticulares != null) {
-                            DtListaParticulares lista;
+                            uytube.web.wsclients.DtListaParticulares lista;
                             String[] datos;
                             for (int i = 0; i < listasParticulares.size(); i++) {
-                                lista = (DtListaParticulares) listasParticulares.get(i);
-                                if(!lista.getPrivado()){
+                                lista = (uytube.web.wsclients.DtListaParticulares) listasParticulares.get(i);
+
+                                if(lista.isPrivado()){
                                     datos = getPrimerVideoListaParticular(lista, lista.getCanal().getUsuario().getNickname());
 
                                 if (datos != null) {%>
                         <div class="col-md-4">
                             <div class="card listas-resultado mb-3">
                                 <div class="card-body">
-                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombre_canal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video"></a>
+                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombreCanal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video"></a>
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-                                    <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
-                                    <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
+                                    <p class="card-text">Categoria: <%=lista.getCategoria().getNombreCategoria()%></p>
+                                    <p class="card-text">Dueño: <%=lista.getCanal().getNombreCanal()%></p>
                                 </div>
                                 <div class="card-footer">
                                     <small>Cantidad de videos: <%=datos[1]%></small>
@@ -293,10 +298,10 @@
                         <div class="col-md-4">
                             <div class="card listas-resultado mb-3">
                                 <div class="card-body">
-                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombre_canal()%>&es_particular=true"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" ></a>
+                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombreCanal()%>&es_particular=true"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" ></a>
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-                                    <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
-                                    <p class="card-text">Dueño: <%=lista.getCanal().getNombre_canal()%></p>
+                                    <p class="card-text">Categoria: <%=lista.getCategoria().getNombreCategoria()%></p>
+                                    <p class="card-text">Dueño: <%=lista.getCanal().getNombreCanal()%></p>
                                 </div>
                                 <div class="card-footer">
                                     <small>Cantidad de videos: 0</small>
@@ -317,16 +322,16 @@
                             List canales = (List) request.getAttribute("canales");
 
                             if (canales != null) {
-                                DtCanal canal;
+                                uytube.web.wsclients.DtCanal canal;
                                 for (int i = 0; i < canales.size(); i++) {
-                                    canal = (DtCanal) canales.get(i);
-                                    if(!canal.getPrivado()){
+                                    canal = (uytube.web.wsclients.DtCanal) canales.get(i);
+                                    if(!canal.isPrivado()){
                         %>
                         <div class="col-md-offset">
                             <div class="card canales-resultado mb-3">
                                 <div class="card-body">
-                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombre_canal()%>"><img src="http://localhost:8080/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal" ></a>
-                                    <h5 class="card-title"><strong><%=canal.getNombre_canal()%></strong></h5>
+                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombreCanal()%>"><img src="http://localhost:8080/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal" ></a>
+                                    <h5 class="card-title"><strong><%=canal.getNombreCanal()%></strong></h5>
                                     <p class="card-text"><%=canal.getDescripcion()%></p>
                                 </div>
                                 <div class="card-footer">

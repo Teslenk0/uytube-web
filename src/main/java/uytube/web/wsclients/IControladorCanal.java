@@ -538,6 +538,36 @@ public interface IControladorCanal {
 
     /**
      * 
+     * @param arg3
+     * @param arg2
+     * @param arg5
+     * @param arg4
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "funcionAuxiliarAccesoDt", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.FuncionAuxiliarAccesoDt")
+    @ResponseWrapper(localName = "funcionAuxiliarAccesoDtResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.FuncionAuxiliarAccesoDtResponse")
+    @Action(input = "http://interfaces/IControladorCanal/funcionAuxiliarAccesoDtRequest", output = "http://interfaces/IControladorCanal/funcionAuxiliarAccesoDtResponse")
+    public List<Object> funcionAuxiliarAccesoDt(
+        @WebParam(name = "arg0", targetNamespace = "")
+        DtAuxiliarValorar arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        DtListaporDefecto arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        DtListaDefectoVideos arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        DtListaParticularVideos arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        DtValorar arg4,
+        @WebParam(name = "arg5", targetNamespace = "")
+        DtauxComentarios arg5);
+
+    /**
+     * 
      * @param arg0
      */
     @WebMethod

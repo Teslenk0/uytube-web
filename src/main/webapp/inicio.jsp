@@ -1,4 +1,4 @@
-<%@ page import="DataTypes.DtUsuario" %><%--
+<%@ page import="uytube.web.wsclients.DtUsuario" %><%--
     Document   : inicio
     Created on : 12 oct. 2019, 13:32:29
     Author     : tesla
@@ -18,7 +18,7 @@
     <body>
         <%DtUsuario user = (DtUsuario) session.getAttribute("usuario");%>
         <hr>
-            <h5><%=user.getCanal().getNombre_canal()%></h5>
+            <h5><%=user.getCanal().getNombreCanal()%></h5>
         <hr>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">

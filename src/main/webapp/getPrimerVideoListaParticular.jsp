@@ -5,26 +5,26 @@
 --%>
 
 <%@include file="getID.jsp" %>
-<%@page import="interfaces.IControladorCanal"%>
-<%@page import="fabrica.Fabrica"%>
 <%@page import="java.util.List"%>
-<%@ page import="DataTypes.*" %>
+<%@ page import="uytube.web.wsclients.DtListaParticulares" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
+<%@ page import="uytube.web.wsclients.IControladorCanal" %>
+<%@ page import="uytube.web.wsclients.DtVideo" %>
 
-<%!    public String[] getPrimerVideoListaParticular(DtListaReproduccion list, String usuario) {
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
-        DtListaParticularVideos vid = null;
+<%!    public String[] getPrimerVideoListaParticular(DtListaParticulares list, String usuario) {
+        ControladorCanalService c = new ControladorCanalService();
+        IControladorCanal controladorCanal = c.getControladorCanalPort();
+        uytube.web.wsclients.DtListaParticularVideos vid = null;
         DtVideo v = null;
         List videos = null;
-        videos = (List) controladorCanal.getVideosListaParticular(usuario, list.getNombreLista());
+        videos = controladorCanal.getVideosListaParticular(usuario, list.getNombreLista());
         if (!videos.isEmpty()) {
-            vid = (DtListaParticularVideos) videos.get(0);
-            v = (DtVideo) controladorCanal.obtenerVideo(vid.getVideo(), vid.getCanal());
+            vid = (uytube.web.wsclients.DtListaParticularVideos) videos.get(0);
+            v = controladorCanal.obtenerVideo(vid.getVideo(), vid.getCanal());
             String id = getID(v.getUrl());
             String[] array = {id, String.valueOf(videos.size())};
             return array;
         } else {
-
             return null;
         }
     }

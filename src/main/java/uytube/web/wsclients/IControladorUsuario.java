@@ -229,9 +229,9 @@ public interface IControladorUsuario {
      * 
      * @param arg1
      * @param arg0
+     * @throws EmailRepetidoException_Exception
      * @throws UsuarioRepetidoException_Exception
      * @throws CanalRepetidoException_Exception
-     * @throws EmailRepetidoException_Exception
      */
     @WebMethod
     @RequestWrapper(localName = "registrarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarUsuario")

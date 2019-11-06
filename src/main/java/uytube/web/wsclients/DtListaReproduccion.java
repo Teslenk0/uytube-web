@@ -33,7 +33,8 @@ import javax.xml.bind.annotation.XmlType;
     "canal"
 })
 @XmlSeeAlso({
-    DtListaParticulares.class
+    DtListaParticulares.class,
+    DtListaporDefecto.class
 })
 public abstract class DtListaReproduccion {
 
