@@ -7,7 +7,9 @@
 <%@ page import="interfaces.IControladorCanal" %>
 <%@ page import="interfaces.IControladorUsuario" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19
@@ -33,12 +35,18 @@
     <%
         String nomVideo = request.getParameter("video"); // obtengo  parametros del href
         String canal = request.getParameter("canal");
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal c = fabrica.getControladorCanal();
-        IControladorUsuario u = fabrica.getControladorUsuario();
-        DtUsuario usuarioDuenio = u.buscarUsuarioCanal(canal);
 
-        DtVideo video = null;
+        ControladorUsuarioService usuario = new ControladorUsuarioService();
+        uytube.web.wsclients.IControladorUsuario u = usuario.getControladorUsuarioPort();
+        ControladorCanalService controlador = new ControladorCanalService();
+        uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
+        //Fabrica fabrica = Fabrica.getInstance();
+        //IControladorCanal c = fabrica.getControladorCanal();
+        //IControladorUsuario u = i.getControladorUsuario();
+        uytube.web.wsclients.DtUsuario usuarioDuenio = u.buscarUsuarioCanal(canal);
+
+        uytube.web.wsclients.DtVideo video = null;
         String url = null;
         if(!nomVideo.isEmpty() && !canal.isEmpty()) {
             video = c.obtenerVideo(nomVideo, canal);
@@ -46,9 +54,9 @@
             session.setAttribute("nomVideo", nomVideo);
             session.setAttribute("canal", canal);
         }
-        DtUsuario logeado = null;
+        uytube.web.wsclients.DtUsuario logeado = null;
         if (session.getAttribute("usuario") != null) {
-            logeado = (DtUsuario) session.getAttribute("usuario");
+            logeado = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
         }
     %>
     <!-- BARRA SUPERIOR -->
@@ -232,15 +240,16 @@
                                         <%if (com.getPadre() == null) {%>
                                         <div class="comment-main-level">
                                             <!-- Avatar -->
-                                            <%DtUsuario usuarioComenta = u.buscarUsuario(com.getNick());
+                                            <%
+                                                uytube.web.wsclients.DtUsuario usuarioComenta = u.buscarUsuario(com.getNick());
                                             String ruta = "http://localhost:8080/assets" + usuarioComenta.getImagen();%>
                                             <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
                                             <!-- Contenedor del Comentario -->
                                             <div class="comment-box">
                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderComentarioServlet" id="fromRespuesta">
                                                     <div class="comment-head">
-                                                        <%DtUsuario us = u.buscarUsuario(com.getNick());%>
-                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=us.getCanal().getNombre_canal()%>"><%=com.getNick()%></a></h6>
+                                                        <%uytube.web.wsclients.DtUsuario us = u.buscarUsuario(com.getNick());%>
+                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=us.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6> -->
                                                         <span><%=com.getFecha()+" Hs"%></span>
                                                     </div>
                                                     <div class="comment-content">
@@ -283,15 +292,16 @@
                                                     <ul class="comments-list reply-list">
                                                         <li>
                                                             <!-- Avatar -->
-                                                            <%DtUsuario usuarioResp = u.buscarUsuario(com.getNick());
+                                                            <%
+                                                                uytube.web.wsclients.DtUsuario usuarioResp = u.buscarUsuario(com.getNick());
                                                             String ruta2 = "http://localhost:8080/assets" + usuarioResp.getImagen();%>
                                                             <div class="comment-avatar"><img src="<%=ruta2%>" alt=""></div>
                                                             <!-- Contenedor del Comentario -->
                                                             <div class="comment-box">
                                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
                                                                     <div class="comment-head">
-                                                                        <%DtUsuario usR = u.buscarUsuario(com.getNick());%>
-                                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombre_canal()%>"><%=com.getNick()%></a></h6>
+                                                                        <%uytube.web.wsclients.DtUsuario usR = u.buscarUsuario(com.getNick());%>
+                                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6>
                                                                         <span><%=resp.getFecha()+" Hs"%></span>
                                                                         <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
                                                                     </div>
