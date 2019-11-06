@@ -24,74 +24,36 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _CrearListaParticularResponse_QNAME = new QName("http://interfaces/", "crearListaParticularResponse");
-    private final static QName _BuscarCanalResponse_QNAME = new QName("http://interfaces/", "buscarCanalResponse");
-    private final static QName _GetVideosListaParticular_QNAME = new QName("http://interfaces/", "getVideosListaParticular");
-    private final static QName _ListaComentariosTodosResponse_QNAME = new QName("http://interfaces/", "listaComentariosTodosResponse");
-    private final static QName _AgregarVideoListaResponse_QNAME = new QName("http://interfaces/", "agregarVideoListaResponse");
-    private final static QName _ObtenerVideo_QNAME = new QName("http://interfaces/", "obtenerVideo");
-    private final static QName _ModificarListaParticular_QNAME = new QName("http://interfaces/", "modificarListaParticular");
-    private final static QName _BuscoVideoMasRecienteCanal_QNAME = new QName("http://interfaces/", "buscoVideoMasRecienteCanal");
-    private final static QName _BusquedaArborescenteListasParticulares_QNAME = new QName("http://interfaces/", "busquedaArborescenteListasParticulares");
-    private final static QName _GetListasReproduccion_QNAME = new QName("http://interfaces/", "getListasReproduccion");
-    private final static QName _ListaComentarios_QNAME = new QName("http://interfaces/", "listaComentarios");
-    private final static QName _BusquedaArborescenteVideos_QNAME = new QName("http://interfaces/", "busquedaArborescenteVideos");
-    private final static QName _RegistrarVideoResponse_QNAME = new QName("http://interfaces/", "registrarVideoResponse");
-    private final static QName _ComentarioEsp_QNAME = new QName("http://interfaces/", "comentarioEsp");
-    private final static QName _ObtenerComentario_QNAME = new QName("http://interfaces/", "obtenerComentario");
-    private final static QName _ListaVideosResponse_QNAME = new QName("http://interfaces/", "listaVideosResponse");
-    private final static QName _BuscoVideoMasRecienteListaParticular_QNAME = new QName("http://interfaces/", "buscoVideoMasRecienteListaParticular");
-    private final static QName _CrearListaDefectoResponse_QNAME = new QName("http://interfaces/", "crearListaDefectoResponse");
-    private final static QName _ObtenerComentarioResponse_QNAME = new QName("http://interfaces/", "obtenerComentarioResponse");
-    private final static QName _ListaMeGustas_QNAME = new QName("http://interfaces/", "listaMeGustas");
-    private final static QName _ListaVideos_QNAME = new QName("http://interfaces/", "listaVideos");
-    private final static QName _BusquedaArborescenteVideosResponse_QNAME = new QName("http://interfaces/", "busquedaArborescenteVideosResponse");
-    private final static QName _CategoriaRepetidaException_QNAME = new QName("http://interfaces/", "CategoriaRepetidaException");
-    private final static QName _BuscarListaParticularResponse_QNAME = new QName("http://interfaces/", "buscarListaParticularResponse");
-    private final static QName _BusquedaArborescenteListasParticularesResponse_QNAME = new QName("http://interfaces/", "busquedaArborescenteListasParticularesResponse");
-    private final static QName _ObtenerListasParticularesPorCategoria_QNAME = new QName("http://interfaces/", "obtenerListasParticularesPorCategoria");
-    private final static QName _ObtenerComentarioRefResponse_QNAME = new QName("http://interfaces/", "obtenerComentarioRefResponse");
-    private final static QName _BuscarListaParticular_QNAME = new QName("http://interfaces/", "buscarListaParticular");
-    private final static QName _GetListasDefectoResponse_QNAME = new QName("http://interfaces/", "getListasDefectoResponse");
-    private final static QName _ObtenerComentarioRef_QNAME = new QName("http://interfaces/", "obtenerComentarioRef");
-    private final static QName _ListaComentariosResponse_QNAME = new QName("http://interfaces/", "listaComentariosResponse");
-    private final static QName _SacarVideoListaResponse_QNAME = new QName("http://interfaces/", "sacarVideoListaResponse");
-    private final static QName _ModificarVideoResponse_QNAME = new QName("http://interfaces/", "modificarVideoResponse");
-    private final static QName _CrearListaParticular_QNAME = new QName("http://interfaces/", "crearListaParticular");
-    private final static QName _ListarVideosPorCategoriaResponse_QNAME = new QName("http://interfaces/", "listarVideosPorCategoriaResponse");
-    private final static QName _AgregarVideoLista_QNAME = new QName("http://interfaces/", "agregarVideoLista");
-    private final static QName _ObtenerVideoResponse_QNAME = new QName("http://interfaces/", "obtenerVideoResponse");
-    private final static QName _GetVideosListaDefecto_QNAME = new QName("http://interfaces/", "getVideosListaDefecto");
-    private final static QName _ListaRepetidaException_QNAME = new QName("http://interfaces/", "ListaRepetidaException");
-    private final static QName _BuscoVideoMasRecienteListaParticularResponse_QNAME = new QName("http://interfaces/", "buscoVideoMasRecienteListaParticularResponse");
-    private final static QName _RegistrarCategoriaResponse_QNAME = new QName("http://interfaces/", "registrarCategoriaResponse");
-    private final static QName _CrearListaDefecto_QNAME = new QName("http://interfaces/", "crearListaDefecto");
-    private final static QName _BusquedaArborescenteCanalesResponse_QNAME = new QName("http://interfaces/", "busquedaArborescenteCanalesResponse");
-    private final static QName _VideoYaExisteEnListaException_QNAME = new QName("http://interfaces/", "VideoYaExisteEnListaException");
-    private final static QName _VideoRepetidoException_QNAME = new QName("http://interfaces/", "VideoRepetidoException");
-    private final static QName _BusquedaArborescenteCanales_QNAME = new QName("http://interfaces/", "busquedaArborescenteCanales");
-    private final static QName _BuscarCanal_QNAME = new QName("http://interfaces/", "buscarCanal");
-    private final static QName _GetCategoriasResponse_QNAME = new QName("http://interfaces/", "getCategoriasResponse");
-    private final static QName _GetListasDefecto_QNAME = new QName("http://interfaces/", "getListasDefecto");
-    private final static QName _ComentarioEspResponse_QNAME = new QName("http://interfaces/", "comentarioEspResponse");
-    private final static QName _GetCategorias_QNAME = new QName("http://interfaces/", "getCategorias");
-    private final static QName _ObtenerListasParticularesPorCategoriaResponse_QNAME = new QName("http://interfaces/", "obtenerListasParticularesPorCategoriaResponse");
-    private final static QName _SacarVideoLista_QNAME = new QName("http://interfaces/", "sacarVideoLista");
-    private final static QName _RegistrarCategoria_QNAME = new QName("http://interfaces/", "registrarCategoria");
-    private final static QName _GetVideosListaDefectoResponse_QNAME = new QName("http://interfaces/", "getVideosListaDefectoResponse");
-    private final static QName _ListaMeGustasResponse_QNAME = new QName("http://interfaces/", "listaMeGustasResponse");
-    private final static QName _GetCanales_QNAME = new QName("http://interfaces/", "getCanales");
-    private final static QName _GetVideosListaParticularResponse_QNAME = new QName("http://interfaces/", "getVideosListaParticularResponse");
-    private final static QName _ListaComentariosTodos_QNAME = new QName("http://interfaces/", "listaComentariosTodos");
-    private final static QName _AgregarComentario_QNAME = new QName("http://interfaces/", "agregarComentario");
-    private final static QName _ModificarVideo_QNAME = new QName("http://interfaces/", "modificarVideo");
-    private final static QName _RegistrarVideo_QNAME = new QName("http://interfaces/", "registrarVideo");
-    private final static QName _ListarVideosPorCategoria_QNAME = new QName("http://interfaces/", "listarVideosPorCategoria");
-    private final static QName _ModificarListaParticularResponse_QNAME = new QName("http://interfaces/", "modificarListaParticularResponse");
-    private final static QName _AgregarComentarioResponse_QNAME = new QName("http://interfaces/", "agregarComentarioResponse");
-    private final static QName _GetListasReproduccionResponse_QNAME = new QName("http://interfaces/", "getListasReproduccionResponse");
-    private final static QName _GetCanalesResponse_QNAME = new QName("http://interfaces/", "getCanalesResponse");
-    private final static QName _BuscoVideoMasRecienteCanalResponse_QNAME = new QName("http://interfaces/", "buscoVideoMasRecienteCanalResponse");
+    private final static QName _ValorarVideoEliminarResponse_QNAME = new QName("http://interfaces/", "valorarVideoEliminarResponse");
+    private final static QName _ListaSeguidoresResponse_QNAME = new QName("http://interfaces/", "listaSeguidoresResponse");
+    private final static QName _BuscarUsuario_QNAME = new QName("http://interfaces/", "buscarUsuario");
+    private final static QName _ValorarVideoEliminar_QNAME = new QName("http://interfaces/", "valorarVideoEliminar");
+    private final static QName _InicioBase_QNAME = new QName("http://interfaces/", "inicioBase");
+    private final static QName _BuscarUsuarioCanalResponse_QNAME = new QName("http://interfaces/", "buscarUsuarioCanalResponse");
+    private final static QName _RegistrarUsuarioResponse_QNAME = new QName("http://interfaces/", "registrarUsuarioResponse");
+    private final static QName _ValorarVideoResponse_QNAME = new QName("http://interfaces/", "valorarVideoResponse");
+    private final static QName _ValoracionException_QNAME = new QName("http://interfaces/", "ValoracionException");
+    private final static QName _ListaSeguidores_QNAME = new QName("http://interfaces/", "listaSeguidores");
+    private final static QName _DejarSeguirUsuario_QNAME = new QName("http://interfaces/", "DejarSeguir_Usuario");
+    private final static QName _BuscarEmail_QNAME = new QName("http://interfaces/", "buscarEmail");
+    private final static QName _CanalRepetidoException_QNAME = new QName("http://interfaces/", "CanalRepetidoException");
+    private final static QName _BuscarUsuarioCanal_QNAME = new QName("http://interfaces/", "buscarUsuarioCanal");
+    private final static QName _ListaUsuarios_QNAME = new QName("http://interfaces/", "listaUsuarios");
+    private final static QName _SeguirUsuario_QNAME = new QName("http://interfaces/", "seguirUsuario");
+    private final static QName _ValorarVideo_QNAME = new QName("http://interfaces/", "valorarVideo");
+    private final static QName _UsuarioRepetidoException_QNAME = new QName("http://interfaces/", "UsuarioRepetidoException");
+    private final static QName _SeguirUsuarioResponse_QNAME = new QName("http://interfaces/", "seguirUsuarioResponse");
+    private final static QName _BuscarEmailResponse_QNAME = new QName("http://interfaces/", "buscarEmailResponse");
+    private final static QName _ModificarUsuarioResponse_QNAME = new QName("http://interfaces/", "modificarUsuarioResponse");
+    private final static QName _RegistrarUsuario_QNAME = new QName("http://interfaces/", "registrarUsuario");
+    private final static QName _EmailRepetidoException_QNAME = new QName("http://interfaces/", "EmailRepetidoException");
+    private final static QName _ListaSeguidosResponse_QNAME = new QName("http://interfaces/", "listaSeguidosResponse");
+    private final static QName _InicioBaseResponse_QNAME = new QName("http://interfaces/", "inicioBaseResponse");
+    private final static QName _ModificarUsuario_QNAME = new QName("http://interfaces/", "modificarUsuario");
+    private final static QName _BuscarUsuarioResponse_QNAME = new QName("http://interfaces/", "buscarUsuarioResponse");
+    private final static QName _ListaUsuariosResponse_QNAME = new QName("http://interfaces/", "listaUsuariosResponse");
+    private final static QName _DejarSeguirUsuarioResponse_QNAME = new QName("http://interfaces/", "DejarSeguir_UsuarioResponse");
+    private final static QName _ListaSeguidos_QNAME = new QName("http://interfaces/", "listaSeguidos");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: uytube.web.wsclients
@@ -101,579 +63,259 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CrearListaDefecto }
+     * Create an instance of {@link ValoracionException }
      * 
      */
-    public CrearListaDefecto createCrearListaDefecto() {
-        return new CrearListaDefecto();
+    public ValoracionException createValoracionException() {
+        return new ValoracionException();
     }
 
     /**
-     * Create an instance of {@link BuscoVideoMasRecienteListaParticularResponse }
+     * Create an instance of {@link ListaSeguidores }
      * 
      */
-    public BuscoVideoMasRecienteListaParticularResponse createBuscoVideoMasRecienteListaParticularResponse() {
-        return new BuscoVideoMasRecienteListaParticularResponse();
+    public ListaSeguidores createListaSeguidores() {
+        return new ListaSeguidores();
     }
 
     /**
-     * Create an instance of {@link RegistrarCategoriaResponse }
+     * Create an instance of {@link BuscarUsuarioCanalResponse }
      * 
      */
-    public RegistrarCategoriaResponse createRegistrarCategoriaResponse() {
-        return new RegistrarCategoriaResponse();
+    public BuscarUsuarioCanalResponse createBuscarUsuarioCanalResponse() {
+        return new BuscarUsuarioCanalResponse();
     }
 
     /**
-     * Create an instance of {@link ListaRepetidaException }
+     * Create an instance of {@link RegistrarUsuarioResponse }
      * 
      */
-    public ListaRepetidaException createListaRepetidaException() {
-        return new ListaRepetidaException();
+    public RegistrarUsuarioResponse createRegistrarUsuarioResponse() {
+        return new RegistrarUsuarioResponse();
     }
 
     /**
-     * Create an instance of {@link GetVideosListaDefecto }
+     * Create an instance of {@link ValorarVideoResponse }
      * 
      */
-    public GetVideosListaDefecto createGetVideosListaDefecto() {
-        return new GetVideosListaDefecto();
+    public ValorarVideoResponse createValorarVideoResponse() {
+        return new ValorarVideoResponse();
     }
 
     /**
-     * Create an instance of {@link ComentarioEspResponse }
+     * Create an instance of {@link ValorarVideoEliminar }
      * 
      */
-    public ComentarioEspResponse createComentarioEspResponse() {
-        return new ComentarioEspResponse();
+    public ValorarVideoEliminar createValorarVideoEliminar() {
+        return new ValorarVideoEliminar();
     }
 
     /**
-     * Create an instance of {@link GetCategorias }
+     * Create an instance of {@link InicioBase }
      * 
      */
-    public GetCategorias createGetCategorias() {
-        return new GetCategorias();
+    public InicioBase createInicioBase() {
+        return new InicioBase();
     }
 
     /**
-     * Create an instance of {@link ObtenerListasParticularesPorCategoriaResponse }
+     * Create an instance of {@link ListaSeguidoresResponse }
      * 
      */
-    public ObtenerListasParticularesPorCategoriaResponse createObtenerListasParticularesPorCategoriaResponse() {
-        return new ObtenerListasParticularesPorCategoriaResponse();
+    public ListaSeguidoresResponse createListaSeguidoresResponse() {
+        return new ListaSeguidoresResponse();
     }
 
     /**
-     * Create an instance of {@link SacarVideoLista }
+     * Create an instance of {@link BuscarUsuario }
      * 
      */
-    public SacarVideoLista createSacarVideoLista() {
-        return new SacarVideoLista();
+    public BuscarUsuario createBuscarUsuario() {
+        return new BuscarUsuario();
     }
 
     /**
-     * Create an instance of {@link GetCategoriasResponse }
+     * Create an instance of {@link ValorarVideoEliminarResponse }
      * 
      */
-    public GetCategoriasResponse createGetCategoriasResponse() {
-        return new GetCategoriasResponse();
+    public ValorarVideoEliminarResponse createValorarVideoEliminarResponse() {
+        return new ValorarVideoEliminarResponse();
     }
 
     /**
-     * Create an instance of {@link GetListasDefecto }
+     * Create an instance of {@link BuscarUsuarioCanal }
      * 
      */
-    public GetListasDefecto createGetListasDefecto() {
-        return new GetListasDefecto();
+    public BuscarUsuarioCanal createBuscarUsuarioCanal() {
+        return new BuscarUsuarioCanal();
     }
 
     /**
-     * Create an instance of {@link BuscarCanal }
+     * Create an instance of {@link ListaUsuarios }
      * 
      */
-    public BuscarCanal createBuscarCanal() {
-        return new BuscarCanal();
+    public ListaUsuarios createListaUsuarios() {
+        return new ListaUsuarios();
     }
 
     /**
-     * Create an instance of {@link VideoRepetidoException }
+     * Create an instance of {@link CanalRepetidoException }
      * 
      */
-    public VideoRepetidoException createVideoRepetidoException() {
-        return new VideoRepetidoException();
+    public CanalRepetidoException createCanalRepetidoException() {
+        return new CanalRepetidoException();
     }
 
     /**
-     * Create an instance of {@link BusquedaArborescenteCanales }
+     * Create an instance of {@link BuscarEmail }
      * 
      */
-    public BusquedaArborescenteCanales createBusquedaArborescenteCanales() {
-        return new BusquedaArborescenteCanales();
+    public BuscarEmail createBuscarEmail() {
+        return new BuscarEmail();
     }
 
     /**
-     * Create an instance of {@link VideoYaExisteEnListaException }
+     * Create an instance of {@link DejarSeguirUsuario }
      * 
      */
-    public VideoYaExisteEnListaException createVideoYaExisteEnListaException() {
-        return new VideoYaExisteEnListaException();
+    public DejarSeguirUsuario createDejarSeguirUsuario() {
+        return new DejarSeguirUsuario();
     }
 
     /**
-     * Create an instance of {@link BusquedaArborescenteCanalesResponse }
+     * Create an instance of {@link EmailRepetidoException }
      * 
      */
-    public BusquedaArborescenteCanalesResponse createBusquedaArborescenteCanalesResponse() {
-        return new BusquedaArborescenteCanalesResponse();
+    public EmailRepetidoException createEmailRepetidoException() {
+        return new EmailRepetidoException();
     }
 
     /**
-     * Create an instance of {@link AgregarComentario }
+     * Create an instance of {@link RegistrarUsuario }
      * 
      */
-    public AgregarComentario createAgregarComentario() {
-        return new AgregarComentario();
+    public RegistrarUsuario createRegistrarUsuario() {
+        return new RegistrarUsuario();
     }
 
     /**
-     * Create an instance of {@link ListaComentariosTodos }
+     * Create an instance of {@link ModificarUsuarioResponse }
      * 
      */
-    public ListaComentariosTodos createListaComentariosTodos() {
-        return new ListaComentariosTodos();
+    public ModificarUsuarioResponse createModificarUsuarioResponse() {
+        return new ModificarUsuarioResponse();
     }
 
     /**
-     * Create an instance of {@link GetVideosListaParticularResponse }
+     * Create an instance of {@link BuscarEmailResponse }
      * 
      */
-    public GetVideosListaParticularResponse createGetVideosListaParticularResponse() {
-        return new GetVideosListaParticularResponse();
+    public BuscarEmailResponse createBuscarEmailResponse() {
+        return new BuscarEmailResponse();
     }
 
     /**
-     * Create an instance of {@link GetCanales }
+     * Create an instance of {@link SeguirUsuarioResponse }
      * 
      */
-    public GetCanales createGetCanales() {
-        return new GetCanales();
+    public SeguirUsuarioResponse createSeguirUsuarioResponse() {
+        return new SeguirUsuarioResponse();
     }
 
     /**
-     * Create an instance of {@link GetVideosListaDefectoResponse }
+     * Create an instance of {@link UsuarioRepetidoException }
      * 
      */
-    public GetVideosListaDefectoResponse createGetVideosListaDefectoResponse() {
-        return new GetVideosListaDefectoResponse();
+    public UsuarioRepetidoException createUsuarioRepetidoException() {
+        return new UsuarioRepetidoException();
     }
 
     /**
-     * Create an instance of {@link ListaMeGustasResponse }
+     * Create an instance of {@link SeguirUsuario }
      * 
      */
-    public ListaMeGustasResponse createListaMeGustasResponse() {
-        return new ListaMeGustasResponse();
+    public SeguirUsuario createSeguirUsuario() {
+        return new SeguirUsuario();
     }
 
     /**
-     * Create an instance of {@link RegistrarCategoria }
+     * Create an instance of {@link ValorarVideo }
      * 
      */
-    public RegistrarCategoria createRegistrarCategoria() {
-        return new RegistrarCategoria();
+    public ValorarVideo createValorarVideo() {
+        return new ValorarVideo();
     }
 
     /**
-     * Create an instance of {@link BuscoVideoMasRecienteCanalResponse }
+     * Create an instance of {@link DejarSeguirUsuarioResponse }
      * 
      */
-    public BuscoVideoMasRecienteCanalResponse createBuscoVideoMasRecienteCanalResponse() {
-        return new BuscoVideoMasRecienteCanalResponse();
+    public DejarSeguirUsuarioResponse createDejarSeguirUsuarioResponse() {
+        return new DejarSeguirUsuarioResponse();
     }
 
     /**
-     * Create an instance of {@link GetCanalesResponse }
+     * Create an instance of {@link ListaSeguidos }
      * 
      */
-    public GetCanalesResponse createGetCanalesResponse() {
-        return new GetCanalesResponse();
+    public ListaSeguidos createListaSeguidos() {
+        return new ListaSeguidos();
     }
 
     /**
-     * Create an instance of {@link AgregarComentarioResponse }
+     * Create an instance of {@link ListaUsuariosResponse }
      * 
      */
-    public AgregarComentarioResponse createAgregarComentarioResponse() {
-        return new AgregarComentarioResponse();
+    public ListaUsuariosResponse createListaUsuariosResponse() {
+        return new ListaUsuariosResponse();
     }
 
     /**
-     * Create an instance of {@link GetListasReproduccionResponse }
+     * Create an instance of {@link BuscarUsuarioResponse }
      * 
      */
-    public GetListasReproduccionResponse createGetListasReproduccionResponse() {
-        return new GetListasReproduccionResponse();
+    public BuscarUsuarioResponse createBuscarUsuarioResponse() {
+        return new BuscarUsuarioResponse();
     }
 
     /**
-     * Create an instance of {@link ModificarVideo }
+     * Create an instance of {@link ModificarUsuario }
      * 
      */
-    public ModificarVideo createModificarVideo() {
-        return new ModificarVideo();
+    public ModificarUsuario createModificarUsuario() {
+        return new ModificarUsuario();
     }
 
     /**
-     * Create an instance of {@link RegistrarVideo }
+     * Create an instance of {@link InicioBaseResponse }
      * 
      */
-    public RegistrarVideo createRegistrarVideo() {
-        return new RegistrarVideo();
+    public InicioBaseResponse createInicioBaseResponse() {
+        return new InicioBaseResponse();
     }
 
     /**
-     * Create an instance of {@link ListarVideosPorCategoria }
+     * Create an instance of {@link ListaSeguidosResponse }
      * 
      */
-    public ListarVideosPorCategoria createListarVideosPorCategoria() {
-        return new ListarVideosPorCategoria();
+    public ListaSeguidosResponse createListaSeguidosResponse() {
+        return new ListaSeguidosResponse();
     }
 
     /**
-     * Create an instance of {@link ModificarListaParticularResponse }
+     * Create an instance of {@link BufferedImage }
      * 
      */
-    public ModificarListaParticularResponse createModificarListaParticularResponse() {
-        return new ModificarListaParticularResponse();
+    public BufferedImage createBufferedImage() {
+        return new BufferedImage();
     }
 
     /**
-     * Create an instance of {@link BuscoVideoMasRecienteCanal }
+     * Create an instance of {@link Raster }
      * 
      */
-    public BuscoVideoMasRecienteCanal createBuscoVideoMasRecienteCanal() {
-        return new BuscoVideoMasRecienteCanal();
-    }
-
-    /**
-     * Create an instance of {@link BusquedaArborescenteListasParticulares }
-     * 
-     */
-    public BusquedaArborescenteListasParticulares createBusquedaArborescenteListasParticulares() {
-        return new BusquedaArborescenteListasParticulares();
-    }
-
-    /**
-     * Create an instance of {@link GetListasReproduccion }
-     * 
-     */
-    public GetListasReproduccion createGetListasReproduccion() {
-        return new GetListasReproduccion();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerVideo }
-     * 
-     */
-    public ObtenerVideo createObtenerVideo() {
-        return new ObtenerVideo();
-    }
-
-    /**
-     * Create an instance of {@link ModificarListaParticular }
-     * 
-     */
-    public ModificarListaParticular createModificarListaParticular() {
-        return new ModificarListaParticular();
-    }
-
-    /**
-     * Create an instance of {@link AgregarVideoListaResponse }
-     * 
-     */
-    public AgregarVideoListaResponse createAgregarVideoListaResponse() {
-        return new AgregarVideoListaResponse();
-    }
-
-    /**
-     * Create an instance of {@link ListaComentariosTodosResponse }
-     * 
-     */
-    public ListaComentariosTodosResponse createListaComentariosTodosResponse() {
-        return new ListaComentariosTodosResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetVideosListaParticular }
-     * 
-     */
-    public GetVideosListaParticular createGetVideosListaParticular() {
-        return new GetVideosListaParticular();
-    }
-
-    /**
-     * Create an instance of {@link CrearListaParticularResponse }
-     * 
-     */
-    public CrearListaParticularResponse createCrearListaParticularResponse() {
-        return new CrearListaParticularResponse();
-    }
-
-    /**
-     * Create an instance of {@link BuscarCanalResponse }
-     * 
-     */
-    public BuscarCanalResponse createBuscarCanalResponse() {
-        return new BuscarCanalResponse();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerComentarioResponse }
-     * 
-     */
-    public ObtenerComentarioResponse createObtenerComentarioResponse() {
-        return new ObtenerComentarioResponse();
-    }
-
-    /**
-     * Create an instance of {@link CrearListaDefectoResponse }
-     * 
-     */
-    public CrearListaDefectoResponse createCrearListaDefectoResponse() {
-        return new CrearListaDefectoResponse();
-    }
-
-    /**
-     * Create an instance of {@link BuscoVideoMasRecienteListaParticular }
-     * 
-     */
-    public BuscoVideoMasRecienteListaParticular createBuscoVideoMasRecienteListaParticular() {
-        return new BuscoVideoMasRecienteListaParticular();
-    }
-
-    /**
-     * Create an instance of {@link ListaVideosResponse }
-     * 
-     */
-    public ListaVideosResponse createListaVideosResponse() {
-        return new ListaVideosResponse();
-    }
-
-    /**
-     * Create an instance of {@link ComentarioEsp }
-     * 
-     */
-    public ComentarioEsp createComentarioEsp() {
-        return new ComentarioEsp();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerComentario }
-     * 
-     */
-    public ObtenerComentario createObtenerComentario() {
-        return new ObtenerComentario();
-    }
-
-    /**
-     * Create an instance of {@link ListaComentarios }
-     * 
-     */
-    public ListaComentarios createListaComentarios() {
-        return new ListaComentarios();
-    }
-
-    /**
-     * Create an instance of {@link BusquedaArborescenteVideos }
-     * 
-     */
-    public BusquedaArborescenteVideos createBusquedaArborescenteVideos() {
-        return new BusquedaArborescenteVideos();
-    }
-
-    /**
-     * Create an instance of {@link RegistrarVideoResponse }
-     * 
-     */
-    public RegistrarVideoResponse createRegistrarVideoResponse() {
-        return new RegistrarVideoResponse();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerComentarioRefResponse }
-     * 
-     */
-    public ObtenerComentarioRefResponse createObtenerComentarioRefResponse() {
-        return new ObtenerComentarioRefResponse();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerListasParticularesPorCategoria }
-     * 
-     */
-    public ObtenerListasParticularesPorCategoria createObtenerListasParticularesPorCategoria() {
-        return new ObtenerListasParticularesPorCategoria();
-    }
-
-    /**
-     * Create an instance of {@link BuscarListaParticularResponse }
-     * 
-     */
-    public BuscarListaParticularResponse createBuscarListaParticularResponse() {
-        return new BuscarListaParticularResponse();
-    }
-
-    /**
-     * Create an instance of {@link BusquedaArborescenteListasParticularesResponse }
-     * 
-     */
-    public BusquedaArborescenteListasParticularesResponse createBusquedaArborescenteListasParticularesResponse() {
-        return new BusquedaArborescenteListasParticularesResponse();
-    }
-
-    /**
-     * Create an instance of {@link CategoriaRepetidaException }
-     * 
-     */
-    public CategoriaRepetidaException createCategoriaRepetidaException() {
-        return new CategoriaRepetidaException();
-    }
-
-    /**
-     * Create an instance of {@link BusquedaArborescenteVideosResponse }
-     * 
-     */
-    public BusquedaArborescenteVideosResponse createBusquedaArborescenteVideosResponse() {
-        return new BusquedaArborescenteVideosResponse();
-    }
-
-    /**
-     * Create an instance of {@link ListaMeGustas }
-     * 
-     */
-    public ListaMeGustas createListaMeGustas() {
-        return new ListaMeGustas();
-    }
-
-    /**
-     * Create an instance of {@link ListaVideos }
-     * 
-     */
-    public ListaVideos createListaVideos() {
-        return new ListaVideos();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerVideoResponse }
-     * 
-     */
-    public ObtenerVideoResponse createObtenerVideoResponse() {
-        return new ObtenerVideoResponse();
-    }
-
-    /**
-     * Create an instance of {@link AgregarVideoLista }
-     * 
-     */
-    public AgregarVideoLista createAgregarVideoLista() {
-        return new AgregarVideoLista();
-    }
-
-    /**
-     * Create an instance of {@link ModificarVideoResponse }
-     * 
-     */
-    public ModificarVideoResponse createModificarVideoResponse() {
-        return new ModificarVideoResponse();
-    }
-
-    /**
-     * Create an instance of {@link CrearListaParticular }
-     * 
-     */
-    public CrearListaParticular createCrearListaParticular() {
-        return new CrearListaParticular();
-    }
-
-    /**
-     * Create an instance of {@link ListarVideosPorCategoriaResponse }
-     * 
-     */
-    public ListarVideosPorCategoriaResponse createListarVideosPorCategoriaResponse() {
-        return new ListarVideosPorCategoriaResponse();
-    }
-
-    /**
-     * Create an instance of {@link ListaComentariosResponse }
-     * 
-     */
-    public ListaComentariosResponse createListaComentariosResponse() {
-        return new ListaComentariosResponse();
-    }
-
-    /**
-     * Create an instance of {@link SacarVideoListaResponse }
-     * 
-     */
-    public SacarVideoListaResponse createSacarVideoListaResponse() {
-        return new SacarVideoListaResponse();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerComentarioRef }
-     * 
-     */
-    public ObtenerComentarioRef createObtenerComentarioRef() {
-        return new ObtenerComentarioRef();
-    }
-
-    /**
-     * Create an instance of {@link BuscarListaParticular }
-     * 
-     */
-    public BuscarListaParticular createBuscarListaParticular() {
-        return new BuscarListaParticular();
-    }
-
-    /**
-     * Create an instance of {@link GetListasDefectoResponse }
-     * 
-     */
-    public GetListasDefectoResponse createGetListasDefectoResponse() {
-        return new GetListasDefectoResponse();
-    }
-
-    /**
-     * Create an instance of {@link DtVideo }
-     * 
-     */
-    public DtVideo createDtVideo() {
-        return new DtVideo();
-    }
-
-    /**
-     * Create an instance of {@link DtAuxiliar }
-     * 
-     */
-    public DtAuxiliar createDtAuxiliar() {
-        return new DtAuxiliar();
-    }
-
-    /**
-     * Create an instance of {@link DtListaParticulares }
-     * 
-     */
-    public DtListaParticulares createDtListaParticulares() {
-        return new DtListaParticulares();
-    }
-
-    /**
-     * Create an instance of {@link DtCategoria }
-     * 
-     */
-    public DtCategoria createDtCategoria() {
-        return new DtCategoria();
+    public Raster createRaster() {
+        return new Raster();
     }
 
     /**
@@ -693,623 +335,273 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DtComentario }
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValorarVideoEliminarResponse }{@code >}}
      * 
      */
-    public DtComentario createDtComentario() {
-        return new DtComentario();
+    @XmlElementDecl(namespace = "http://interfaces/", name = "valorarVideoEliminarResponse")
+    public JAXBElement<ValorarVideoEliminarResponse> createValorarVideoEliminarResponse(ValorarVideoEliminarResponse value) {
+        return new JAXBElement<ValorarVideoEliminarResponse>(_ValorarVideoEliminarResponse_QNAME, ValorarVideoEliminarResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CrearListaParticularResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListaSeguidoresResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "crearListaParticularResponse")
-    public JAXBElement<CrearListaParticularResponse> createCrearListaParticularResponse(CrearListaParticularResponse value) {
-        return new JAXBElement<CrearListaParticularResponse>(_CrearListaParticularResponse_QNAME, CrearListaParticularResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "listaSeguidoresResponse")
+    public JAXBElement<ListaSeguidoresResponse> createListaSeguidoresResponse(ListaSeguidoresResponse value) {
+        return new JAXBElement<ListaSeguidoresResponse>(_ListaSeguidoresResponse_QNAME, ListaSeguidoresResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarCanalResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarUsuario }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarCanalResponse")
-    public JAXBElement<BuscarCanalResponse> createBuscarCanalResponse(BuscarCanalResponse value) {
-        return new JAXBElement<BuscarCanalResponse>(_BuscarCanalResponse_QNAME, BuscarCanalResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarUsuario")
+    public JAXBElement<BuscarUsuario> createBuscarUsuario(BuscarUsuario value) {
+        return new JAXBElement<BuscarUsuario>(_BuscarUsuario_QNAME, BuscarUsuario.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVideosListaParticular }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValorarVideoEliminar }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getVideosListaParticular")
-    public JAXBElement<GetVideosListaParticular> createGetVideosListaParticular(GetVideosListaParticular value) {
-        return new JAXBElement<GetVideosListaParticular>(_GetVideosListaParticular_QNAME, GetVideosListaParticular.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "valorarVideoEliminar")
+    public JAXBElement<ValorarVideoEliminar> createValorarVideoEliminar(ValorarVideoEliminar value) {
+        return new JAXBElement<ValorarVideoEliminar>(_ValorarVideoEliminar_QNAME, ValorarVideoEliminar.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaComentariosTodosResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link InicioBase }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listaComentariosTodosResponse")
-    public JAXBElement<ListaComentariosTodosResponse> createListaComentariosTodosResponse(ListaComentariosTodosResponse value) {
-        return new JAXBElement<ListaComentariosTodosResponse>(_ListaComentariosTodosResponse_QNAME, ListaComentariosTodosResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "inicioBase")
+    public JAXBElement<InicioBase> createInicioBase(InicioBase value) {
+        return new JAXBElement<InicioBase>(_InicioBase_QNAME, InicioBase.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarVideoListaResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarUsuarioCanalResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "agregarVideoListaResponse")
-    public JAXBElement<AgregarVideoListaResponse> createAgregarVideoListaResponse(AgregarVideoListaResponse value) {
-        return new JAXBElement<AgregarVideoListaResponse>(_AgregarVideoListaResponse_QNAME, AgregarVideoListaResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarUsuarioCanalResponse")
+    public JAXBElement<BuscarUsuarioCanalResponse> createBuscarUsuarioCanalResponse(BuscarUsuarioCanalResponse value) {
+        return new JAXBElement<BuscarUsuarioCanalResponse>(_BuscarUsuarioCanalResponse_QNAME, BuscarUsuarioCanalResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerVideo }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarUsuarioResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerVideo")
-    public JAXBElement<ObtenerVideo> createObtenerVideo(ObtenerVideo value) {
-        return new JAXBElement<ObtenerVideo>(_ObtenerVideo_QNAME, ObtenerVideo.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "registrarUsuarioResponse")
+    public JAXBElement<RegistrarUsuarioResponse> createRegistrarUsuarioResponse(RegistrarUsuarioResponse value) {
+        return new JAXBElement<RegistrarUsuarioResponse>(_RegistrarUsuarioResponse_QNAME, RegistrarUsuarioResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModificarListaParticular }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValorarVideoResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "modificarListaParticular")
-    public JAXBElement<ModificarListaParticular> createModificarListaParticular(ModificarListaParticular value) {
-        return new JAXBElement<ModificarListaParticular>(_ModificarListaParticular_QNAME, ModificarListaParticular.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "valorarVideoResponse")
+    public JAXBElement<ValorarVideoResponse> createValorarVideoResponse(ValorarVideoResponse value) {
+        return new JAXBElement<ValorarVideoResponse>(_ValorarVideoResponse_QNAME, ValorarVideoResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscoVideoMasRecienteCanal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValoracionException }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "buscoVideoMasRecienteCanal")
-    public JAXBElement<BuscoVideoMasRecienteCanal> createBuscoVideoMasRecienteCanal(BuscoVideoMasRecienteCanal value) {
-        return new JAXBElement<BuscoVideoMasRecienteCanal>(_BuscoVideoMasRecienteCanal_QNAME, BuscoVideoMasRecienteCanal.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "ValoracionException")
+    public JAXBElement<ValoracionException> createValoracionException(ValoracionException value) {
+        return new JAXBElement<ValoracionException>(_ValoracionException_QNAME, ValoracionException.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BusquedaArborescenteListasParticulares }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListaSeguidores }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "busquedaArborescenteListasParticulares")
-    public JAXBElement<BusquedaArborescenteListasParticulares> createBusquedaArborescenteListasParticulares(BusquedaArborescenteListasParticulares value) {
-        return new JAXBElement<BusquedaArborescenteListasParticulares>(_BusquedaArborescenteListasParticulares_QNAME, BusquedaArborescenteListasParticulares.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "listaSeguidores")
+    public JAXBElement<ListaSeguidores> createListaSeguidores(ListaSeguidores value) {
+        return new JAXBElement<ListaSeguidores>(_ListaSeguidores_QNAME, ListaSeguidores.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetListasReproduccion }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DejarSeguirUsuario }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getListasReproduccion")
-    public JAXBElement<GetListasReproduccion> createGetListasReproduccion(GetListasReproduccion value) {
-        return new JAXBElement<GetListasReproduccion>(_GetListasReproduccion_QNAME, GetListasReproduccion.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "DejarSeguir_Usuario")
+    public JAXBElement<DejarSeguirUsuario> createDejarSeguirUsuario(DejarSeguirUsuario value) {
+        return new JAXBElement<DejarSeguirUsuario>(_DejarSeguirUsuario_QNAME, DejarSeguirUsuario.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaComentarios }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarEmail }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listaComentarios")
-    public JAXBElement<ListaComentarios> createListaComentarios(ListaComentarios value) {
-        return new JAXBElement<ListaComentarios>(_ListaComentarios_QNAME, ListaComentarios.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarEmail")
+    public JAXBElement<BuscarEmail> createBuscarEmail(BuscarEmail value) {
+        return new JAXBElement<BuscarEmail>(_BuscarEmail_QNAME, BuscarEmail.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BusquedaArborescenteVideos }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CanalRepetidoException }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "busquedaArborescenteVideos")
-    public JAXBElement<BusquedaArborescenteVideos> createBusquedaArborescenteVideos(BusquedaArborescenteVideos value) {
-        return new JAXBElement<BusquedaArborescenteVideos>(_BusquedaArborescenteVideos_QNAME, BusquedaArborescenteVideos.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "CanalRepetidoException")
+    public JAXBElement<CanalRepetidoException> createCanalRepetidoException(CanalRepetidoException value) {
+        return new JAXBElement<CanalRepetidoException>(_CanalRepetidoException_QNAME, CanalRepetidoException.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarVideoResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarUsuarioCanal }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "registrarVideoResponse")
-    public JAXBElement<RegistrarVideoResponse> createRegistrarVideoResponse(RegistrarVideoResponse value) {
-        return new JAXBElement<RegistrarVideoResponse>(_RegistrarVideoResponse_QNAME, RegistrarVideoResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarUsuarioCanal")
+    public JAXBElement<BuscarUsuarioCanal> createBuscarUsuarioCanal(BuscarUsuarioCanal value) {
+        return new JAXBElement<BuscarUsuarioCanal>(_BuscarUsuarioCanal_QNAME, BuscarUsuarioCanal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ComentarioEsp }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListaUsuarios }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "comentarioEsp")
-    public JAXBElement<ComentarioEsp> createComentarioEsp(ComentarioEsp value) {
-        return new JAXBElement<ComentarioEsp>(_ComentarioEsp_QNAME, ComentarioEsp.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "listaUsuarios")
+    public JAXBElement<ListaUsuarios> createListaUsuarios(ListaUsuarios value) {
+        return new JAXBElement<ListaUsuarios>(_ListaUsuarios_QNAME, ListaUsuarios.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerComentario }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SeguirUsuario }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerComentario")
-    public JAXBElement<ObtenerComentario> createObtenerComentario(ObtenerComentario value) {
-        return new JAXBElement<ObtenerComentario>(_ObtenerComentario_QNAME, ObtenerComentario.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "seguirUsuario")
+    public JAXBElement<SeguirUsuario> createSeguirUsuario(SeguirUsuario value) {
+        return new JAXBElement<SeguirUsuario>(_SeguirUsuario_QNAME, SeguirUsuario.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaVideosResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValorarVideo }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listaVideosResponse")
-    public JAXBElement<ListaVideosResponse> createListaVideosResponse(ListaVideosResponse value) {
-        return new JAXBElement<ListaVideosResponse>(_ListaVideosResponse_QNAME, ListaVideosResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "valorarVideo")
+    public JAXBElement<ValorarVideo> createValorarVideo(ValorarVideo value) {
+        return new JAXBElement<ValorarVideo>(_ValorarVideo_QNAME, ValorarVideo.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscoVideoMasRecienteListaParticular }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UsuarioRepetidoException }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "buscoVideoMasRecienteListaParticular")
-    public JAXBElement<BuscoVideoMasRecienteListaParticular> createBuscoVideoMasRecienteListaParticular(BuscoVideoMasRecienteListaParticular value) {
-        return new JAXBElement<BuscoVideoMasRecienteListaParticular>(_BuscoVideoMasRecienteListaParticular_QNAME, BuscoVideoMasRecienteListaParticular.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "UsuarioRepetidoException")
+    public JAXBElement<UsuarioRepetidoException> createUsuarioRepetidoException(UsuarioRepetidoException value) {
+        return new JAXBElement<UsuarioRepetidoException>(_UsuarioRepetidoException_QNAME, UsuarioRepetidoException.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CrearListaDefectoResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SeguirUsuarioResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "crearListaDefectoResponse")
-    public JAXBElement<CrearListaDefectoResponse> createCrearListaDefectoResponse(CrearListaDefectoResponse value) {
-        return new JAXBElement<CrearListaDefectoResponse>(_CrearListaDefectoResponse_QNAME, CrearListaDefectoResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "seguirUsuarioResponse")
+    public JAXBElement<SeguirUsuarioResponse> createSeguirUsuarioResponse(SeguirUsuarioResponse value) {
+        return new JAXBElement<SeguirUsuarioResponse>(_SeguirUsuarioResponse_QNAME, SeguirUsuarioResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerComentarioResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarEmailResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerComentarioResponse")
-    public JAXBElement<ObtenerComentarioResponse> createObtenerComentarioResponse(ObtenerComentarioResponse value) {
-        return new JAXBElement<ObtenerComentarioResponse>(_ObtenerComentarioResponse_QNAME, ObtenerComentarioResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarEmailResponse")
+    public JAXBElement<BuscarEmailResponse> createBuscarEmailResponse(BuscarEmailResponse value) {
+        return new JAXBElement<BuscarEmailResponse>(_BuscarEmailResponse_QNAME, BuscarEmailResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaMeGustas }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModificarUsuarioResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listaMeGustas")
-    public JAXBElement<ListaMeGustas> createListaMeGustas(ListaMeGustas value) {
-        return new JAXBElement<ListaMeGustas>(_ListaMeGustas_QNAME, ListaMeGustas.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "modificarUsuarioResponse")
+    public JAXBElement<ModificarUsuarioResponse> createModificarUsuarioResponse(ModificarUsuarioResponse value) {
+        return new JAXBElement<ModificarUsuarioResponse>(_ModificarUsuarioResponse_QNAME, ModificarUsuarioResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaVideos }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarUsuario }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listaVideos")
-    public JAXBElement<ListaVideos> createListaVideos(ListaVideos value) {
-        return new JAXBElement<ListaVideos>(_ListaVideos_QNAME, ListaVideos.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "registrarUsuario")
+    public JAXBElement<RegistrarUsuario> createRegistrarUsuario(RegistrarUsuario value) {
+        return new JAXBElement<RegistrarUsuario>(_RegistrarUsuario_QNAME, RegistrarUsuario.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BusquedaArborescenteVideosResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link EmailRepetidoException }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "busquedaArborescenteVideosResponse")
-    public JAXBElement<BusquedaArborescenteVideosResponse> createBusquedaArborescenteVideosResponse(BusquedaArborescenteVideosResponse value) {
-        return new JAXBElement<BusquedaArborescenteVideosResponse>(_BusquedaArborescenteVideosResponse_QNAME, BusquedaArborescenteVideosResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "EmailRepetidoException")
+    public JAXBElement<EmailRepetidoException> createEmailRepetidoException(EmailRepetidoException value) {
+        return new JAXBElement<EmailRepetidoException>(_EmailRepetidoException_QNAME, EmailRepetidoException.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CategoriaRepetidaException }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListaSeguidosResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "CategoriaRepetidaException")
-    public JAXBElement<CategoriaRepetidaException> createCategoriaRepetidaException(CategoriaRepetidaException value) {
-        return new JAXBElement<CategoriaRepetidaException>(_CategoriaRepetidaException_QNAME, CategoriaRepetidaException.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "listaSeguidosResponse")
+    public JAXBElement<ListaSeguidosResponse> createListaSeguidosResponse(ListaSeguidosResponse value) {
+        return new JAXBElement<ListaSeguidosResponse>(_ListaSeguidosResponse_QNAME, ListaSeguidosResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarListaParticularResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link InicioBaseResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarListaParticularResponse")
-    public JAXBElement<BuscarListaParticularResponse> createBuscarListaParticularResponse(BuscarListaParticularResponse value) {
-        return new JAXBElement<BuscarListaParticularResponse>(_BuscarListaParticularResponse_QNAME, BuscarListaParticularResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "inicioBaseResponse")
+    public JAXBElement<InicioBaseResponse> createInicioBaseResponse(InicioBaseResponse value) {
+        return new JAXBElement<InicioBaseResponse>(_InicioBaseResponse_QNAME, InicioBaseResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BusquedaArborescenteListasParticularesResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModificarUsuario }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "busquedaArborescenteListasParticularesResponse")
-    public JAXBElement<BusquedaArborescenteListasParticularesResponse> createBusquedaArborescenteListasParticularesResponse(BusquedaArborescenteListasParticularesResponse value) {
-        return new JAXBElement<BusquedaArborescenteListasParticularesResponse>(_BusquedaArborescenteListasParticularesResponse_QNAME, BusquedaArborescenteListasParticularesResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "modificarUsuario")
+    public JAXBElement<ModificarUsuario> createModificarUsuario(ModificarUsuario value) {
+        return new JAXBElement<ModificarUsuario>(_ModificarUsuario_QNAME, ModificarUsuario.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerListasParticularesPorCategoria }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarUsuarioResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerListasParticularesPorCategoria")
-    public JAXBElement<ObtenerListasParticularesPorCategoria> createObtenerListasParticularesPorCategoria(ObtenerListasParticularesPorCategoria value) {
-        return new JAXBElement<ObtenerListasParticularesPorCategoria>(_ObtenerListasParticularesPorCategoria_QNAME, ObtenerListasParticularesPorCategoria.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarUsuarioResponse")
+    public JAXBElement<BuscarUsuarioResponse> createBuscarUsuarioResponse(BuscarUsuarioResponse value) {
+        return new JAXBElement<BuscarUsuarioResponse>(_BuscarUsuarioResponse_QNAME, BuscarUsuarioResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerComentarioRefResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListaUsuariosResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerComentarioRefResponse")
-    public JAXBElement<ObtenerComentarioRefResponse> createObtenerComentarioRefResponse(ObtenerComentarioRefResponse value) {
-        return new JAXBElement<ObtenerComentarioRefResponse>(_ObtenerComentarioRefResponse_QNAME, ObtenerComentarioRefResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "listaUsuariosResponse")
+    public JAXBElement<ListaUsuariosResponse> createListaUsuariosResponse(ListaUsuariosResponse value) {
+        return new JAXBElement<ListaUsuariosResponse>(_ListaUsuariosResponse_QNAME, ListaUsuariosResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarListaParticular }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DejarSeguirUsuarioResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarListaParticular")
-    public JAXBElement<BuscarListaParticular> createBuscarListaParticular(BuscarListaParticular value) {
-        return new JAXBElement<BuscarListaParticular>(_BuscarListaParticular_QNAME, BuscarListaParticular.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "DejarSeguir_UsuarioResponse")
+    public JAXBElement<DejarSeguirUsuarioResponse> createDejarSeguirUsuarioResponse(DejarSeguirUsuarioResponse value) {
+        return new JAXBElement<DejarSeguirUsuarioResponse>(_DejarSeguirUsuarioResponse_QNAME, DejarSeguirUsuarioResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetListasDefectoResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListaSeguidos }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getListasDefectoResponse")
-    public JAXBElement<GetListasDefectoResponse> createGetListasDefectoResponse(GetListasDefectoResponse value) {
-        return new JAXBElement<GetListasDefectoResponse>(_GetListasDefectoResponse_QNAME, GetListasDefectoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerComentarioRef }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerComentarioRef")
-    public JAXBElement<ObtenerComentarioRef> createObtenerComentarioRef(ObtenerComentarioRef value) {
-        return new JAXBElement<ObtenerComentarioRef>(_ObtenerComentarioRef_QNAME, ObtenerComentarioRef.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaComentariosResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listaComentariosResponse")
-    public JAXBElement<ListaComentariosResponse> createListaComentariosResponse(ListaComentariosResponse value) {
-        return new JAXBElement<ListaComentariosResponse>(_ListaComentariosResponse_QNAME, ListaComentariosResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SacarVideoListaResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "sacarVideoListaResponse")
-    public JAXBElement<SacarVideoListaResponse> createSacarVideoListaResponse(SacarVideoListaResponse value) {
-        return new JAXBElement<SacarVideoListaResponse>(_SacarVideoListaResponse_QNAME, SacarVideoListaResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModificarVideoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "modificarVideoResponse")
-    public JAXBElement<ModificarVideoResponse> createModificarVideoResponse(ModificarVideoResponse value) {
-        return new JAXBElement<ModificarVideoResponse>(_ModificarVideoResponse_QNAME, ModificarVideoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CrearListaParticular }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "crearListaParticular")
-    public JAXBElement<CrearListaParticular> createCrearListaParticular(CrearListaParticular value) {
-        return new JAXBElement<CrearListaParticular>(_CrearListaParticular_QNAME, CrearListaParticular.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListarVideosPorCategoriaResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listarVideosPorCategoriaResponse")
-    public JAXBElement<ListarVideosPorCategoriaResponse> createListarVideosPorCategoriaResponse(ListarVideosPorCategoriaResponse value) {
-        return new JAXBElement<ListarVideosPorCategoriaResponse>(_ListarVideosPorCategoriaResponse_QNAME, ListarVideosPorCategoriaResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarVideoLista }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "agregarVideoLista")
-    public JAXBElement<AgregarVideoLista> createAgregarVideoLista(AgregarVideoLista value) {
-        return new JAXBElement<AgregarVideoLista>(_AgregarVideoLista_QNAME, AgregarVideoLista.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerVideoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerVideoResponse")
-    public JAXBElement<ObtenerVideoResponse> createObtenerVideoResponse(ObtenerVideoResponse value) {
-        return new JAXBElement<ObtenerVideoResponse>(_ObtenerVideoResponse_QNAME, ObtenerVideoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVideosListaDefecto }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getVideosListaDefecto")
-    public JAXBElement<GetVideosListaDefecto> createGetVideosListaDefecto(GetVideosListaDefecto value) {
-        return new JAXBElement<GetVideosListaDefecto>(_GetVideosListaDefecto_QNAME, GetVideosListaDefecto.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaRepetidaException }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "ListaRepetidaException")
-    public JAXBElement<ListaRepetidaException> createListaRepetidaException(ListaRepetidaException value) {
-        return new JAXBElement<ListaRepetidaException>(_ListaRepetidaException_QNAME, ListaRepetidaException.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscoVideoMasRecienteListaParticularResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "buscoVideoMasRecienteListaParticularResponse")
-    public JAXBElement<BuscoVideoMasRecienteListaParticularResponse> createBuscoVideoMasRecienteListaParticularResponse(BuscoVideoMasRecienteListaParticularResponse value) {
-        return new JAXBElement<BuscoVideoMasRecienteListaParticularResponse>(_BuscoVideoMasRecienteListaParticularResponse_QNAME, BuscoVideoMasRecienteListaParticularResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarCategoriaResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "registrarCategoriaResponse")
-    public JAXBElement<RegistrarCategoriaResponse> createRegistrarCategoriaResponse(RegistrarCategoriaResponse value) {
-        return new JAXBElement<RegistrarCategoriaResponse>(_RegistrarCategoriaResponse_QNAME, RegistrarCategoriaResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CrearListaDefecto }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "crearListaDefecto")
-    public JAXBElement<CrearListaDefecto> createCrearListaDefecto(CrearListaDefecto value) {
-        return new JAXBElement<CrearListaDefecto>(_CrearListaDefecto_QNAME, CrearListaDefecto.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BusquedaArborescenteCanalesResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "busquedaArborescenteCanalesResponse")
-    public JAXBElement<BusquedaArborescenteCanalesResponse> createBusquedaArborescenteCanalesResponse(BusquedaArborescenteCanalesResponse value) {
-        return new JAXBElement<BusquedaArborescenteCanalesResponse>(_BusquedaArborescenteCanalesResponse_QNAME, BusquedaArborescenteCanalesResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VideoYaExisteEnListaException }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "VideoYaExisteEnListaException")
-    public JAXBElement<VideoYaExisteEnListaException> createVideoYaExisteEnListaException(VideoYaExisteEnListaException value) {
-        return new JAXBElement<VideoYaExisteEnListaException>(_VideoYaExisteEnListaException_QNAME, VideoYaExisteEnListaException.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VideoRepetidoException }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "VideoRepetidoException")
-    public JAXBElement<VideoRepetidoException> createVideoRepetidoException(VideoRepetidoException value) {
-        return new JAXBElement<VideoRepetidoException>(_VideoRepetidoException_QNAME, VideoRepetidoException.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BusquedaArborescenteCanales }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "busquedaArborescenteCanales")
-    public JAXBElement<BusquedaArborescenteCanales> createBusquedaArborescenteCanales(BusquedaArborescenteCanales value) {
-        return new JAXBElement<BusquedaArborescenteCanales>(_BusquedaArborescenteCanales_QNAME, BusquedaArborescenteCanales.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarCanal }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarCanal")
-    public JAXBElement<BuscarCanal> createBuscarCanal(BuscarCanal value) {
-        return new JAXBElement<BuscarCanal>(_BuscarCanal_QNAME, BuscarCanal.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoriasResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getCategoriasResponse")
-    public JAXBElement<GetCategoriasResponse> createGetCategoriasResponse(GetCategoriasResponse value) {
-        return new JAXBElement<GetCategoriasResponse>(_GetCategoriasResponse_QNAME, GetCategoriasResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetListasDefecto }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getListasDefecto")
-    public JAXBElement<GetListasDefecto> createGetListasDefecto(GetListasDefecto value) {
-        return new JAXBElement<GetListasDefecto>(_GetListasDefecto_QNAME, GetListasDefecto.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ComentarioEspResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "comentarioEspResponse")
-    public JAXBElement<ComentarioEspResponse> createComentarioEspResponse(ComentarioEspResponse value) {
-        return new JAXBElement<ComentarioEspResponse>(_ComentarioEspResponse_QNAME, ComentarioEspResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategorias }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getCategorias")
-    public JAXBElement<GetCategorias> createGetCategorias(GetCategorias value) {
-        return new JAXBElement<GetCategorias>(_GetCategorias_QNAME, GetCategorias.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerListasParticularesPorCategoriaResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerListasParticularesPorCategoriaResponse")
-    public JAXBElement<ObtenerListasParticularesPorCategoriaResponse> createObtenerListasParticularesPorCategoriaResponse(ObtenerListasParticularesPorCategoriaResponse value) {
-        return new JAXBElement<ObtenerListasParticularesPorCategoriaResponse>(_ObtenerListasParticularesPorCategoriaResponse_QNAME, ObtenerListasParticularesPorCategoriaResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SacarVideoLista }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "sacarVideoLista")
-    public JAXBElement<SacarVideoLista> createSacarVideoLista(SacarVideoLista value) {
-        return new JAXBElement<SacarVideoLista>(_SacarVideoLista_QNAME, SacarVideoLista.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarCategoria }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "registrarCategoria")
-    public JAXBElement<RegistrarCategoria> createRegistrarCategoria(RegistrarCategoria value) {
-        return new JAXBElement<RegistrarCategoria>(_RegistrarCategoria_QNAME, RegistrarCategoria.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVideosListaDefectoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getVideosListaDefectoResponse")
-    public JAXBElement<GetVideosListaDefectoResponse> createGetVideosListaDefectoResponse(GetVideosListaDefectoResponse value) {
-        return new JAXBElement<GetVideosListaDefectoResponse>(_GetVideosListaDefectoResponse_QNAME, GetVideosListaDefectoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaMeGustasResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listaMeGustasResponse")
-    public JAXBElement<ListaMeGustasResponse> createListaMeGustasResponse(ListaMeGustasResponse value) {
-        return new JAXBElement<ListaMeGustasResponse>(_ListaMeGustasResponse_QNAME, ListaMeGustasResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCanales }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getCanales")
-    public JAXBElement<GetCanales> createGetCanales(GetCanales value) {
-        return new JAXBElement<GetCanales>(_GetCanales_QNAME, GetCanales.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVideosListaParticularResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getVideosListaParticularResponse")
-    public JAXBElement<GetVideosListaParticularResponse> createGetVideosListaParticularResponse(GetVideosListaParticularResponse value) {
-        return new JAXBElement<GetVideosListaParticularResponse>(_GetVideosListaParticularResponse_QNAME, GetVideosListaParticularResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListaComentariosTodos }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listaComentariosTodos")
-    public JAXBElement<ListaComentariosTodos> createListaComentariosTodos(ListaComentariosTodos value) {
-        return new JAXBElement<ListaComentariosTodos>(_ListaComentariosTodos_QNAME, ListaComentariosTodos.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarComentario }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "agregarComentario")
-    public JAXBElement<AgregarComentario> createAgregarComentario(AgregarComentario value) {
-        return new JAXBElement<AgregarComentario>(_AgregarComentario_QNAME, AgregarComentario.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModificarVideo }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "modificarVideo")
-    public JAXBElement<ModificarVideo> createModificarVideo(ModificarVideo value) {
-        return new JAXBElement<ModificarVideo>(_ModificarVideo_QNAME, ModificarVideo.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarVideo }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "registrarVideo")
-    public JAXBElement<RegistrarVideo> createRegistrarVideo(RegistrarVideo value) {
-        return new JAXBElement<RegistrarVideo>(_RegistrarVideo_QNAME, RegistrarVideo.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListarVideosPorCategoria }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "listarVideosPorCategoria")
-    public JAXBElement<ListarVideosPorCategoria> createListarVideosPorCategoria(ListarVideosPorCategoria value) {
-        return new JAXBElement<ListarVideosPorCategoria>(_ListarVideosPorCategoria_QNAME, ListarVideosPorCategoria.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModificarListaParticularResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "modificarListaParticularResponse")
-    public JAXBElement<ModificarListaParticularResponse> createModificarListaParticularResponse(ModificarListaParticularResponse value) {
-        return new JAXBElement<ModificarListaParticularResponse>(_ModificarListaParticularResponse_QNAME, ModificarListaParticularResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarComentarioResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "agregarComentarioResponse")
-    public JAXBElement<AgregarComentarioResponse> createAgregarComentarioResponse(AgregarComentarioResponse value) {
-        return new JAXBElement<AgregarComentarioResponse>(_AgregarComentarioResponse_QNAME, AgregarComentarioResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetListasReproduccionResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getListasReproduccionResponse")
-    public JAXBElement<GetListasReproduccionResponse> createGetListasReproduccionResponse(GetListasReproduccionResponse value) {
-        return new JAXBElement<GetListasReproduccionResponse>(_GetListasReproduccionResponse_QNAME, GetListasReproduccionResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCanalesResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getCanalesResponse")
-    public JAXBElement<GetCanalesResponse> createGetCanalesResponse(GetCanalesResponse value) {
-        return new JAXBElement<GetCanalesResponse>(_GetCanalesResponse_QNAME, GetCanalesResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscoVideoMasRecienteCanalResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "buscoVideoMasRecienteCanalResponse")
-    public JAXBElement<BuscoVideoMasRecienteCanalResponse> createBuscoVideoMasRecienteCanalResponse(BuscoVideoMasRecienteCanalResponse value) {
-        return new JAXBElement<BuscoVideoMasRecienteCanalResponse>(_BuscoVideoMasRecienteCanalResponse_QNAME, BuscoVideoMasRecienteCanalResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "listaSeguidos")
+    public JAXBElement<ListaSeguidos> createListaSeguidos(ListaSeguidos value) {
+        return new JAXBElement<ListaSeguidos>(_ListaSeguidos_QNAME, ListaSeguidos.class, null, value);
     }
 
 }

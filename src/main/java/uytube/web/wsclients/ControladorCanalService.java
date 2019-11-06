@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ControladorCanalService", targetNamespace = "http://controladores/", wsdlLocation = "http://localhost:17184/CanalWs?wsdl")
+@WebServiceClient(name = "ControladorCanalService", targetNamespace = "http://controladores/", wsdlLocation = "http://uytube.com:17184/CanalWs?wsdl")
 public class ControladorCanalService
     extends Service
 {
@@ -30,7 +30,7 @@ public class ControladorCanalService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:17184/CanalWs?wsdl");
+            url = new URL("http://uytube.com:17184/CanalWs?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
