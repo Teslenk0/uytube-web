@@ -7,7 +7,8 @@ package uytube.web.classes;
 
 import DataTypes.DtUsuario;
 import fabrica.Fabrica;
-import interfaces.IControladorCanal;
+import uytube.web.wsclients.ControladorCanalService;
+import uytube.web.wsclients.IControladorCanal;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,17 +41,17 @@ public class ValidarModificarVideoServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
 
-        Fabrica f = Fabrica.getInstance();
+        ControladorCanalService controller = new ControladorCanalService();
         HttpSession s = request.getSession();
 
         String nomO = (String) s.getAttribute("oldV");
         String nomVN = request.getParameter("nombre");
-        DtUsuario u = (DtUsuario) s.getAttribute("usuario");
+        uytube.web.wsclients.DtUsuario u = (uytube.web.wsclients.DtUsuario) s.getAttribute("usuario");
 
-        IControladorCanal c = f.getControladorCanal();
+        IControladorCanal c = controller.getControladorCanalPort();
         String respuesta = "{\"existe\":false}";
         if(!nomVN.equals(nomO)) {
-            if (c.obtenerVideo(nomVN, u.getCanal().getNombre_canal()) != null) {
+            if (c.obtenerVideo(nomVN, u.getCanal().getNombreCanal()) != null) {
                 respuesta = "{\"existe\":true}";
             } else {
                 respuesta = "{\"existe\":false}";

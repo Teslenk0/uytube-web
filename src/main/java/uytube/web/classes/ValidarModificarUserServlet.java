@@ -5,8 +5,8 @@
  */
 package uytube.web.classes;
 
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
+import uytube.web.wsclients.ControladorCanalService;
+import uytube.web.wsclients.IControladorCanal;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,8 +43,9 @@ public class ValidarModificarUserServlet extends HttpServlet {
         String canal = request.getParameter("nombre");
         String nomO = (String) s.getAttribute("oldN");
 
-        Fabrica f = Fabrica.getInstance();
-        IControladorCanal c = f.getControladorCanal();
+        ControladorCanalService i = new ControladorCanalService();
+        IControladorCanal c = i.getControladorCanalPort();
+
         String respuesta;
         String rcanal = "\"canal\":false";
         if(!nomO.equals(canal)) {

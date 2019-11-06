@@ -7,9 +7,11 @@ package uytube.web.classes;
 
 import DataTypes.DtUsuario;
 import fabrica.Fabrica;
-import interfaces.IControladorCanal;
 import interfaces.IControladorUsuario;
 import org.json.JSONObject;
+import uytube.web.wsclients.ControladorCanalService;
+import uytube.web.wsclients.ControladorUsuarioService;
+import uytube.web.wsclients.IControladorCanal;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,12 +49,14 @@ public class ValidarRegistroServlet extends HttpServlet {
         String email = (String) json.get("email");
         String canal = (String) json.get("canal");
 
-        Fabrica f = Fabrica.getInstance();
-        IControladorUsuario u = f.getControladorUsuario();
-        IControladorCanal c = f.getControladorCanal();
+        ControladorUsuarioService controllerUser = new ControladorUsuarioService();
+        uytube.web.wsclients.IControladorUsuario u = controllerUser.getControladorUsuarioPort();
+
+        ControladorCanalService controllerCanal = new ControladorCanalService();
+        IControladorCanal c = (IControladorCanal) new ControladorCanalService();
         String rnickname, remail, rcanal, respuesta;
 
-        DtUsuario user = u.buscarUsuario(nickname);
+        uytube.web.wsclients.DtUsuario user = u.buscarUsuario(nickname);
         if(user!=null)
             rnickname = "\"nickname\":true";
         else

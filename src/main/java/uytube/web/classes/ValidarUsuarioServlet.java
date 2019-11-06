@@ -9,6 +9,7 @@ import DataTypes.DtUsuario;
 import fabrica.Fabrica;
 import interfaces.IControladorUsuario;
 import org.json.JSONObject;
+import uytube.web.wsclients.ControladorUsuarioService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,9 +46,9 @@ public class ValidarUsuarioServlet extends HttpServlet {
         String nickname = (String) json.get("nickname");
         String password = (String) json.get("password");
 
-        Fabrica f = Fabrica.getInstance();
-        IControladorUsuario user = f.getControladorUsuario();
-        DtUsuario u = user.buscarUsuario(nickname);
+        ControladorUsuarioService controllerUser = new ControladorUsuarioService();
+        uytube.web.wsclients.IControladorUsuario user = controllerUser.getControladorUsuarioPort();
+        uytube.web.wsclients.DtUsuario u = user.buscarUsuario(nickname);
 
         String respuesta;
 

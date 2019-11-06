@@ -9,7 +9,8 @@ import DataTypes.DtListaParticulares;
 import DataTypes.DtUsuario;
 import DataTypes.DtVideo;
 import fabrica.Fabrica;
-import interfaces.IControladorCanal;
+import uytube.web.wsclients.ControladorCanalService;
+import uytube.web.wsclients.IControladorCanal;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,14 +47,15 @@ public class ValidarPlaylistServlet extends HttpServlet {
         String nomPlaylist = request.getParameter("nombre");
 
         Fabrica f = Fabrica.getInstance();
+        ControladorCanalService c = new ControladorCanalService();
         HttpSession s = request.getSession();
-        DtUsuario u = (DtUsuario) s.getAttribute("usuario");
+        uytube.web.wsclients.DtUsuario u = (uytube.web.wsclients.DtUsuario) s.getAttribute("usuario");
 
-        IControladorCanal icanal = f.getControladorCanal();
+        IControladorCanal icanal = c.getControladorCanalPort();
         List listas = icanal.getListasReproduccion(u.getNickname());
         String respuesta = "{\"existe\":false}";
         for (int i=0;i<listas.size();i++) {
-            DtListaParticulares lista = (DtListaParticulares) listas.get(i);
+            uytube.web.wsclients.DtListaParticulares lista = (uytube.web.wsclients.DtListaParticulares) listas.get(i);
             if (lista!=null) {
                 if(lista.getNombreLista().equals(nomPlaylist)){
                     respuesta = "{\"existe\":true}";

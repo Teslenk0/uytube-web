@@ -4,11 +4,7 @@
  * and open the template in the editor.
  */
 package uytube.web.classes;
-
-import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
+import uytube.web.wsclients.ControladorCanalService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,15 +40,15 @@ public class ValidarVideoServlet extends HttpServlet {
 
         String datosVideo = request.getParameter("nombre");
 
-        Fabrica f = Fabrica.getInstance();
+        ControladorCanalService c = new ControladorCanalService();
         HttpSession s = request.getSession();
-        DtUsuario u = (DtUsuario) s.getAttribute("usuario");
+        uytube.web.wsclients.DtUsuario u = (uytube.web.wsclients.DtUsuario) s.getAttribute("usuario");
 
-        IControladorCanal icanal = f.getControladorCanal();
+        uytube.web.wsclients.IControladorCanal icanal = c.getControladorCanalPort();
         List videos = icanal.listaVideos(u.getCanal());
         String respuesta = "{\"existe\":false}";
         for (Object video : videos) {
-            DtVideo v = (DtVideo) video;
+            uytube.web.wsclients.DtVideo v = (uytube.web.wsclients.DtVideo) video;
             if (v != null) {
                 if (v.getNombre().equals(datosVideo)) {
                     respuesta = "{\"existe\":true}";
