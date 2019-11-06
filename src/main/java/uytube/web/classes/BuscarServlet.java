@@ -5,9 +5,8 @@
  */
 package uytube.web.classes;
 
-import DataTypes.*;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
+import uytube.web.wsclients.ControladorCanalService;
+import uytube.web.wsclients.IControladorCanal;
 
 import java.io.IOException;
 import java.util.*;
@@ -40,13 +39,13 @@ public class BuscarServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
 
         HttpSession s = request.getSession();
-        DtUsuario user =(DtUsuario) s.getAttribute("usuario");
+        uytube.web.wsclients.DtUsuario user =(uytube.web.wsclients.DtUsuario) s.getAttribute("usuario");
 
         response.setContentType("text/html;charset=UTF-8");
         String texto = request.getParameter("buscador").trim();
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+        ControladorCanalService c = new ControladorCanalService();
+        IControladorCanal controladorCanal = c.getControladorCanalPort();
 
         //VER SI SACAR LOS RESULTADOS EN EL MISMO ARBOL O EN DIFERENTES
         List canales = controladorCanal.busquedaArborescenteCanales(texto);
@@ -58,38 +57,38 @@ public class BuscarServlet extends HttpServlet {
                 if(videos != null) {
                     Collections.sort(videos, new Comparator() {
                         public int compare(Object o1, Object o2) {
-                            DtVideo aux;
-                            DtVideo tmp;
-                            aux = (DtVideo) o1;
-                            tmp = (DtVideo) o2;
-                            return tmp.getFechaPublicacion().compareTo(aux.getFechaPublicacion());
+                            uytube.web.wsclients.DtVideo aux;
+                            uytube.web.wsclients.DtVideo tmp;
+                            aux = (uytube.web.wsclients.DtVideo) o1;
+                            tmp = (uytube.web.wsclients.DtVideo) o2;
+                            return tmp.getFechaPublicacion().toGregorianCalendar().compareTo(aux.getFechaPublicacion().toGregorianCalendar());
                         }
                     });
                 }
 
                 if(canales != null) {
-                    List<DtVideo> ultimosVideos = new LinkedList<DtVideo>();
-                    List<DtCanal> canalesVacios = new LinkedList<DtCanal>();
-                    DtCanal aux;
-                    DtVideo tmp;
+                    List<uytube.web.wsclients.DtVideo> ultimosVideos = new LinkedList<uytube.web.wsclients.DtVideo>();
+                    List<uytube.web.wsclients.DtCanal> canalesVacios = new LinkedList<uytube.web.wsclients.DtCanal>();
+                    uytube.web.wsclients.DtCanal aux;
+                    uytube.web.wsclients.DtVideo tmp;
                     for (int i=0; i < canales.size();i++){
-                        aux = (DtCanal)  canales.get(i);
-                        tmp = controladorCanal.buscoVideoMasRecienteCanal(aux.getNombre_canal());
+                        aux = (uytube.web.wsclients.DtCanal)  canales.get(i);
+                        tmp = controladorCanal.buscoVideoMasRecienteCanal(aux.getNombreCanal());
                         if(tmp != null) {
                             ultimosVideos.add(tmp);
                         }else{
                             canalesVacios.add(aux);
                         }
                     }
-                    Collections.sort(ultimosVideos,  new Comparator<DtVideo>() {
-                        public int compare(DtVideo m1, DtVideo m2) {
-                            return (m1.getFechaPublicacion().compareTo(m2.getFechaPublicacion())*(-1));
+                    Collections.sort(ultimosVideos,  new Comparator<uytube.web.wsclients.DtVideo>() {
+                        public int compare(uytube.web.wsclients.DtVideo m1, uytube.web.wsclients.DtVideo m2) {
+                            return (m1.getFechaPublicacion().toGregorianCalendar().compareTo(m2.getFechaPublicacion().toGregorianCalendar())*(-1));
                         }
                     });
                     aux = null;
                     canales = new LinkedList();
                     for(int i=0; i < ultimosVideos.size();i++){
-                        tmp = (DtVideo) ultimosVideos.get(i);
+                        tmp = (uytube.web.wsclients.DtVideo) ultimosVideos.get(i);
                         canales.add(tmp.getCanal());
                     }
                     canales.addAll(canalesVacios);
@@ -100,23 +99,22 @@ public class BuscarServlet extends HttpServlet {
                     List ultimosVideos = new LinkedList<>();
 
                     //listas postas
-                    List<DtListaParticulares> listasVacias = new LinkedList<DtListaParticulares>();
-                    DtListaParticulares aux;
+                    List<uytube.web.wsclients.DtListaParticulares> listasVacias = new LinkedList<uytube.web.wsclients.DtListaParticulares>();
+                    uytube.web.wsclients.DtListaParticulares aux;
 
                     //listas por videos
-                    DtListaParticularVideos vidxlist= null;
-                    DtVideo tmp;
+                    uytube.web.wsclients.DtListaParticularVideos vidxlist= null;
+                    uytube.web.wsclients.DtVideo tmp;
                     Object[] datos = new Object[2];
                     for (int i = 0; i < listas.size(); i++) {
-                        aux = (DtListaParticulares) listas.get(i);
-                        tmp = controladorCanal.buscoVideoMasRecienteListaParticular(aux.getNombreLista(),aux.getCanal().getNombre_canal());
+                        aux = (uytube.web.wsclients.DtListaParticulares) listas.get(i);
+                        tmp = controladorCanal.buscoVideoMasRecienteListaParticular(aux.getNombreLista(),aux.getCanal().getNombreCanal());
                         if (tmp != null) {
                             //creo un array en el que guardo la lista y el video mas nuevo
                             //perteneciente a esta
 
                             datos[0] = aux;
                             datos[1] = tmp;
-                            System.out.println(datos);
                             ultimosVideos.add(datos);
                             datos = new Object[2];
                         } else {
@@ -126,9 +124,9 @@ public class BuscarServlet extends HttpServlet {
 
                     Collections.sort(ultimosVideos, new Comparator<Object[]>() {
                         public int compare(Object[] m1, Object[] m2) {
-                            DtVideo v1 = (DtVideo) m1[1];
-                            DtVideo v2 = (DtVideo) m2[1];
-                            return (v1.getFechaPublicacion().compareTo(v2.getFechaPublicacion()) * (-1));
+                            uytube.web.wsclients.DtVideo v1 = (uytube.web.wsclients.DtVideo) m1[1];
+                            uytube.web.wsclients.DtVideo v2 = (uytube.web.wsclients.DtVideo) m2[1];
+                            return (v1.getFechaPublicacion().toGregorianCalendar().compareTo(v2.getFechaPublicacion().toGregorianCalendar()) * (-1));
                         }
                     });
 
@@ -147,10 +145,10 @@ public class BuscarServlet extends HttpServlet {
         if(user != null){
             if(canales != null){
                 int ubicacion = -5;
-                DtCanal canal = null;
+                uytube.web.wsclients.DtCanal canal = null;
                 for(int i = 0; i < canales.size();i++){
-                    canal = (DtCanal) canales.get(i);
-                    if(canal.getNombre_canal().equals(user.getCanal().getNombre_canal())){
+                    canal = (uytube.web.wsclients.DtCanal) canales.get(i);
+                    if(canal.getNombreCanal().equals(user.getCanal().getNombreCanal())){
                         ubicacion = i;
                         break;
                     }
