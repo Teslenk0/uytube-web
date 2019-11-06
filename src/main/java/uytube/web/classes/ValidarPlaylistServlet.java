@@ -5,10 +5,6 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtListaParticulares;
-import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
-import fabrica.Fabrica;
 import uytube.web.wsclients.ControladorCanalService;
 import uytube.web.wsclients.IControladorCanal;
 
@@ -46,7 +42,6 @@ public class ValidarPlaylistServlet extends HttpServlet {
 
         String nomPlaylist = request.getParameter("nombre");
 
-        Fabrica f = Fabrica.getInstance();
         ControladorCanalService c = new ControladorCanalService();
         HttpSession s = request.getSession();
         uytube.web.wsclients.DtUsuario u = (uytube.web.wsclients.DtUsuario) s.getAttribute("usuario");

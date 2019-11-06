@@ -1,7 +1,5 @@
 <%@include file="getPrimerVideoListaParticular.jsp"%>
 <%@page import="java.util.List"%>
-<%@ page import="DataTypes.*" %>
-<%@ page import="interfaces.IControladorUsuario" %>
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -59,10 +57,10 @@
                         <div class="user-pic">
                             <%if (user == null) {%>
                             <img class="img-responsive img-rounded"
-                                 src="http://localhost:8080/assets/imagenesUsuarios/Defecto.png"
+                                 src="http://uytube.com:8080/assets/imagenesUsuarios/Defecto.png"
                                  alt="User picture">
                             <%} else {
-                                String ruta = "http://localhost:8080/assets" + user.getImagen();%>
+                                String ruta = "http://uytube.com:8080/assets" + user.getImagen();%>
                             <img class="img-responsive img-rounded" src="<%=ruta%>" alt="User picture">
                             <%}%>
                         </div>
@@ -328,7 +326,7 @@
                         <div class="col-md-offset">
                             <div class="card canales-resultado mb-3">
                                 <div class="card-body">
-                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombreCanal()%>"><img src="http://localhost:8080/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal" ></a>
+                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombreCanal()%>"><img src="http://uytube.com:8080/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal" ></a>
                                     <h5 class="card-title"><strong><%=canal.getNombreCanal()%></strong></h5>
                                     <p class="card-text"><%=canal.getDescripcion()%></p>
                                 </div>

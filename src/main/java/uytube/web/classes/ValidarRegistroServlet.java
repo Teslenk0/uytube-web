@@ -5,9 +5,6 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtUsuario;
-import fabrica.Fabrica;
-import interfaces.IControladorUsuario;
 import org.json.JSONObject;
 import uytube.web.wsclients.ControladorCanalService;
 import uytube.web.wsclients.ControladorUsuarioService;
@@ -53,7 +50,7 @@ public class ValidarRegistroServlet extends HttpServlet {
         uytube.web.wsclients.IControladorUsuario u = controllerUser.getControladorUsuarioPort();
 
         ControladorCanalService controllerCanal = new ControladorCanalService();
-        IControladorCanal c = (IControladorCanal) new ControladorCanalService();
+        IControladorCanal c = controllerCanal.getControladorCanalPort();
         String rnickname, remail, rcanal, respuesta;
 
         uytube.web.wsclients.DtUsuario user = u.buscarUsuario(nickname);

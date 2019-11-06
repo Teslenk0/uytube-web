@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="getPrimerVideoListaParticular.jsp"%>
-<%@page import="DataTypes.DtUsuario"%>
+
 <%@ page import="uytube.web.wsclients.*" %>
 
 <%@ page contentType="text/html;charset=UTF-8" %>

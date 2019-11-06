@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="getPrimerVideoListaDefecto.jsp"%>
-<%@page import="DataTypes.DtUsuario"%>
+
 <%@page import="uytube.web.wsclients.ControladorUsuarioService"%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -23,9 +23,8 @@
                 ControladorCanalService controlador = new ControladorCanalService();
                 uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
 
-                DtUsuario user = null;
-                if (session.getAttribute("usuario") != null) {
-                    user = (DtUsuario) session.getAttribute("usuario");
+                //if (session.getAttribute("usuario") != null) {
+                    uytube.web.wsclients.DtUsuario user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
                     List listasDefecto = c.getListasDefecto(user.getNickname());
 
                     if (listasDefecto != null) {
@@ -37,7 +36,7 @@
                             if (datos != null) {%>
             <div class="card">
                 <div class="card-body">
-                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombre_canal()%>&es_particular=false"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
+                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombreCanal()%>&es_particular=false"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                 </div>
                 <div class="card-footer">
@@ -47,7 +46,7 @@
             <%} else {%>
             <div class="card">
                 <div class="card-body">
-                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombre_canal()%>&es_particular=false"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista"></a>
+                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombreCanal()%>&es_particular=false"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista"></a>
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                 </div>
                 <div class="card-footer">
@@ -57,7 +56,7 @@
             <%}
                         }
                     }
-                }
+                //}
             %>
         </div>
     </body>

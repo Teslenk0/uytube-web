@@ -5,9 +5,6 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtUsuario;
-import fabrica.Fabrica;
-import interfaces.IControladorUsuario;
 import org.json.JSONObject;
 import uytube.web.wsclients.ControladorUsuarioService;
 

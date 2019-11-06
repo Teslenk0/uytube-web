@@ -1,9 +1,10 @@
-<%@ page import="DataTypes.DtAuxiliarValorar" %>
+
 <%@include file="getID.jsp"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
-<%@ page import="uytube.web.wsclients.ControladorCanalService" %><%--
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
+<%@ page import="uytube.web.wsclients.DtAuxiliarValorar" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19

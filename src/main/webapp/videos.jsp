@@ -4,7 +4,6 @@
     Author     : tesla
 --%>
 <%@include file="getID.jsp"%>
-<%@page import="DataTypes.DtVideo"%>
 <%@page import="java.util.List"%>
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
@@ -26,16 +25,14 @@
                         ControladorCanalService controlador = new ControladorCanalService();
                         uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
 
-                        uytube.web.wsclients.DtUsuario user = null;
-                        if (session.getAttribute("usuario") != null) {
-                            user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
-                        }
+                        uytube.web.wsclients.DtUsuario user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
+
                         String id;
-                        DtVideo vid;
+                        uytube.web.wsclients.DtVideo vid;
                         List videos = c.listaVideos(user.getCanal());
                         if (videos != null) {
                             for (int i = 0; i < videos.size(); i++) {
-                                vid = (DtVideo) videos.get(i);
+                                vid = (uytube.web.wsclients.DtVideo) videos.get(i);
                                 if (vid.getUrl() != null) {
                                     id = getID(vid.getUrl());
                     %>
@@ -43,7 +40,7 @@
                     <div class="col-md-4">
                         <div class="card mb-3">
                         <div class="card-body">
-                            <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombre_canal()%>">
+                            <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombreCanal()%>">
                                 <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                             </a>
                             <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>

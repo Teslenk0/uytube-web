@@ -6,9 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="getPrimerVideoListaDefecto.jsp"%>
-<%@page import="uytube.web.wsclients.DtVideo"%>
 <%@page import="uytube.web.wsclients.DtListaporDefecto"%>
-<%@page import="uytube.web.wsclients.DtListaDefectoVideos"%>
 <%@page import="java.util.List"%>
 
 <%@page import="uytube.web.wsclients.DtUsuario"%>

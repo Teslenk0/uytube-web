@@ -1,11 +1,7 @@
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtVideo" %>
-<%@ page import="DataTypes.DtUsuario" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorUsuario" %>
-<%@ page import="interfaces.IControladorCanal" %>
+
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="DataTypes.DtListaDefectoVideos" %>
+
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@include file="getID.jsp"%>

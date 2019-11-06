@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package uytube.web.classes;
-
-import DataTypes.DtUsuario;
-import fabrica.Fabrica;
 import uytube.web.wsclients.ControladorCanalService;
 import uytube.web.wsclients.IControladorCanal;
 
