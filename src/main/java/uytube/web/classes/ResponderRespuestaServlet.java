@@ -42,6 +42,10 @@ public class ResponderRespuestaServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String comentario = request.getParameter("respuesta1");
@@ -75,8 +79,7 @@ public class ResponderRespuestaServlet extends HttpServlet {
             c.setRef(ref);
             c.setCanal(canal);
         }
-
-        response.sendRedirect("index.jsp");
+        request.getRequestDispatcher("verVideos.jsp?video="+ nomVid+"&canal="+canal).forward(request, response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

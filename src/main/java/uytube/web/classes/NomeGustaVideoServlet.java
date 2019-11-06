@@ -36,10 +36,14 @@ public class NomeGustaVideoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         HttpSession s = request.getSession();
         DtUsuario userLog = (DtUsuario) s.getAttribute("usuario");
-        String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesio
-        String canal = (String) s.getAttribute("canal"); // obtengo nombre canal por medio de la sesio
+        String nomVid = (String) s.getAttribute("nomVideo");
+        String canal = (String) s.getAttribute("canal");
 
         ControladorUsuarioService ff = new ControladorUsuarioService();
         IControladorUsuario controladorUsuario = ff.getControladorUsuarioPort();
@@ -51,7 +55,7 @@ public class NomeGustaVideoServlet extends HttpServlet {
         if(v != null && usuarioDuenio != null){
             controladorUsuario.valorarVideo(usuarioDuenio.getNickname(),nomVid,userLog.getNickname(),"No me gusta");
         }
-        response.sendRedirect("index.jsp");
+        request.getRequestDispatcher("verVideos.jsp?video="+ nomVid+"&canal="+canal).forward(request, response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

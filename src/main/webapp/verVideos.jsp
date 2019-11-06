@@ -1,11 +1,5 @@
-<%@ page import="DataTypes.DtAuxiliar" %>
 <%@ page import="DataTypes.DtAuxiliarValorar" %>
-<%@ page import="DataTypes.DtUsuario" %>
 <%@include file="getID.jsp"%>
-<%@ page import="DataTypes.DtVideo" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="interfaces.IControladorUsuario" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
@@ -33,6 +27,8 @@
 <body>
 
     <%
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         String nomVideo = request.getParameter("video"); // obtengo  parametros del href
         String canal = request.getParameter("canal");
 
@@ -41,9 +37,7 @@
         ControladorCanalService controlador = new ControladorCanalService();
         uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
 
-        //Fabrica fabrica = Fabrica.getInstance();
-        //IControladorCanal c = fabrica.getControladorCanal();
-        //IControladorUsuario u = i.getControladorUsuario();
+
         uytube.web.wsclients.DtUsuario usuarioDuenio = u.buscarUsuarioCanal(canal);
 
         uytube.web.wsclients.DtVideo video = null;
@@ -78,14 +72,14 @@
                         </div>
                         <div class="form-group" >
                            <%List listaV = c.listaMeGustas(usuarioDuenio.getNickname());
-                            DtAuxiliarValorar dtaux;
+                            uytube.web.wsclients.DtAuxiliarValorar dtaux;
                             int contMg = 0;
                             int contNmg = 0;
                             boolean esta = false;
                             boolean mg = false;
                             if(listaV != null){
                                 for (Object o : listaV) {
-                                    dtaux = (DtAuxiliarValorar) o;
+                                    dtaux = (uytube.web.wsclients.DtAuxiliarValorar) o;
                                     if (o != null) {
 
                                         if (nomVideo.equals(dtaux.getVid()) && dtaux.getVal().equals("Me gusta")) {
@@ -230,7 +224,7 @@
                         <h1>Comentarios</h1>
                         <%List lista = c.listaComentarios(video);
                         for(int x=0 ; x<lista.size(); x++){
-                            DtAuxiliar com = (DtAuxiliar) lista.get(x);
+                            uytube.web.wsclients.DtAuxiliar com = (uytube.web.wsclients.DtAuxiliar) lista.get(x);
                             if(com != null){ %>
 
                             <!-- Contenedor Principal -->
@@ -249,7 +243,7 @@
                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderComentarioServlet" id="fromRespuesta">
                                                     <div class="comment-head">
                                                         <%uytube.web.wsclients.DtUsuario us = u.buscarUsuario(com.getNick());%>
-                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=us.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6> -->
+                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=us.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6>
                                                         <span><%=com.getFecha()+" Hs"%></span>
                                                     </div>
                                                     <div class="comment-content">
@@ -286,7 +280,7 @@
                                         else {
                                             List lista2 = c.listaComentarios(video);
                                             for(int y=0; y<lista2.size(); y++){
-                                                DtAuxiliar resp =(DtAuxiliar) lista2.get(y);
+                                                uytube.web.wsclients.DtAuxiliar resp =(uytube.web.wsclients.DtAuxiliar) lista2.get(y);
                                                 if(com.getPadre().equals(resp.getReferencia().toString())){%>
                                                     <!-- Respuestas de los comentarios -->
                                                     <ul class="comments-list reply-list">

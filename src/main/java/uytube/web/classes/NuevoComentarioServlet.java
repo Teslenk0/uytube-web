@@ -42,6 +42,10 @@ public class NuevoComentarioServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String comentario = request.getParameter("comentario");
@@ -49,7 +53,7 @@ public class NuevoComentarioServlet extends HttpServlet {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date fecha = sdf.parse(date);
 
-        String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion de verVideo.jsp
+        String nomVid = (String) s.getAttribute("nomVideo");
         String canal = (String) s.getAttribute("canal");
 
         ControladorCanalService f = new ControladorCanalService();
@@ -74,8 +78,7 @@ public class NuevoComentarioServlet extends HttpServlet {
             c.setCanal(canal);
             controladorCanal.agregarComentario(c);
         }
-
-        response.sendRedirect("index.jsp");
+        request.getRequestDispatcher("verVideos.jsp?video="+ nomVid+"&canal="+canal).forward(request, response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
