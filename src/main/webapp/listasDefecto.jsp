@@ -6,14 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="getPrimerVideoListaDefecto.jsp"%>
-<%@page import="DataTypes.DtVideo"%>
-<%@page import="DataTypes.DtListaporDefecto"%>
-<%@page import="DataTypes.DtListaDefectoVideos"%>
-<%@page import="java.util.List"%>
-
-<%@page import="interfaces.IControladorCanal"%>
-<%@page import="fabrica.Fabrica"%>
 <%@page import="DataTypes.DtUsuario"%>
+<%@page import="uytube.web.wsclients.ControladorUsuarioService"%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -23,18 +18,21 @@
     <body>
         <div class="card-group">
             <%
+                ControladorUsuarioService us = new ControladorUsuarioService();
+                uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
+                ControladorCanalService controlador = new ControladorCanalService();
+                uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
                 DtUsuario user = null;
                 if (session.getAttribute("usuario") != null) {
                     user = (DtUsuario) session.getAttribute("usuario");
-                    Fabrica fabrica = Fabrica.getInstance();
-                    IControladorCanal controladorCanal = fabrica.getControladorCanal();
-                    List listasDefecto = controladorCanal.getListasDefecto(user.getNickname());
+                    List listasDefecto = c.getListasDefecto(user.getNickname());
 
                     if (listasDefecto != null) {
-                        DtListaporDefecto lista;
+                        uytube.web.wsclients.DtListaporDefecto lista;
                         String[] datos;
                         for (int i = 0; i < listasDefecto.size(); i++) {
-                            lista = (DtListaporDefecto) listasDefecto.get(i);
+                            lista = (uytube.web.wsclients.DtListaporDefecto) listasDefecto.get(i);
                             datos = getPrimerVideoListaDefecto(lista, user.getNickname());
                             if (datos != null) {%>
             <div class="card">

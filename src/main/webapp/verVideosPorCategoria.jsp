@@ -1,10 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="DataTypes.DtVideo" %>
-<%@ page import="DataTypes.DtListaParticularVideos" %>
-<%@ page import="DataTypes.DtListaParticulares" %>
-<%@ page import="interfaces.IControladorUsuario" %>
+<%@ page import="uytube.web.wsclients.*" %>
 <%@include file="getPrimerVideoListaParticular.jsp"%>
 <%--
   Created by IntelliJ IDEA.
@@ -27,9 +22,11 @@
     </div>
 </div>
 <%
-    Fabrica fabrica = Fabrica.getInstance();
-    IControladorCanal c = fabrica.getControladorCanal();
-    IControladorUsuario u = fabrica.getControladorUsuario();
+    ControladorUsuarioService us = new ControladorUsuarioService();
+    uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
+    ControladorCanalService controlador = new ControladorCanalService();
+    uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
     String categoria = request.getParameter("categoria");
     List listaVidCat = c.listarVideosPorCategoria(categoria);
     List listaPlaylistCat = c.obtenerListasParticularesPorCategoria(categoria);
@@ -45,26 +42,26 @@
                             <div class="card-deck">
                                 <div class="row align-self-center">
                                     <%
-                                    DtVideo vid;
-                                    DtListaParticulares playlist = null;
+                                    uytube.web.wsclients.DtVideo vid;
+                                    uytube.web.wsclients.DtListaParticulares playlist = null;
                                     String id;
                                     if(listaVidCat != null){
                                         for(int x = 0; x<listaVidCat.size(); x++){
-                                            vid = (DtVideo) listaVidCat.get(x);
+                                            vid = (uytube.web.wsclients.DtVideo) listaVidCat.get(x);
                                             if (vid.getUrl() != null) {
                                                 id = getID(vid.getUrl());
-                                                if(!vid.getPrivado()){%>
+                                                if(!vid.isPrivado()){%>
                                                     <div class="col-md-4">
                                                         <div class="card mb-3">
                                                             <div class="card-body">
-                                                                <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombre_canal()%>">
+                                                                <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombreCanal()%>">
                                                                     <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                                                 </a>
                                                                 <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
                                                                 <p class="card-text">Video</p>
                                                             </div>
                                                             <div class="card-footer">
-                                                                <small class="text-muted">Propietario: <%=vid.getCanal().getNombre_canal()%></small>
+                                                                <small class="text-muted">Propietario: <%=vid.getCanal().getNombreCanal()%></small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -75,22 +72,22 @@
                                     String[] datos;
                                     if(listaPlaylistCat != null){
                                         for(int y=0; y<listaPlaylistCat.size(); y++){
-                                            playlist = (DtListaParticulares) listaPlaylistCat.get(y);
-                                            DtUsuario usuario = u.buscarUsuarioCanal(playlist.getCanal().getNombre_canal());
+                                            playlist = (uytube.web.wsclients.DtListaParticulares) listaPlaylistCat.get(y);
+                                            DtUsuario usuario = u.buscarUsuarioCanal(playlist.getCanal().getNombreCanal());
                                             datos = getPrimerVideoListaParticular(playlist, usuario.getNickname());
                                             if (datos != null) {
-                                                if(!playlist.getPrivado()){%>
+                                                if(!playlist.isPrivado()){%>
                                                     <div class="col-md-4">
                                                         <div class="card mb-3">
                                                                 <div class="card-body">
-                                                                    <a href="verPlaylist.jsp?nomLista=<%=playlist.getNombreLista()%>&user=<%=playlist.getCanal().getNombre_canal()%>&es_particular=true">
+                                                                    <a href="verPlaylist.jsp?nomLista=<%=playlist.getNombreLista()%>&user=<%=playlist.getCanal().getNombreCanal()%>&es_particular=true">
                                                                         <img src="https://img.youtube.com/vi/<%=datos[0].toString()%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
                                                                     </a>
                                                                     <h5 class="card-title"><strong><%=playlist.getNombreLista()%></strong></h5>
                                                                     <p class="card-text">Lista de Reproduccion</p>
                                                                 </div>
                                                                     <div class="card-footer">
-                                                                        <small class="text-muted">Propietario: <%=playlist.getCanal().getNombre_canal()%></small>
+                                                                        <small class="text-muted">Propietario: <%=playlist.getCanal().getNombreCanal()%></small>
                                                                     </div>
                                                         </div>
                                                     </div>

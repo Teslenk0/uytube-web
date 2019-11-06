@@ -1,8 +1,3 @@
-<%@ page import="DataTypes.DtUsuario" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtListaParticulares" %>
 <%@include file="getPrimerVideoListaParticular.jsp"%>
 <%--
   Created by IntelliJ IDEA.

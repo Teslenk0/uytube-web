@@ -5,10 +5,9 @@
   Time: 18:45
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorCanal" %>
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtCategoria" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -52,13 +51,16 @@
                         <label class="cols-sm-2 control-label" for="categorias">Categorias</label>
                         <div class="btn-group dropup" style="margin-bottom: 10px">
                             <select id="categorias" name="categorias">
-                                <% Fabrica fabrica = Fabrica.getInstance();
-                                    IControladorCanal controladorCanal = fabrica.getControladorCanal();
-                                    List lista = controladorCanal.getCategorias();
+                                <%  ControladorUsuarioService us = new ControladorUsuarioService();
+                                    uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
+                                    ControladorCanalService controlador = new ControladorCanalService();
+                                    uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
+                                    List lista = c.getCategorias();
                                     for(int x=0 ; x<lista.size(); x++) {
-                                        DtCategoria c = (DtCategoria) lista.get(x);
+                                        uytube.web.wsclients.DtCategoria cat = (uytube.web.wsclients.DtCategoria) lista.get(x);
                                         if(c != null) {%>
-                                <option value="<%=c.getnombreCategoria()%>" name="categoria"><%=c.getnombreCategoria()%></option>
+                                <option value="<%=cat.getNombreCategoria()%>" name="categoria"><%=cat.getNombreCategoria()%></option>
                                 <%}}%>
                             </select>
                         </div>

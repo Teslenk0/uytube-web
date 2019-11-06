@@ -4,12 +4,10 @@
     Author     : tesla
 --%>
 <%@include file="getID.jsp"%>
-<%@page import="DataTypes.DtUsuario"%>
 <%@page import="DataTypes.DtVideo"%>
 <%@page import="java.util.List"%>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="controladores.ControladorCanal" %>
-<%@ page import="interfaces.IControladorCanal" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,14 +21,17 @@
             <div class="card-deck">
                 <div class="row align-self-center">
                     <%
-                        DtUsuario user = null;
+                        ControladorUsuarioService us = new ControladorUsuarioService();
+                        uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
+                        ControladorCanalService controlador = new ControladorCanalService();
+                        uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
+                        uytube.web.wsclients.DtUsuario user = null;
                         if (session.getAttribute("usuario") != null) {
-                            user = (DtUsuario) session.getAttribute("usuario");
+                            user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
                         }
                         String id;
                         DtVideo vid;
-                        Fabrica fabrica = Fabrica.getInstance();
-                        IControladorCanal c = fabrica.getControladorCanal();
                         List videos = c.listaVideos(user.getCanal());
                         if (videos != null) {
                             for (int i = 0; i < videos.size(); i++) {

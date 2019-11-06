@@ -1,6 +1,8 @@
 <%@page import="DataTypes.DtUsuario"%>
 <%@ page import="fabrica.Fabrica" %>
 <%@ page import="interfaces.IControladorUsuario" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
@@ -8,10 +10,14 @@
 </head>
 <body>
 <%
+    ControladorUsuarioService us = new ControladorUsuarioService();
+    uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
+    ControladorCanalService controlador = new ControladorCanalService();
+    uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
     String nomCanal = (String) session.getAttribute("nomCanal");
-    Fabrica f = Fabrica.getInstance();
-    IControladorUsuario u = f.getControladorUsuario();
-    DtUsuario user = u.buscarUsuarioCanal(nomCanal);
+
+    uytube.web.wsclients.DtUsuario user = u.buscarUsuarioCanal(nomCanal);
 %>
 <div id="modify-user-panel" class="container" style="margin-top: 30px; margin-bottom: 50px">
     <div class="row justify-content-center">
@@ -39,7 +45,7 @@
                         </div>
                         <div class="form-group" id="errorNom">
                             <label for="nomCanal" class="control-label">Nombre de Canal</label>
-                            <input type="text" class="form-control" name="nomCanal" id="nomCanal" value="<%=user.getCanal().getNombre_canal()%>" disabled/>
+                            <input type="text" class="form-control" name="nomCanal" id="nomCanal" value="<%=user.getCanal().getNombreCanal()%>" disabled/>
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>

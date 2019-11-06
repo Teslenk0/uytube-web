@@ -1,10 +1,7 @@
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtVideo" %>
-<%@ page import="DataTypes.DtUsuario" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorUsuario" %>
-<%@ page import="interfaces.IControladorCanal" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@include file="getID.jsp"%>
 <%--
   Created by IntelliJ IDEA.
@@ -41,36 +38,37 @@
                         <div class="card-deck">
                             <div class="row align-self-center">
                                 <%
+                                    ControladorUsuarioService us = new ControladorUsuarioService();
+                                    uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
+                                    ControladorCanalService controlador = new ControladorCanalService();
+                                    uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
                                     String nombrePlaylist = request.getParameter("nomLista");
-                                    DtUsuario user = null;
+                                    uytube.web.wsclients.DtUsuario user = null;
                                     if (session.getAttribute("usuario") != null) {
-                                        user = (DtUsuario) session.getAttribute("usuario");
+                                        user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
                                     }
 
-                                    Fabrica fabrica = Fabrica.getInstance();
-                                    IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
-                                    IControladorCanal controladorCanal = fabrica.getControladorCanal();
-
-                                    List<DtVideo> videosUser = new ArrayList<>();
-                                    videosUser = controladorCanal.listaVideos(user.getCanal());
-                                    List<DtVideo> lista_videos = new ArrayList<>();
+                                    List videosUser = new ArrayList<>();
+                                    videosUser = c.listaVideos(user.getCanal());
+                                    List<uytube.web.wsclients.DtVideo> lista_videos = new ArrayList<>();
                                     lista_videos.addAll(videosUser);
 
-                                    List usuarios = controladorUsuario.listaUsuarios();
+                                    List usuarios = u.listaUsuarios();
 
                                     List aux = null;
-                                    DtVideo vidActual;
-                                    DtUsuario userActual = null;
+                                    uytube.web.wsclients.DtVideo vidActual;
+                                    uytube.web.wsclients.DtUsuario userActual = null;
 
                                     String esParticular = request.getParameter("es_particular");
                                     for(int x = 0; x < usuarios.size(); x++) {
-                                        userActual = (DtUsuario) usuarios.get(x);
+                                        userActual = (uytube.web.wsclients.DtUsuario) usuarios.get(x);
                                         if(!userActual.getNickname().equals(user.getNickname())) {
-                                            aux = controladorCanal.listaVideos(userActual.getCanal());
+                                            aux = c.listaVideos(userActual.getCanal());
                                             if(!aux.isEmpty()) {
                                                 for (int y = 0; y < aux.size(); y++) {
-                                                    vidActual = (DtVideo) aux.get(y);
-                                                    if (!vidActual.getPrivado()) {
+                                                    vidActual = (uytube.web.wsclients.DtVideo) aux.get(y);
+                                                    if (!vidActual.isPrivado()) {
                                                         lista_videos.add(vidActual);
                                                     }
                                                 }
@@ -79,11 +77,11 @@
                                     }
 
                                     String id;
-                                    DtVideo vid = null;
+                                    uytube.web.wsclients.DtVideo vid = null;
 
                                     if (lista_videos != null) {
                                         for (int i = 0; i < lista_videos.size(); i++) {
-                                            vid = (DtVideo) lista_videos.get(i);
+                                            vid = (uytube.web.wsclients.DtVideo) lista_videos.get(i);
                                             if (vid.getUrl() != null) {
                                                 //getID es la funcion definida en el .jsp con el mismo nombre (getID.jsp)
                                                 id = getID(vid.getUrl());
@@ -93,19 +91,19 @@
                                     <div class="card-body">
                                         <%if(esParticular.equals("true")) {
                                         %>
-                                            <a href="/uytube/AgregarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=vid.getNombre()%>&nomCanal=<%=vid.getCanal().getNombre_canal()%>">
+                                            <a href="/uytube/AgregarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=vid.getNombre()%>&nomCanal=<%=vid.getCanal().getNombreCanal()%>">
                                                 <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                             </a>
                                         <%}
                                         else if(esParticular.equals("false")) {%>
-                                            <a href="/uytube/AgregarVideoPlaylistDefectoServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=vid.getNombre()%>&nomCanal=<%=vid.getCanal().getNombre_canal()%>">
+                                            <a href="/uytube/AgregarVideoPlaylistDefectoServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=vid.getNombre()%>&nomCanal=<%=vid.getCanal().getNombreCanal()%>">
                                                 <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                             </a>
                                         <%}%>
                                         <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
                                     </div>
                                     <div class="card-footer">
-                                        <small class="text-muted">Canal: <%=vid.getCanal().getNombre_canal()%></small>
+                                        <small class="text-muted">Canal: <%=vid.getCanal().getNombreCanal()%></small>
                                     </div>
                                 </div>
                             </div>

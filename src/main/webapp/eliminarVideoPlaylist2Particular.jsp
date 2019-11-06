@@ -1,12 +1,7 @@
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtVideo" %>
-<%@ page import="DataTypes.DtUsuario" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorUsuario" %>
-<%@ page import="interfaces.IControladorCanal" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="DataTypes.DtListaDefectoVideos" %>
-<%@ page import="DataTypes.DtListaParticularVideos" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@include file="getID.jsp"%>
 <%--
   Created by IntelliJ IDEA.
@@ -43,28 +38,29 @@
                         <div class="card-deck">
                             <div class="row align-self-center">
                                 <%
+                                    ControladorUsuarioService us = new ControladorUsuarioService();
+                                    uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
+                                    ControladorCanalService controlador = new ControladorCanalService();
+                                    uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
                                     String nombrePlaylist = request.getParameter("nomLista");
-                                    DtUsuario user = null;
+                                    uytube.web.wsclients.DtUsuario user = null;
                                     if (session.getAttribute("usuario") != null) {
-                                        user = (DtUsuario) session.getAttribute("usuario");
+                                        user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
                                     }
 
-                                    Fabrica fabrica = Fabrica.getInstance();
-                                    IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
-                                    IControladorCanal controladorCanal = fabrica.getControladorCanal();
-
                                     String esParticular = request.getParameter("es_particular");
-                                    List<DtListaParticularVideos> lista_videos = new ArrayList<>();
-                                    lista_videos=controladorCanal.getVideosListaParticular(user.getNickname(),nombrePlaylist);
+                                    List lista_videos = new ArrayList<>();
+                                    lista_videos=c.getVideosListaParticular(user.getNickname(),nombrePlaylist);
 
                                     String id;
-                                    DtListaParticularVideos vid = null;
-                                    DtVideo aux = null;
+                                    uytube.web.wsclients.DtListaParticularVideos vid = null;
+                                    uytube.web.wsclients.DtVideo aux = null;
 
                                     if (lista_videos != null) {
                                         for (int i = 0; i < lista_videos.size(); i++) {
-                                            vid = (DtListaParticularVideos) lista_videos.get(i);
-                                            aux = controladorCanal.obtenerVideo(vid.getVideo(),vid.getCanal());
+                                            vid = (uytube.web.wsclients.DtListaParticularVideos) lista_videos.get(i);
+                                            aux = c.obtenerVideo(vid.getVideo(),vid.getCanal());
                                             if (aux.getUrl() != null) {
                                                 //getID es la funcion definida en el .jsp con el mismo nombre (getID.jsp)
                                                 id = getID(aux.getUrl());
@@ -75,19 +71,19 @@
                                             <%if(esParticular.equals("true")) {
                                             %>
 
-                                            <a href="/uytube/EliminarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombre_canal()%>">
+                                            <a href="/uytube/EliminarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombreCanal()%>">
                                                 <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                             </a>
                                             <%}
                                             else if(esParticular.equals("false")) {%>
-                                            <a href="/uytube/EliminarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombre_canal()%>">
+                                            <a href="/uytube/EliminarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombreCanal()%>">
                                                 <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                             </a>
                                             <%}%>
                                             <h5 class="card-title"><strong><%=aux.getNombre()%></strong></h5>
                                         </div>
                                         <div class="card-footer">
-                                            <small class="text-muted">Canal: <%=aux.getCanal().getNombre_canal()%></small>
+                                            <small class="text-muted">Canal: <%=aux.getCanal().getNombreCanal()%></small>
                                         </div>
                                     </div>
                                 </div>

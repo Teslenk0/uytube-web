@@ -7,6 +7,7 @@
 --%>
 <%@include file="getPrimerVideoListaParticular.jsp"%>
 <%@page import="DataTypes.DtUsuario"%>
+<%@ page import="uytube.web.wsclients.*" %>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 
@@ -17,18 +18,22 @@
 <body>
 <div class="card-group">
     <%
-        DtUsuario user;
+        ControladorUsuarioService us = new ControladorUsuarioService();
+        uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
+        ControladorCanalService controlador = new ControladorCanalService();
+        uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
+        uytube.web.wsclients.DtUsuario user;
         if (session.getAttribute("usuario") != null) {
-            user = (DtUsuario) session.getAttribute("usuario");
-            Fabrica fabrica = Fabrica.getInstance();
-            IControladorCanal controladorCanal = fabrica.getControladorCanal();
-            List listasParticulares = controladorCanal.getListasReproduccion(user.getNickname());
+            user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
+
+            List listasParticulares = c.getListasReproduccion(user.getNickname());
 
             if (listasParticulares != null) {
-                DtListaParticulares lista;
+                uytube.web.wsclients.DtListaParticulares lista;
                 String[] datos;
                 for (int i = 0; i < listasParticulares.size(); i++) {
-                    lista = (DtListaParticulares) listasParticulares.get(i);
+                    lista = (uytube.web.wsclients.DtListaParticulares) listasParticulares.get(i);
                     datos = getPrimerVideoListaParticular(lista, user.getNickname());
                     if (datos != null) {
     %>
@@ -36,7 +41,7 @@
         <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
         <div class="card-body">
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-            <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
+            <p class="card-text">Categoria: <%=lista.getCategoria().getNombreCategoria()%></p>
         </div>
         <div class="card-footer">
             <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>" class="btn btn-primary">Modificar</a>
