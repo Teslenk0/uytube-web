@@ -5,18 +5,21 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtCanal;
-import DataTypes.DtUsuario;
-import fabrica.Fabrica;
-import interfaces.IControladorUsuario;
+import uytube.web.wsclients.ControladorUsuarioService;
+import uytube.web.wsclients.DtCanal;
+import uytube.web.wsclients.DtUsuario;
+import uytube.web.wsclients.IControladorUsuario;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -73,16 +76,30 @@ public class RegistrarServlet extends HttpServlet {
         else
             img = "/imagenesUsuarios/Defecto.png";
 
-        DtCanal c;
+        DtCanal c = new DtCanal();
         if(nomCanal.isEmpty())
-            c = new DtCanal(nick,desc,privado);
+           c.setNombreCanal(nick);
         else
-            c = new DtCanal(nomCanal,desc,privado);
+           c.setNombreCanal(nomCanal);
+        c.setDescripcion(desc);
+        c.setPrivado(privado);
 
-        DtUsuario u = new DtUsuario(nick,pass,nombre,apellido,email,fecha,img,c);
+        DtUsuario u = new DtUsuario();
+        u.setNickname(nick);
+        u.setContrasenia(pass);
+        u.setNombre(nombre);
+        u.setApellido(apellido);
+        u.setEmail(email);
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorUsuario cu = fabrica.getControladorUsuario();
+        GregorianCalendar calendario = new GregorianCalendar();
+        calendario.setTime(fecha);
+        XMLGregorianCalendar xmlCalendario = DatatypeFactory.newInstance().newXMLGregorianCalendar(calendario);
+        u.setFechaNac(xmlCalendario);
+        u.setImagen(img);
+        u.setCanal(c);
+
+        ControladorUsuarioService cc = new ControladorUsuarioService();
+        IControladorUsuario cu = cc.getControladorUsuarioPort();
         cu.registrarUsuario(u,null);
 
         response.sendRedirect("login.jsp");

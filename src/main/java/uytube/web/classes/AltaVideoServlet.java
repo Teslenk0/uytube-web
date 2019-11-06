@@ -5,11 +5,8 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtCanal;
-import DataTypes.DtUsuario;
-import DataTypes.DtVideo;
-import fabrica.Fabrica;
-import interfaces.IControladorCanal;
+
+import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -17,11 +14,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -60,10 +59,22 @@ public class AltaVideoServlet extends HttpServlet {
         Date fecha = sdf.parse(date);
 
         DtCanal canal = user.getCanal();
-        DtVideo v = new DtVideo(video, canal, fecha, url, descripcion,categoria, duracion, estado);
+        DtVideo v = new DtVideo();
+        v.setNombre(video);
+        v.setCanal(canal);
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorCanal controladorCanal = fabrica.getControladorCanal();
+        GregorianCalendar calendario = new GregorianCalendar();
+        calendario.setTime(fecha);
+        XMLGregorianCalendar xmlCalendario = DatatypeFactory.newInstance().newXMLGregorianCalendar(calendario);
+        v.setFechaPublicacion(xmlCalendario);
+        v.setUrl(url);
+        v.setDescripcion(descripcion);
+        v.setCategoria(categoria);
+        v.setDuracion(duracion);
+        v.setPrivado(estado);
+
+        ControladorCanalService f = new ControladorCanalService();
+        IControladorCanal controladorCanal = f.getControladorCanalPort();
         controladorCanal.registrarVideo(v);
         response.sendRedirect("index.jsp");
     }

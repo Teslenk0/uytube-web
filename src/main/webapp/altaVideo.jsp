@@ -1,11 +1,8 @@
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorCanal" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
+<%@ page import="uytube.web.wsclients.DtCategoria" %>
+<%@ page import="uytube.web.wsclients.IControladorCanal" %>
 <%@ page import="java.util.List" %>
-<%@ page import="DataTypes.DtCategoria" %>
-<%@ page import="java.util.Calendar" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.time.LocalDate" %>
-<%@ page import="java.time.format.DateTimeFormatter" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 10/10/19
@@ -61,13 +58,14 @@
                         <label class="control-label" for="categorias">Categorías</label>
                         <div class="btn-group dropup" >
                             <select id="categorias" name="categorias" required>
-                                <% Fabrica fabrica = Fabrica.getInstance();
-                                    IControladorCanal controladorCanal = fabrica.getControladorCanal();
+                                <%
+                                    ControladorCanalService f = new ControladorCanalService();
+                                    IControladorCanal controladorCanal = f.getControladorCanalPort();
                                     List lista = controladorCanal.getCategorias();
                                     for(int x=0 ; x<lista.size(); x++) {
                                         DtCategoria c = (DtCategoria) lista.get(x);
                                         if(c != null) {%>
-                                <option value="<%=c.getnombreCategoria()%>" name="categoria"><%=c.getnombreCategoria()%></option>
+                                <option value="<%=c.getNombreCategoria()%>" name="categoria"><%=c.getNombreCategoria()%></option>
                                 <%}}%>
                             </select>
                         </div>

@@ -1,4 +1,4 @@
-<%@page import="DataTypes.DtUsuario"%>
+<%@ page import="uytube.web.wsclients.DtUsuario" %>
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page %>
 <html>
@@ -17,9 +17,9 @@
     }
 
     assert user != null;
-    Boolean isChannelPrivate = user.getCanal().getPrivado();
+    Boolean isChannelPrivate = user.getCanal().isPrivado();
 
-    session.setAttribute("oldN",user.getCanal().getNombre_canal());
+    session.setAttribute("oldN",user.getCanal().getNombreCanal());
 %>
 <div id="modify-user-panel" class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row justify-content-center">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group" id="errorNom">
                             <label for="nomCanal" class="control-label">Nombre de Canal</label>
-                            <input type="text" class="form-control" name="nomCanal" id="nomCanal" value="<%=user.getCanal().getNombre_canal()%>" />
+                            <input type="text" class="form-control" name="nomCanal" id="nomCanal" value="<%=user.getCanal().getNombreCanal()%>" />
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>

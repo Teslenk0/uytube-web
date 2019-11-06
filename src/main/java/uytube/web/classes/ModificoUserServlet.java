@@ -5,20 +5,22 @@
  */
 package uytube.web.classes;
 
-import DataTypes.DtCanal;
-import DataTypes.DtUsuario;
-import fabrica.Fabrica;
-import interfaces.IControladorUsuario;
+
+import uytube.web.wsclients.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 @MultipartConfig
 @WebServlet(name = "ModificoUserServlet", urlPatterns = {"/ModificoUserServlet"})
@@ -36,7 +38,7 @@ public class ModificoUserServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ParseException {
+            throws ServletException, IOException, ParseException, DatatypeConfigurationException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
@@ -79,20 +81,34 @@ public class ModificoUserServlet extends HttpServlet {
             img = "/imagenesUsuarios/"+ nick +".png";
         }
 
-        DtCanal canal = new DtCanal(nomCanal,descripcion,estadoCanal);
+        DtCanal canal = new DtCanal();
+        canal.setNombreCanal(nomCanal);
+        canal.setDescripcion(descripcion);
+        canal.setPrivado(estadoCanal);
 
-        DtUsuario userMod = new DtUsuario(nick,pass,nombre,apellido,email,fecha,img,user.getCanal());
-        DtUsuario userModificado = new DtUsuario(nick,pass,nombre,apellido,email,fecha,img,canal);
+        DtUsuario userMod = new DtUsuario();
+        userMod.setNickname(nick);
+        userMod.setContrasenia(pass);
+        userMod.setNombre(nombre);
+        userMod.setApellido(apellido);
+        userMod.setEmail(email);
 
-        s.setAttribute("usuario", userModificado);
+        GregorianCalendar calendario = new GregorianCalendar();
+        calendario.setTime(fecha);
+        XMLGregorianCalendar xmlCalendario = DatatypeFactory.newInstance().newXMLGregorianCalendar(calendario);
+        userMod.setFechaNac(xmlCalendario);
+        userMod.setImagen(img);
+        userMod.setCanal(user.getCanal());
 
-        Fabrica fabrica = Fabrica.getInstance();
-        IControladorUsuario controladorUsuario = fabrica.getControladorUsuario();
+        ControladorUsuarioService f = new ControladorUsuarioService();
+        IControladorUsuario controladorUsuario = f.getControladorUsuarioPort();
         try{
             controladorUsuario.modificarUsuario(userMod,canal,null,false);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+        userMod.setCanal(canal);
+        s.setAttribute("usuario", userMod);
         response.sendRedirect("index.jsp");
 
     }
@@ -128,9 +144,10 @@ public class ModificoUserServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (ParseException e) {
+        } catch (ParseException | DatatypeConfigurationException e) {
             e.printStackTrace();
         }
+
 
     }
 
