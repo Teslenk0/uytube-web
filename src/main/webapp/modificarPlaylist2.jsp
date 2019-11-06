@@ -1,7 +1,4 @@
-<%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="DataTypes.DtListaParticulares" %>
-<%@ page import="DataTypes.DtUsuario" %><%--
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %><%--
   Created by IntelliJ IDEA.
   User: tecnologo
   Date: 17/10/19
@@ -18,14 +15,14 @@
 </head>
 <body style="background-color:#343841">
 <%
-    DtUsuario user = null;
+    uytube.web.wsclients.DtUsuario user = null;
     if (session.getAttribute("usuario") != null)
-        user = (DtUsuario) session.getAttribute("usuario");
+        user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
     String nomLista = request.getParameter("nomLista");
-    Fabrica fabrica = Fabrica.getInstance();
-    IControladorCanal controladorCanal = fabrica.getControladorCanal();
-    DtListaParticulares lista = controladorCanal.buscarListaParticular(nomLista,user.getCanal());
-    Boolean isPlaylistPrivate = lista.getPrivado();
+    ControladorCanalService controllerCanal = new ControladorCanalService();
+    uytube.web.wsclients.IControladorCanal controladorCanal = controllerCanal.getControladorCanalPort();
+    uytube.web.wsclients.DtListaParticulares lista = controladorCanal.buscarListaParticular(nomLista,user.getCanal());
+    Boolean isPlaylistPrivate = lista.isPrivado();
     session.setAttribute("lista", lista);
 
 %>

@@ -6,14 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="getPrimerVideoListaDefecto.jsp"%>
-<%@page import="DataTypes.DtVideo"%>
-<%@page import="DataTypes.DtListaporDefecto"%>
-<%@page import="DataTypes.DtListaDefectoVideos"%>
+<%@page import="uytube.web.wsclients.DtVideo"%>
+<%@page import="uytube.web.wsclients.DtListaporDefecto"%>
+<%@page import="uytube.web.wsclients.DtListaDefectoVideos"%>
 <%@page import="java.util.List"%>
 
-<%@page import="interfaces.IControladorCanal"%>
-<%@page import="fabrica.Fabrica"%>
-<%@page import="DataTypes.DtUsuario"%>
+<%@page import="uytube.web.wsclients.DtUsuario"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -27,8 +25,10 @@
         String esParticular = "false";
         if (session.getAttribute("usuario") != null) {
             user = (DtUsuario) session.getAttribute("usuario");
-            Fabrica fabrica = Fabrica.getInstance();
-            IControladorCanal controladorCanal = fabrica.getControladorCanal();
+
+            ControladorCanalService c = new ControladorCanalService();
+            uytube.web.wsclients.IControladorCanal controladorCanal = c.getControladorCanalPort();
+
             List listasDefecto = controladorCanal.getListasDefecto(user.getNickname());
 
             if (listasDefecto != null) {

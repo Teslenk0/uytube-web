@@ -7,6 +7,9 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="DataTypes.DtListaParticularVideos" %>
 <%@ page import="DataTypes.DtListaDefectoVideos" %>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
+<%@ page import="javax.naming.ldap.Control" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@include file="getID.jsp"%>
 <%--
   Created by IntelliJ IDEA.
@@ -27,10 +30,15 @@
     <%  String nomLista = request.getParameter("nomLista");
         String canal = request.getParameter("user");
         String particular = request.getParameter("es_particular");
-        Fabrica f = Fabrica.getInstance();
-        IControladorCanal c = f.getControladorCanal();
-        IControladorUsuario u = f.getControladorUsuario();
-        DtUsuario user = u.buscarUsuarioCanal(canal);
+
+        ControladorCanalService controllerCanal = new ControladorCanalService();
+        uytube.web.wsclients.IControladorCanal c =  controllerCanal.getControladorCanalPort();
+
+        ControladorUsuarioService controllerUser = new ControladorUsuarioService();
+        uytube.web.wsclients.IControladorUsuario u = controllerUser.getControladorUsuarioPort();
+
+        uytube.web.wsclients.DtUsuario user = u.buscarUsuarioCanal(canal);
+
         List listaVideos;
         if(particular.equals("true"))
             listaVideos = c.getVideosListaParticular(user.getNickname(), nomLista);
@@ -54,24 +62,24 @@
                             <div class="row">
                                 <%
                                     if (listaVideos != null) {
-                                        DtVideo v;
+                                        uytube.web.wsclients.DtVideo v;
                                         String id;
                                         for (int i = 0; i < listaVideos.size(); i++) {
-                                            DtListaParticularVideos li = (DtListaParticularVideos) listaVideos.get(i);
+                                            uytube.web.wsclients.DtListaParticularVideos li = (uytube.web.wsclients.DtListaParticularVideos) listaVideos.get(i);
                                             v = c.obtenerVideo(li.getVideo(),li.getCanal());
                                             id = getID(v.getUrl());
                                         %>
                                         <div class="col-md-6">
                                             <div class="card mb-3">
                                                 <div class="card-body">
-                                                    <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombre_canal()%>">
+                                                    <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
                                                         <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                                     </a>
                                                     <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
                                                     <p class="card-text"><%=v.getDescripcion()%></p>
                                                 </div>
                                                 <div class="card-footer">
-                                                    <small>Canal: <%=v.getCanal().getNombre_canal()%></small>
+                                                    <small>Canal: <%=v.getCanal().getNombreCanal()%></small>
                                                     <br>
                                                     <small>Duracion: <%=v.getDuracion()%></small>
                                                 </div>
@@ -84,24 +92,24 @@
                             <div class="row">
                                     <%
                                         if (listaVideos != null) {
-                                            DtVideo v;
+                                            uytube.web.wsclients.DtVideo v;
                                             String id;
                                             for (int i = 0; i < listaVideos.size(); i++) {
-                                                DtListaDefectoVideos li = (DtListaDefectoVideos) listaVideos.get(i);
+                                                uytube.web.wsclients.DtListaDefectoVideos li = (uytube.web.wsclients.DtListaDefectoVideos) listaVideos.get(i);
                                                 v = c.obtenerVideo(li.getVideo(),li.getCanal());
                                                 id = getID(v.getUrl());
                                     %>
                                     <div class="col-md-6">
                                         <div class="card mb-3">
                                             <div class="card-body">
-                                                <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombre_canal()%>">
+                                                <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
                                                     <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                                 </a>
                                                 <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
                                                 <p class="card-text"><%=v.getDescripcion()%></p>
                                             </div>
                                             <div class="card-footer">
-                                                <small>Canal: <%=v.getCanal().getNombre_canal()%></small>
+                                                <small>Canal: <%=v.getCanal().getNombreCanal()%></small>
                                                 <br>
                                                 <small>Duracion: <%=v.getDuracion()%></small>
                                             </div>

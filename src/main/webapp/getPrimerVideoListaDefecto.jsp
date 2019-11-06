@@ -8,7 +8,7 @@
 <%@ page import="uytube.web.wsclients.DtListaDefectoVideos" %>
 <%@ page import="uytube.web.wsclients.DtVideo" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
-<%!    public String[] getPrimerVideoListaDefecto(DtListaporDefecto list, String usuario) {
+<%!    public String[] getPrimerVideoListaDefecto(uytube.web.wsclients.DtListaporDefecto list, String usuario) {
         ControladorCanalService c = new ControladorCanalService();
         uytube.web.wsclients.IControladorCanal controladorCanal = c.getControladorCanalPort();
         DtListaDefectoVideos vid = null;

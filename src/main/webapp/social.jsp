@@ -1,16 +1,9 @@
-<%@ page import="DataTypes.DtUsuario" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorCanal" %>
-<%@ page import="interfaces.IControladorUsuario" %>
+<%@ page import="uytube.web.wsclients.DtUsuario" %>
 <%@ page import="java.util.List" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: esteban
-  Date: 18/10/19
-  Time: 13:09
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page contentType="text/html;charset=UTF-8"%>
+
 <html>
 <head>
     <title>Social</title>
@@ -19,13 +12,16 @@
 </head>
 <body>
     <%
-    DtUsuario user = null;
+    uytube.web.wsclients.DtUsuario user = null;
     if (session.getAttribute("usuario") != null) {
     user = (DtUsuario) session.getAttribute("usuario");
     }
-    Fabrica fabrica = Fabrica.getInstance();
-    IControladorCanal c = fabrica.getControladorCanal();
-    IControladorUsuario u = fabrica.getControladorUsuario();
+    ControladorCanalService controllerCanal = new ControladorCanalService();
+    uytube.web.wsclients.IControladorCanal c = controllerCanal.getControladorCanalPort();
+
+    ControladorUsuarioService controllerUser = new ControladorUsuarioService();
+    uytube.web.wsclients.IControladorUsuario u = controllerUser.getControladorUsuarioPort();
+
     List listaSeguidos = u.listaSeguidos(user.getNickname());
     List listaSeguidores = u.listaSeguidores(user.getNickname());
     %>
@@ -87,7 +83,7 @@
                                         <%String ruta = "http://localhost:8080/assets" + nomSeguidor.getImagen();%>
                                         <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                         <div class="media-body">
-                                            <a href="verCanales.jsp?nomCanal=<%=nomSeguidor.getCanal().getNombre_canal()%>" style="margin-left: 10px"><%=nomSeguidor.getNickname()%></a>
+                                            <a href="verCanales.jsp?nomCanal=<%=nomSeguidor.getCanal().getNombreCanal()%>" style="margin-left: 10px"><%=nomSeguidor.getNickname()%></a>
                                             <%
                                                 for(int r=0; r<listaSeguidos.size(); r++){
                                                     String usuarios = (String) listaSeguidos.get(r);
@@ -125,7 +121,7 @@
                                     <%String ruta = "http://localhost:8080/assets" + userSeguidos.getImagen();%>
                                     <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                     <div class="media-body">
-                                        <a href="verCanales.jsp?nomCanal=<%=userSeguidos.getCanal().getNombre_canal()%>" style="margin-left: 10px"><%=userSeguidos.getNickname()%></a>
+                                        <a href="verCanales.jsp?nomCanal=<%=userSeguidos.getCanal().getNombreCanal()%>" style="margin-left: 10px"><%=userSeguidos.getNickname()%></a>
                                         <a href="/uytube/UnfollowUsuarioServlet?seguir=<%=userSeguidos.getNickname()%>" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
                                     </div>
                                 </div>

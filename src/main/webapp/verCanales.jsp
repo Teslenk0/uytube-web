@@ -1,6 +1,5 @@
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorUsuario" %>
-<%@ page import="DataTypes.DtUsuario" %>
+
+<%@ page import="uytube.web.wsclients.DtUsuario" %>
 <%@ page import="java.util.List" %>
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %><%--
     Document   : inicio

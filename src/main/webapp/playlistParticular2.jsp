@@ -7,9 +7,7 @@
 <%@include file="getPrimerVideoListaParticular.jsp"%>
 <%@page import="java.util.List"%>
 
-<%@page import="interfaces.IControladorCanal"%>
-<%@page import="fabrica.Fabrica"%>
-<%@page import="DataTypes.DtUsuario"%>
+<%@page import="uytube.web.wsclients.DtUsuario"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -23,8 +21,8 @@
         String esParticular = "true";
         if (session.getAttribute("usuario") != null) {
             user = (DtUsuario) session.getAttribute("usuario");
-            Fabrica fabrica = Fabrica.getInstance();
-            IControladorCanal controladorCanal = fabrica.getControladorCanal();
+            ControladorCanalService controllerCanal = new ControladorCanalService();
+            uytube.web.wsclients.IControladorCanal controladorCanal = controllerCanal.getControladorCanalPort();
             List listasParticulares = controladorCanal.getListasReproduccion(user.getNickname());
 
             if (listasParticulares != null) {
@@ -38,7 +36,7 @@
         <img src="https://img.youtube.com/vi/<%=datos[0].toString()%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
         <div class="card-body">
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-            <p class="card-text">Categoria: <%=lista.getCategoria().getnombreCategoria()%></p>
+            <p class="card-text">Categoria: <%=lista.getCategoria().getNombreCategoria()%></p>
         </div>
         <div class="card-footer">
             <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>

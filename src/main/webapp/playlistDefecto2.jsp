@@ -6,14 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="getPrimerVideoListaDefecto.jsp"%>
-<%@page import="DataTypes.DtVideo"%>
-<%@page import="DataTypes.DtListaporDefecto"%>
-<%@page import="DataTypes.DtListaDefectoVideos"%>
+
 <%@page import="java.util.List"%>
 
-<%@page import="interfaces.IControladorCanal"%>
-<%@page import="fabrica.Fabrica"%>
-<%@page import="DataTypes.DtUsuario"%>
+<%@page import="uytube.web.wsclients.DtUsuario"%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -27,15 +24,15 @@
         String esParticular = "false";
         if (session.getAttribute("usuario") != null) {
             user = (DtUsuario) session.getAttribute("usuario");
-            Fabrica fabrica = Fabrica.getInstance();
-            IControladorCanal controladorCanal = fabrica.getControladorCanal();
+            ControladorCanalService controllerCanal = new ControladorCanalService();
+            uytube.web.wsclients.IControladorCanal controladorCanal = controllerCanal.getControladorCanalPort();
             List listasDefecto = controladorCanal.getListasDefecto(user.getNickname());
 
             if (listasDefecto != null) {
-                DtListaporDefecto lista;
+                uytube.web.wsclients.DtListaporDefecto lista;
                 String[] datos;
                 for (int i = 0; i < listasDefecto.size(); i++) {
-                    lista = (DtListaporDefecto) listasDefecto.get(i);
+                    lista = (uytube.web.wsclients.DtListaporDefecto) listasDefecto.get(i);
                     datos = getPrimerVideoListaDefecto(lista, user.getNickname());
                     if (datos != null) {%>
     <div class="card">

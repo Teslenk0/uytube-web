@@ -1,7 +1,7 @@
-<%@ page import="DataTypes.DtUsuario" %>
-<%@ page import="fabrica.Fabrica" %>
-<%@ page import="interfaces.IControladorUsuario" %>
+<%@ page import="uytube.web.wsclients.DtUsuario" %>
+
 <%@ page import="java.util.List" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%--
   Created by IntelliJ IDEA.
   User: esteban
@@ -20,8 +20,9 @@
 <body>
     <%
         String nomCanal = (String) session.getAttribute("nomCanal");
-        Fabrica f = Fabrica.getInstance();
-        IControladorUsuario u = f.getControladorUsuario();
+        ControladorUsuarioService controllerUser = new ControladorUsuarioService();
+        uytube.web.wsclients.IControladorUsuario u = controllerUser.getControladorUsuarioPort();
+
         DtUsuario user = u.buscarUsuarioCanal(nomCanal);
         List listaSeguidos = u.listaSeguidos(user.getNickname());
         List listaSeguidores = u.listaSeguidores(user.getNickname());
@@ -84,7 +85,7 @@
                                         <%String ruta = "http://localhost:8080/assets" + nomSeguidor.getImagen();%>
                                         <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                         <div class="media-body">
-                                            <a href="verCanales.jsp?nomCanal=<%=nomSeguidor.getCanal().getNombre_canal()%>" style="margin-left: 10px"><%=nomSeguidor.getNickname()%></a>
+                                            <a href="verCanales.jsp?nomCanal=<%=nomSeguidor.getCanal().getNombreCanal()%>" style="margin-left: 10px"><%=nomSeguidor.getNickname()%></a>
                                         </div>
                                     </div>
                                 <!-- end followers -->
@@ -106,7 +107,7 @@
                                     <%String ruta = "http://localhost:8080/assets" + userSeguidos.getImagen();%>
                                     <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                     <div class="media-body">
-                                        <a href="verCanales.jsp?nomCanal=<%=userSeguidos.getCanal().getNombre_canal()%>" style="margin-left: 10px"><%=userSeguidos.getNickname()%></a>
+                                        <a href="verCanales.jsp?nomCanal=<%=userSeguidos.getCanal().getNombreCanal()%>" style="margin-left: 10px"><%=userSeguidos.getNickname()%></a>
                                     </div>
                                 </div>
                             <%}
