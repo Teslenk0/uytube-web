@@ -33,8 +33,6 @@
             }
             ControladorCanalService controllerCanal = new ControladorCanalService();
             uytube.web.wsclients.IControladorCanal c = controllerCanal.getControladorCanalPort();
-            //Fabrica fabrica = Fabrica.getInstance();
-            //IControladorCanal c = fabrica.getControladorCanal();
         %>
         <!-- BARRA SUPERIOR -->
         <div class="barra_superior" style="background-color:#343841">

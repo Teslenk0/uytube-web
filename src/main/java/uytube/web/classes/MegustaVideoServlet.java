@@ -36,6 +36,8 @@ public class MegustaVideoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
         DtUsuario userLog = (DtUsuario) s.getAttribute("usuario");
         String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion
@@ -52,7 +54,9 @@ public class MegustaVideoServlet extends HttpServlet {
         if(v != null && usuarioDuenio != null){
             controladorUsuario.valorarVideo(usuarioDuenio.getNickname(),nomVid,userLog.getNickname(),"Me gusta");
         }
-        response.sendRedirect("index.jsp");
+        response.setContentType("text/html;charset=UTF-8");
+
+        request.getRequestDispatcher("verVideos.jsp?video="+ nomVid+"&canal="+canal).forward(request, response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
