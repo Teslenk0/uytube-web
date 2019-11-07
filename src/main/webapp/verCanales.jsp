@@ -44,7 +44,7 @@
         </div>
         <hr>
             <div class="form-group">
-            <%String ruta = "http://uytube.com:8080/assets" + user.getImagen();%>
+            <%String ruta = "http://localhost:8080/assets" + user.getImagen();%>
             <img class="img-thumbnail" src="<%=ruta%>" style="margin-left: 45%; width: 160px; height: 160px" alt="User picture">
             <hr>
             <%
