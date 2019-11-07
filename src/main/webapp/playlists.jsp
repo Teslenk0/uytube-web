@@ -14,6 +14,9 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title>Playlists</title>
         <script src="assets/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     </head>
     <body>
         <hr>

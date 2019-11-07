@@ -33,12 +33,11 @@
             uytube.web.wsclients.IControladorCanal c = controllerCanal.getControladorCanalPort();
         %>
         <!-- BARRA SUPERIOR -->
-        <div class="barra_superior" style="background-color:#343841">
+        <div class="barra_superior text-center" style="background-color:#343841">
             <div class="d-inline">
-                <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+                <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
             </div>
         </div>
-
 
         <!-- ACA BARRA LATERAL -->
         <div class="page-wrapper chiller-theme toggled">

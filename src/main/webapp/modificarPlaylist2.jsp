@@ -12,8 +12,17 @@
     <link rel="stylesheet" type="text/css" href="assets/css/modificaruser.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Modificar Playlist</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body style="background-color:#343841">
+<body>
+    <!-- BARRA SUPERIOR -->
+    <div class="barra_superior text-center" style="background-color:#343841">
+        <div class="d-inline">
+            <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+        </div>
+    </div>
 <%
     uytube.web.wsclients.DtUsuario user = null;
     if (session.getAttribute("usuario") != null)

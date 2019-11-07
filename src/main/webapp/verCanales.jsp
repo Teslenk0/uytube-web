@@ -34,17 +34,20 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     </head>
     <body>
-        <div class="barra_superior" style="background-color:#343841">
+        <div class="barra_superior text-center" style="background-color:#343841">
             <div class="d-inline">
-                <a class="navbar-brand" href="index.jsp" style="margin-left: 46%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+                <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
             </div>
         </div>
         <hr>
-            <div class="form-group">
+            <div class="form-group text-center">
             <%String ruta = "http://uytube.com:8080/assets" + user.getImagen();%>
-            <img class="img-thumbnail" src="<%=ruta%>" style="margin-left: 45%; width: 160px; height: 160px" alt="User picture">
+            <img class="img-fluid" src="<%=ruta%>" style=" width: 160px; height: 160px" alt="User picture">
             <hr>
             <%
                 if(logiado!=null && !user.getNickname().equals(logiado.getNickname())){
@@ -58,11 +61,11 @@
                     }%>
                     <h5 align="center">Canal de <%=user.getNickname()%></h5>
                     <%if(aux == true){%>
-                        <a href="/uytube/UnfollowUsuarioServlet?seguir=<%=user.getNickname()%>" style="margin-left: 48%" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
+                        <a href="/uytube/UnfollowUsuarioServlet?seguir=<%=user.getNickname()%>" class="btn btn-danger"><i class="fa fa-close-round"></i> Unfollow</i><br></a>
                     <%
                     }
                     else{%>
-                        <a href="/uytube/FollowUsuarioServlet?seguir=<%=user.getNickname()%>" style="margin-left: 48%" class="btn btn-success" ><i class="fa fa-checkmark-round"></i> Follow</i><br></a>
+                        <a href="/uytube/FollowUsuarioServlet?seguir=<%=user.getNickname()%>" class="btn btn-success" ><i class="fa fa-checkmark-round"></i> Follow</i><br></a>
                     <%}
                 }else{%>
                     <h5 align="center">Canal de <%=user.getNickname()%></h5>

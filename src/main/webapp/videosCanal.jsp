@@ -13,6 +13,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Videos</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     </head>
     <body>
         <br>
@@ -48,7 +51,7 @@
                                     <p class="card-text"><%=vid.getDescripcion()%></p>
                                 </div>
                                 <div class="card-footer">
-                                    <small class="text-muted">Subido el: <%=vid.getFechaPublicacion().toGregorianCalendar().toString()%></small>
+                                    <small class="text-muted">Subido el: <%=vid.getFechaPublicacion().toString()%></small>
                                 </div>
                             </div>
                         </div>

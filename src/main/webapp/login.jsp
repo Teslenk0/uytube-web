@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
 <body>
@@ -24,8 +26,7 @@
                             <div class="field" id="boxUsuario">
                                 <label class="label">Usuario</label>
                                 <div class="control has-icons-left">
-                                    <input name="inputUser" id="inputUser" placeholder="Usuario" class="input"
-                                        oninvalid="this.setCustomValidity('Debe ingresar su nickname')" required>
+                                    <input name="inputUser" id="inputUser" placeholder="Usuario" class="input" required>
                                     <span class="icon is-small is-left">
                                         <i class="fa fa-user icon"></i>
                                     </span>
@@ -35,8 +36,7 @@
                                 <label for="inputPassword" class="label">Contraseña</label>
                                 <div class="control has-icons-left">
                                     <input type="password" name="inputPassword" id="inputPassword" placeholder="*******"
-                                        class="input" oninvalid="this.setCustomValidity('Debe ingresar su Password')"
-                                        required>
+                                        class="input" required>
                                     <span class="icon is-small is-left">
                                         <i class="fa fa-lock icon"></i>
                                     </span>

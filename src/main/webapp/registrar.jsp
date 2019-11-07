@@ -12,16 +12,19 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/registrar.css">
     <title>Registro de Usuario</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
 <div class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row justify-content-center">
-        <div class="card col s10 offset-s1 align z-depth-4">
+        <div class="card col s10 offset-s1 z-depth-4">
             <div class="card-content">
                 <form id="bodyForm" method="post" action="RegistrarServlet" novalidate enctype="multipart/form-data">
                     <span class="card-title" style="text-align:center">Registrar</span>
                     <div class="divider"></div>
-                        <div class="row" style="margin-top: 10px; margin-bottom: -15px">
+                        <div class="row rowA">
                             <div class="col s6">
                                 <div class="input-field">
                                     <i class="material-icons prefix">person</i>
@@ -82,7 +85,6 @@
                             <span class="helper-text" data-error="Este campo es obligatorio"></span>
                         </div>
                         <div>
-                             <!--<i class="material-icons prefix">security</i>-->
                             <label for="buttonR" style="font-size: larger">Estado de canal</label>
                             <p>
                             <label>

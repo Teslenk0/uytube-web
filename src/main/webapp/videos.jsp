@@ -13,10 +13,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Videos</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     </head>
     <body>
         <br>
-        <div class="container-fluid">
             <div class="card-deck">
                 <div class="row align-self-center">
                     <%
@@ -57,6 +59,5 @@
                     %>
                 </div>
             </div>
-        </div>
     </body>
 </html>

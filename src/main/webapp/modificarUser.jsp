@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/modificaruser.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Modificar Usuario</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body style="background-color: #32353E">
 <%

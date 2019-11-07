@@ -1,4 +1,8 @@
 .btn-block {
     width: 100%;
-    height: 6%;
+}
+
+.rowA {
+    margin-top: 10px;
+    margin-bottom: -14px;
 }

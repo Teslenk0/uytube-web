@@ -24,6 +24,9 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
 
@@ -55,9 +58,9 @@
         }
     %>
     <!-- BARRA SUPERIOR -->
-    <div class="barra_superior" style="background-color:#343841">
+    <div class="barra_superior text-center" style="background-color:#343841">
         <div class="d-inline">
-            <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+            <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -228,12 +231,12 @@
                             uytube.web.wsclients.DtAuxiliar com = (uytube.web.wsclients.DtAuxiliar) lista.get(x);
                             if(com != null){ %>
 
-                            <!-- Contenedor Principal -->
-                            <div class="comments-container">
-                                <ul id="comments-list" class="comments-list">
-                                    <li>
-                                        <%if (com.getPadre() == null) {%>
-                                        <div class="comment-main-level">
+                                <!-- Contenedor Principal -->
+                                <div class="comments-container">
+                                    <ul id="comments-list" class="comments-list">
+                                        <li>
+                                            <%if (com.getPadre() == null) {%>
+                                            <div class="comment-main-level">
                                             <!-- Avatar -->
                                             <%
                                                 uytube.web.wsclients.DtUsuario usuarioComenta = u.buscarUsuario(com.getNick());
@@ -277,65 +280,66 @@
                                                 </form>
                                             </div>
                                         </div>
-                                        <%}
-                                        else {
-                                            List lista2 = c.listaComentarios(video);
-                                            for(int y=0; y<lista2.size(); y++){
-                                                uytube.web.wsclients.DtAuxiliar resp =(uytube.web.wsclients.DtAuxiliar) lista2.get(y);
-                                                if(com.getPadre().equals(resp.getReferencia().toString())){%>
-                                                    <!-- Respuestas de los comentarios -->
-                                                    <ul class="comments-list reply-list">
-                                                        <li>
-                                                            <!-- Avatar -->
-                                                            <%
-                                                                uytube.web.wsclients.DtUsuario usuarioResp = u.buscarUsuario(com.getNick());
-                                                            String ruta2 = "http://uytube.com:8080/assets" + usuarioResp.getImagen();%>
-                                                            <div class="comment-avatar"><img src="<%=ruta2%>" alt=""></div>
-                                                            <!-- Contenedor del Comentario -->
-                                                            <div class="comment-box">
-                                                                <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
-                                                                    <div class="comment-head">
-                                                                        <%uytube.web.wsclients.DtUsuario usR = u.buscarUsuario(com.getNick());%>
-                                                                        <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6>
-                                                                        <span><%=resp.getFecha()+" Hs"%></span>
-                                                                        <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
-                                                                    </div>
-                                                                    <div class="comment-content">
-                                                                        <%="@"+resp.getNick() +": "+com.getComentario()%>
-                                                                    </div>
-                                                                    <%if (logeado != null) {%>
-                                                                        <div class="form-group">
-                                                                            <div class="cols-sm-10">
-                                                                                <div class="input-group" >
-                                                                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                                                                    <textarea class="form-control" rows="2" name="respuesta1" id="respuesta1" placeholder="Agrega una respuesta"></textarea>
-                                                                                    <input type="hidden"  name="referencia1" value="<%=resp.getReferencia()%>" >
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group" id="error2" >
-                                                                            <button type="submit" id="resp1" name="resp" class="btn btn-success btn-lg" >Responder</button>
-                                                                        </div>
-                                                                    <%}
-                                                                    else{ %>
-                                                                        <div class="form-group">
-                                                                            <div class="cols-sm-10">
-                                                                                <div class="input-group" >
-                                                                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                                                                    <textarea class="form-control" rows="2" name="respuesta1" placeholder="Agrega una respuesta" disabled></textarea>
-                                                                                </div>
-                                                                             </div>
-                                                                        </div>
-                                                                    <%}%>
-                                                                </form>
+                                        <%
+                                        List lista2 = c.listaComentarios(video);
+                                        for(int y=0; y<lista2.size(); y++){
+                                            uytube.web.wsclients.DtAuxiliar resp =(uytube.web.wsclients.DtAuxiliar) lista2.get(y);
+                                            if(resp != null){
+                                                if(com.getReferencia().toString().equals(resp.getPadre())){%>
+                                                <!-- Respuestas de los comentarios -->
+                                                <ul class="comments-list reply-list">
+                                                    <li>
+                                                    <!-- Avatar -->
+                                                    <%
+                                                        uytube.web.wsclients.DtUsuario usuarioResp = u.buscarUsuario(com.getNick());
+                                                        String ruta2 = "http://uytube.com:8080/assets" + usuarioResp.getImagen();%>
+                                                    <div class="comment-avatar"><img src="<%=ruta2%>" alt=""></div>
+                                                    <!-- Contenedor del Comentario -->
+                                                    <div class="comment-box">
+                                                        <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
+                                                            <div class="comment-head">
+                                                                <%uytube.web.wsclients.DtUsuario usR = u.buscarUsuario(com.getNick());%>
+                                                                <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6>
+                                                                <span><%=resp.getFecha()+" Hs"%></span>
+                                                                <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
                                                             </div>
-                                                        </li>
-                                                    </ul>
+                                                            <div class="comment-content">
+                                                                <%="@"+resp.getNick() +": "+resp.getComentario()%>
+                                                            </div>
+                                                            <%if (logeado != null) {%>
+                                                            <div class="form-group">
+                                                                <div class="cols-sm-10">
+                                                                    <div class="input-group" >
+                                                                        <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                        <textarea class="form-control" rows="2" name="respuesta1" id="respuesta1" placeholder="Agrega una respuesta"></textarea>
+                                                                        <input type="hidden"  name="referencia1" value="<%=com.getReferencia()%>" >
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group" id="error2" >
+                                                                <button type="submit" id="resp1" name="resp" class="btn btn-success btn-lg" >Responder</button>
+                                                            </div>
+                                                            <%}
+                                                            else{ %>
+                                                            <div class="form-group">
+                                                                <div class="cols-sm-10">
+                                                                    <div class="input-group" >
+                                                                        <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                        <textarea class="form-control" rows="2" name="respuesta1" placeholder="Agrega una respuesta" disabled></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <%}%>
+                                                        </form>
+                                                    </div>
                                                 </li>
-                                                <%}
-                                            }
+                                            </ul>
+                                        </li>
+                                        <%}
                                         }
                                     }
+                                }
+                            }
                         }%>
 
                                 </ul>

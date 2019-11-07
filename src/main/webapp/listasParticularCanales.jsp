@@ -12,6 +12,9 @@
 <html>
 <head>
     <title>Listas Particulares</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
 <br>
@@ -36,10 +39,10 @@
                     datos = getPrimerVideoListaParticular(lista, user.getNickname());
                     if(!lista.isPrivado()){
                     if (datos != null) {%>
-            <div class="col-md-10">
-                <div class="card mb-5">
-                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombreCanal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
+            <div class="col-md-4">
+                <div class="card mb-3">
                     <div class="card-body">
+                        <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombreCanal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
                         <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                         <p class="card-text">Categoria: <%=lista.getCategoria().getNombreCategoria()%></p>
                     </div>
@@ -49,8 +52,8 @@
                 </div>
             </div>
     <%} else {%>
-            <div class="col-md-10">
-                <div class="card mb-5">
+            <div class="col-md-4">
+                <div class="card mb-3">
                     <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
                     <div class="card-body">
                         <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>

@@ -78,6 +78,8 @@ public class ResponderRespuestaServlet extends HttpServlet {
             c.setPadre(padre);
             c.setRef(ref);
             c.setCanal(canal);
+
+            controladorCanal.agregarComentario(c);
         }
         request.getRequestDispatcher("verVideos.jsp?video="+ nomVid+"&canal="+canal).forward(request, response);
     }

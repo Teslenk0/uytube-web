@@ -13,12 +13,15 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="assets/css/modificaruser.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Videos</title>
 </head>
 <body>
-<div class="barra_superior" style="background-color:#343841">
+<div class="barra_superior text-center" style="background-color:#343841">
     <div class="d-inline">
-        <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+        <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
     </div>
 </div>
 <%
@@ -34,7 +37,7 @@
 %>
     <div id="modify-user-panel" class="container" style="margin-top: 50px; margin-bottom: 50px">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Lista por categoria: <%=categoria%></div>
                     <div class="card-body">
@@ -51,7 +54,7 @@
                                             if (vid.getUrl() != null) {
                                                 id = getID(vid.getUrl());
                                                 if(!vid.isPrivado()){%>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="card mb-3">
                                                             <div class="card-body">
                                                                 <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombreCanal()%>">
