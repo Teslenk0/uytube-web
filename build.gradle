@@ -14,7 +14,7 @@ repositories {
 dependencies {
     providedCompile 'javax:javaee-web-api:7.0'
     providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //compile fileTree(include: ['*.jar'], dir: 'libs')
     compile group: 'org.netbeans.external', name: 'AbsoluteLayout', version: 'RELEASE111'
     compile group: 'com.github.fracpete', name: 'jfilechooser-bookmarks', version: '0.1.6'
     compile group: 'com.toedter', name: 'jcalendar', version: '1.4'

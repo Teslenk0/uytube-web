@@ -237,7 +237,7 @@
                                             <!-- Avatar -->
                                             <%
                                                 uytube.web.wsclients.DtUsuario usuarioComenta = u.buscarUsuario(com.getNick());
-                                            String ruta = "http://localhost:8080/assets" + usuarioComenta.getImagen();%>
+                                            String ruta = "http://uytube.com:8080/assets" + usuarioComenta.getImagen();%>
                                             <div class="comment-avatar"><img src="<%=ruta%>" alt=""></div>
                                             <!-- Contenedor del Comentario -->
                                             <div class="comment-box">
@@ -289,7 +289,7 @@
                                                             <!-- Avatar -->
                                                             <%
                                                                 uytube.web.wsclients.DtUsuario usuarioResp = u.buscarUsuario(com.getNick());
-                                                            String ruta2 = "http://localhost:8080/assets" + usuarioResp.getImagen();%>
+                                                            String ruta2 = "http://uytube.com:8080/assets" + usuarioResp.getImagen();%>
                                                             <div class="comment-avatar"><img src="<%=ruta2%>" alt=""></div>
                                                             <!-- Contenedor del Comentario -->
                                                             <div class="comment-box">

@@ -5,6 +5,7 @@
  */
 package uytube.web.classes;
 
+import org.hibernate.query.criteria.internal.expression.function.CurrentDateFunction;
 import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.MultipartConfig;
@@ -49,9 +50,9 @@ public class NuevoComentarioServlet extends HttpServlet {
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String comentario = request.getParameter("comentario");
-        String date = LocalDate.now().toString();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date fecha = sdf.parse(date);
+        Date fecha = new Date();
+        sdf.format(fecha);
 
         String nomVid = (String) s.getAttribute("nomVideo");
         String canal = (String) s.getAttribute("canal");
@@ -70,6 +71,7 @@ public class NuevoComentarioServlet extends HttpServlet {
 
             GregorianCalendar calendario = new GregorianCalendar();
             calendario.setTime(fecha);
+            //calendario.clear(GregorianCalendar.ZONE_OFFSET);
             XMLGregorianCalendar xmlCalendario = DatatypeFactory.newInstance().newXMLGregorianCalendar(calendario);
             c.setFecha(xmlCalendario);
             c.setVideo(v);
@@ -78,6 +80,8 @@ public class NuevoComentarioServlet extends HttpServlet {
             c.setCanal(canal);
             controladorCanal.agregarComentario(c);
         }
+        System.out.println(nomVid);
+        System.out.println(canal);
         request.getRequestDispatcher("verVideos.jsp?video="+ nomVid+"&canal="+canal).forward(request, response);
     }
 

@@ -50,9 +50,9 @@ public class ResponderRespuestaServlet extends HttpServlet {
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String comentario = request.getParameter("respuesta1");
         String padre = request.getParameter("referencia1");
-        String date = LocalDate.now().toString();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date fecha = sdf.parse(date);
+        Date fecha = new Date();
+        sdf.format(fecha);
 
         String nomVid = (String) s.getAttribute("nomVideo"); // obtengo nombre video por medio de la sesion de verVideo.jsp
         String canal = (String) s.getAttribute("canal");
