@@ -80,7 +80,7 @@
                                     DtUsuario nomSeguidor = (DtUsuario) listaSeguidores.get(x);
                                     %>
                                     <div class="media user-follower">
-                                        <%String ruta = "http://uytube.com:8080/assets" + nomSeguidor.getImagen();%>
+                                        <%String ruta = "http://localhost:8080/assets" + nomSeguidor.getImagen();%>
                                         <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                         <div class="media-body">
                                             <a href="verCanales.jsp?nomCanal=<%=nomSeguidor.getCanal().getNombreCanal()%>" style="margin-left: 10px"><%=nomSeguidor.getNickname()%></a>
@@ -118,7 +118,7 @@
                                     DtUsuario userSeguidos = u.buscarUsuario(aux);
                                 %>
                                 <div class="media user-follower" style="margin-top: 30px">
-                                    <%String ruta = "http://uytube.com:8080/assets" + userSeguidos.getImagen();%>
+                                    <%String ruta = "http://localhost:8080/assets" + userSeguidos.getImagen();%>
                                     <img src="<%=ruta%>" alt="User Avatar" class="media-object pull-left">
                                     <div class="media-body">
                                         <a href="verCanales.jsp?nomCanal=<%=userSeguidos.getCanal().getNombreCanal()%>" style="margin-left: 10px"><%=userSeguidos.getNickname()%></a>
