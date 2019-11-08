@@ -34,40 +34,63 @@ public interface IControladorCanal {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "busquedaArborescenteVideos", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteVideos")
-    @ResponseWrapper(localName = "busquedaArborescenteVideosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteVideosResponse")
-    @Action(input = "http://interfaces/IControladorCanal/busquedaArborescenteVideosRequest", output = "http://interfaces/IControladorCanal/busquedaArborescenteVideosResponse")
-    public List<Object> busquedaArborescenteVideos(
+    @RequestWrapper(localName = "listaVideos", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaVideos")
+    @ResponseWrapper(localName = "listaVideosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaVideosResponse")
+    @Action(input = "http://interfaces/IControladorCanal/listaVideosRequest", output = "http://interfaces/IControladorCanal/listaVideosResponse")
+    public List<Object> listaVideos(
+        @WebParam(name = "arg0", targetNamespace = "")
+        DtCanal arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarCanal", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarCanal")
+    @ResponseWrapper(localName = "buscarCanalResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarCanalResponse")
+    @Action(input = "http://interfaces/IControladorCanal/buscarCanalRequest", output = "http://interfaces/IControladorCanal/buscarCanalResponse")
+    public boolean buscarCanal(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
     /**
      * 
-     * @param arg3
-     * @param arg2
-     * @param arg4
-     * @param arg1
      * @param arg0
-     * @throws VideoYaExisteEnListaException_Exception
+     * @throws VideoRepetidoException_Exception
      */
     @WebMethod
-    @RequestWrapper(localName = "agregarVideoLista", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarVideoLista")
-    @ResponseWrapper(localName = "agregarVideoListaResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarVideoListaResponse")
-    @Action(input = "http://interfaces/IControladorCanal/agregarVideoListaRequest", output = "http://interfaces/IControladorCanal/agregarVideoListaResponse", fault = {
-        @FaultAction(className = VideoYaExisteEnListaException_Exception.class, value = "http://interfaces/IControladorCanal/agregarVideoLista/Fault/VideoYaExisteEnListaException")
+    @RequestWrapper(localName = "registrarVideo", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarVideo")
+    @ResponseWrapper(localName = "registrarVideoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarVideoResponse")
+    @Action(input = "http://interfaces/IControladorCanal/registrarVideoRequest", output = "http://interfaces/IControladorCanal/registrarVideoResponse", fault = {
+        @FaultAction(className = VideoRepetidoException_Exception.class, value = "http://interfaces/IControladorCanal/registrarVideo/Fault/VideoRepetidoException")
     })
-    public void agregarVideoLista(
+    public void registrarVideo(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
+        DtVideo arg0)
+        throws VideoRepetidoException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @throws VideoRepetidoException_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "modificarVideo", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ModificarVideo")
+    @ResponseWrapper(localName = "modificarVideoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ModificarVideoResponse")
+    @Action(input = "http://interfaces/IControladorCanal/modificarVideoRequest", output = "http://interfaces/IControladorCanal/modificarVideoResponse", fault = {
+        @FaultAction(className = VideoRepetidoException_Exception.class, value = "http://interfaces/IControladorCanal/modificarVideo/Fault/VideoRepetidoException")
+    })
+    public void modificarVideo(
+        @WebParam(name = "arg0", targetNamespace = "")
+        DtVideo arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2,
-        @WebParam(name = "arg3", targetNamespace = "")
-        String arg3,
-        @WebParam(name = "arg4", targetNamespace = "")
-        Boolean arg4)
-        throws VideoYaExisteEnListaException_Exception
+        String arg1)
+        throws VideoRepetidoException_Exception
     ;
 
     /**
@@ -75,18 +98,18 @@ public interface IControladorCanal {
      * @param arg1
      * @param arg0
      * @return
-     *     returns uytube.web.wsclients.DtListaParticulares
+     *     returns uytube.web.wsclients.DtVideo
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarListaParticular", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarListaParticular")
-    @ResponseWrapper(localName = "buscarListaParticularResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarListaParticularResponse")
-    @Action(input = "http://interfaces/IControladorCanal/buscarListaParticularRequest", output = "http://interfaces/IControladorCanal/buscarListaParticularResponse")
-    public DtListaParticulares buscarListaParticular(
+    @RequestWrapper(localName = "obtenerVideo", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerVideo")
+    @ResponseWrapper(localName = "obtenerVideoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerVideoResponse")
+    @Action(input = "http://interfaces/IControladorCanal/obtenerVideoRequest", output = "http://interfaces/IControladorCanal/obtenerVideoResponse")
+    public DtVideo obtenerVideo(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        DtCanal arg1);
+        String arg1);
 
     /**
      * 
@@ -96,48 +119,96 @@ public interface IControladorCanal {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "busquedaArborescenteCanales", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteCanales")
-    @ResponseWrapper(localName = "busquedaArborescenteCanalesResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteCanalesResponse")
-    @Action(input = "http://interfaces/IControladorCanal/busquedaArborescenteCanalesRequest", output = "http://interfaces/IControladorCanal/busquedaArborescenteCanalesResponse")
-    public List<Object> busquedaArborescenteCanales(
+    @RequestWrapper(localName = "listaComentarios", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaComentarios")
+    @ResponseWrapper(localName = "listaComentariosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaComentariosResponse")
+    @Action(input = "http://interfaces/IControladorCanal/listaComentariosRequest", output = "http://interfaces/IControladorCanal/listaComentariosResponse")
+    public List<Object> listaComentarios(
+        @WebParam(name = "arg0", targetNamespace = "")
+        DtVideo arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns uytube.web.wsclients.DtComentario
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "obtenerComentario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerComentario")
+    @ResponseWrapper(localName = "obtenerComentarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerComentarioResponse")
+    @Action(input = "http://interfaces/IControladorCanal/obtenerComentarioRequest", output = "http://interfaces/IControladorCanal/obtenerComentarioResponse")
+    public DtComentario obtenerComentario(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
     /**
      * 
-     * @param arg1
      * @param arg0
      * @return
-     *     returns java.util.List<java.lang.Object>
+     *     returns uytube.web.wsclients.DtAuxiliar
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getVideosListaDefecto", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaDefecto")
-    @ResponseWrapper(localName = "getVideosListaDefectoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaDefectoResponse")
-    @Action(input = "http://interfaces/IControladorCanal/getVideosListaDefectoRequest", output = "http://interfaces/IControladorCanal/getVideosListaDefectoResponse")
-    public List<Object> getVideosListaDefecto(
+    @RequestWrapper(localName = "obtenerComentarioRef", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerComentarioRef")
+    @ResponseWrapper(localName = "obtenerComentarioRefResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerComentarioRefResponse")
+    @Action(input = "http://interfaces/IControladorCanal/obtenerComentarioRefRequest", output = "http://interfaces/IControladorCanal/obtenerComentarioRefResponse")
+    public DtAuxiliar obtenerComentarioRef(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+        String arg0);
 
     /**
      * 
-     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "comentarioEsp", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ComentarioEsp")
+    @ResponseWrapper(localName = "comentarioEspResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ComentarioEspResponse")
+    @Action(input = "http://interfaces/IControladorCanal/comentarioEspRequest", output = "http://interfaces/IControladorCanal/comentarioEspResponse")
+    public String comentarioEsp(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listaComentariosTodos", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaComentariosTodos")
+    @ResponseWrapper(localName = "listaComentariosTodosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaComentariosTodosResponse")
+    @Action(input = "http://interfaces/IControladorCanal/listaComentariosTodosRequest", output = "http://interfaces/IControladorCanal/listaComentariosTodosResponse")
+    public List<Object> listaComentariosTodos();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCanales", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetCanales")
+    @ResponseWrapper(localName = "getCanalesResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetCanalesResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getCanalesRequest", output = "http://interfaces/IControladorCanal/getCanalesResponse")
+    public List<Object> getCanales();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns java.util.List<java.lang.Object>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getVideosListaParticular", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaParticular")
-    @ResponseWrapper(localName = "getVideosListaParticularResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaParticularResponse")
-    @Action(input = "http://interfaces/IControladorCanal/getVideosListaParticularRequest", output = "http://interfaces/IControladorCanal/getVideosListaParticularResponse")
-    public List<Object> getVideosListaParticular(
+    @RequestWrapper(localName = "getListasReproduccion", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasReproduccion")
+    @ResponseWrapper(localName = "getListasReproduccionResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasReproduccionResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getListasReproduccionRequest", output = "http://interfaces/IControladorCanal/getListasReproduccionResponse")
+    public List<Object> getListasReproduccion(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+        String arg0);
 
     /**
      * 
@@ -155,36 +226,6 @@ public interface IControladorCanal {
         DtListaReproduccion arg0)
         throws ListaRepetidaException_Exception
     ;
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "agregarVideoHistorial", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarVideoHistorial")
-    @ResponseWrapper(localName = "agregarVideoHistorialResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarVideoHistorialResponse")
-    @Action(input = "http://interfaces/IControladorCanal/agregarVideoHistorialRequest", output = "http://interfaces/IControladorCanal/agregarVideoHistorialResponse")
-    public void agregarVideoHistorial(
-        @WebParam(name = "arg0", targetNamespace = "")
-        DtVideo arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        DtCanal arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns uytube.web.wsclients.DtComentario
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "obtenerComentario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerComentario")
-    @ResponseWrapper(localName = "obtenerComentarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerComentarioResponse")
-    @Action(input = "http://interfaces/IControladorCanal/obtenerComentarioRequest", output = "http://interfaces/IControladorCanal/obtenerComentarioResponse")
-    public DtComentario obtenerComentario(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
 
     /**
      * 
@@ -224,14 +265,165 @@ public interface IControladorCanal {
     /**
      * 
      * @param arg0
+     * @throws CategoriaRepetidaException_Exception
      */
     @WebMethod
-    @RequestWrapper(localName = "agregarComentario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarComentario")
-    @ResponseWrapper(localName = "agregarComentarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarComentarioResponse")
-    @Action(input = "http://interfaces/IControladorCanal/agregarComentarioRequest", output = "http://interfaces/IControladorCanal/agregarComentarioResponse")
-    public void agregarComentario(
+    @RequestWrapper(localName = "registrarCategoria", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarCategoria")
+    @ResponseWrapper(localName = "registrarCategoriaResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarCategoriaResponse")
+    @Action(input = "http://interfaces/IControladorCanal/registrarCategoriaRequest", output = "http://interfaces/IControladorCanal/registrarCategoriaResponse", fault = {
+        @FaultAction(className = CategoriaRepetidaException_Exception.class, value = "http://interfaces/IControladorCanal/registrarCategoria/Fault/CategoriaRepetidaException")
+    })
+    public void registrarCategoria(
         @WebParam(name = "arg0", targetNamespace = "")
-        DtComentario arg0);
+        DtCategoria arg0)
+        throws CategoriaRepetidaException_Exception
+    ;
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCategorias", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetCategorias")
+    @ResponseWrapper(localName = "getCategoriasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetCategoriasResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getCategoriasRequest", output = "http://interfaces/IControladorCanal/getCategoriasResponse")
+    public List<Object> getCategorias();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getListasDefecto", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasDefecto")
+    @ResponseWrapper(localName = "getListasDefectoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasDefectoResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getListasDefectoRequest", output = "http://interfaces/IControladorCanal/getListasDefectoResponse")
+    public List<Object> getListasDefecto(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg3
+     * @param arg2
+     * @param arg4
+     * @param arg1
+     * @param arg0
+     * @throws VideoYaExisteEnListaException_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "agregarVideoLista", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarVideoLista")
+    @ResponseWrapper(localName = "agregarVideoListaResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarVideoListaResponse")
+    @Action(input = "http://interfaces/IControladorCanal/agregarVideoListaRequest", output = "http://interfaces/IControladorCanal/agregarVideoListaResponse", fault = {
+        @FaultAction(className = VideoYaExisteEnListaException_Exception.class, value = "http://interfaces/IControladorCanal/agregarVideoLista/Fault/VideoYaExisteEnListaException")
+    })
+    public void agregarVideoLista(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        Boolean arg4)
+        throws VideoYaExisteEnListaException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVideosListaDefecto", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaDefecto")
+    @ResponseWrapper(localName = "getVideosListaDefectoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaDefectoResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getVideosListaDefectoRequest", output = "http://interfaces/IControladorCanal/getVideosListaDefectoResponse")
+    public List<Object> getVideosListaDefecto(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVideosListaParticular", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaParticular")
+    @ResponseWrapper(localName = "getVideosListaParticularResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaParticularResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getVideosListaParticularRequest", output = "http://interfaces/IControladorCanal/getVideosListaParticularResponse")
+    public List<Object> getVideosListaParticular(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg3
+     * @param arg2
+     * @param arg4
+     * @param arg1
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "sacarVideoLista", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.SacarVideoLista")
+    @ResponseWrapper(localName = "sacarVideoListaResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.SacarVideoListaResponse")
+    @Action(input = "http://interfaces/IControladorCanal/sacarVideoListaRequest", output = "http://interfaces/IControladorCanal/sacarVideoListaResponse")
+    public void sacarVideoLista(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        Boolean arg4);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listaMeGustas", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaMeGustas")
+    @ResponseWrapper(localName = "listaMeGustasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaMeGustasResponse")
+    @Action(input = "http://interfaces/IControladorCanal/listaMeGustasRequest", output = "http://interfaces/IControladorCanal/listaMeGustasResponse")
+    public List<Object> listaMeGustas(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "obtenerListasParticularesPorCategoria", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerListasParticularesPorCategoria")
+    @ResponseWrapper(localName = "obtenerListasParticularesPorCategoriaResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerListasParticularesPorCategoriaResponse")
+    @Action(input = "http://interfaces/IControladorCanal/obtenerListasParticularesPorCategoriaRequest", output = "http://interfaces/IControladorCanal/obtenerListasParticularesPorCategoriaResponse")
+    public List<Object> obtenerListasParticularesPorCategoria(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
@@ -250,32 +442,66 @@ public interface IControladorCanal {
 
     /**
      * 
+     * @param arg0
      * @return
      *     returns java.util.List<java.lang.Object>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listaComentariosTodos", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaComentariosTodos")
-    @ResponseWrapper(localName = "listaComentariosTodosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaComentariosTodosResponse")
-    @Action(input = "http://interfaces/IControladorCanal/listaComentariosTodosRequest", output = "http://interfaces/IControladorCanal/listaComentariosTodosResponse")
-    public List<Object> listaComentariosTodos();
+    @RequestWrapper(localName = "busquedaArborescenteCanales", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteCanales")
+    @ResponseWrapper(localName = "busquedaArborescenteCanalesResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteCanalesResponse")
+    @Action(input = "http://interfaces/IControladorCanal/busquedaArborescenteCanalesRequest", output = "http://interfaces/IControladorCanal/busquedaArborescenteCanalesResponse")
+    public List<Object> busquedaArborescenteCanales(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
      * @param arg0
-     * @throws CategoriaRepetidaException_Exception
+     * @return
+     *     returns java.util.List<java.lang.Object>
      */
     @WebMethod
-    @RequestWrapper(localName = "registrarCategoria", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarCategoria")
-    @ResponseWrapper(localName = "registrarCategoriaResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarCategoriaResponse")
-    @Action(input = "http://interfaces/IControladorCanal/registrarCategoriaRequest", output = "http://interfaces/IControladorCanal/registrarCategoriaResponse", fault = {
-        @FaultAction(className = CategoriaRepetidaException_Exception.class, value = "http://interfaces/IControladorCanal/registrarCategoria/Fault/CategoriaRepetidaException")
-    })
-    public void registrarCategoria(
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "busquedaArborescenteVideos", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteVideos")
+    @ResponseWrapper(localName = "busquedaArborescenteVideosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteVideosResponse")
+    @Action(input = "http://interfaces/IControladorCanal/busquedaArborescenteVideosRequest", output = "http://interfaces/IControladorCanal/busquedaArborescenteVideosResponse")
+    public List<Object> busquedaArborescenteVideos(
         @WebParam(name = "arg0", targetNamespace = "")
-        DtCategoria arg0)
-        throws CategoriaRepetidaException_Exception
-    ;
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "busquedaArborescenteListasParticulares", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteListasParticulares")
+    @ResponseWrapper(localName = "busquedaArborescenteListasParticularesResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteListasParticularesResponse")
+    @Action(input = "http://interfaces/IControladorCanal/busquedaArborescenteListasParticularesRequest", output = "http://interfaces/IControladorCanal/busquedaArborescenteListasParticularesResponse")
+    public List<Object> busquedaArborescenteListasParticulares(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns uytube.web.wsclients.DtListaParticulares
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarListaParticular", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarListaParticular")
+    @ResponseWrapper(localName = "buscarListaParticularResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarListaParticularResponse")
+    @Action(input = "http://interfaces/IControladorCanal/buscarListaParticularRequest", output = "http://interfaces/IControladorCanal/buscarListaParticularResponse")
+    public DtListaParticulares buscarListaParticular(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        DtCanal arg1);
 
     /**
      * 
@@ -291,6 +517,24 @@ public interface IControladorCanal {
     public DtVideo buscoVideoMasRecienteCanal(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns uytube.web.wsclients.DtVideo
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscoVideoMasRecienteListaParticular", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscoVideoMasRecienteListaParticular")
+    @ResponseWrapper(localName = "buscoVideoMasRecienteListaParticularResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscoVideoMasRecienteListaParticularResponse")
+    @Action(input = "http://interfaces/IControladorCanal/buscoVideoMasRecienteListaParticularRequest", output = "http://interfaces/IControladorCanal/buscoVideoMasRecienteListaParticularResponse")
+    public DtVideo buscoVideoMasRecienteListaParticular(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
@@ -324,273 +568,29 @@ public interface IControladorCanal {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getListasReproduccion", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasReproduccion")
-    @ResponseWrapper(localName = "getListasReproduccionResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasReproduccionResponse")
-    @Action(input = "http://interfaces/IControladorCanal/getListasReproduccionRequest", output = "http://interfaces/IControladorCanal/getListasReproduccionResponse")
-    public List<Object> getListasReproduccion(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns uytube.web.wsclients.DtAuxiliar
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "obtenerComentarioRef", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerComentarioRef")
-    @ResponseWrapper(localName = "obtenerComentarioRefResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerComentarioRefResponse")
-    @Action(input = "http://interfaces/IControladorCanal/obtenerComentarioRefRequest", output = "http://interfaces/IControladorCanal/obtenerComentarioRefResponse")
-    public DtAuxiliar obtenerComentarioRef(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listaMeGustas", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaMeGustas")
-    @ResponseWrapper(localName = "listaMeGustasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaMeGustasResponse")
-    @Action(input = "http://interfaces/IControladorCanal/listaMeGustasRequest", output = "http://interfaces/IControladorCanal/listaMeGustasResponse")
-    public List<Object> listaMeGustas(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
-     * @return
-     *     returns uytube.web.wsclients.DtVideo
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "obtenerVideo", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerVideo")
-    @ResponseWrapper(localName = "obtenerVideoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerVideoResponse")
-    @Action(input = "http://interfaces/IControladorCanal/obtenerVideoRequest", output = "http://interfaces/IControladorCanal/obtenerVideoResponse")
-    public DtVideo obtenerVideo(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCanales", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetCanales")
-    @ResponseWrapper(localName = "getCanalesResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetCanalesResponse")
-    @Action(input = "http://interfaces/IControladorCanal/getCanalesRequest", output = "http://interfaces/IControladorCanal/getCanalesResponse")
-    public List<Object> getCanales();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarCanal", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarCanal")
-    @ResponseWrapper(localName = "buscarCanalResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarCanalResponse")
-    @Action(input = "http://interfaces/IControladorCanal/buscarCanalRequest", output = "http://interfaces/IControladorCanal/buscarCanalResponse")
-    public boolean buscarCanal(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCategorias", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetCategorias")
-    @ResponseWrapper(localName = "getCategoriasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetCategoriasResponse")
-    @Action(input = "http://interfaces/IControladorCanal/getCategoriasRequest", output = "http://interfaces/IControladorCanal/getCategoriasResponse")
-    public List<Object> getCategorias();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listaComentarios", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaComentarios")
-    @ResponseWrapper(localName = "listaComentariosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaComentariosResponse")
-    @Action(input = "http://interfaces/IControladorCanal/listaComentariosRequest", output = "http://interfaces/IControladorCanal/listaComentariosResponse")
-    public List<Object> listaComentarios(
-        @WebParam(name = "arg0", targetNamespace = "")
-        DtVideo arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @throws VideoRepetidoException_Exception
-     */
-    @WebMethod
-    @RequestWrapper(localName = "modificarVideo", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ModificarVideo")
-    @ResponseWrapper(localName = "modificarVideoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ModificarVideoResponse")
-    @Action(input = "http://interfaces/IControladorCanal/modificarVideoRequest", output = "http://interfaces/IControladorCanal/modificarVideoResponse", fault = {
-        @FaultAction(className = VideoRepetidoException_Exception.class, value = "http://interfaces/IControladorCanal/modificarVideo/Fault/VideoRepetidoException")
-    })
-    public void modificarVideo(
+    @RequestWrapper(localName = "agregarVideoHistorial", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarVideoHistorial")
+    @ResponseWrapper(localName = "agregarVideoHistorialResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarVideoHistorialResponse")
+    @Action(input = "http://interfaces/IControladorCanal/agregarVideoHistorialRequest", output = "http://interfaces/IControladorCanal/agregarVideoHistorialResponse")
+    public void agregarVideoHistorial(
         @WebParam(name = "arg0", targetNamespace = "")
         DtVideo arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        String arg1)
-        throws VideoRepetidoException_Exception
-    ;
+        DtCanal arg1);
 
     /**
      * 
      * @param arg0
-     * @return
-     *     returns java.util.List<java.lang.Object>
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getListasDefecto", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasDefecto")
-    @ResponseWrapper(localName = "getListasDefectoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasDefectoResponse")
-    @Action(input = "http://interfaces/IControladorCanal/getListasDefectoRequest", output = "http://interfaces/IControladorCanal/getListasDefectoResponse")
-    public List<Object> getListasDefecto(
+    @RequestWrapper(localName = "agregarComentario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarComentario")
+    @ResponseWrapper(localName = "agregarComentarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarComentarioResponse")
+    @Action(input = "http://interfaces/IControladorCanal/agregarComentarioRequest", output = "http://interfaces/IControladorCanal/agregarComentarioResponse")
+    public void agregarComentario(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg3
-     * @param arg2
-     * @param arg4
-     * @param arg1
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "sacarVideoLista", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.SacarVideoLista")
-    @ResponseWrapper(localName = "sacarVideoListaResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.SacarVideoListaResponse")
-    @Action(input = "http://interfaces/IControladorCanal/sacarVideoListaRequest", output = "http://interfaces/IControladorCanal/sacarVideoListaResponse")
-    public void sacarVideoLista(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2,
-        @WebParam(name = "arg3", targetNamespace = "")
-        String arg3,
-        @WebParam(name = "arg4", targetNamespace = "")
-        Boolean arg4);
-
-    /**
-     * 
-     * @param arg0
-     * @throws VideoRepetidoException_Exception
-     */
-    @WebMethod
-    @RequestWrapper(localName = "registrarVideo", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarVideo")
-    @ResponseWrapper(localName = "registrarVideoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarVideoResponse")
-    @Action(input = "http://interfaces/IControladorCanal/registrarVideoRequest", output = "http://interfaces/IControladorCanal/registrarVideoResponse", fault = {
-        @FaultAction(className = VideoRepetidoException_Exception.class, value = "http://interfaces/IControladorCanal/registrarVideo/Fault/VideoRepetidoException")
-    })
-    public void registrarVideo(
-        @WebParam(name = "arg0", targetNamespace = "")
-        DtVideo arg0)
-        throws VideoRepetidoException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "comentarioEsp", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ComentarioEsp")
-    @ResponseWrapper(localName = "comentarioEspResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ComentarioEspResponse")
-    @Action(input = "http://interfaces/IControladorCanal/comentarioEspRequest", output = "http://interfaces/IControladorCanal/comentarioEspResponse")
-    public String comentarioEsp(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Integer arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listaVideos", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaVideos")
-    @ResponseWrapper(localName = "listaVideosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaVideosResponse")
-    @Action(input = "http://interfaces/IControladorCanal/listaVideosRequest", output = "http://interfaces/IControladorCanal/listaVideosResponse")
-    public List<Object> listaVideos(
-        @WebParam(name = "arg0", targetNamespace = "")
-        DtCanal arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "obtenerListasParticularesPorCategoria", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerListasParticularesPorCategoria")
-    @ResponseWrapper(localName = "obtenerListasParticularesPorCategoriaResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerListasParticularesPorCategoriaResponse")
-    @Action(input = "http://interfaces/IControladorCanal/obtenerListasParticularesPorCategoriaRequest", output = "http://interfaces/IControladorCanal/obtenerListasParticularesPorCategoriaResponse")
-    public List<Object> obtenerListasParticularesPorCategoria(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "busquedaArborescenteListasParticulares", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteListasParticulares")
-    @ResponseWrapper(localName = "busquedaArborescenteListasParticularesResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BusquedaArborescenteListasParticularesResponse")
-    @Action(input = "http://interfaces/IControladorCanal/busquedaArborescenteListasParticularesRequest", output = "http://interfaces/IControladorCanal/busquedaArborescenteListasParticularesResponse")
-    public List<Object> busquedaArborescenteListasParticulares(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns uytube.web.wsclients.DtVideo
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscoVideoMasRecienteListaParticular", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscoVideoMasRecienteListaParticular")
-    @ResponseWrapper(localName = "buscoVideoMasRecienteListaParticularResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscoVideoMasRecienteListaParticularResponse")
-    @Action(input = "http://interfaces/IControladorCanal/buscoVideoMasRecienteListaParticularRequest", output = "http://interfaces/IControladorCanal/buscoVideoMasRecienteListaParticularResponse")
-    public DtVideo buscoVideoMasRecienteListaParticular(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+        DtComentario arg0);
 
 }

@@ -51,6 +51,7 @@
         String url = null;
         if(!nomVideo.isEmpty() && !canal.isEmpty()) {
             video = c.obtenerVideo(nomVideo, canal);
+
             url = getID(video.getUrl());
             session.setAttribute("nomVideo", nomVideo);
             session.setAttribute("canal", canal);
@@ -58,6 +59,7 @@
         uytube.web.wsclients.DtUsuario logeado = null;
         if (session.getAttribute("usuario") != null) {
             logeado = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
+            c.agregarVideoHistorial(video, logeado.getCanal());
         }
     %>
     <!-- BARRA SUPERIOR -->

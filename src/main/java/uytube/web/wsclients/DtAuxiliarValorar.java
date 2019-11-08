@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="dueño" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="duenio" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="vid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="user" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="val" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -30,40 +30,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "dtAuxiliarValorar", propOrder = {
-    "due\u00f1o",
+    "duenio",
     "vid",
     "user",
     "val"
 })
 public class DtAuxiliarValorar {
 
-    protected String dueño;
+    protected String duenio;
     protected String vid;
     protected String user;
     protected String val;
 
     /**
-     * Obtiene el valor de la propiedad dueño.
+     * Obtiene el valor de la propiedad duenio.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDueño() {
-        return dueño;
+    public String getDuenio() {
+        return duenio;
     }
 
     /**
-     * Define el valor de la propiedad dueño.
+     * Define el valor de la propiedad duenio.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDueño(String value) {
-        this.dueño = value;
+    public void setDuenio(String value) {
+        this.duenio = value;
     }
 
     /**

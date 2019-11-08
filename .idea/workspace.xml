@@ -2,30 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a05e968-1539-4d3e-a848-51078821ab16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarVideoHistorial.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarVideoHistorial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarVideoHistorialResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/AgregarVideoHistorialResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ControladorUsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ControladorUsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/DtAuxiliarValorar.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/DtAuxiliarValorar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorCanal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorCanal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AltaVideoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AltaVideoServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalWs.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalWs.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ControladorUsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ControladorUsuarioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ControladorUsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ControladorUsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliarValorar.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliarValorar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliarValorar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliarValorar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.java" afterDir="false" />
@@ -34,15 +26,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/altaVideo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/altaVideo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/registrar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/registrar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/getID.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/getID.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listasParticularCanales.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listasParticularCanales.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/videos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/videos.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/videosCanal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/videosCanal.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,17 +49,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="MySQL - uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - uytubeAPP@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="uytubeapp: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -177,7 +150,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.26" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.26" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.26" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.26" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8-ea" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : uytube-web.war">
@@ -429,6 +402,7 @@
       <workItem from="1573177928620" duration="633000" />
       <workItem from="1573178847434" duration="423000" />
       <workItem from="1573183931205" duration="2224000" />
+      <workItem from="1573224419960" duration="867000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>
