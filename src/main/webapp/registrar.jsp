@@ -79,7 +79,7 @@
                             <span class="helper-text" data-error="Este campo es obligatorio"></span>
                         </div>
                         <div>
-                            <label for="buttonR" style="font-size: larger">Estado de canal</label>
+                            <label for="buttonR" style="font-size: larger">Estado de Canal</label>
                             <p>
                             <label>
                                 <input class="with-gap" name="group1" id="buttonR" type="radio" value="privado" checked/>

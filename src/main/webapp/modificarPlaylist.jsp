@@ -7,8 +7,6 @@
 --%>
 <%@include file="getPrimerVideoListaParticular.jsp"%>
 
-<%@ page import="uytube.web.wsclients.*" %>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
@@ -21,8 +19,6 @@
 <body>
 <div class="card-group">
     <%
-        ControladorUsuarioService us = new ControladorUsuarioService();
-        uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
         ControladorCanalService controlador = new ControladorCanalService();
         uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
 
@@ -44,7 +40,7 @@
         <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
         <div class="card-body">
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-            <p class="card-text">Categoria: <%=lista.getCategoria().getNombreCategoria()%></p>
+            <p class="card-text">Categoría: <%=lista.getCategoria().getNombreCategoria()%></p>
         </div>
         <div class="card-footer">
             <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>" class="btn btn-primary">Modificar</a>

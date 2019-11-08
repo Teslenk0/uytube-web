@@ -27,12 +27,15 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
-
     <%
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
@@ -108,7 +111,7 @@
                                     }
                                 }
                            %>
-                                <div class="btn-group" role="group" aria-label="Basic example" style="margin-left: 85%">
+                                <div class="btn-group float-right" role="group">
                                     <%if(contMg != 0) {%>
                                     <a><%=contMg%></a>
                                     <%}
@@ -141,57 +144,64 @@
                         </div>
                         <%if(logeado!=null) {
                             assert video != null;
-                            if(logeado.getCanal().equals(video.getCanal())){%>
-                                <div class="btn-group" role="group" aria-label="Basic example">
+                            if(logeado.getCanal().getNombreCanal().equals(video.getCanal().getNombreCanal())){%>
+                                <br>
+                                <div class="btn-group" role="group">
                                     <a href="modificarVideo.jsp?nombre=<%=video.getNombre()%>" class="btn btn-primary">Modificar<span class="badge"></span></a>
                                 </div>
-                                <div class="ver mas">
-                                    <p> <a href="#" id="alternar-respuesta-ej1" class="btn btn-primary" style="margin-top: 15px">Ver lista de me gustas</a>
 
-                                    <p> <a href="#" id="alternar-respuesta-ej2" class="btn btn-primary" >Ver lista de No me gustas</a>
-                                </div>
+                                <div class="dropdown" style="margin-top: 20px">
+                                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMeGusta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Likes
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMeGusta">
                                 <%
-                                List<String> cadenaMegusta = new ArrayList<String>();
-                                List<String> cadenaNoMegusta = new ArrayList<String>();
                                 boolean entrarMg = false;
-                                boolean entrarNmg = false;
                                 DtAuxiliarValorar auxi;
                                 for(int i=0; i<listaV.size(); i++){
                                     auxi = (DtAuxiliarValorar) listaV.get(i);
                                     if(auxi != null){
-                                        if(auxi.getVal().equals("Me gusta") && auxi.getVid().equals(nomVideo)){
-                                            cadenaMegusta.add(auxi.getUser()+"\n");
-                                            if(entrarMg == false){
-                                                entrarMg = true;
-                                            }
-                                        }
-                                        if(auxi.getVal().equals("No me gusta") && auxi.getVid().equals(nomVideo)){
-                                            cadenaNoMegusta.add(auxi.getUser()+"\n");
-                                            if(entrarNmg == false){
-                                                entrarNmg = true;
+                                        if(auxi.getVal().equals("Me gusta") && auxi.getVid().equals(nomVideo)){%>
+                                            <a class="dropdown-item" href="#"><%=auxi.getUser()%></a>
+                                        <%if(!entrarMg){
+                                            entrarMg = true;
                                             }
                                         }
                                     }
                                 }
-                                if(entrarMg == true){%>
-                                    <div id="respuesta-ej1" style="display:none" ><%=cadenaMegusta.toString()%> </div>
-                                <%}
-                                else{%>
-                                    <div id="respuesta-ej1" style="display:none" >No se valoro el video aun</div>
-                                <%}
-                                if(entrarNmg == true){%>
-                                    <div id="respuesta-ej2" style="display:none" ><%=cadenaNoMegusta.toString()%> </div>
-                                <%}
-                                else{%>
-                                    <div id="respuesta-ej2" style="display:none" >No se valoro el video aun</div>
-                                <%}
-
-                            }
+                                if(!entrarMg){%>
+                                    <a class="dropdown-item" href="#">No se valoró el vídeo aún</a>
+                                <%}%>
+                                    </div>
+                                </div>
+                            <div class="dropdown" style="margin-top: 5px; margin-bottom: 20px">
+                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownNoGusta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Dislikes
+                                </button>
+                             <div class="dropdown-menu" aria-labelledby="dropdownNoGusta">
+                                <% boolean entrarNmg = false;
+                                for(int i=0; i<listaV.size(); i++){
+                                    auxi = (DtAuxiliarValorar) listaV.get(i);
+                                    if(auxi != null){
+                                        if(auxi.getVal().equals("No me gusta") && auxi.getVid().equals(nomVideo)){%>
+                                            <a class="dropdown-item" href="#"><%=auxi.getUser()%></a>
+                                        <%  if(!entrarNmg){
+                                              entrarNmg = true;
+                                            }
+                                        }
+                                     }
+                                }
+                                if(!entrarNmg){%>
+                                    <a class="dropdown-item" href="#">No se valoró el vídeo aún</a>
+                                <%}%>
+                             </div>
+                            </div>
+                            <%}
                         }
                             assert video != null;
                         %>
                         <div class="form-group">
-                            <label for="descripcion" class="cols-sm-2 control-label"><strong>Descripcion:</strong></label>
+                            <label for="descripcion" class="cols-sm-2 control-label"><strong>Descripción:</strong></label>
                             <div class="cols-sm-10">
                                 <div class="input-group" >
                                     <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
@@ -424,7 +434,6 @@
     <script src="assets/js/verVideos.js" type="text/javascript"></script>
     <script src="assets/js/ResponderComentario.js" type="text/javascript"></script>
     <script src="assets/js/responderRespuesta.js" type="text/javascript"></script>
-    <script src="assets/js/botonesMegusta.js" type="text/javascript"></script>
     <script src="assets/js/verMas.js" type="text/javascript"></script>
 </body>
 </html>

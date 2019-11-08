@@ -10,7 +10,7 @@
   Time: 15:15
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -24,9 +24,9 @@
 <body>
 
 <!-- BARRA SUPERIOR -->
-<div class="barra_superior" style="background-color:#343841">
+<div class="barra_superior text-center" style="background-color:#343841">
     <div class="d-inline">
-        <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+        <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
     </div>
 </div>
 
@@ -34,7 +34,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Elegir Video A Agregar</div>
+                <div class="card-header">Elegir Vídeo</div>
                 <div class="card-body">
 
                     <div class="container-fluid">
@@ -52,16 +52,16 @@
                                         user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
                                     }
 
-                                    List videosUser = new ArrayList<>();
+                                    List videosUser;
                                     videosUser = c.listaVideos(user.getCanal());
                                     List<uytube.web.wsclients.DtVideo> lista_videos = new ArrayList<>();
                                     lista_videos.addAll(videosUser);
 
                                     List usuarios = u.listaUsuarios();
 
-                                    List aux = null;
+                                    List aux;
                                     uytube.web.wsclients.DtVideo vidActual;
-                                    uytube.web.wsclients.DtUsuario userActual = null;
+                                    uytube.web.wsclients.DtUsuario userActual;
 
                                     String esParticular = request.getParameter("es_particular");
                                     for(int x = 0; x < usuarios.size(); x++) {
@@ -80,13 +80,12 @@
                                     }
 
                                     String id;
-                                    uytube.web.wsclients.DtVideo vid = null;
+                                    uytube.web.wsclients.DtVideo vid;
 
                                     if (lista_videos != null) {
                                         for (int i = 0; i < lista_videos.size(); i++) {
-                                            vid = (uytube.web.wsclients.DtVideo) lista_videos.get(i);
+                                            vid = lista_videos.get(i);
                                             if (vid.getUrl() != null) {
-                                                //getID es la funcion definida en el .jsp con el mismo nombre (getID.jsp)
                                                 id = getID(vid.getUrl());
                                 %>
                             <div class="col-md-4">

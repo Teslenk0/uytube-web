@@ -9,7 +9,7 @@
   Time: 19:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Alta video</title>
@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <form class="form-horizontal" method="post" action="AltaVideoServlet" id="formAltaVideo">
                         <div class="form-group" id="divError">
-                            <label for="nombreVideo" class="control-label">Nombre video</label>
+                            <label for="nombreVideo" class="control-label">Nombre de vídeo</label>
                             <input type="text" class="form-control" name="nombreVideo" id="nombreVideo" placeholder="Ingresa Nombre Video" required/>
                         </div>
                         <div class="form-group" id="urlError">
@@ -42,14 +42,14 @@
                             <textarea class="form-control" rows="4" name="descripcion" id="descripcion" required maxlength="300"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="nombreVideo" class="control-label">Estado de video</label>
+                            <label for="nombreVideo" class="control-label">Estado de vídeo</label>
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" id="privado" value="publico" name="estado">
                                 <label class="custom-control-label" for="privado" name="privado">Privado</label>
                             </div>
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" id="publico" value="publico" name="estado" checked>
-                                <label class="custom-control-label" for="publico">Publico</label>
+                                <label class="custom-control-label" for="publico">Público</label>
                             </div>
                         </div>
 

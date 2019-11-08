@@ -10,7 +10,7 @@
 <%@page import="java.util.List"%>
 
 <%@page import="uytube.web.wsclients.DtUsuario"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <html>
 <head>
@@ -22,7 +22,7 @@
 <body>
 <div class="card-group">
     <%
-        DtUsuario user = null;
+        DtUsuario user;
         String esParticular = "false";
         if (session.getAttribute("usuario") != null) {
             user = (DtUsuario) session.getAttribute("usuario");

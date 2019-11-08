@@ -7,6 +7,10 @@
 --%>
 <%@ page import="java.util.List" %>
 <%@ page import="uytube.web.wsclients.*" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
@@ -17,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body style="background-color: #32353E">
+<body>
 <%
     String nomVideo = request.getParameter("nombre");
     DtUsuario user = null;
@@ -25,6 +29,11 @@
         user = (DtUsuario) session.getAttribute("usuario");
     }
 %>
+<div class="barra_superior text-center" style="background-color:#343841">
+    <div class="d-inline">
+        <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+    </div>
+</div>
 <div class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -45,16 +54,20 @@
                             <input type="text" class="form-control" name="nomV" id="nomV" value="<%=video.getNombre()%>" required>
                         </div>
                         <div class="form-group">
-                            <label for="fechaPu" class="control-label"></label>
-                            <input type="date" class="form-control" name="fechaPu" id="fechaPu" value="<%=video.getFechaPublicacion()%>" required>
+                            <label for="fechaPu" class="control-label">Fecha de Publicación</label>
+                            <%  Date date = video.getFechaPublicacion().toGregorianCalendar().getTime();
+                                DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                                String fecha  = formatter.format(date);
+                                Calendar ca = Calendar.getInstance();
+                                ca.setTime(formatter.parse(fecha));
+                                ca.add(Calendar.DATE, 1);
+                                fecha = formatter.format(ca.getTime());
+                            %>
+                            <input type="date" class="form-control" name="fechaPu" id="fechaPu" value="<%=fecha%>" required>
                         </div>
                         <div class="form-group" id="urlError">
-                            <label for="url" class="control-label"></label>
+                            <label for="url" class="control-label">URL de Video</label>
                             <input type="url" class="form-control" name="url" id="url" value="<%=video.getUrl()%>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="duracion" class="control-label"></label>
-                            <input type="input" class="form-control" name="duracion" id="duracion" value="<%=video.getDuracion()%>" required>
                         </div>
                         <div class="form-group">
                             <label for="desc" class="control-label">Descripción</label>

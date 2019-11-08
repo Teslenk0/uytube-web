@@ -46,8 +46,8 @@
         </div>
         <hr>
             <div class="form-group text-center">
-            <%String ruta = "http://uytube.com:8080/assets" + user.getImagen();%>
-            <img class="img-fluid" src="<%=ruta%>" style=" width: 160px; height: 160px" alt="User picture">
+            <%String ruta = "/assets" + user.getImagen();%>
+            <img class="img-thumbnail" src="<%=ruta%>" style=" width: 160px; height: 160px" alt="User picture">
             <hr>
             <%
                 if(logiado!=null && !user.getNickname().equals(logiado.getNickname())){
@@ -75,7 +75,7 @@
         <hr>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="videos-tab" href="#videos" role="tab" aria-controls="videos" aria-selected="true">Videos
+                <a class="nav-link active" id="videos-tab" href="#videos" role="tab" aria-controls="videos" aria-selected="true">Vídeos
                     <i class="fas fa-play"></i>
                 </a>
             </li>
@@ -90,7 +90,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="informacion-tab" href="#informacion" role="tab" aria-controls="informacion" aria-selected="false">Informacion
+                <a class="nav-link" id="informacion-tab" href="#informacion" role="tab" aria-controls="informacion" aria-selected="false">Información
                     <i class="fas fa-address-card"></i>
                 </a>
             </li>

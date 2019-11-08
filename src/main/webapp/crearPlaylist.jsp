@@ -8,7 +8,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Alta video</title>
@@ -27,30 +27,25 @@
             <div class="card">
                 <div class="card-header">Crear Playlist</div>
                 <div class="card-body">
-
                     <form class="form-horizontal" method="post" action="CrearPlaylistServlet" id="formCrearPlaylist">
-
                         <div class="form-group" id="divError">
-                            <label for="nombrePlaylist" class="cols-sm-2 control-label">Nombre playlist</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="nombrePlaylist" id="nombrePlaylist" placeholder="Ingrese nombre Playlist" />
-                                </div>
+                            <div class="input-group">
+                                <label for="nombrePlaylist" class="control-label">Nombre Playlist</label>
+                                <input type="text" class="form-control" name="nombrePlaylist" id="nombrePlaylist" placeholder="Ingrese Nombre Playlist" required/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="cols-sm-2 control-label">Estado de Playlist</label>
                             <div class="custom-control custom-radio">
-                                <input name="group1" value="privado" type="radio" class="custom-control-input" id="privado" name="defaultExampleRadios">
+                                <input name="group1" value="privado" type="radio" class="custom-control-input" id="privado" name="defaultExampleRadios" checked>
                                 <label class="custom-control-label" for="privado">Privado</label>
                             </div>
                             <div class="custom-control custom-radio">
                                 <input name="group1" value="publico" type="radio" class="custom-control-input" id="publico" name="defaultExampleRadios">
-                                <label class="custom-control-label" for="publico">Publico</label>
+                                <label class="custom-control-label" for="publico">Público</label>
                             </div>
                         </div>
-                        <label class="cols-sm-2 control-label" for="categorias">Categorias</label>
+                        <label class="cols-sm-2 control-label" for="categorias">Categorías</label>
                         <div class="btn-group dropup" style="margin-bottom: 10px">
                             <select id="categorias" name="categorias">
                                 <%  ControladorUsuarioService us = new ControladorUsuarioService();

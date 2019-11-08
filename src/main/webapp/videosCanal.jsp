@@ -10,6 +10,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.DateFormat" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -56,7 +57,11 @@
                                 <div class="card-footer">
                                     <%  Date date = vid.getFechaPublicacion().toGregorianCalendar().getTime();
                                         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                                        String fecha  = formatter.format(date);%>
+                                        String fecha  = formatter.format(date);
+                                        Calendar ca = Calendar.getInstance();
+                                        ca.setTime(formatter.parse(fecha));
+                                        ca.add(Calendar.DATE, 1);
+                                        fecha = formatter.format(ca.getTime());%>
                                     <small class="text-muted">Subido el: <%=fecha%></small>
                                 </div>
                             </div>

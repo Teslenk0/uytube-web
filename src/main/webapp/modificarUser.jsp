@@ -2,6 +2,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.DateFormat" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page %>
 <html>
@@ -54,7 +55,12 @@
                         <div class="form-group">
                             <%  Date date = user.getFechaNac().toGregorianCalendar().getTime();
                                 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                                String fecha  = formatter.format(date);%>
+                                String fecha  = formatter.format(date);
+                                Calendar c = Calendar.getInstance();
+                                c.setTime(formatter.parse(fecha));
+                                c.add(Calendar.DATE, 1);
+                                fecha = formatter.format(c.getTime());
+                               ;%>
                             <label for="fechaNac" class="control-label">Fecha de Nacimiento <span style="color: red">*</span></label>
                             <input type="date" class="form-control" name="fechaNac" id="fechaNac" value="<%=fecha%>" required/>
                         </div>

@@ -4,7 +4,7 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <title>Informacion Usuario</title>
+    <title>Información Usuario</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Informacion General</div>
+                <div class="card-header">Información General</div>
                 <div class="card-body">
                     <form class="form-horizontal" method="post" action="ModificoUserServlet" id="formModificar" enctype="multipart/form-data">
                         <div class="form-group">
@@ -49,7 +49,7 @@
                             <input type="text" class="form-control" name="nomCanal" id="nomCanal" value="<%=user.getCanal().getNombreCanal()%>" disabled/>
                         </div>
                         <div class="form-group">
-                            <label for="descripcion">Descripcion</label>
+                            <label for="descripcion">Descripción</label>
                             <textarea class="form-control" rows="4" name="descripcion" id="descripcion" disabled maxlength="300"><%=user.getCanal().getDescripcion()%></textarea>
                         </div>
                     </form>

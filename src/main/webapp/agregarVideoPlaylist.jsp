@@ -9,13 +9,12 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <title>Agregar Video Playlist</title>
+    <title>Agregar Vídeo Playlist</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
-
 <hr>
 <div id="carouselTipos" class="carousel slide" data-ride="carousel" data-interval="0" style="background: darkslategray">
     <ol class="carousel-indicators">

@@ -5,6 +5,11 @@
  */
 package uytube.web.classes;
 
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.model.Video;
+import com.google.api.services.youtube.model.VideoListResponse;
 import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.WebServlet;
@@ -16,10 +21,12 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -45,7 +52,6 @@ public class ModificarVideoServlet extends HttpServlet {
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String oldV = (String) s.getAttribute("oldV");
         String nomV = request.getParameter("nomV").trim();
-        String duracion = request.getParameter("duracion").trim();
         String url = request.getParameter("url").trim();
         String descripcion = request.getParameter("desc").trim();
         String fechaPub = request.getParameter("fechaPu").trim();
@@ -54,6 +60,18 @@ public class ModificarVideoServlet extends HttpServlet {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = sdf.parse(fechaPub);
+
+        YouTube youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(),
+                request1 -> {
+                }).setApplicationName("video-test").build();
+
+        YouTube.Videos.List videoRequest = youtube.videos().list("contentDetails");
+        videoRequest.setId(getID(url));
+        videoRequest.setKey("AIzaSyA3ufP6Bysq7K9xMv3BSXLlUGIC_oX3Lt8");
+        VideoListResponse listResponse = videoRequest.execute();
+        List<Video> videoList = listResponse.getItems();
+        Video targetVideo = videoList.iterator().next();
+        String duracion = convertYouTubeDuration(targetVideo.getContentDetails().getDuration());
 
         ControladorCanalService f = new ControladorCanalService();
         IControladorCanal c = f.getControladorCanalPort();
@@ -74,6 +92,71 @@ public class ModificarVideoServlet extends HttpServlet {
         c.modificarVideo(v,oldV);
         s.removeAttribute("oldV");
         response.sendRedirect("index.jsp");
+    }
+
+    public String getID(String url){
+        String id = null;
+        String pattern = "(?<=watch\\?v=|/videos/|embed\\/|youtu.be\\/|\\/v\\/|\\/e\\/|watch\\?v%3D|watch\\?feature=player_embedded&v=|%2Fvideos%2F|embed%\u200C\u200B2F|youtu.be%2F|%2Fv%2F)[^#\\&\\?\\n]*";
+        Pattern compiledPattern = Pattern.compile(pattern);
+        if ( url != null) {
+            Matcher matcher = compiledPattern.matcher(url);
+            if (matcher.find()) {
+                id = matcher.group();
+            } else {
+                id = null;
+            }
+
+        }
+        return id;
+    }
+
+    public static String convertYouTubeDuration(String duration) {
+        String youtubeDuration = duration;
+        Calendar c = new GregorianCalendar();
+        try {
+            DateFormat df = new SimpleDateFormat("'PT'mm'M'ss'S'");
+            Date d = df.parse(youtubeDuration);
+            c.setTime(d);
+        } catch (ParseException e) {
+            try {
+                DateFormat df = new SimpleDateFormat("'PT'hh'H'mm'M'ss'S'");
+                Date d = df.parse(youtubeDuration);
+                c.setTime(d);
+            } catch (ParseException e1) {
+                try {
+                    DateFormat df = new SimpleDateFormat("'PT'ss'S'");
+                    Date d = df.parse(youtubeDuration);
+                    c.setTime(d);
+                } catch (ParseException e2) {
+                }
+            }
+        }
+        c.setTimeZone(TimeZone.getDefault());
+
+        String time = "";
+        if ( c.get(Calendar.HOUR) > 0 ) {
+            if ( String.valueOf(c.get(Calendar.HOUR)).length() == 1 ) {
+                time += "0" + c.get(Calendar.HOUR);
+            }
+            else {
+                time += c.get(Calendar.HOUR);
+            }
+            time += ":";
+        }
+        if ( String.valueOf(c.get(Calendar.MINUTE)).length() == 1 ) {
+            time += "0" + c.get(Calendar.MINUTE);
+        }
+        else {
+            time += c.get(Calendar.MINUTE);
+        }
+        time += ":";
+        if ( String.valueOf(c.get(Calendar.SECOND)).length() == 1 ) {
+            time += "0" + c.get(Calendar.SECOND);
+        }
+        else {
+            time += c.get(Calendar.SECOND);
+        }
+        return time ;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

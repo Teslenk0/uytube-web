@@ -8,7 +8,7 @@
   Time: 20:47
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="assets/css/modificaruser.css">
@@ -39,14 +39,14 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Lista por categoria: <%=categoria%></div>
+                    <div class="card-header">Lista por categoría: <%=categoria%></div>
                     <div class="card-body">
                         <div class="container-fluid">
                             <div class="card-deck">
                                 <div class="row align-self-center">
                                     <%
                                     uytube.web.wsclients.DtVideo vid;
-                                    uytube.web.wsclients.DtListaParticulares playlist = null;
+                                    uytube.web.wsclients.DtListaParticulares playlist;
                                     String id;
                                     if(listaVidCat != null){
                                         for(int x = 0; x<listaVidCat.size(); x++){
@@ -61,7 +61,7 @@
                                                                     <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                                                                 </a>
                                                                 <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
-                                                                <p class="card-text">Video</p>
+                                                                <p class="card-text">Vídeo</p>
                                                             </div>
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Propietario: <%=vid.getCanal().getNombreCanal()%></small>
@@ -84,10 +84,10 @@
                                                         <div class="card mb-3">
                                                                 <div class="card-body">
                                                                     <a href="verPlaylist.jsp?nomLista=<%=playlist.getNombreLista()%>&user=<%=playlist.getCanal().getNombreCanal()%>&es_particular=true">
-                                                                        <img src="https://img.youtube.com/vi/<%=datos[0].toString()%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
+                                                                        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
                                                                     </a>
                                                                     <h5 class="card-title"><strong><%=playlist.getNombreLista()%></strong></h5>
-                                                                    <p class="card-text">Lista de Reproduccion</p>
+                                                                    <p class="card-text">Lista de Reproducción</p>
                                                                 </div>
                                                                     <div class="card-footer">
                                                                         <small class="text-muted">Propietario: <%=playlist.getCanal().getNombreCanal()%></small>

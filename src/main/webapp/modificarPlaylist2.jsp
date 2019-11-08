@@ -43,7 +43,7 @@
                 <div class="card-body">
                     <form class="form-horizontal" method="post" action="ModificoPlaylistServlet">
                         <div class="form-group">
-                            <label class="cols-sm-2 control-label">Estado de canal</label>
+                            <label class="cols-sm-2 control-label">Estado de Canal</label>
                             <span id="is-lista-private" data-value="<%=isPlaylistPrivate%>" hidden></span>
                             <div class="custom-control custom-radio">
                                 <input name="group1" value="privado" type="radio" class="custom-control-input" id="privado" name="defaultExampleRadios">
@@ -51,7 +51,7 @@
                             </div>
                             <div class="custom-control custom-radio">
                                 <input name="group1" value="publico" type="radio" class="custom-control-input" id="publico" name="defaultExampleRadios">
-                                <label class="custom-control-label" for="publico">Publico</label>
+                                <label class="custom-control-label" for="publico">Público</label>
                             </div>
                         </div>
                         <div class="form-group">

@@ -11,7 +11,7 @@
 
 <%@page import="uytube.web.wsclients.DtUsuario"%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <html>
 <head>
@@ -23,7 +23,7 @@
 <body>
 <div class="card-group">
     <%
-        DtUsuario user = null;
+        DtUsuario user;
         String esParticular = "false";
         if (session.getAttribute("usuario") != null) {
             user = (DtUsuario) session.getAttribute("usuario");
@@ -44,7 +44,7 @@
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
         </div>
         <div class="card-footer">
-            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>
+            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">Agregar</a>
         </div>
     </div>
     <%} else {%>
@@ -55,7 +55,7 @@
             <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
         </div>
         <div class="card-footer">
-            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">AGREGAR</a>
+            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">Agregar</a>
         </div>
     </div>
     <%}

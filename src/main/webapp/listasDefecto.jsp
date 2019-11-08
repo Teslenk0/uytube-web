@@ -9,7 +9,7 @@
 
 <%@page import="uytube.web.wsclients.ControladorUsuarioService"%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <html>
     <head>
@@ -26,7 +26,6 @@
                 ControladorCanalService controlador = new ControladorCanalService();
                 uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
 
-                //if (session.getAttribute("usuario") != null) {
                     uytube.web.wsclients.DtUsuario user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
                     List listasDefecto = c.getListasDefecto(user.getNickname());
 
@@ -43,7 +42,7 @@
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Cantidad de videos: <%=datos[1]%></small>
+                    <small class="text-muted">Cantidad de vídeos: <%=datos[1]%></small>
                 </div>
             </div>
             <%} else {%>
@@ -53,13 +52,12 @@
                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Cantidad de videos: 0</small>
+                    <small class="text-muted">Cantidad de vídeos: 0</small>
                 </div>
             </div>
             <%}
                         }
                     }
-                //}
             %>
         </div>
     </body>

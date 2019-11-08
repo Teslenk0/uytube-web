@@ -21,9 +21,9 @@
                 <div class="columns is-centered">
                     <div class="column is-5-tablet is-4-desktop is-3-widescreen has-text-centered">
                         <img src="assets/images/logo.png" alt="Logo de UyTube">
-                        <h1 class="title">Iniciar Sesion</h1>
+                        <h1 class="title">Iniciar Sesión</h1>
                         <form class="box" method="post" action="LoginServlet" id="loginForm">
-                            <div class="field" id="boxUsuario">
+                            <div class="field">
                                 <label class="label">Usuario</label>
                                 <div class="control has-icons-left">
                                     <input name="inputUser" id="inputUser" placeholder="Usuario" class="input" required>
@@ -32,7 +32,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="field">
+                            <div class="field" id="boxUsuario">
                                 <label for="inputPassword" class="label">Contraseña</label>
                                 <div class="control has-icons-left">
                                     <input type="password" name="inputPassword" id="inputPassword" placeholder="*******"
@@ -44,7 +44,7 @@
                             </div>
                             <div class="field">
                                 <button type="submit" class="button is-success" id="submitForm">
-                                    Iniciar Sesion
+                                    Iniciar Sesión
                                 </button>
                             </div>
                             <div class="field">

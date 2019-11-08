@@ -12,7 +12,7 @@
   Time: 15:15
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -26,9 +26,9 @@
 <body>
 
 <!-- BARRA SUPERIOR -->
-<div class="barra_superior" style="background-color:#343841">
+<div class="barra_superior text-center" style="background-color:#343841">
     <div class="d-inline">
-        <a class="navbar-brand" href="index.jsp" style="margin-left: 45%"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+        <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
     </div>
 </div>
 
@@ -36,15 +36,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Elegir Video A Eliminar</div>
+                <div class="card-header">Elegir Vídeo A Eliminar</div>
                 <div class="card-body">
 
                     <div class="container-fluid">
                         <div class="card-deck">
                             <div class="row align-self-center">
                                 <%
-                                    ControladorUsuarioService us = new ControladorUsuarioService();
-                                    uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
                                     ControladorCanalService controlador = new ControladorCanalService();
                                     uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
 
@@ -55,19 +53,18 @@
                                     }
 
                                     String esParticular = request.getParameter("es_particular");
-                                    List lista_videos = new ArrayList<>();
+                                    List lista_videos;
                                     lista_videos= c.getVideosListaDefecto(user.getNickname(),nombrePlaylist);
 
                                     String id;
-                                    uytube.web.wsclients.DtListaDefectoVideos vid = null;
-                                    uytube.web.wsclients.DtVideo aux = null;
+                                    uytube.web.wsclients.DtListaDefectoVideos vid;
+                                    uytube.web.wsclients.DtVideo aux;
 
                                     if (lista_videos != null) {
                                         for (int i = 0; i < lista_videos.size(); i++) {
                                             vid = (uytube.web.wsclients.DtListaDefectoVideos) lista_videos.get(i);
                                             aux = c.obtenerVideo(vid.getVideo(),vid.getCanal());
                                             if (aux.getUrl() != null) {
-                                                //getID es la funcion definida en el .jsp con el mismo nombre (getID.jsp)
                                                 id = getID(aux.getUrl());
                                 %>
                                 <div class="col-md-4">
