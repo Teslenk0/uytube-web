@@ -1,4 +1,7 @@
 <%@ page import="uytube.web.wsclients.DtUsuario" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page %>
 <html>
@@ -37,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nombre" class="control-label">Nombre <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" name="nombre" id="nombre" value="<%=user.getNombre()%>" oninvalid="this.setCustomValidity('Debe ingresar su nombrecito')" required>
+                            <input type="text" class="form-control" name="nombre" id="nombre" value="<%=user.getNombre()%>" required>
                         </div>
                         <div class="form-group">
                             <label for="apellido" class="control-label">Apellido <span style="color: red">*</span></label>
@@ -49,8 +52,11 @@
                             <input type="email" class="form-control" name="email" id="email" value="<%=user.getEmail()%>" disabled/>
                         </div>
                         <div class="form-group">
+                            <%  Date date = user.getFechaNac().toGregorianCalendar().getTime();
+                                DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                                String fecha  = formatter.format(date);%>
                             <label for="fechaNac" class="control-label">Fecha de Nacimiento <span style="color: red">*</span></label>
-                            <input type="date" class="form-control" name="fechaNac" id="fechaNac" value="<%=user.getFechaNac()%>" required/>
+                            <input type="date" class="form-control" name="fechaNac" id="fechaNac" value="<%=fecha%>" required/>
                         </div>
                         <div class="form-group" id="confirmacionDiv">
                             <label for="password" class="control-label">Contraseña <span style="color: red">*</span></label>

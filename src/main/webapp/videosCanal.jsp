@@ -7,6 +7,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -51,7 +54,10 @@
                                     <p class="card-text"><%=vid.getDescripcion()%></p>
                                 </div>
                                 <div class="card-footer">
-                                    <small class="text-muted">Subido el: <%=vid.getFechaPublicacion().toString()%></small>
+                                    <%  Date date = vid.getFechaPublicacion().toGregorianCalendar().getTime();
+                                        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                                        String fecha  = formatter.format(date);%>
+                                    <small class="text-muted">Subido el: <%=fecha%></small>
                                 </div>
                             </div>
                         </div>

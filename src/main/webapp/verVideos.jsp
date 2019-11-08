@@ -4,7 +4,10 @@
 <%@ page import="java.util.List" %>
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
-<%@ page import="uytube.web.wsclients.DtAuxiliarValorar" %><%--
+<%@ page import="uytube.web.wsclients.DtAuxiliarValorar" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19
@@ -246,9 +249,12 @@
                                             <div class="comment-box">
                                                 <form class="form-horizontal needs-validation" method="post" action="ResponderComentarioServlet" id="fromRespuesta">
                                                     <div class="comment-head">
-                                                        <%uytube.web.wsclients.DtUsuario us = u.buscarUsuario(com.getNick());%>
+                                                        <%uytube.web.wsclients.DtUsuario us = u.buscarUsuario(com.getNick());
+                                                            Date date = com.getFecha().toGregorianCalendar().getTime();
+                                                            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                                            String fecha  = formatter.format(date);%>
                                                         <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=us.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6>
-                                                        <span><%=com.getFecha()+" Hs"%></span>
+                                                        <span><%=fecha+"hs"%></span>
                                                     </div>
                                                     <div class="comment-content">
                                                         <%=com.getComentario()%>
@@ -298,9 +304,11 @@
                                                     <div class="comment-box">
                                                         <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
                                                             <div class="comment-head">
-                                                                <%uytube.web.wsclients.DtUsuario usR = u.buscarUsuario(com.getNick());%>
+                                                                <%uytube.web.wsclients.DtUsuario usR = u.buscarUsuario(com.getNick());
+                                                                    date = resp.getFecha().toGregorianCalendar().getTime();
+                                                                    fecha  = formatter.format(date);%>
                                                                 <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6>
-                                                                <span><%=resp.getFecha()+" Hs"%></span>
+                                                                <span><%=fecha+"hs"%></span>
                                                                 <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
                                                             </div>
                                                             <div class="comment-content">

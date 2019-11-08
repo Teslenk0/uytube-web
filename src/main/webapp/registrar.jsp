@@ -19,30 +19,24 @@
 <body>
 <div class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row justify-content-center">
-        <div class="card col s10 offset-s1 z-depth-4">
+        <div class="card col s12 z-depth-4">
             <div class="card-content">
                 <form id="bodyForm" method="post" action="RegistrarServlet" novalidate enctype="multipart/form-data">
                     <span class="card-title" style="text-align:center">Registrar</span>
                     <div class="divider"></div>
-                        <div class="row rowA">
-                            <div class="col s6">
-                                <div class="input-field">
-                                    <i class="material-icons prefix">person</i>
-                                    <label for="nombre" >Nombre</label>
-                                    <input type="text" name="nombre" id="nombre" onfocusout="validateNombre()">
-                                    <span class="helper-text"></span>
-                                </div>
-                            </div>
-                            <div class="col s6">
-                                <div class="input-field">
-                                    <i class="material-icons prefix">person</i>
-                                    <label for="apellido">Apellido</label>
-                                    <input type="text" name="apellido" id="apellido" onfocusout="validateApellido()">
-                                    <span class="helper-text"></span>
-                                </div>
-                            </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">person</i>
+                            <label for="nombre" >Nombre</label>
+                            <input type="text" name="nombre" id="nombre" onfocusout="validateNombre()">
+                            <span class="helper-text"></span>
                         </div>
                         <div class="input-field">
+                            <i class="material-icons prefix">person</i>
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="apellido" id="apellido" onfocusout="validateApellido()">
+                            <span class="helper-text"></span>
+                        </div>
+                            <div class="input-field">
                             <i class="material-icons prefix">group</i>
                             <label for="nickname">Nickname</label>
                             <input type="text" name="nickname" id="nickname" onfocusout="validateNickname()">

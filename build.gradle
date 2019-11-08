@@ -31,6 +31,9 @@ dependencies {
     // https://mvnrepository.com/artifact/javax.jws/javax.jws-api
     compile group: 'javax.jws', name: 'javax.jws-api', version: '1.1'
 
+    // https://mvnrepository.com/artifact/com.google.apis/google-api-services-youtube
+    compile group: 'com.google.apis', name: 'google-api-services-youtube', version: 'v3-rev212-1.25.0'
+
 
     testCompile     'junit:junit:4.12'
 }

@@ -33,10 +33,6 @@
                             <label for="nombreVideo" class="control-label">Nombre video</label>
                             <input type="text" class="form-control" name="nombreVideo" id="nombreVideo" placeholder="Ingresa Nombre Video" required/>
                         </div>
-                        <div class="form-group">
-                            <label for="duracion" class="control-label">Duracion</label>
-                            <input type="text" class="form-control" name="duracion" id="duracion" placeholder="Ingresa la Duración" required/>
-                        </div>
                         <div class="form-group" id="urlError">
                             <label for="url" class="control-label">URL</label>
                             <input type="url" class="form-control" name="url" id="url" placeholder="Ingresa URL" required>

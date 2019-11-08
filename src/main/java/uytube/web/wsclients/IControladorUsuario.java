@@ -28,95 +28,24 @@ public interface IControladorUsuario {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<java.lang.Object>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listaUsuarios", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaUsuarios")
-    @ResponseWrapper(localName = "listaUsuariosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaUsuariosResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/listaUsuariosRequest", output = "http://interfaces/IControladorUsuario/listaUsuariosResponse")
-    public List<Object> listaUsuarios();
-
-    /**
-     * 
-     */
-    @WebMethod
-    @RequestWrapper(localName = "inicioBase", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.InicioBase")
-    @ResponseWrapper(localName = "inicioBaseResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.InicioBaseResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/inicioBaseRequest", output = "http://interfaces/IControladorUsuario/inicioBaseResponse")
-    public void inicioBase();
-
-    /**
-     * 
      * @param arg3
      * @param arg2
      * @param arg1
      * @param arg0
-     * @throws CanalRepetidoException_Exception
      */
     @WebMethod
-    @RequestWrapper(localName = "modificarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ModificarUsuario")
-    @ResponseWrapper(localName = "modificarUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ModificarUsuarioResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/modificarUsuarioRequest", output = "http://interfaces/IControladorUsuario/modificarUsuarioResponse", fault = {
-        @FaultAction(className = CanalRepetidoException_Exception.class, value = "http://interfaces/IControladorUsuario/modificarUsuario/Fault/CanalRepetidoException")
-    })
-    public void modificarUsuario(
+    @RequestWrapper(localName = "valorarVideoEliminar", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ValorarVideoEliminar")
+    @ResponseWrapper(localName = "valorarVideoEliminarResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ValorarVideoEliminarResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/valorarVideoEliminarRequest", output = "http://interfaces/IControladorUsuario/valorarVideoEliminarResponse")
+    public void valorarVideoEliminar(
         @WebParam(name = "arg0", targetNamespace = "")
-        DtUsuario arg0,
+        String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        DtCanal arg1,
+        String arg1,
         @WebParam(name = "arg2", targetNamespace = "")
-        BufferedImage arg2,
+        String arg2,
         @WebParam(name = "arg3", targetNamespace = "")
-        Boolean arg3)
-        throws CanalRepetidoException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns uytube.web.wsclients.DtUsuario
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuario")
-    @ResponseWrapper(localName = "buscarUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuarioResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/buscarUsuarioRequest", output = "http://interfaces/IControladorUsuario/buscarUsuarioResponse")
-    public DtUsuario buscarUsuario(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarEmail", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarEmail")
-    @ResponseWrapper(localName = "buscarEmailResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarEmailResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/buscarEmailRequest", output = "http://interfaces/IControladorUsuario/buscarEmailResponse")
-    public boolean buscarEmail(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "seguirUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.SeguirUsuario")
-    @ResponseWrapper(localName = "seguirUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.SeguirUsuarioResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/seguirUsuarioRequest", output = "http://interfaces/IControladorUsuario/seguirUsuarioResponse")
-    public void seguirUsuario(
-        @WebParam(name = "arg0", targetNamespace = "")
-        DtUsuario arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+        String arg3);
 
     /**
      * 
@@ -137,31 +66,40 @@ public interface IControladorUsuario {
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<java.lang.Object>
+     *     returns uytube.web.wsclients.DtUsuario
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listaSeguidos", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaSeguidos")
-    @ResponseWrapper(localName = "listaSeguidosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaSeguidosResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/listaSeguidosRequest", output = "http://interfaces/IControladorUsuario/listaSeguidosResponse")
-    public List<Object> listaSeguidos(
+    @RequestWrapper(localName = "buscarUsuarioCanal", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuarioCanal")
+    @ResponseWrapper(localName = "buscarUsuarioCanalResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuarioCanalResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/buscarUsuarioCanalRequest", output = "http://interfaces/IControladorUsuario/buscarUsuarioCanalResponse")
+    public DtUsuario buscarUsuarioCanal(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
     /**
      * 
+     * @param arg1
      * @param arg0
-     * @return
-     *     returns java.util.List<java.lang.Object>
+     * @throws CanalRepetidoException_Exception
+     * @throws EmailRepetidoException_Exception
+     * @throws UsuarioRepetidoException_Exception
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listaSeguidores", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaSeguidores")
-    @ResponseWrapper(localName = "listaSeguidoresResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaSeguidoresResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/listaSeguidoresRequest", output = "http://interfaces/IControladorUsuario/listaSeguidoresResponse")
-    public List<Object> listaSeguidores(
+    @RequestWrapper(localName = "registrarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarUsuario")
+    @ResponseWrapper(localName = "registrarUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarUsuarioResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/registrarUsuarioRequest", output = "http://interfaces/IControladorUsuario/registrarUsuarioResponse", fault = {
+        @FaultAction(className = UsuarioRepetidoException_Exception.class, value = "http://interfaces/IControladorUsuario/registrarUsuario/Fault/UsuarioRepetidoException"),
+        @FaultAction(className = CanalRepetidoException_Exception.class, value = "http://interfaces/IControladorUsuario/registrarUsuario/Fault/CanalRepetidoException"),
+        @FaultAction(className = EmailRepetidoException_Exception.class, value = "http://interfaces/IControladorUsuario/registrarUsuario/Fault/EmailRepetidoException")
+    })
+    public void registrarUsuario(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        DtUsuario arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        BufferedImage arg1)
+        throws CanalRepetidoException_Exception, EmailRepetidoException_Exception, UsuarioRepetidoException_Exception
+    ;
 
     /**
      * 
@@ -197,10 +135,10 @@ public interface IControladorUsuario {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarUsuarioCanal", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuarioCanal")
-    @ResponseWrapper(localName = "buscarUsuarioCanalResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuarioCanalResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/buscarUsuarioCanalRequest", output = "http://interfaces/IControladorUsuario/buscarUsuarioCanalResponse")
-    public DtUsuario buscarUsuarioCanal(
+    @RequestWrapper(localName = "buscarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuario")
+    @ResponseWrapper(localName = "buscarUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuarioResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/buscarUsuarioRequest", output = "http://interfaces/IControladorUsuario/buscarUsuarioResponse")
+    public DtUsuario buscarUsuario(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
@@ -210,43 +148,105 @@ public interface IControladorUsuario {
      * @param arg2
      * @param arg1
      * @param arg0
+     * @throws CanalRepetidoException_Exception
      */
     @WebMethod
-    @RequestWrapper(localName = "valorarVideoEliminar", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ValorarVideoEliminar")
-    @ResponseWrapper(localName = "valorarVideoEliminarResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ValorarVideoEliminarResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/valorarVideoEliminarRequest", output = "http://interfaces/IControladorUsuario/valorarVideoEliminarResponse")
-    public void valorarVideoEliminar(
+    @RequestWrapper(localName = "modificarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ModificarUsuario")
+    @ResponseWrapper(localName = "modificarUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ModificarUsuarioResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/modificarUsuarioRequest", output = "http://interfaces/IControladorUsuario/modificarUsuarioResponse", fault = {
+        @FaultAction(className = CanalRepetidoException_Exception.class, value = "http://interfaces/IControladorUsuario/modificarUsuario/Fault/CanalRepetidoException")
+    })
+    public void modificarUsuario(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
+        DtUsuario arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
+        DtCanal arg1,
         @WebParam(name = "arg2", targetNamespace = "")
-        String arg2,
+        BufferedImage arg2,
         @WebParam(name = "arg3", targetNamespace = "")
-        String arg3);
+        Boolean arg3)
+        throws CanalRepetidoException_Exception
+    ;
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listaUsuarios", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaUsuarios")
+    @ResponseWrapper(localName = "listaUsuariosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaUsuariosResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/listaUsuariosRequest", output = "http://interfaces/IControladorUsuario/listaUsuariosResponse")
+    public List<Object> listaUsuarios();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listaSeguidores", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaSeguidores")
+    @ResponseWrapper(localName = "listaSeguidoresResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaSeguidoresResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/listaSeguidoresRequest", output = "http://interfaces/IControladorUsuario/listaSeguidoresResponse")
+    public List<Object> listaSeguidores(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listaSeguidos", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaSeguidos")
+    @ResponseWrapper(localName = "listaSeguidosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaSeguidosResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/listaSeguidosRequest", output = "http://interfaces/IControladorUsuario/listaSeguidosResponse")
+    public List<Object> listaSeguidos(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
      * @param arg1
      * @param arg0
-     * @throws EmailRepetidoException_Exception
-     * @throws UsuarioRepetidoException_Exception
-     * @throws CanalRepetidoException_Exception
      */
     @WebMethod
-    @RequestWrapper(localName = "registrarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarUsuario")
-    @ResponseWrapper(localName = "registrarUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarUsuarioResponse")
-    @Action(input = "http://interfaces/IControladorUsuario/registrarUsuarioRequest", output = "http://interfaces/IControladorUsuario/registrarUsuarioResponse", fault = {
-        @FaultAction(className = UsuarioRepetidoException_Exception.class, value = "http://interfaces/IControladorUsuario/registrarUsuario/Fault/UsuarioRepetidoException"),
-        @FaultAction(className = CanalRepetidoException_Exception.class, value = "http://interfaces/IControladorUsuario/registrarUsuario/Fault/CanalRepetidoException"),
-        @FaultAction(className = EmailRepetidoException_Exception.class, value = "http://interfaces/IControladorUsuario/registrarUsuario/Fault/EmailRepetidoException")
-    })
-    public void registrarUsuario(
+    @RequestWrapper(localName = "seguirUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.SeguirUsuario")
+    @ResponseWrapper(localName = "seguirUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.SeguirUsuarioResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/seguirUsuarioRequest", output = "http://interfaces/IControladorUsuario/seguirUsuarioResponse")
+    public void seguirUsuario(
         @WebParam(name = "arg0", targetNamespace = "")
         DtUsuario arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        BufferedImage arg1)
-        throws CanalRepetidoException_Exception, EmailRepetidoException_Exception, UsuarioRepetidoException_Exception
-    ;
+        String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarEmail", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarEmail")
+    @ResponseWrapper(localName = "buscarEmailResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarEmailResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/buscarEmailRequest", output = "http://interfaces/IControladorUsuario/buscarEmailResponse")
+    public boolean buscarEmail(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     */
+    @WebMethod
+    @RequestWrapper(localName = "inicioBase", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.InicioBase")
+    @ResponseWrapper(localName = "inicioBaseResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.InicioBaseResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/inicioBaseRequest", output = "http://interfaces/IControladorUsuario/inicioBaseResponse")
+    public void inicioBase();
 
 }
