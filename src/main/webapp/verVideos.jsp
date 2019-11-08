@@ -299,22 +299,23 @@
                                                     <li>
                                                     <!-- Avatar -->
                                                     <%
-                                                        uytube.web.wsclients.DtUsuario usuarioResp = u.buscarUsuario(com.getNick());
+                                                        uytube.web.wsclients.DtUsuario usuarioResp = u.buscarUsuario(resp.getNick());
+                                                        uytube.web.wsclients.DtUsuario usRefe = u.buscarUsuario(com.getNick());
                                                         String ruta2 = "http://uytube.com:8080/assets" + usuarioResp.getImagen();%>
                                                     <div class="comment-avatar"><img src="<%=ruta2%>" alt=""></div>
                                                     <!-- Contenedor del Comentario -->
                                                     <div class="comment-box">
-                                                        <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
+                                                        <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta2">
                                                             <div class="comment-head">
                                                                 <%uytube.web.wsclients.DtUsuario usR = u.buscarUsuario(com.getNick());
                                                                     date = resp.getFecha().toGregorianCalendar().getTime();
                                                                     fecha  = formatter.format(date);%>
-                                                                <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombreCanal()%>"><%=com.getNick()%></a></h6>
+                                                                <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombreCanal()%>"><%=resp.getNick()%></a></h6>
                                                                 <span><%=fecha+"hs"%></span>
                                                                 <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
                                                             </div>
                                                             <div class="comment-content">
-                                                                <%="@"+resp.getNick() +": "+resp.getComentario()%>
+                                                                <%="@"+usRefe.getNickname() +": "+resp.getComentario()%>
                                                             </div>
                                                             <%if (logeado != null) {%>
                                                             <div class="form-group">
@@ -322,7 +323,7 @@
                                                                     <div class="input-group" >
                                                                         <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
                                                                         <textarea class="form-control" rows="2" name="respuesta1" id="respuesta1" placeholder="Agrega una respuesta"></textarea>
-                                                                        <input type="hidden"  name="referencia1" value="<%=com.getReferencia()%>" >
+                                                                        <input type="hidden"  name="referencia1" value="<%=resp.getReferencia()%>" >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -345,7 +346,67 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                        <%List lista3 = c.listaComentarios(video);
+                                            for(int z=0; z<lista3.size(); z++){
+                                                uytube.web.wsclients.DtAuxiliar resp1 =(uytube.web.wsclients.DtAuxiliar) lista2.get(z);
+                                                if(resp1 != null){
+                                                    if(resp.getReferencia().toString().equals(resp1.getPadre())){%>
+                                        <!-- Respuestas de los comentarios -->
+                                        <ul class="comments-list reply-list">
+                                            <li>
+                                                <!-- Avatar -->
+                                                <%
+                                                    uytube.web.wsclients.DtUsuario usuarioResp1 = u.buscarUsuario(resp1.getNick());
+                                                    String ruta3 = "http://uytube.com:8080/assets" + usuarioResp1.getImagen();%>
+                                                <div class="comment-avatar"><img src="<%=ruta3%>" alt=""></div>
+                                                <!-- Contenedor del Comentario -->
+                                                <div class="comment-box">
+                                                    <form class="form-horizontal needs-validation" method="post" action="ResponderRespuestaServlet" id="fromRespuesta1">
+                                                        <div class="comment-head">
+                                                            <%uytube.web.wsclients.DtUsuario usR1 = u.buscarUsuario(resp1.getNick());
+                                                                uytube.web.wsclients.DtUsuario usRef = u.buscarUsuario(resp.getNick());
+                                                                date = resp.getFecha().toGregorianCalendar().getTime();
+                                                                fecha  = formatter.format(date);%>
+                                                            <h6 class="comment-name"><a href="verCanales.jsp?nomCanal=<%=usR.getCanal().getNombreCanal()%>"><%=resp1.getNick()%></a></h6>
+                                                            <span><%=fecha+"hs"%></span>
+                                                            <button type="submit" id="ref" name="ref" style="border: transparent" ></button>
+                                                        </div>
+                                                        <div class="comment-content">
+                                                            <%="@"+usRef.getNickname() +": "+resp1.getComentario()%>
+                                                        </div>
+                                                        <%if (logeado != null) {%>
+                                                        <div class="form-group">
+                                                            <div class="cols-sm-10">
+                                                                <div class="input-group" >
+                                                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                    <textarea class="form-control" rows="2" name="respuesta1" id="respuesta2" placeholder="Agrega una respuesta"></textarea>
+                                                                    <input type="hidden"  name="referencia1" value="<%=resp1.getReferencia()%>" >
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" id="error2" >
+                                                            <button type="submit" id="resp2" name="resp" class="btn btn-success btn-lg" >Responder</button>
+                                                        </div>
+                                                        <%}
+                                                        else{ %>
+                                                        <div class="form-group">
+                                                            <div class="cols-sm-10">
+                                                                <div class="input-group" >
+                                                                    <span class="input-group-addon"><i class="fa fa" aria-hidden="true"></i></span>
+                                                                    <textarea class="form-control" rows="2" name="respuesta1" placeholder="Agrega una respuesta" disabled></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <%}%>
+                                                    </form>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        </li>
                                         <%}
+                                        }
+                                        }
+                                                }
                                         }
                                     }
                                 }

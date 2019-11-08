@@ -11,21 +11,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/DtAuxiliarValorar.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/DtAuxiliarValorar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorCanal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorCanal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalWs.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalWs.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliarValorar.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliarValorar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliarValorar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DtAuxiliarValorar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,7 +105,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
@@ -150,7 +136,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.26" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.26" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8-ea" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.26" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.26" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : uytube-web.war">
@@ -403,6 +389,7 @@
       <workItem from="1573178847434" duration="423000" />
       <workItem from="1573183931205" duration="2224000" />
       <workItem from="1573224419960" duration="867000" />
+      <workItem from="1573228776600" duration="6422000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>
