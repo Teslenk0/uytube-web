@@ -44,7 +44,7 @@
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
                     <div class="sidebar-brand">
-                        <a href="index.jsp">UyTube</a>
+                        <a href="#">UyTube</a>
                         <div id="close-sidebar">
                             <i class="fas fa-times"></i>
                         </div>
@@ -124,14 +124,13 @@
                                     <span>Usuario</span>
                                 </a>
                                 <div class="sidebar-submenu">
-                                    <ul>      
+                                    <ul>
                                         <li>
                                             <a href="#" id="modificoUser_btn">Modificar</a>
                                             <header class="header">
                                                 <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
                                                 </nav>
                                             </header>
-                                            <script type="text/javascript" src="assets/js/barralateral_index.js"></script></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -184,7 +183,7 @@
                                     <ul>
                                         <li><%
                                             List listaCat = c.getCategorias();
-                                            uytube.web.wsclients.DtCategoria dtaux = null;
+                                            uytube.web.wsclients.DtCategoria dtaux;
                                             for(int x = 0 ; x< listaCat.size(); x++){
                                                 dtaux = (uytube.web.wsclients.DtCategoria) listaCat.get(x);%>
                                             <a href="verVideosPorCategoria.jsp?categoria=<%=dtaux.getNombreCategoria()%>" id=""><%=dtaux.getNombreCategoria()%></a>
@@ -333,6 +332,7 @@
         </div>
         <script src="assets/js/filtrado.js"></script>
         <script src="assets/js/search.js"></script>
+        <script type="text/javascript" src="assets/js/barralateral_index.js"></script></a>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>

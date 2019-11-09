@@ -95,6 +95,7 @@ public class AltaVideoServlet extends HttpServlet {
         IControladorCanal controladorCanal = f.getControladorCanalPort();
         controladorCanal.registrarVideo(v);
         response.sendRedirect("index.jsp");
+
     }
 
     public String getID(String url){

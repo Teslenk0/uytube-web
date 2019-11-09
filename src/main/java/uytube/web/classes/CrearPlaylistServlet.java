@@ -7,6 +7,7 @@ package uytube.web.classes;
 
 import uytube.web.wsclients.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -37,6 +39,7 @@ public class CrearPlaylistServlet extends HttpServlet {
             throws Exception {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
 
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
@@ -61,7 +64,16 @@ public class CrearPlaylistServlet extends HttpServlet {
         IControladorCanal controladorCanal = c.getControladorCanalPort();
 
         controladorCanal.crearListaParticular(lista, user);
-        response.sendRedirect("index.jsp");
+
+        out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
+        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>\n");
+        out.println("<script>");
+        out.println("$(document).ready(function(){");
+        out.println("Swal.fire('Good job!','You clicked the button!','success')");
+        out.println("});");
+        out.println("</script>");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        rd.include(request,response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
