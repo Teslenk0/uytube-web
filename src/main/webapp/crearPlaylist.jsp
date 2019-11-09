@@ -29,10 +29,8 @@
                 <div class="card-body">
                     <form class="form-horizontal" method="post" action="CrearPlaylistServlet" id="formCrearPlaylist">
                         <div class="form-group" id="divError">
-                            <div class="input-group">
-                                <label for="nombrePlaylist" class="control-label">Nombre Playlist</label>
-                                <input type="text" class="form-control" name="nombrePlaylist" id="nombrePlaylist" placeholder="Ingrese Nombre Playlist" required/>
-                            </div>
+                            <label for="nombrePlaylist" class="control-label">Nombre de Playlist</label>
+                            <input type="text" class="form-control" name="nombrePlaylist" id="nombrePlaylist" placeholder="Ingrese Nombre Playlist" required/>
                         </div>
                         <div class="form-group">
                             <label class="cols-sm-2 control-label">Estado de Playlist</label>

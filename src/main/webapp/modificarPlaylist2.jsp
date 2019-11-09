@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body>
+<body style="background-color: #EEEEEE">
     <!-- BARRA SUPERIOR -->
     <div class="barra_superior text-center" style="background-color:#343841">
         <div class="d-inline">

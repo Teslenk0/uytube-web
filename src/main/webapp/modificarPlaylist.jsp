@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 </head>
-<body>
+<body style="background-color: #EEEEEE">
 <div class="card-group">
     <%
         ControladorCanalService controlador = new ControladorCanalService();

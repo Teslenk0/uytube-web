@@ -11,9 +11,9 @@
 <%!    public String[] getPrimerVideoListaDefecto(uytube.web.wsclients.DtListaporDefecto list, String usuario) {
         ControladorCanalService c = new ControladorCanalService();
         uytube.web.wsclients.IControladorCanal controladorCanal = c.getControladorCanalPort();
-        DtListaDefectoVideos vid = null;
-        DtVideo v = null;
-        List videos = null;
+        DtListaDefectoVideos vid;
+        DtVideo v;
+        List videos;
         videos = controladorCanal.getVideosListaDefecto(usuario, list.getNombreLista());
         if (!videos.isEmpty()) {
             vid = (DtListaDefectoVideos) videos.get(0);

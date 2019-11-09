@@ -51,10 +51,13 @@
             <div class="card">
                 <div class="card-header text-center"><%=nomLista%></div>
                 <div class="card-body">
+                    <%if(listaVideos.isEmpty()){%>
+                    <p class="card-text text-center">Esta lista no contiene videos</p>
+                    <%}%>
                         <div class="card-group">
                             <% if(particular.equals("true")){ %>
                                 <%
-                                    if (listaVideos != null) {
+                                    if (!listaVideos.isEmpty()) {
                                         uytube.web.wsclients.DtVideo v;
                                         String id;
                                         for (int i = 0; i < listaVideos.size(); i++) {
@@ -83,7 +86,7 @@
                         </div>
                             <%}else{%>
                                     <%
-                                        if (listaVideos != null) {
+                                        if (!listaVideos.isEmpty()) {
                                             uytube.web.wsclients.DtVideo v;
                                             String id;
                                             for (int i = 0; i < listaVideos.size(); i++) {
@@ -110,10 +113,7 @@
                                     <%}
 
                                     }
-                                    }
-                    if(listaVideos.isEmpty()){%>
-                        <p class="text-center">Esta lista no contiene videos</p>
-                    <%}%>
+                                    }%>
                 </div>
             </div>
         </div>

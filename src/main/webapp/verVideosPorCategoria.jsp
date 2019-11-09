@@ -41,6 +41,9 @@
                 <div class="card">
                     <div class="card-header text-center">Categoría: <%=categoria%></div>
                     <div class="card-body">
+                            <%if(listaVidCat.isEmpty() && listaPlaylistCat.isEmpty()){%>
+                                <p class="card-text text-center">No hay vídeos ni playlist para esta categoría</p>
+                            <%}%>
                             <div class="card-group">
                                     <%
                                     uytube.web.wsclients.DtVideo vid;

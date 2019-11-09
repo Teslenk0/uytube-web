@@ -33,30 +33,32 @@
 </div>
 
 <div id="modify-user-panel" class="container" style="margin-top: 50px; margin-bottom: 50px">
+    <%
+        ControladorCanalService controlador = new ControladorCanalService();
+        uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+
+        String nombrePlaylist = request.getParameter("nomLista");
+        uytube.web.wsclients.DtUsuario user = null;
+        if (session.getAttribute("usuario") != null) {
+            user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
+        }
+
+        String esParticular = request.getParameter("es_particular");
+        List lista_videos;
+        lista_videos= c.getVideosListaDefecto(user.getNickname(),nombrePlaylist);%>
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header text-center">Elegir Vídeo A Eliminar</div>
                 <div class="card-body">
+                        <%if(lista_videos.isEmpty()){%>
+                        <p class="card-text text-center">Esta lista no contiene videos para eliminar</p>
+                        <%}%>
                         <div class="card-group">
                                 <%
-                                    ControladorCanalService controlador = new ControladorCanalService();
-                                    uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
-
-                                    String nombrePlaylist = request.getParameter("nomLista");
-                                    uytube.web.wsclients.DtUsuario user = null;
-                                    if (session.getAttribute("usuario") != null) {
-                                        user = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
-                                    }
-
-                                    String esParticular = request.getParameter("es_particular");
-                                    List lista_videos;
-                                    lista_videos= c.getVideosListaDefecto(user.getNickname(),nombrePlaylist);
-
                                     String id;
                                     uytube.web.wsclients.DtListaDefectoVideos vid;
                                     uytube.web.wsclients.DtVideo aux;
-
                                     if (lista_videos != null) {
                                         for (int i = 0; i < lista_videos.size(); i++) {
                                             vid = (uytube.web.wsclients.DtListaDefectoVideos) lista_videos.get(i);

@@ -9,21 +9,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/agregarVideoPlaylist2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/agregarVideoPlaylist2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/crearPlaylist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/crearPlaylist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/eliminarVideoPlaylist2Defecto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/eliminarVideoPlaylist2Defecto.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/eliminarVideoPlaylist2Particular.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/eliminarVideoPlaylist2Particular.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listasParticular.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listasParticular.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listasParticularCanales.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listasParticularCanales.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/getPrimerVideoListaDefecto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/getPrimerVideoListaDefecto.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarPlaylist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarPlaylist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/playlistParticular1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/playlistParticular1.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/playlistParticular2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/playlistParticular2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/socialCanales.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/socialCanales.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/verCanales.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verCanales.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarPlaylist2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarPlaylist2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarVideo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarVideo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/verPlaylist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verPlaylist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/verVideosPorCategoria.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verVideosPorCategoria.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/videos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/videos.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/videosCanal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/videosCanal.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -402,7 +396,7 @@
       <workItem from="1573183931205" duration="2224000" />
       <workItem from="1573224419960" duration="867000" />
       <workItem from="1573228776600" duration="6422000" />
-      <workItem from="1573243356590" duration="15783000" />
+      <workItem from="1573243356590" duration="18349000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>
