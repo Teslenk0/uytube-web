@@ -36,25 +36,28 @@
                     datos = getPrimerVideoListaParticular(lista, user.getNickname());
                     if (datos != null) {
     %>
-    <div class="card" id="playlist_div">
-        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
-        <div class="card-body">
-            <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-            <p class="card-text">Categoría: <%=lista.getCategoria().getNombreCategoria()%></p>
-        </div>
-        <div class="card-footer">
-            <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>" class="btn btn-primary">Modificar</a>
+    <div class="col-md-4">
+        <div class="card my-3" id="playlist_div">
+            <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
+            <div class="card-body">
+                <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+                <p class="card-text">Categoría: <%=lista.getCategoria().getNombreCategoria()%></p>
+            </div>
+            <div class="card-footer">
+                <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>" class="btn btn-primary">Modificar</a>
+            </div>
         </div>
     </div>
     <%} else {%>
-    <div class="card">
-        <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
-
-        <div class="card-body">
-            <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-        </div>
-        <div class="card-footer">
-            <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>" class="btn btn-primary">Modificar</a>
+    <div class="col-md-4">
+        <div class="card my-3">
+            <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
+            <div class="card-body">
+                <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+            </div>
+            <div class="card-footer">
+                <a href="modificarPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>" class="btn btn-primary">Modificar</a>
+            </div>
         </div>
     </div>
     <%}

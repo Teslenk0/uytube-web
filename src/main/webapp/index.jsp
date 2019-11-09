@@ -217,13 +217,11 @@
                         <i class="fas fa-sort"></i>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Alfabeticamente (Defecto)</a>
+                        <a class="dropdown-item" href="#">Alfabéticamente (Defecto)</a>
                         <a class="dropdown-item" href="BuscarServlet?buscador=<%=request.getAttribute("ultimaBusqueda")%>&ordFecha=1">Fecha de carga</a>
                     </div>
                 </div>
-                <div class="container-fluid">
-                <div class="card-deck" id="deck-videos">
-                    <div class="row align-self-center">
+                <div class="card-group" id="deck-videos">
                         <%
                             List videos = (List) request.getAttribute("videos");
                             if (videos != null) {
@@ -235,18 +233,18 @@
 
                         %>
                                     <div class="col-md-4">
-                                        <div class="card video-resultado mb-3">
+                                        <div class="card video-resultado my-3">
+                                            <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
+                                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                            </a>
                                             <div class="card-body">
-                                                <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
-                                                    <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                                </a>
                                                 <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
                                                 <p class="card-text"><%=v.getDescripcion()%></p>
                                             </div>
                                             <div class="card-footer">
                                                 <small>Canal: <%=v.getCanal().getNombreCanal()%></small>
                                                 <br>
-                                                <small>Duracion: <%=v.getDuracion()%></small>
+                                                <small>Duración: <%=v.getDuracion()%></small>
                                             </div>
                                         </div>
                                     </div>
@@ -254,10 +252,8 @@
                                 }
                             }
                         %>
-                    </div>
                 </div>
-                <div class="card-deck" id="deck-listas">
-                    <div class="row align-self-center">
+                <div class="card-group" id="deck-listas">
                         <%
                         List listasParticulares = (List) request.getAttribute("listas");
 
@@ -272,11 +268,11 @@
 
                                 if (datos != null) {%>
                         <div class="col-md-4">
-                            <div class="card listas-resultado mb-3">
+                            <div class="card listas-resultado my-3">
+                                <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombreCanal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video"></a>
                                 <div class="card-body">
-                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombreCanal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de video"></a>
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-                                    <p class="card-text">Categoria: <%=lista.getCategoria().getNombreCategoria()%></p>
+                                    <p class="card-text">Categoría: <%=lista.getCategoria().getNombreCategoria()%></p>
                                     <p class="card-text">Dueño: <%=lista.getCanal().getNombreCanal()%></p>
                                 </div>
                                 <div class="card-footer">
@@ -286,11 +282,11 @@
                         </div>
                         <%}else{%>
                         <div class="col-md-4">
-                            <div class="card listas-resultado mb-3">
+                            <div class="card listas-resultado my-3">
+                                <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombreCanal()%>&es_particular=true"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" ></a>
                                 <div class="card-body">
-                                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=lista.getCanal().getNombreCanal()%>&es_particular=true"><img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de video" ></a>
                                     <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-                                    <p class="card-text">Categoria: <%=lista.getCategoria().getNombreCategoria()%></p>
+                                    <p class="card-text">Categoría: <%=lista.getCategoria().getNombreCategoria()%></p>
                                     <p class="card-text">Dueño: <%=lista.getCanal().getNombreCanal()%></p>
                                 </div>
                                 <div class="card-footer">
@@ -304,10 +300,8 @@
                             }
                             }
                         %>
-                    </div>
                 </div>
-                 <div class="card-deck" id="deck-canales">
-                    <div class="row align-self-center">
+                 <div class="card-group" id="deck-canales">
                         <%
                             List canales = (List) request.getAttribute("canales");
 
@@ -317,10 +311,10 @@
                                     canal = (uytube.web.wsclients.DtCanal) canales.get(i);
                                     if(!canal.isPrivado()){
                         %>
-                        <div class="col-md-offset">
-                            <div class="card canales-resultado mb-3">
+                        <div class="col-md-3">
+                            <div class="card canales-resultado my-3">
+                                <a href="verCanales.jsp?nomCanal=<%=canal.getNombreCanal()%>"><img src="/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal" ></a>
                                 <div class="card-body">
-                                    <a href="verCanales.jsp?nomCanal=<%=canal.getNombreCanal()%>"><img src="/assets<%=canal.getUsuario().getImagen()%>" class="card-img-top" alt="Miniatura de canal" ></a>
                                     <h5 class="card-title"><strong><%=canal.getNombreCanal()%></strong></h5>
                                     <p class="card-text"><%=canal.getDescripcion()%></p>
                                 </div>
@@ -333,9 +327,7 @@
                             }
                             }
                         %>
-                    </div>
                 </div>
-            </div>
         </div>
         </main>
         </div>

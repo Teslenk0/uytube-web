@@ -38,7 +38,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     </head>
-    <body>
+    <body style="background-color: #EEEEEE">
         <div class="barra_superior text-center" style="background-color:#343841">
             <div class="d-inline">
                 <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>

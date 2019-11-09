@@ -35,25 +35,28 @@
                     lista = (DtListaParticulares) listasParticulares.get(i);
                     datos = getPrimerVideoListaParticular(lista, user.getNickname());
                     if (datos != null) {%>
-    <div class="card">
-        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
-        <div class="card-body">
-            <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-            <p class="card-text">Categoría: <%=lista.getCategoria().getNombreCategoria()%></p>
-        </div>
-        <div class="card-footer">
-            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">Agregar</a>
+    <div class="col-md-4">
+        <div class="card my-3">
+            <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
+            <div class="card-body">
+                <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+                <p class="card-text">Categoría: <%=lista.getCategoria().getNombreCategoria()%></p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">Agregar</a>
+            </div>
         </div>
     </div>
     <%} else {%>
-    <div class="card">
-        <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
-
-        <div class="card-body">
-            <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
-        </div>
-        <div class="card-footer">
-            <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">Agregar</a>
+    <div class="col-md-4">
+        <div class="card my-3">
+            <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
+            <div class="card-body">
+                <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" href="agregarVideoPlaylist2.jsp?nomLista=<%=lista.getNombreLista()%>&es_particular=<%=esParticular%>">Agregar</a>
+            </div>
         </div>
     </div>
     <%}

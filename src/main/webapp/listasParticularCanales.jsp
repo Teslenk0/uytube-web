@@ -18,9 +18,7 @@
 </head>
 <body>
 <br>
-<div class="container-fluid">
-    <div class="card-deck">
-        <div class="row align-self-center">
+    <div class="card-group">
     <%
             ControladorUsuarioService us = new ControladorUsuarioService();
             uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
@@ -39,10 +37,10 @@
                     datos = getPrimerVideoListaParticular(lista, user.getNickname());
                     if(!lista.isPrivado()){
                     if (datos != null) {%>
-            <div class="col-md-10">
-                <div class="card mb-5">
+            <div class="col-md-4">
+                <div class="card my-3">
+                    <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombreCanal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
                     <div class="card-body">
-                        <a href="verPlaylist.jsp?nomLista=<%=lista.getNombreLista()%>&user=<%=user.getCanal().getNombreCanal()%>&es_particular=true"><img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista"></a>
                         <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                         <p class="card-text">Categoría: <%=lista.getCategoria().getNombreCategoria()%></p>
                     </div>
@@ -52,9 +50,9 @@
                 </div>
             </div>
     <%} else {%>
-            <div class="col-md-10">
-                <div class="card mb-5">
-                    <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
+            <div class="col-md-4">
+                <img src="assets/images/logo.png" class="card-img-top" alt="Miniatura de lista">
+                <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title"><strong><%=lista.getNombreLista()%></strong></h5>
                     </div>
@@ -68,8 +66,6 @@
     }
     }
     %>
-        </div>
-        </div>
-        </div>
+    </div>
 </body>
 </html>

@@ -23,9 +23,7 @@
     </head>
     <body>
         <br>
-        <div class="container-fluid">
-            <div class="card-deck">
-                <div class="row align-self-center">
+            <div class="card-group">
                     <%
                         String nomCanal = (String) session.getAttribute("nomCanal");
                         ControladorUsuarioService controllerUser = new ControladorUsuarioService();
@@ -46,11 +44,11 @@
                                         id = getID(vid.getUrl());
                     %>
                         <div class="col-md-4">
-                            <div class="card mb-3">
+                            <div class="card my-3">
+                                <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombreCanal()%>">
+                                    <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                </a>
                                 <div class="card-body">
-                                    <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombreCanal()%>">
-                                        <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                    </a>
                                     <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
                                     <p class="card-text"><%=vid.getDescripcion()%></p>
                                 </div>
@@ -71,8 +69,6 @@
                             }
                         }
                     %>
-                </div>
             </div>
-        </div>
     </body>
 </html>

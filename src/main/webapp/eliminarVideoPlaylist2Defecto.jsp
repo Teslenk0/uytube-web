@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body>
+<body style="background-color: #EEEEEE">
 
 <!-- BARRA SUPERIOR -->
 <div class="barra_superior text-center" style="background-color:#343841">
@@ -34,14 +34,11 @@
 
 <div id="modify-user-panel" class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Elegir Vídeo A Eliminar</div>
+                <div class="card-header text-center">Elegir Vídeo A Eliminar</div>
                 <div class="card-body">
-
-                    <div class="container-fluid">
-                        <div class="card-deck">
-                            <div class="row align-self-center">
+                        <div class="card-group">
                                 <%
                                     ControladorCanalService controlador = new ControladorCanalService();
                                     uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
@@ -67,20 +64,20 @@
                                             if (aux.getUrl() != null) {
                                                 id = getID(aux.getUrl());
                                 %>
-                                <div class="col-md-4">
-                                    <div class="mb-3">
+                                <div class="col-md-6">
+                                    <div class="card my-3">
+                                        <%if(esParticular.equals("true")) {
+                                        %>
+                                        <a href="/uytube/EliminarVideoPlaylistDefectoServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombreCanal()%>">
+                                            <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                        </a>
+                                        <%}
+                                        else if(esParticular.equals("false")) {%>
+                                        <a href="/uytube/EliminarVideoPlaylistDefectoServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombreCanal()%>">
+                                            <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                        </a>
+                                        <%}%>
                                         <div class="card-body">
-                                            <%if(esParticular.equals("true")) {
-                                            %>
-                                            <a href="/uytube/EliminarVideoPlaylistDefectoServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombreCanal()%>">
-                                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                            </a>
-                                            <%}
-                                            else if(esParticular.equals("false")) {%>
-                                            <a href="/uytube/EliminarVideoPlaylistDefectoServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=aux.getNombre()%>&nomCanal=<%=aux.getCanal().getNombreCanal()%>">
-                                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                            </a>
-                                            <%}%>
                                             <h5 class="card-title"><strong><%=aux.getNombre()%></strong></h5>
                                         </div>
                                         <div class="card-footer">
@@ -92,10 +89,7 @@
                                 }
                                 }
                                 %>
-                            </div>
                         </div>
-                    </div>
-
                 </div>
             </div>
         </div>

@@ -23,8 +23,7 @@
     </head>
     <body>
         <br>
-            <div class="card-deck">
-                <div class="row align-self-center">
+            <div class="card-group">
                     <%
                         ControladorUsuarioService us = new ControladorUsuarioService();
                         uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
@@ -44,31 +43,30 @@
                     %>
 
                     <div class="col-md-4">
-                        <div class="card mb-3">
-                        <div class="card-body">
+                        <div class="card my-3">
                             <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombreCanal()%>">
                                 <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
                             </a>
-                            <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
-                            <p class="card-text"><%=vid.getDescripcion()%></p>
+                            <div class="card-body">
+                                <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
+                                <p class="card-text"><%=vid.getDescripcion()%></p>
+                            </div>
+                            <div class="card-footer">
+                                <%  Date date = vid.getFechaPublicacion().toGregorianCalendar().getTime();
+                                    DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                                    String fecha  = formatter.format(date);
+                                    Calendar ca = Calendar.getInstance();
+                                    ca.setTime(formatter.parse(fecha));
+                                    ca.add(Calendar.DATE, 1);
+                                    fecha = formatter.format(ca.getTime());%>
+                                <small class="text-muted">Subido el: <%=fecha%></small>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <%  Date date = vid.getFechaPublicacion().toGregorianCalendar().getTime();
-                                DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                                String fecha  = formatter.format(date);
-                                Calendar ca = Calendar.getInstance();
-                                ca.setTime(formatter.parse(fecha));
-                                ca.add(Calendar.DATE, 1);
-                                fecha = formatter.format(ca.getTime());%>
-                            <small class="text-muted">Subido el: <%=fecha%></small>
-                        </div>
-                    </div>
                     </div>
                     <%         }
                             }
                         }
                     %>
-                </div>
             </div>
     </body>
 </html>

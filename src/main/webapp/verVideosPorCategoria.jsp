@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Videos</title>
 </head>
-<body>
+<body style="background-color: #EEEEEE">
 <div class="barra_superior text-center" style="background-color:#343841">
     <div class="d-inline">
         <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
@@ -39,11 +39,9 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Lista por categoría: <%=categoria%></div>
+                    <div class="card-header text-center">Categoría: <%=categoria%></div>
                     <div class="card-body">
-                        <div class="container-fluid">
-                            <div class="card-deck">
-                                <div class="row align-self-center">
+                            <div class="card-group">
                                     <%
                                     uytube.web.wsclients.DtVideo vid;
                                     uytube.web.wsclients.DtListaParticulares playlist;
@@ -55,11 +53,11 @@
                                                 id = getID(vid.getUrl());
                                                 if(!vid.isPrivado()){%>
                                                     <div class="col-md-6">
-                                                        <div class="card mb-3">
+                                                        <div class="card my-3">
+                                                            <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombreCanal()%>">
+                                                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                                            </a>
                                                             <div class="card-body">
-                                                                <a href="verVideos.jsp?video=<%=vid.getNombre()%>&canal=<%=vid.getCanal().getNombreCanal()%>">
-                                                                    <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                                                </a>
                                                                 <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
                                                                 <p class="card-text">Vídeo</p>
                                                             </div>
@@ -80,12 +78,12 @@
                                             datos = getPrimerVideoListaParticular(playlist, usuario.getNickname());
                                             if (datos != null) {
                                                 if(!playlist.isPrivado()){%>
-                                                    <div class="col-md-4">
-                                                        <div class="card mb-3">
+                                                    <div class="col-md-6">
+                                                        <div class="card my-3">
+                                                                <a href="verPlaylist.jsp?nomLista=<%=playlist.getNombreLista()%>&user=<%=playlist.getCanal().getNombreCanal()%>&es_particular=true">
+                                                                    <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
+                                                                </a>
                                                                 <div class="card-body">
-                                                                    <a href="verPlaylist.jsp?nomLista=<%=playlist.getNombreLista()%>&user=<%=playlist.getCanal().getNombreCanal()%>&es_particular=true">
-                                                                        <img src="https://img.youtube.com/vi/<%=datos[0]%>/0.jpg" class="card-img-top" alt="Miniatura de lista">
-                                                                    </a>
                                                                     <h5 class="card-title"><strong><%=playlist.getNombreLista()%></strong></h5>
                                                                     <p class="card-text">Lista de Reproducción</p>
                                                                 </div>
@@ -98,10 +96,8 @@
                                             }
                                         }
                                     }%>
-                                </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

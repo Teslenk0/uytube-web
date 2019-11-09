@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body>
+<body style="background-color: #EEEEEE">
     <%
         String nomCanal = (String) session.getAttribute("nomCanal");
         ControladorUsuarioService controllerUser = new ControladorUsuarioService();
@@ -31,10 +31,8 @@
         List listaSeguidores = u.listaSeguidores(user.getNickname());
     %>
 <br>
-<br>
 <div class="container">
     <div class="user-profile">
-
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-info-left">

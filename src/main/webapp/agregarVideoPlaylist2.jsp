@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body>
+<body style="background-color: #EEEEEE">
 
 <!-- BARRA SUPERIOR -->
 <div class="barra_superior text-center" style="background-color:#343841">
@@ -32,14 +32,11 @@
 
 <div id="modify-user-panel" class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Elegir Vídeo</div>
+                <div class="card-header text-center">Elegir Vídeo</div>
                 <div class="card-body">
-
-                    <div class="container-fluid">
-                        <div class="card-deck">
-                            <div class="row align-self-center">
+                        <div class="card-group">
                                 <%
                                     ControladorUsuarioService us = new ControladorUsuarioService();
                                     uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
@@ -88,20 +85,20 @@
                                             if (vid.getUrl() != null) {
                                                 id = getID(vid.getUrl());
                                 %>
-                            <div class="col-md-4">
-                                <div class="mb-3">
+                            <div class="col-md-6">
+                                <div class="card my-3">
+                                    <%if(esParticular.equals("true")) {
+                                    %>
+                                    <a href="/uytube/AgregarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=vid.getNombre()%>&nomCanal=<%=vid.getCanal().getNombreCanal()%>">
+                                        <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                    </a>
+                                    <%}
+                                    else if(esParticular.equals("false")) {%>
+                                    <a href="/uytube/AgregarVideoPlaylistDefectoServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=vid.getNombre()%>&nomCanal=<%=vid.getCanal().getNombreCanal()%>">
+                                        <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                    </a>
+                                    <%}%>
                                     <div class="card-body">
-                                        <%if(esParticular.equals("true")) {
-                                        %>
-                                            <a href="/uytube/AgregarVideoPlaylistParticularServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=vid.getNombre()%>&nomCanal=<%=vid.getCanal().getNombreCanal()%>">
-                                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                            </a>
-                                        <%}
-                                        else if(esParticular.equals("false")) {%>
-                                            <a href="/uytube/AgregarVideoPlaylistDefectoServlet?nomPlaylist=<%=nombrePlaylist%>&nomVideo=<%=vid.getNombre()%>&nomCanal=<%=vid.getCanal().getNombreCanal()%>">
-                                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                            </a>
-                                        <%}%>
                                         <h5 class="card-title"><strong><%=vid.getNombre()%></strong></h5>
                                     </div>
                                     <div class="card-footer">
@@ -113,7 +110,6 @@
                                 }
                                 }
                                 %>
-                            </div>
                         </div>
                     </div>
 

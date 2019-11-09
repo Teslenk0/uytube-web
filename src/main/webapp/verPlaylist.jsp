@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body>
+<body style="background-color: #EEEEEE">
     <%  String nomLista = request.getParameter("nomLista");
         String canal = request.getParameter("user");
         String particular = request.getParameter("es_particular");
@@ -47,14 +47,12 @@
 </div>
 <div id="modify-user-panel" class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
-                <div class="card-header" align="center"><%=nomLista%></div>
+                <div class="card-header text-center"><%=nomLista%></div>
                 <div class="card-body">
-                    <div class="container-fluid">
-                        <div class="card-deck">
+                        <div class="card-group">
                             <% if(particular.equals("true")){ %>
-                            <div class="row">
                                 <%
                                     if (listaVideos != null) {
                                         uytube.web.wsclients.DtVideo v;
@@ -65,11 +63,11 @@
                                             id = getID(v.getUrl());
                                         %>
                                         <div class="col-md-6">
-                                            <div class="card mb-3">
+                                            <div class="card my-3">
+                                                <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
+                                                    <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                                </a>
                                                 <div class="card-body">
-                                                    <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
-                                                        <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                                    </a>
                                                     <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
                                                     <p class="card-text"><%=v.getDescripcion()%></p>
                                                 </div>
@@ -82,9 +80,8 @@
                                         </div>
                                 <% }
                                 }%>
-                            </div>
+                        </div>
                             <%}else{%>
-                            <div class="row">
                                     <%
                                         if (listaVideos != null) {
                                             uytube.web.wsclients.DtVideo v;
@@ -95,11 +92,11 @@
                                                 id = getID(v.getUrl());
                                     %>
                                     <div class="col-md-6">
-                                        <div class="card mb-3">
+                                        <div class="card my-3">
+                                            <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
+                                                <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
+                                            </a>
                                             <div class="card-body">
-                                                <a href="verVideos.jsp?video=<%=v.getNombre()%>&canal=<%=v.getCanal().getNombreCanal()%>">
-                                                    <img src="https://img.youtube.com/vi/<%=id%>/0.jpg" class="card-img-top" alt="Miniatura de video">
-                                                </a>
                                                 <h5 class="card-title"><strong><%=v.getNombre()%></strong></h5>
                                                 <p class="card-text"><%=v.getDescripcion()%></p>
                                             </div>
@@ -114,10 +111,9 @@
 
                                     }
                                     }
-                                %>
-                            </div>
-                        </div>
-                    </div>
+                    if(listaVideos.isEmpty()){%>
+                        <p class="text-center">Esta lista no contiene videos</p>
+                    <%}%>
                 </div>
             </div>
         </div>
