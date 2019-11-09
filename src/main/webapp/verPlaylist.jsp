@@ -35,10 +35,12 @@
         uytube.web.wsclients.DtUsuario user = u.buscarUsuarioCanal(canal);
         
         List listaVideos;
-        if(particular.equals("true"))
+        if(particular.equals("true") && !nomLista.equals("Historial"))
             listaVideos = c.getVideosListaParticular(user.getNickname(), nomLista);
-        else
+        else if(!nomLista.equals("Historial"))
             listaVideos = c.getVideosListaDefecto(user.getNickname(),nomLista);
+        else
+            listaVideos = c.obtenerVideosHistoricos(user.getCanal());
     %>
 <div class="barra_superior text-center" style="background-color:#343841">
     <div class="d-inline">

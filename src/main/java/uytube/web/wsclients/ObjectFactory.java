@@ -30,6 +30,7 @@ public class ObjectFactory {
     private final static QName _ListaComentariosTodosResponse_QNAME = new QName("http://interfaces/", "listaComentariosTodosResponse");
     private final static QName _AgregarVideoListaResponse_QNAME = new QName("http://interfaces/", "agregarVideoListaResponse");
     private final static QName _ObtenerVideo_QNAME = new QName("http://interfaces/", "obtenerVideo");
+    private final static QName _ObtenerVideosHistoricos_QNAME = new QName("http://interfaces/", "obtenerVideosHistoricos");
     private final static QName _ModificarListaParticular_QNAME = new QName("http://interfaces/", "modificarListaParticular");
     private final static QName _BuscoVideoMasRecienteCanal_QNAME = new QName("http://interfaces/", "buscoVideoMasRecienteCanal");
     private final static QName _BusquedaArborescenteListasParticulares_QNAME = new QName("http://interfaces/", "busquedaArborescenteListasParticulares");
@@ -69,6 +70,7 @@ public class ObjectFactory {
     private final static QName _ListaRepetidaException_QNAME = new QName("http://interfaces/", "ListaRepetidaException");
     private final static QName _BuscoVideoMasRecienteListaParticularResponse_QNAME = new QName("http://interfaces/", "buscoVideoMasRecienteListaParticularResponse");
     private final static QName _RegistrarCategoriaResponse_QNAME = new QName("http://interfaces/", "registrarCategoriaResponse");
+    private final static QName _ObtenerVideosHistoricosResponse_QNAME = new QName("http://interfaces/", "obtenerVideosHistoricosResponse");
     private final static QName _CrearListaDefecto_QNAME = new QName("http://interfaces/", "crearListaDefecto");
     private final static QName _BusquedaArborescenteCanalesResponse_QNAME = new QName("http://interfaces/", "busquedaArborescenteCanalesResponse");
     private final static QName _VideoYaExisteEnListaException_QNAME = new QName("http://interfaces/", "VideoYaExisteEnListaException");
@@ -110,6 +112,14 @@ public class ObjectFactory {
      */
     public CrearListaDefecto createCrearListaDefecto() {
         return new CrearListaDefecto();
+    }
+
+    /**
+     * Create an instance of {@link ObtenerVideosHistoricosResponse }
+     * 
+     */
+    public ObtenerVideosHistoricosResponse createObtenerVideosHistoricosResponse() {
+        return new ObtenerVideosHistoricosResponse();
     }
 
     /**
@@ -398,6 +408,14 @@ public class ObjectFactory {
      */
     public ObtenerVideo createObtenerVideo() {
         return new ObtenerVideo();
+    }
+
+    /**
+     * Create an instance of {@link ObtenerVideosHistoricos }
+     * 
+     */
+    public ObtenerVideosHistoricos createObtenerVideosHistoricos() {
+        return new ObtenerVideosHistoricos();
     }
 
     /**
@@ -839,6 +857,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerVideosHistoricos }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerVideosHistoricos")
+    public JAXBElement<ObtenerVideosHistoricos> createObtenerVideosHistoricos(ObtenerVideosHistoricos value) {
+        return new JAXBElement<ObtenerVideosHistoricos>(_ObtenerVideosHistoricos_QNAME, ObtenerVideosHistoricos.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ModificarListaParticular }{@code >}}
      * 
      */
@@ -1187,6 +1214,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://interfaces/", name = "registrarCategoriaResponse")
     public JAXBElement<RegistrarCategoriaResponse> createRegistrarCategoriaResponse(RegistrarCategoriaResponse value) {
         return new JAXBElement<RegistrarCategoriaResponse>(_RegistrarCategoriaResponse_QNAME, RegistrarCategoriaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerVideosHistoricosResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://interfaces/", name = "obtenerVideosHistoricosResponse")
+    public JAXBElement<ObtenerVideosHistoricosResponse> createObtenerVideosHistoricosResponse(ObtenerVideosHistoricosResponse value) {
+        return new JAXBElement<ObtenerVideosHistoricosResponse>(_ObtenerVideosHistoricosResponse_QNAME, ObtenerVideosHistoricosResponse.class, null, value);
     }
 
     /**

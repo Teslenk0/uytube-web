@@ -31,10 +31,25 @@
 
                     if (listasDefecto != null) {
                         uytube.web.wsclients.DtListaporDefecto lista;
-                        String[] datos;
+                        String[] datos = {};
+                        List listaVideosHistoricos;
+                        DtListaDefectoVideos auxiliar;
+                        DtVideo auxVideo;
                         for (int i = 0; i < listasDefecto.size(); i++) {
                             lista = (uytube.web.wsclients.DtListaporDefecto) listasDefecto.get(i);
-                            datos = getPrimerVideoListaDefecto(lista, user.getNickname());
+                            if(!lista.getNombreLista().equals("Historial"))
+                                datos = getPrimerVideoListaDefecto(lista, user.getNickname());
+                            else {
+                                listaVideosHistoricos = c.obtenerVideosHistoricos(user.getCanal());
+                                if(!listaVideosHistoricos.isEmpty()){
+                                    auxiliar = (DtListaDefectoVideos) listaVideosHistoricos.get(0);
+                                    auxVideo = c.obtenerVideo(auxiliar.getVideo(),auxiliar.getCanal());
+                                    String id = getID(auxVideo.getUrl());
+                                    datos = new String[]{id, String.valueOf(listaVideosHistoricos.size())};
+                                }else{
+                                    datos = null;
+                                }
+                            }
                             if (datos != null) {%>
             <div class="card">
                 <div class="card-body">
