@@ -13,6 +13,7 @@ import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoListResponse;
 import uytube.web.wsclients.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +23,7 @@ import javax.servlet.http.HttpSession;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,6 +53,7 @@ public class AltaVideoServlet extends HttpServlet {
             throws Exception {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
 
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
@@ -94,7 +97,16 @@ public class AltaVideoServlet extends HttpServlet {
         ControladorCanalService f = new ControladorCanalService();
         IControladorCanal controladorCanal = f.getControladorCanalPort();
         controladorCanal.registrarVideo(v);
-        response.sendRedirect("index.jsp");
+
+        out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
+        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+        out.println("<script>");
+        out.println("$(document).ready(function(){");
+        out.println("Swal.fire('Excelente!','El vídeo se ha registrado con éxito','success')");
+        out.println("});");
+        out.println("</script>");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        rd.include(request,response);
 
     }
 

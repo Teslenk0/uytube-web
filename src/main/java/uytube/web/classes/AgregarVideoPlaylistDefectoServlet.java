@@ -7,6 +7,8 @@ package uytube.web.classes;
 
 import uytube.web.wsclients.*;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @MultipartConfig
 @WebServlet(name = "AgregarVideoPlaylistDefectoServlet", urlPatterns = {"/AgregarVideoPlaylistDefectoServlet"})
@@ -30,10 +33,11 @@ public class AgregarVideoPlaylistDefectoServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
+            throws IOException, ServletException {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
+        PrintWriter out = response.getWriter();
 
 
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
@@ -57,7 +61,16 @@ public class AgregarVideoPlaylistDefectoServlet extends HttpServlet {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-        response.sendRedirect("index.jsp");
+
+        out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
+        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+        out.println("<script>");
+        out.println("$(document).ready(function(){");
+        out.println("Swal.fire('Excelente!','Vídeo agregado con éxito','success')");
+        out.println("});");
+        out.println("</script>");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        rd.include(request,response);
 
     }
 
@@ -88,7 +101,7 @@ public class AgregarVideoPlaylistDefectoServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
+            throws IOException, ServletException {
         processRequest(request, response);
 
     }

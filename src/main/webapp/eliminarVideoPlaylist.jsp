@@ -17,7 +17,7 @@
 <body>
 
 <hr>
-<div id="carouselTipos" class="carousel slide" data-ride="carousel" data-interval="0" style="background: darkslategray">
+<div id="carouselTipos" class="carousel slide" data-ride="carousel" data-interval="0" style="background: #343841">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

@@ -66,10 +66,10 @@ public class CrearPlaylistServlet extends HttpServlet {
         controladorCanal.crearListaParticular(lista, user);
 
         out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
-        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>\n");
+        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
         out.println("<script>");
         out.println("$(document).ready(function(){");
-        out.println("Swal.fire('Good job!','You clicked the button!','success')");
+        out.println("Swal.fire('Excelente!','La playlist: "+ nombrePlaylist +" ha sido creada','success')");
         out.println("});");
         out.println("</script>");
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");

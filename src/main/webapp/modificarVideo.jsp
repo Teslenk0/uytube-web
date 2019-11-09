@@ -16,7 +16,7 @@
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>Modificar Usuario</title>
+    <title>Modificar Vídeo</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,7 +50,7 @@
                             Boolean isChannelPrivate = video.isPrivado();
                         %>
                         <div class="form-group" id="errorNom">
-                            <label for="nomV" class="control-label">Nombre de Video</label>
+                            <label for="nomV" class="control-label">Nombre de Vídeo</label>
                             <input type="text" class="form-control" name="nomV" id="nomV" value="<%=video.getNombre()%>" required>
                         </div>
                         <div class="form-group">
@@ -66,14 +66,14 @@
                             <input type="date" class="form-control" name="fechaPu" id="fechaPu" value="<%=fecha%>" required>
                         </div>
                         <div class="form-group" id="urlError">
-                            <label for="url" class="control-label">URL de Video</label>
+                            <label for="url" class="control-label">URL de Vídeo</label>
                             <input type="url" class="form-control" name="url" id="url" value="<%=video.getUrl()%>" required>
                         </div>
                         <div class="form-group">
                             <label for="desc" class="control-label">Descripción</label>
                             <textarea class="form-control rounded-0" name="desc" id="desc" rows="4" required><%=video.getDescripcion()%></textarea>
                         </div>
-                        <label class="cols-sm-2 control-label" for="categorias">Categorias</label>
+                        <label class="cols-sm-2 control-label" for="categorias">Categorías</label>
                         <div class="btn-group dropup">
                             <select id="categorias" name="categorias">
                                 <option value="<%=video.getCategoria()%>" selected hidden><%=video.getCategoria()%></option>
@@ -89,7 +89,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="privado">Estado de video</label>
+                            <label for="privado">Estado de vídeo</label>
                             <span id="is-channel-private" data-value="<%=isChannelPrivate%>" hidden></span>
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" id="privado" value="publico" name="estado">

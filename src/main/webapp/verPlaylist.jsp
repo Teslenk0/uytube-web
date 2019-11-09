@@ -33,7 +33,7 @@
         uytube.web.wsclients.IControladorUsuario u = controllerUser.getControladorUsuarioPort();
 
         uytube.web.wsclients.DtUsuario user = u.buscarUsuarioCanal(canal);
-
+        
         List listaVideos;
         if(particular.equals("true"))
             listaVideos = c.getVideosListaParticular(user.getNickname(), nomLista);

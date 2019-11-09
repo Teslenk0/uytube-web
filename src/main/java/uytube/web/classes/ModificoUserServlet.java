@@ -8,6 +8,7 @@ package uytube.web.classes;
 
 import uytube.web.wsclients.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +18,7 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,6 +44,7 @@ public class ModificoUserServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
+        PrintWriter out = response.getWriter();
 
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
         String nick = user.getNickname();
@@ -109,7 +112,17 @@ public class ModificoUserServlet extends HttpServlet {
         }
         userMod.setCanal(canal);
         s.setAttribute("usuario", userMod);
-        response.sendRedirect("index.jsp");
+
+
+        out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
+        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+        out.println("<script>");
+        out.println("$(document).ready(function(){");
+        out.println("Swal.fire('Excelente!','Su usuario ha sido modificado con éxito','success')");
+        out.println("});");
+        out.println("</script>");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        rd.include(request,response);
 
     }
 

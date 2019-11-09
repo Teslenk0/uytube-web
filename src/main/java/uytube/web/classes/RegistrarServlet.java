@@ -10,6 +10,7 @@ import uytube.web.wsclients.DtCanal;
 import uytube.web.wsclients.DtUsuario;
 import uytube.web.wsclients.IControladorUsuario;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -17,6 +18,7 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -43,6 +45,7 @@ public class RegistrarServlet extends HttpServlet {
             throws Exception {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
 
         String nick = request.getParameter("nickname").trim();
         String pass = request.getParameter("password").trim();
@@ -102,7 +105,15 @@ public class RegistrarServlet extends HttpServlet {
         IControladorUsuario cu = cc.getControladorUsuarioPort();
         cu.registrarUsuario(u,null);
 
-        response.sendRedirect("login.jsp");
+        out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
+        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+        out.println("<script>");
+        out.println("$(document).ready(function(){");
+        out.println("Swal.fire('Bienvenido!','success')");
+        out.println("});");
+        out.println("</script>");
+        RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+        rd.include(request,response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

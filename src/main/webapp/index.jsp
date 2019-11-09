@@ -50,12 +50,20 @@
                         </div>
                     </div>
                     <div class="sidebar-header">
-                        <div class="user-pic">
+                        <div class="foto-user">
                             <%if (user == null) {%>
-                                <img class="img-responsive img-rounded" src="/assets/imagenesUsuarios/Defecto.png" alt="User picture">
+                                <img class="img-rounded" src="/assets/imagenesUsuarios/Defecto.png" alt="User picture" style="float: left; width: 60px;
+                                padding: 2px;
+                                border-radius: 12px;
+                                margin-right: 15px;
+                                overflow: hidden">
                             <%} else {
                                 String ruta = "/assets" + user.getImagen();%>
-                                <img class="img-responsive img-rounded" src="<%=ruta%>" alt="User picture">
+                                <img class="img-rounded" src="<%=ruta%>" alt="User picture" style="float: left; width: 60px;
+                                padding: 2px;
+                                border-radius: 12px;
+                                margin-right: 15px;
+                                overflow: hidden">
                             <%}%>
                         </div>
                         <div class="user-info">
@@ -83,11 +91,11 @@
                         <div>
                             <% if (user == null) {%>
                             <a href="login.jsp" style="margin-left: 25%">
-                                <span>Iniciar Sesion</span>
+                                <span>Iniciar Sesión</span>
                             </a>
                             <%} else {%>
                             <a href="LogoutServlet" style="margin-left: 25%">
-                                <span>Cerrar Sesion</span>
+                                <span>Cerrar Sesión</span>
                             </a>
                             <%}%>
                             <div class="input-group">

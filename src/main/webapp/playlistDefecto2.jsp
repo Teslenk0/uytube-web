@@ -36,6 +36,7 @@
                 String[] datos;
                 for (int i = 0; i < listasDefecto.size(); i++) {
                     lista = (uytube.web.wsclients.DtListaporDefecto) listasDefecto.get(i);
+                    if(!lista.getNombreLista().equals("Historial")){
                     datos = getPrimerVideoListaDefecto(lista, user.getNickname());
                     if (datos != null) {%>
     <div class="card">
@@ -59,6 +60,7 @@
         </div>
     </div>
     <%}
+    }
     }
     }
     }
