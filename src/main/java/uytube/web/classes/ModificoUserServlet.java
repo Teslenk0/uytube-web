@@ -16,9 +16,7 @@ import javax.servlet.http.*;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -111,6 +109,29 @@ public class ModificoUserServlet extends HttpServlet {
             System.out.println(e.getMessage());
         }
         userMod.setCanal(canal);
+
+        //PARA CUANDO NO SEA POR DEFECTO
+        if(!filename.isEmpty()) {
+            String fileName = nick + ".png";
+
+            String filePath = path + fileName;
+            File imagen = new File(filePath);
+
+            // PARA SUBIR UNA IMAGEN DESDE LA CARPETA DE TOMCAT
+            try {
+                FileInputStream fis = new FileInputStream(imagen);
+                BufferedInputStream inputStream = new BufferedInputStream(fis);
+                byte[] imageBytes = new byte[(int) imagen.length()];
+                inputStream.read(imageBytes);
+
+                controladorUsuario.uploadImage(imagen.getName(), imageBytes);
+
+                inputStream.close();
+                System.out.println("File uploaded: " + filePath);
+            } catch (IOException ex) {
+                System.err.println(ex);
+            }
+        }
         s.setAttribute("usuario", userMod);
 
 
