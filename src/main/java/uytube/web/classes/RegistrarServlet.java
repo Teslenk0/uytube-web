@@ -16,9 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -104,6 +102,43 @@ public class RegistrarServlet extends HttpServlet {
         ControladorUsuarioService cc = new ControladorUsuarioService();
         IControladorUsuario cu = cc.getControladorUsuarioPort();
         cu.registrarUsuario(u,null);
+
+        //PARA CUANDO NO SEA POR DEFECTO
+        if(!filename.isEmpty()) {
+            String fileName = nick + ".png";
+
+            String filePath = path + fileName;
+            File imagen = new File(filePath);
+
+            // PARA SUBIR UNA IMAGEN DESDE LA CARPETA DE TOMCAT
+            try {
+                FileInputStream fis = new FileInputStream(imagen);
+                BufferedInputStream inputStream = new BufferedInputStream(fis);
+                byte[] imageBytes = new byte[(int) imagen.length()];
+                inputStream.read(imageBytes);
+
+                cu.uploadImage(imagen.getName(), imageBytes);
+
+                inputStream.close();
+                System.out.println("File uploaded: " + filePath);
+            } catch (IOException ex) {
+                System.err.println(ex);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
         out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");

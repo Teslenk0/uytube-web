@@ -2,6 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a05e968-1539-4d3e-a848-51078821ab16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DownloadImage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DownloadImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DownloadImageResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/DownloadImageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EliminarUsuario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EliminarUsuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EliminarUsuarioResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EliminarUsuarioResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UploadImage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UploadImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UploadImageResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UploadImageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -10,19 +23,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistParticularServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistParticularServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoPlaylistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoPlaylistServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/NuevoComentarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/NuevoComentarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderComentarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderComentarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderRespuestaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderRespuestaServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/EliminarVideoPlaylistParticularServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/EliminarVideoPlaylistParticularServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ModificoPlaylistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ModificoPlaylistServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/NuevoComentarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/NuevoComentarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ResponderComentarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ResponderComentarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ResponderRespuestaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ResponderRespuestaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/Comentarios.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/Comentarios.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/RegistrarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/RegistrarServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -405,6 +414,7 @@
       <workItem from="1573316299618" duration="5695000" />
       <workItem from="1573322440940" duration="2653000" />
       <workItem from="1573481775244" duration="8843000" />
+      <workItem from="1573492629949" duration="8261000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>

@@ -227,10 +227,52 @@ public interface IControladorUsuario {
 
     /**
      * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "eliminarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.EliminarUsuario")
+    @ResponseWrapper(localName = "eliminarUsuarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.EliminarUsuarioResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/eliminarUsuarioRequest", output = "http://interfaces/IControladorUsuario/eliminarUsuarioResponse")
+    public void eliminarUsuario(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
      * @param arg1
      * @param arg0
-     * @throws UsuarioRepetidoException_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "uploadImage", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.UploadImage")
+    @ResponseWrapper(localName = "uploadImageResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.UploadImageResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/uploadImageRequest", output = "http://interfaces/IControladorUsuario/uploadImageResponse")
+    public void uploadImage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        byte[] arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns byte[]
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "downloadImage", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.DownloadImage")
+    @ResponseWrapper(localName = "downloadImageResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.DownloadImageResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/downloadImageRequest", output = "http://interfaces/IControladorUsuario/downloadImageResponse")
+    public byte[] downloadImage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
      * @throws CanalRepetidoException_Exception
+     * @throws UsuarioRepetidoException_Exception
      * @throws EmailRepetidoException_Exception
      */
     @WebMethod
