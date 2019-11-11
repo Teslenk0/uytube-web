@@ -8,6 +8,7 @@ package uytube.web.classes;
 import org.hibernate.query.criteria.internal.expression.function.CurrentDateFunction;
 import uytube.web.wsclients.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -46,6 +48,7 @@ public class NuevoComentarioServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
         HttpSession s = request.getSession();
         DtUsuario user = (DtUsuario) s.getAttribute("usuario");
@@ -71,7 +74,6 @@ public class NuevoComentarioServlet extends HttpServlet {
 
             GregorianCalendar calendario = new GregorianCalendar();
             calendario.setTime(fecha);
-            //calendario.clear(GregorianCalendar.ZONE_OFFSET);
             XMLGregorianCalendar xmlCalendario = DatatypeFactory.newInstance().newXMLGregorianCalendar(calendario);
             c.setFecha(xmlCalendario);
             c.setVideo(v);
@@ -79,10 +81,25 @@ public class NuevoComentarioServlet extends HttpServlet {
             c.setRef(ref);
             c.setCanal(canal);
             controladorCanal.agregarComentario(c);
+            out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
+            out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+            out.println("<script>");
+            out.println("$(document).ready(function(){");
+            out.println("Swal.fire('Excelente!','Comentario agregado','success')");
+            out.println("});");
+            out.println("</script>");
         }
-        System.out.println(nomVid);
-        System.out.println(canal);
-        request.getRequestDispatcher("verVideos.jsp?video="+ nomVid+"&canal="+canal).forward(request, response);
+        else{
+            out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
+            out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+            out.println("<script>");
+            out.println("$(document).ready(function(){");
+            out.println("Swal.fire('Error!','Comentario vacio','error')");
+            out.println("});");
+            out.println("</script>");
+        }
+        RequestDispatcher rd = request.getRequestDispatcher("verVideos.jsp?video="+ nomVid+"&canal="+canal);
+        rd.include(request,response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

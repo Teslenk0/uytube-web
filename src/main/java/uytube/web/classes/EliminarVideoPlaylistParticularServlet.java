@@ -65,7 +65,7 @@ public class EliminarVideoPlaylistParticularServlet extends HttpServlet {
         out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
         out.println("<script>");
         out.println("$(document).ready(function(){");
-        out.println("Swal.fire('Excelente!','Vídeo agregado con éxito','success')");
+        out.println("Swal.fire('Excelente!','Vídeo eliminado con éxito','success')");
         out.println("});");
         out.println("</script>");
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");

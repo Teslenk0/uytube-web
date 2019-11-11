@@ -58,8 +58,6 @@ public class ModificoPlaylistServlet extends HttpServlet {
             System.out.println(e.getMessage());
         }
         s.removeAttribute("lista");
-        response.sendRedirect("index.jsp");
-
         out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
         out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
         out.println("<script>");
