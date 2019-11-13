@@ -1,9 +1,7 @@
+<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
+
 <%@ page import="java.util.List" %>
 
-<%@ page import="java.util.ArrayList" %>
-
-<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
-<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
 <%@include file="getID.jsp"%>
 <%--
   Created by IntelliJ IDEA.
@@ -15,20 +13,19 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" type="text/css" href="assets/css/modificaruser.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>Eliminar Video</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Eliminar Vídeo</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body style="background-color: #EEEEEE">
 
 <!-- BARRA SUPERIOR -->
 <div class="barra_superior text-center" style="background-color:#343841">
     <div class="d-inline">
-        <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto"></a>
+        <a class="navbar-brand" href="index.jsp"> <img src="assets/images/logo2.png" width="112" height="auto" alt=""></a>
     </div>
 </div>
 
@@ -97,5 +94,7 @@
         </div>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

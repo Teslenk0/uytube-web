@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$/src/main" libraries="{bootstrap-validate, bootstrapvalidator}" />
+    <file url="file://$PROJECT_DIR$/src/main" libraries="{bootstrap, bootstrap-validate, bootstrapvalidator, popper}" />
   </component>
 </project>

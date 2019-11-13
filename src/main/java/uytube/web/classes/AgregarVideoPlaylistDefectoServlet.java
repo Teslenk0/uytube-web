@@ -63,7 +63,7 @@ public class AgregarVideoPlaylistDefectoServlet extends HttpServlet {
         }
 
         out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
-        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+        out.println("<script type='text/javascript' src='assets/js/jquery-3.4.1.min.js'></script>");
         out.println("<script>");
         out.println("$(document).ready(function(){");
         out.println("Swal.fire('Excelente!','Vídeo agregado con éxito','success')");

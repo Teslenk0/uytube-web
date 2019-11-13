@@ -11,16 +11,11 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <title>Alta video</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="assets/css/sweetalert2.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Crear Playlist</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/css/sweetalert2.min.css">
 </head>
 <body style="background-color: #32353E">
 <div class="container" style="margin-top: 50px; margin-bottom: 50px">
@@ -48,9 +43,7 @@
                         <label class="cols-sm-2 control-label" for="categorias">Categorías</label>
                         <div class="btn-group dropup" style="margin-bottom: 10px">
                             <select id="categorias" name="categorias">
-                                <%  ControladorUsuarioService us = new ControladorUsuarioService();
-                                    uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
-                                    ControladorCanalService controlador = new ControladorCanalService();
+                                <%  ControladorCanalService controlador = new ControladorCanalService();
                                     uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
 
                                     List lista = c.getCategorias();

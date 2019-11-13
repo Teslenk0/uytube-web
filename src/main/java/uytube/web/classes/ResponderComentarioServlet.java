@@ -19,7 +19,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -86,7 +85,7 @@ public class ResponderComentarioServlet extends HttpServlet {
             controladorCanal.agregarComentario(c);
 
             out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
-            out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+            out.println("<script type='text/javascript' src='assets/js/jquery-3.4.1.min.js'></script>");
             out.println("<script>");
             out.println("$(document).ready(function(){");
             out.println("Swal.fire('Excelente!','Comentario agregado','success')");
@@ -95,7 +94,7 @@ public class ResponderComentarioServlet extends HttpServlet {
         }
         else{
             out.println("<script src='assets/js/sweetalert2.all.min.js' type='text/javascript'></script>");
-            out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>\n");
+            out.println("<script type='text/javascript' src='assets/js/jquery-3.4.1.min.js'></script>");
             out.println("<script>");
             out.println("$(document).ready(function(){");
             out.println("Swal.fire('Error!','Comentario vacio','error')");

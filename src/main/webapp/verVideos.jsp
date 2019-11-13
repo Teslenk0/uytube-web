@@ -1,13 +1,13 @@
 
 <%@include file="getID.jsp"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %>
-<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
+<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page import="uytube.web.wsclients.DtAuxiliarValorar" %>
-<%@ page import="java.util.Date" %>
 <%@ page import="java.text.DateFormat" %>
-<%@ page import="java.text.SimpleDateFormat" %><%--
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: esteban
   Date: 14/10/19
@@ -18,48 +18,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ver Videos</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" id="bootstrap-css">
-    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+        String nomVideo = request.getParameter("video");
+        String canal = request.getParameter("canal");
+        ControladorUsuarioService usuario = new ControladorUsuarioService();
+        uytube.web.wsclients.IControladorUsuario u = usuario.getControladorUsuarioPort();
+        ControladorCanalService controlador = new ControladorCanalService();
+        uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
+        uytube.web.wsclients.DtUsuario usuarioDuenio = u.buscarUsuarioCanal(canal);
+        uytube.web.wsclients.DtVideo video = null;
+        String url = null;
+        if(!nomVideo.isEmpty() && !canal.isEmpty()) {
+            video = c.obtenerVideo(nomVideo, canal);
+            url = getID(video.getUrl());
+            session.setAttribute("nomVideo", nomVideo);
+            session.setAttribute("canal", canal);
+        }
+        uytube.web.wsclients.DtUsuario logeado = null;
+        if (session.getAttribute("usuario") != null) {
+            logeado = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
+            c.agregarVideoHistorial(video, logeado.getCanal());
+        }
+    %>
+    <title><%=video.getNombre()%></title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/Comentarios.css">
     <link rel="stylesheet" type="text/css" href="assets/css/meGusta.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-<%
-    response.setCharacterEncoding("utf-8");
-    request.setCharacterEncoding("utf-8");
-    String nomVideo = request.getParameter("video"); // obtengo  parametros del href
-    String canal = request.getParameter("canal");
-    ControladorUsuarioService usuario = new ControladorUsuarioService();
-    uytube.web.wsclients.IControladorUsuario u = usuario.getControladorUsuarioPort();
-    ControladorCanalService controlador = new ControladorCanalService();
-    uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
-    uytube.web.wsclients.DtUsuario usuarioDuenio = u.buscarUsuarioCanal(canal);
-    uytube.web.wsclients.DtVideo video = null;
-    String url = null;
-    if(!nomVideo.isEmpty() && !canal.isEmpty()) {
-        video = c.obtenerVideo(nomVideo, canal);
-        url = getID(video.getUrl());
-        session.setAttribute("nomVideo", nomVideo);
-        session.setAttribute("canal", canal);
-    }
-    uytube.web.wsclients.DtUsuario logeado = null;
-    if (session.getAttribute("usuario") != null) {
-        logeado = (uytube.web.wsclients.DtUsuario) session.getAttribute("usuario");
-        c.agregarVideoHistorial(video, logeado.getCanal());
-    }
-%>
 <!-- BARRA SUPERIOR -->
 <div class="barra_superior text-center" style="background-color:#343841">
     <div class="d-inline">
@@ -426,5 +420,8 @@
     </div>
 </div>
 <script src="assets/js/verMas.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

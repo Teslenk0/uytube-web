@@ -6,12 +6,12 @@
 
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Social</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/social.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/social.css">
 </head>
 <body>
     <%
@@ -37,11 +37,11 @@
             <div class="col-md-4">
                 <div class="profile-info-left">
                     <div class="section">
-                        <h3>Descripcion canal</h3>
+                        <h3>Descripción de Canal</h3>
                         <p><%=user.getCanal().getDescripcion()%></p>
                     </div>
                     <div class="section">
-                        <h3>Estadisticas</h3>
+                        <h3>Estadísticas</h3>
                         <%
                         if(!listaSeguidos.isEmpty()){%>
                             <p><span class="badge"><%=listaSeguidos.size()%></span> Seguidos</p>
