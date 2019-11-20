@@ -1,6 +1,9 @@
 
 <%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
 <%@ page import="uytube.web.wsclients.ControladorCanalService" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
@@ -39,7 +42,11 @@
                         </div>
                         <div class="form-group">
                             <label for="fechaNac" class="control-label">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" name="fechaNac" id="fechaNac" value="<%=user.getFechaNac()%>" disabled/>
+                            <%  Date date = user.getFechaNac().toGregorianCalendar().getTime();
+                                DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                                String fecha  = formatter.format(date);
+                            %>
+                            <input type="date" class="form-control" name="fechaNac" id="fechaNac" value="<%=fecha%>" disabled/>
                         </div>
                         <div class="form-group" id="errorNom">
                             <label for="nomCanal" class="control-label">Nombre de Canal</label>

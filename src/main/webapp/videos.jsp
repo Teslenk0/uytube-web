@@ -4,13 +4,11 @@
     Author     : tesla
 --%>
 <%@include file="getID.jsp"%>
-<%@page import="java.util.List"%>
-<%@ page import="uytube.web.wsclients.ControladorUsuarioService" %>
-<%@ page import="uytube.web.wsclients.ControladorCanalService" %>
-<%@ page import="java.util.Date" %>
+<%@page import="uytube.web.wsclients.ControladorCanalService"%>
 <%@ page import="java.text.DateFormat" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.List" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,8 +21,6 @@
         <br>
             <div class="card-group">
                     <%
-                        ControladorUsuarioService us = new ControladorUsuarioService();
-                        uytube.web.wsclients.IControladorUsuario u = us.getControladorUsuarioPort();
                         ControladorCanalService controlador = new ControladorCanalService();
                         uytube.web.wsclients.IControladorCanal c = controlador.getControladorCanalPort();
 
@@ -53,10 +49,7 @@
                                 <%  Date date = vid.getFechaPublicacion().toGregorianCalendar().getTime();
                                     DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                                     String fecha  = formatter.format(date);
-                                    Calendar ca = Calendar.getInstance();
-                                    ca.setTime(formatter.parse(fecha));
-                                    ca.add(Calendar.DATE, 1);
-                                    fecha = formatter.format(ca.getTime());%>
+                                %>
                                 <small class="text-muted">Subido el: <%=fecha%></small>
                             </div>
                         </div>

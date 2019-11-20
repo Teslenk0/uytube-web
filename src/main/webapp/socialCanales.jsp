@@ -76,7 +76,6 @@
                         <!-- followers -->
                         <%
                         if(!listaSeguidores.isEmpty()){
-                            boolean aux = false;
                             for(int x=0; x<listaSeguidores.size(); x++){
                                 if(listaSeguidores.get(x) != null){
                                     DtUsuario nomSeguidor = (DtUsuario) listaSeguidores.get(x);

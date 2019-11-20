@@ -112,7 +112,7 @@ public class AltaVideoServlet extends HttpServlet {
 
     public String getID(String url){
         String id = null;
-        String pattern = "(?<=watch\\?v=|/videos/|embed\\/|youtu.be\\/|\\/v\\/|\\/e\\/|watch\\?v%3D|watch\\?feature=player_embedded&v=|%2Fvideos%2F|embed%\u200C\u200B2F|youtu.be%2F|%2Fv%2F)[^#\\&\\?\\n]*";
+        String pattern = "(?<=watch\\?v=|/videos/|embed/|youtu.be/|/v/|/e/|watch\\?v%3D|watch\\?feature=player_embedded&v=|%2Fvideos%2F|embed%\u200C\u200B2F|youtu.be%2F|%2Fv%2F)[^#&?\\n]*";
         Pattern compiledPattern = Pattern.compile(pattern);
         if ( url != null) {
             Matcher matcher = compiledPattern.matcher(url);
@@ -126,24 +126,23 @@ public class AltaVideoServlet extends HttpServlet {
         return id;
     }
 
-    public static String convertYouTubeDuration(String duration) {
-        String youtubeDuration = duration;
+    private static String convertYouTubeDuration(String duration) {
         Calendar c = new GregorianCalendar();
         try {
             DateFormat df = new SimpleDateFormat("'PT'mm'M'ss'S'");
-            Date d = df.parse(youtubeDuration);
+            Date d = df.parse(duration);
             c.setTime(d);
         } catch (ParseException e) {
             try {
                 DateFormat df = new SimpleDateFormat("'PT'hh'H'mm'M'ss'S'");
-                Date d = df.parse(youtubeDuration);
+                Date d = df.parse(duration);
                 c.setTime(d);
             } catch (ParseException e1) {
                 try {
                     DateFormat df = new SimpleDateFormat("'PT'ss'S'");
-                    Date d = df.parse(youtubeDuration);
+                    Date d = df.parse(duration);
                     c.setTime(d);
-                } catch (ParseException e2) {
+                } catch (ParseException ignored) {
                 }
             }
         }

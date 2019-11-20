@@ -11,30 +11,45 @@ $(document).ready(function () {
     form.submit(function (e) {
         e.preventDefault();
         e.returnValue = false;
-        const nomVideo = $('#nomV').val().trim();
+        const datos = {
+            nomV: $('#nomV').val().trim(),
+            fechaPu: $('#fechaPu').val().trim(),
+            url: $('#url').val().trim(),
+            desc: $('#desc').val().trim(),
+            categoria: $('#categorias').val().trim(),
+            privado: $("input[name=estado]:checked").val()
+        };
         $.ajax({
             type: 'get',
             url: 'ValidarModificarVideoServlet',
             dataType: 'JSON',
             data: {
                 loadProds: 1,
-                nombre: nomVideo
+                datos: JSON.stringify(datos)
             },
             success: function (response) {
-                if(!response.existe){
+                if(!response.existe && !response.cambios){
                     const url = $('#url').val().trim();
+                    $('#alertaRoja').remove();
                     if(matchYoutubeUrl(url)){
                         form.off('submit');
                         form.submit();
                     }else{
                         const div = $("#urlError");
-                        $('#alertaRoja').remove();
                         div.append('<p id="alertaRoja" style="color: red">URL Invalida</p>');
                     }
                 }else{
-                    const div = $("#errorNom");
-                    $('#alertaRoja').remove();
-                    div.append('<p id="alertaRoja" style="color: red">Este nombre de video ya existe en su canal</p>');
+                    if(response.existe) {
+                        const div = $("#errorNom");
+                        div.append('<p id="alertaRoja" style="color: red">Este nombre de video ya existe en su canal</p>');
+                    }
+                    if(response.cambios){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'No se registraron cambios!',
+                        })
+                    }
                 }
             },
             error: function (data) {

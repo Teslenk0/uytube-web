@@ -5,8 +5,8 @@
  */
 package uytube.web.classes;
 
-import uytube.web.wsclients.ControladorCanalService;
-import uytube.web.wsclients.IControladorCanal;
+import org.json.JSONObject;
+import uytube.web.wsclients.*;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -40,20 +43,45 @@ public class ValidarModificarUserServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         HttpSession s = request.getSession();
 
-        String canal = request.getParameter("nombre");
+        String strJson = request.getParameter("datos");
+        JSONObject json = new JSONObject(strJson);
+        String nick = (String) json.get("nickname");
+        String nombre = (String) json.get("nombre");
+        String apellido = (String) json.get("apellido");
+        String email = (String) json.get("email");
+        String pass = (String) json.get("password");
+        String canal = (String) json.get("nomCanal");
+        String fechaNac = (String) json.get("fechaNac");
+        String descripcion = (String) json.get("descripcion");
+        String privado = (String) json.get("privado");
+
         String nomO = (String) s.getAttribute("oldN");
+
+        Boolean isPrivate = false;
+        if(privado.equals("privado"))
+            isPrivate = true;
 
         ControladorCanalService i = new ControladorCanalService();
         IControladorCanal c = i.getControladorCanalPort();
+        ControladorUsuarioService ii = new ControladorUsuarioService();
+        IControladorUsuario u = ii.getControladorUsuarioPort();
+        DtUsuario user = u.buscarUsuario(nick);
 
-        String respuesta;
+        Date date = user.getFechaNac().toGregorianCalendar().getTime();
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaU  = formatter.format(date);
+
         String rcanal = "\"canal\":false";
         if(!nomO.equals(canal)) {
             if (c.buscarCanal(canal))
                 rcanal = "\"canal\":true";
         }
 
-        respuesta = "{"+rcanal+"}";
+        String cambios = "\"cambios\":false";
+        if(nick.equals(user.getNickname()) && nombre.equals(user.getNombre()) && apellido.equals(user.getApellido()) && email.equals(user.getEmail()) && canal.equals(user.getCanal().getNombreCanal()) && pass.equals(user.getContrasenia()) && descripcion.equals(user.getCanal().getDescripcion()) && fechaNac.equals(fechaU) && isPrivate.equals(user.getCanal().isPrivado()))
+            cambios = "\"cambios\":true";
+
+        String respuesta = "{"+cambios+","+rcanal+"}";
         out.print(respuesta);
         out.flush();
         out.close();

@@ -65,21 +65,21 @@ public class ModificoUserServlet extends HttpServlet {
         File file = new File(path);
         if(!file.exists()){
             if(file.mkdirs())
-                System.out.println("Directorios creados");
+                System.out.println("");
         }
 
-
-
-        if(filename.isEmpty() && user.getImagen().equals("/imagenesUsuarios/Defecto.png")){
-            img = "/imagenesUsuarios/Defecto.png";
+        img = "/imagenesUsuarios/" + nick + ".png";
+        if(filename.isEmpty()){
+            if(user.getImagen().equals("/imagenesUsuarios/Defecto.png"))
+                img = "/imagenesUsuarios/Defecto.png";
         }
         else{
             file = new File(path + nick + ".png");
-            if(file.delete())
-                System.out.println("Imagen borrada");
+            if (file.delete())
+                System.out.println("");
 
             part.write(path + nick + ".png");
-            img = "/imagenesUsuarios/"+ nick +".png";
+
         }
 
         DtCanal canal = new DtCanal();

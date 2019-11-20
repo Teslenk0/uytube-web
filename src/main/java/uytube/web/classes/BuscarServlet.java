@@ -6,6 +6,7 @@
 package uytube.web.classes;
 
 import uytube.web.wsclients.ControladorCanalService;
+import uytube.web.wsclients.DtVideo;
 import uytube.web.wsclients.IControladorCanal;
 
 import java.io.IOException;
@@ -55,14 +56,12 @@ public class BuscarServlet extends HttpServlet {
         if(request.getParameter("ordFecha") != null){
             if (request.getParameter("ordFecha").equals("1")) {
                 if(videos != null) {
-                    Collections.sort(videos, new Comparator() {
-                        public int compare(Object o1, Object o2) {
-                            uytube.web.wsclients.DtVideo aux;
-                            uytube.web.wsclients.DtVideo tmp;
-                            aux = (uytube.web.wsclients.DtVideo) o1;
-                            tmp = (uytube.web.wsclients.DtVideo) o2;
-                            return tmp.getFechaPublicacion().toGregorianCalendar().compareTo(aux.getFechaPublicacion().toGregorianCalendar());
-                        }
+                    videos.sort((o1, o2) -> {
+                        DtVideo aux;
+                        DtVideo tmp;
+                        aux = (DtVideo) o1;
+                        tmp = (DtVideo) o2;
+                        return tmp.getFechaPublicacion().toGregorianCalendar().compareTo(aux.getFechaPublicacion().toGregorianCalendar());
                     });
                 }
 

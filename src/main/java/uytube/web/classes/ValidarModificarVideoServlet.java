@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package uytube.web.classes;
+import org.json.JSONObject;
 import uytube.web.wsclients.ControladorCanalService;
+import uytube.web.wsclients.DtUsuario;
+import uytube.web.wsclients.DtVideo;
 import uytube.web.wsclients.IControladorCanal;
 
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -42,18 +48,39 @@ public class ValidarModificarVideoServlet extends HttpServlet {
         HttpSession s = request.getSession();
 
         String nomO = (String) s.getAttribute("oldV");
-        String nomVN = request.getParameter("nombre");
-        uytube.web.wsclients.DtUsuario u = (uytube.web.wsclients.DtUsuario) s.getAttribute("usuario");
+        DtUsuario u = (DtUsuario) s.getAttribute("usuario");
+
+        String strJson = request.getParameter("datos");
+        JSONObject json = new JSONObject(strJson);
+        String nomVN = (String) json.get("nomV");
+        String fechaPu = (String) json.get("fechaPu");
+        String url = (String) json.get("url");
+        String desc = (String) json.get("desc");
+        String categoria = (String) json.get("categoria");
+        String privado = (String) json.get("privado");
+
+        Boolean isPrivate = false;
+        if(privado.equals("privado"))
+            isPrivate = true;
 
         IControladorCanal c = controller.getControladorCanalPort();
-        String respuesta = "{\"existe\":false}";
+        String existe = "\"existe\":false";
         if(!nomVN.equals(nomO)) {
             if (c.obtenerVideo(nomVN, u.getCanal().getNombreCanal()) != null) {
-                respuesta = "{\"existe\":true}";
-            } else {
-                respuesta = "{\"existe\":false}";
+                existe = "\"existe\":true";
             }
         }
+
+        DtVideo vi = c.obtenerVideo(nomO, u.getCanal().getNombreCanal());
+        Date date = vi.getFechaPublicacion().toGregorianCalendar().getTime();
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaU  = formatter.format(date);
+
+        String cambios = "\"cambios\":false";
+        if(vi.getNombre().equals(nomVN) && fechaPu.equals(fechaU) && vi.getUrl().equals(url) && vi.getDescripcion().equals(desc) && vi.getCategoria().equals(categoria) && isPrivate.equals(vi.isPrivado()))
+            cambios = "\"cambios\":true";
+
+        String respuesta = "{"+cambios+","+existe+"}";
         out.print(respuesta);
         out.flush();
         out.close();
