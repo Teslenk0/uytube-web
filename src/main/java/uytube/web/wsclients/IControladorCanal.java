@@ -113,6 +113,24 @@ public interface IControladorCanal {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns uytube.web.wsclients.DtVideoEliminado
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "obtenerVideoEliminado", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerVideoEliminado")
+    @ResponseWrapper(localName = "obtenerVideoEliminadoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ObtenerVideoEliminadoResponse")
+    @Action(input = "http://interfaces/IControladorCanal/obtenerVideoEliminadoRequest", output = "http://interfaces/IControladorCanal/obtenerVideoEliminadoResponse")
+    public DtVideoEliminado obtenerVideoEliminado(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns java.util.List<java.lang.Object>
@@ -125,6 +143,18 @@ public interface IControladorCanal {
     public List<Object> listaComentarios(
         @WebParam(name = "arg0", targetNamespace = "")
         DtVideo arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "agregarComentario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarComentario")
+    @ResponseWrapper(localName = "agregarComentarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarComentarioResponse")
+    @Action(input = "http://interfaces/IControladorCanal/agregarComentarioRequest", output = "http://interfaces/IControladorCanal/agregarComentarioResponse")
+    public void agregarComentario(
+        @WebParam(name = "arg0", targetNamespace = "")
+        DtComentario arg0);
 
     /**
      * 
@@ -209,6 +239,36 @@ public interface IControladorCanal {
     public List<Object> getListasReproduccion(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getListasParticularesEliminadas", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasParticularesEliminadas")
+    @ResponseWrapper(localName = "getListasParticularesEliminadasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasParticularesEliminadasResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getListasParticularesEliminadasRequest", output = "http://interfaces/IControladorCanal/getListasParticularesEliminadasResponse")
+    public List<Object> getListasParticularesEliminadas(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getListasDefectoEliminadas", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasDefectoEliminadas")
+    @ResponseWrapper(localName = "getListasDefectoEliminadasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetListasDefectoEliminadasResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getListasDefectoEliminadasRequest", output = "http://interfaces/IControladorCanal/getListasDefectoEliminadasResponse")
+    public List<Object> getListasDefectoEliminadas(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
 
     /**
      * 
@@ -370,6 +430,36 @@ public interface IControladorCanal {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVideosListaParticularEliminadas", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaParticularEliminadas")
+    @ResponseWrapper(localName = "getVideosListaParticularEliminadasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaParticularEliminadasResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getVideosListaParticularEliminadasRequest", output = "http://interfaces/IControladorCanal/getVideosListaParticularEliminadasResponse")
+    public List<Object> getVideosListaParticularEliminadas(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVideosListaDefectoEliminadas", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaDefectoEliminadas")
+    @ResponseWrapper(localName = "getVideosListaDefectoEliminadasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.GetVideosListaDefectoEliminadasResponse")
+    @Action(input = "http://interfaces/IControladorCanal/getVideosListaDefectoEliminadasRequest", output = "http://interfaces/IControladorCanal/getVideosListaDefectoEliminadasResponse")
+    public List<Object> getVideosListaDefectoEliminadas(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
 
     /**
      * 
@@ -599,13 +689,31 @@ public interface IControladorCanal {
     /**
      * 
      * @param arg0
+     * @return
+     *     returns uytube.web.wsclients.DtauxComentarios
      */
     @WebMethod
-    @RequestWrapper(localName = "agregarComentario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarComentario")
-    @ResponseWrapper(localName = "agregarComentarioResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.AgregarComentarioResponse")
-    @Action(input = "http://interfaces/IControladorCanal/agregarComentarioRequest", output = "http://interfaces/IControladorCanal/agregarComentarioResponse")
-    public void agregarComentario(
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarRespuestas", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarRespuestas")
+    @ResponseWrapper(localName = "buscarRespuestasResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarRespuestasResponse")
+    @Action(input = "http://interfaces/IControladorCanal/buscarRespuestasRequest", output = "http://interfaces/IControladorCanal/buscarRespuestasResponse")
+    public DtauxComentarios buscarRespuestas(
         @WebParam(name = "arg0", targetNamespace = "")
         DtComentario arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listaVideosUserEliminado", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaVideosUserEliminado")
+    @ResponseWrapper(localName = "listaVideosUserEliminadoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaVideosUserEliminadoResponse")
+    @Action(input = "http://interfaces/IControladorCanal/listaVideosUserEliminadoRequest", output = "http://interfaces/IControladorCanal/listaVideosUserEliminadoResponse")
+    public List<Object> listaVideosUserEliminado(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
 
 }

@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a05e968-1539-4d3e-a848-51078821ab16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileContent/annotation-processors.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/jarAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -22,41 +9,28 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AgregarVideoPlaylistDefectoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AgregarVideoPlaylistDefectoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AgregarVideoPlaylistParticularServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AgregarVideoPlaylistParticularServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/AltaVideoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/BuscarServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/CrearPlaylistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/CrearPlaylistServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistDefectoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistDefectoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistParticularServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/EliminarVideoPlaylistParticularServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificarVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificarVideoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoPlaylistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoPlaylistServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ModificoUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/NuevoComentarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/NuevoComentarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/RegistrarServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/RegistrarServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderComentarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderComentarioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderRespuestaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ResponderRespuestaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarModificarUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarModificarUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarModificarVideoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/classes/ValidarModificarVideoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/EliminarUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/EliminarUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorCanal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorCanal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/IControladorUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/uytube-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/uytube-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AltaVideoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/AltaVideoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/BuscarServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ModificoUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ModificoUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/RegistrarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/RegistrarServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ValidarModificarUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ValidarModificarUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ValidarModificarVideoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/classes/ValidarModificarVideoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/social.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/social.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/modificarUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/modificarUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/modificarVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/modificarVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/infoCanales.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/infoCanales.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarVideo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarVideo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/socialCanales.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/socialCanales.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/videos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/videos.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalWs.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/CanalWs.wsdl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EliminarUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EliminarUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EliminarUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/EliminarUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorCanal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/IControladorUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uytube/web/wsclients/UsuarioWs.wsdl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/clearPaneles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/clearPaneles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verVideos.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -447,6 +421,7 @@
       <workItem from="1573671843726" duration="3130000" />
       <workItem from="1573678427190" duration="251000" />
       <workItem from="1574204184019" duration="6744000" />
+      <workItem from="1574711352015" duration="427000" />
     </task>
     <task id="LOCAL-00001" summary="tuneando login">
       <created>1570394468526</created>

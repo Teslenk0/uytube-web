@@ -40,6 +40,18 @@ public interface IControladorUsuario {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listaUsuariosEliminados", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaUsuariosEliminados")
+    @ResponseWrapper(localName = "listaUsuariosEliminadosResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.ListaUsuariosEliminadosResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/listaUsuariosEliminadosRequest", output = "http://interfaces/IControladorUsuario/listaUsuariosEliminadosResponse")
+    public List<Object> listaUsuariosEliminados();
+
+    /**
+     * 
      */
     @WebMethod
     @RequestWrapper(localName = "inicioBase", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.InicioBase")
@@ -87,6 +99,21 @@ public interface IControladorUsuario {
     public DtUsuario buscarUsuario(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns uytube.web.wsclients.DtCanalEliminado
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarUsuarioEliminado", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuarioEliminado")
+    @ResponseWrapper(localName = "buscarUsuarioEliminadoResponse", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.BuscarUsuarioEliminadoResponse")
+    @Action(input = "http://interfaces/IControladorUsuario/buscarUsuarioEliminadoRequest", output = "http://interfaces/IControladorUsuario/buscarUsuarioEliminadoResponse")
+    public DtCanalEliminado buscarUsuarioEliminado(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
 
     /**
      * 
@@ -235,7 +262,7 @@ public interface IControladorUsuario {
     @Action(input = "http://interfaces/IControladorUsuario/eliminarUsuarioRequest", output = "http://interfaces/IControladorUsuario/eliminarUsuarioResponse")
     public void eliminarUsuario(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        DtUsuario arg0);
 
     /**
      * 
@@ -271,9 +298,9 @@ public interface IControladorUsuario {
      * 
      * @param arg1
      * @param arg0
+     * @throws EmailRepetidoException_Exception
      * @throws CanalRepetidoException_Exception
      * @throws UsuarioRepetidoException_Exception
-     * @throws EmailRepetidoException_Exception
      */
     @WebMethod
     @RequestWrapper(localName = "registrarUsuario", targetNamespace = "http://interfaces/", className = "uytube.web.wsclients.RegistrarUsuario")

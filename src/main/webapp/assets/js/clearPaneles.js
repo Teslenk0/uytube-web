@@ -26,6 +26,11 @@ $(document).ready(function () {
         panel.load("modificarUser.jsp");
     });
 
+    $("#eliminarUser_btn").on("click",function (e) {
+        panel.empty();
+        panel.load("eliminarUser.jsp");
+    });
+
     $("#crearLista_btn").on("click",function (e) {
         panel.empty();
         panel.load("crearPlaylist.jsp");

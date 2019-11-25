@@ -39,7 +39,9 @@ public class ObjectFactory {
     private final static QName _DejarSeguirUsuario_QNAME = new QName("http://interfaces/", "DejarSeguir_Usuario");
     private final static QName _UploadImageResponse_QNAME = new QName("http://interfaces/", "uploadImageResponse");
     private final static QName _BuscarEmail_QNAME = new QName("http://interfaces/", "buscarEmail");
+    private final static QName _BuscarUsuarioEliminado_QNAME = new QName("http://interfaces/", "buscarUsuarioEliminado");
     private final static QName _UploadImage_QNAME = new QName("http://interfaces/", "uploadImage");
+    private final static QName _ListaUsuariosEliminados_QNAME = new QName("http://interfaces/", "listaUsuariosEliminados");
     private final static QName _DownloadImageResponse_QNAME = new QName("http://interfaces/", "downloadImageResponse");
     private final static QName _CanalRepetidoException_QNAME = new QName("http://interfaces/", "CanalRepetidoException");
     private final static QName _BuscarUsuarioCanal_QNAME = new QName("http://interfaces/", "buscarUsuarioCanal");
@@ -51,12 +53,14 @@ public class ObjectFactory {
     private final static QName _SeguirUsuarioResponse_QNAME = new QName("http://interfaces/", "seguirUsuarioResponse");
     private final static QName _BuscarEmailResponse_QNAME = new QName("http://interfaces/", "buscarEmailResponse");
     private final static QName _ModificarUsuarioResponse_QNAME = new QName("http://interfaces/", "modificarUsuarioResponse");
+    private final static QName _ListaUsuariosEliminadosResponse_QNAME = new QName("http://interfaces/", "listaUsuariosEliminadosResponse");
     private final static QName _RegistrarUsuario_QNAME = new QName("http://interfaces/", "registrarUsuario");
     private final static QName _EmailRepetidoException_QNAME = new QName("http://interfaces/", "EmailRepetidoException");
     private final static QName _ListaSeguidosResponse_QNAME = new QName("http://interfaces/", "listaSeguidosResponse");
     private final static QName _InicioBaseResponse_QNAME = new QName("http://interfaces/", "inicioBaseResponse");
     private final static QName _ModificarUsuario_QNAME = new QName("http://interfaces/", "modificarUsuario");
     private final static QName _BuscarUsuarioResponse_QNAME = new QName("http://interfaces/", "buscarUsuarioResponse");
+    private final static QName _BuscarUsuarioEliminadoResponse_QNAME = new QName("http://interfaces/", "buscarUsuarioEliminadoResponse");
     private final static QName _ListaUsuariosResponse_QNAME = new QName("http://interfaces/", "listaUsuariosResponse");
     private final static QName _DejarSeguirUsuarioResponse_QNAME = new QName("http://interfaces/", "DejarSeguir_UsuarioResponse");
     private final static QName _ListaSeguidos_QNAME = new QName("http://interfaces/", "listaSeguidos");
@@ -191,11 +195,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ListaUsuariosEliminados }
+     * 
+     */
+    public ListaUsuariosEliminados createListaUsuariosEliminados() {
+        return new ListaUsuariosEliminados();
+    }
+
+    /**
      * Create an instance of {@link BuscarEmail }
      * 
      */
     public BuscarEmail createBuscarEmail() {
         return new BuscarEmail();
+    }
+
+    /**
+     * Create an instance of {@link BuscarUsuarioEliminado }
+     * 
+     */
+    public BuscarUsuarioEliminado createBuscarUsuarioEliminado() {
+        return new BuscarUsuarioEliminado();
     }
 
     /**
@@ -236,6 +256,14 @@ public class ObjectFactory {
      */
     public EmailRepetidoException createEmailRepetidoException() {
         return new EmailRepetidoException();
+    }
+
+    /**
+     * Create an instance of {@link ListaUsuariosEliminadosResponse }
+     * 
+     */
+    public ListaUsuariosEliminadosResponse createListaUsuariosEliminadosResponse() {
+        return new ListaUsuariosEliminadosResponse();
     }
 
     /**
@@ -335,6 +363,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BuscarUsuarioEliminadoResponse }
+     * 
+     */
+    public BuscarUsuarioEliminadoResponse createBuscarUsuarioEliminadoResponse() {
+        return new BuscarUsuarioEliminadoResponse();
+    }
+
+    /**
      * Create an instance of {@link ModificarUsuario }
      * 
      */
@@ -359,11 +395,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DtUsuarioEliminado }
+     * 
+     */
+    public DtUsuarioEliminado createDtUsuarioEliminado() {
+        return new DtUsuarioEliminado();
+    }
+
+    /**
      * Create an instance of {@link BufferedImage }
      * 
      */
     public BufferedImage createBufferedImage() {
         return new BufferedImage();
+    }
+
+    /**
+     * Create an instance of {@link DtCanalEliminado }
+     * 
+     */
+    public DtCanalEliminado createDtCanalEliminado() {
+        return new DtCanalEliminado();
     }
 
     /**
@@ -526,12 +578,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarUsuarioEliminado }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarUsuarioEliminado")
+    public JAXBElement<BuscarUsuarioEliminado> createBuscarUsuarioEliminado(BuscarUsuarioEliminado value) {
+        return new JAXBElement<BuscarUsuarioEliminado>(_BuscarUsuarioEliminado_QNAME, BuscarUsuarioEliminado.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UploadImage }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://interfaces/", name = "uploadImage")
     public JAXBElement<UploadImage> createUploadImage(UploadImage value) {
         return new JAXBElement<UploadImage>(_UploadImage_QNAME, UploadImage.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListaUsuariosEliminados }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://interfaces/", name = "listaUsuariosEliminados")
+    public JAXBElement<ListaUsuariosEliminados> createListaUsuariosEliminados(ListaUsuariosEliminados value) {
+        return new JAXBElement<ListaUsuariosEliminados>(_ListaUsuariosEliminados_QNAME, ListaUsuariosEliminados.class, null, value);
     }
 
     /**
@@ -634,6 +704,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListaUsuariosEliminadosResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://interfaces/", name = "listaUsuariosEliminadosResponse")
+    public JAXBElement<ListaUsuariosEliminadosResponse> createListaUsuariosEliminadosResponse(ListaUsuariosEliminadosResponse value) {
+        return new JAXBElement<ListaUsuariosEliminadosResponse>(_ListaUsuariosEliminadosResponse_QNAME, ListaUsuariosEliminadosResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarUsuario }{@code >}}
      * 
      */
@@ -685,6 +764,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://interfaces/", name = "buscarUsuarioResponse")
     public JAXBElement<BuscarUsuarioResponse> createBuscarUsuarioResponse(BuscarUsuarioResponse value) {
         return new JAXBElement<BuscarUsuarioResponse>(_BuscarUsuarioResponse_QNAME, BuscarUsuarioResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarUsuarioEliminadoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://interfaces/", name = "buscarUsuarioEliminadoResponse")
+    public JAXBElement<BuscarUsuarioEliminadoResponse> createBuscarUsuarioEliminadoResponse(BuscarUsuarioEliminadoResponse value) {
+        return new JAXBElement<BuscarUsuarioEliminadoResponse>(_BuscarUsuarioEliminadoResponse_QNAME, BuscarUsuarioEliminadoResponse.class, null, value);
     }
 
     /**

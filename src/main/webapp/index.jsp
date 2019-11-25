@@ -130,10 +130,9 @@
                                     <ul>
                                         <li>
                                             <a href="#" id="modificoUser_btn">Modificar</a>
-                                            <header class="header">
-                                                <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
-                                                </nav>
-                                            </header>
+                                        </li>
+                                        <li>
+                                            <a href="#" id="eliminarUser_btn">Eliminar</a>
                                         </li>
                                     </ul>
                                 </div>

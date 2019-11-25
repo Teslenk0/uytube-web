@@ -11,6 +11,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="listaUsuariosEliminados">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="inicioBase">
 <soap:operation soapAction=""/>
 <input>
@@ -33,6 +42,15 @@
 </fault>
 </operation>
 <operation name="buscarUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarUsuarioEliminado">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

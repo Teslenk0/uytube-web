@@ -48,9 +48,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" type="text/css" href="assets/css/Comentarios.css">
     <link rel="stylesheet" type="text/css" href="assets/css/meGusta.css">
-
     <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -105,23 +105,23 @@
                             <%}
                                 if (logeado != null) {
                                     if(!esta) {%>
-                            <a href="/uytube/MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                            <a href="/uytube/NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                            <a href="/uytube/MegustaVideoServlet" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="far fa-thumbs-up" aria-hidden="true" ></i><br></a>
+                            <a href="/uytube/NomeGustaVideoServlet" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="far fa-thumbs-down" aria-hidden="true"></i><br></a>
                             <%}
                             else{
                                 if(mg) {%>
-                            <a href="/uytube/CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: red" ></i><br></a>
-                            <a href="#" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                            <a href="/uytube/CambiarMegustaServlet" class="like" id="like" title="Te gusta" style="margin-left: 5px"> <i class="far fa-thumbs-up" aria-hidden="true" style="color: red" ></i><br></a>
+                            <a href="#" class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="far fa-thumbs-down" aria-hidden="true"></i><br></a>
                             <%}
                             else{%>
-                            <a href="#" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                            <a href="/uytube/CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: red"></i><br></a>
+                            <a href="#" class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="far fa-thumbs-up" aria-hidden="true" ></i><br></a>
+                            <a href="/uytube/CambiarNomegustaServlet" class="dislike" id="dislike" title="No te gusta" style="margin-left: 15px"><i class="far fa-thumbs-down" aria-hidden="true" style="color: red"></i><br></a>
                             <%}
                             }
                             }
                             else{%>
-                            <a class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="fa fa-thumbs-o-up" aria-hidden="true" ></i><br></a>
-                            <a class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><br></a>
+                            <a class="like" id="like" title="Me gusta" style="margin-left: 5px"> <i class="far fa-thumbs-up" aria-hidden="true" ></i><br></a>
+                            <a class="dislike" id="dislike" title="No me gusta" style="margin-left: 15px"><i class="far fa-thumbs-down" aria-hidden="true"></i><br></a>
                             <%}
                                 if(contNmg != 0) {%>
                             <a style="margin-left: 5px" ><%=contNmg%></a>
